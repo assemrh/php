@@ -1,0 +1,3 @@
+HTML=Hyper Text Markup Language
+CSS=Cascaded Style Sheets
+JSON=JavaScript Object Notation
