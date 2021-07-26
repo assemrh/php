@@ -1,0 +1,14 @@
+﻿@model List<legarage.Models.WinchesModel>
+
+<div class="form-group">
+    <label for="select_winches" class="mt-2">select winches</label>
+    <select name="referal_id" class="form-control mr-sm-2" placeholder="select_winches" id="select_winches">
+        <option value="select">Select Winches</option>
+        @{
+            foreach (var m in Model)
+            {
+                <option value="@m.ID">@m.Title</option>
+            }
+        }
+    </select>
+</div>

@@ -1,0 +1,227 @@
+﻿@model legarage.Models.OffersModel
+@using System.Data;
+@using legarage.Classes;
+@using System.Data.SqlClient;
+
+@{
+    string msg = "";
+    string[] selected = new string[6] { "", "", "", "", "", "" };
+    switch (Model.referal_type)
+    {
+        case "Garage":
+            selected[0] = "selected";
+            break;
+        case "RentOffice":
+            selected[1] = "selected";
+            break;
+        case "Vehichle":
+            selected[2] = "selected";
+            break;
+        case "Product":
+            selected[3] = "selected";
+            break;
+        case "Winches":
+            selected[4] = "selected";
+            break;
+        default:
+            selected[5] = "selected";
+            break;
+    }
+}
+
+
+<div class="modal-body">
+    <form id="EditForm">
+        <input type="hidden" value="@Model.referal_id" name="referal_id" />
+        <input type="hidden" value="@Model.referal_type" name="Offer_type" />
+        <input type="hidden" value="@Model.Owner_Id" name="owner" />
+        <input type="hidden" value="@Model.description" name="desc" />
+        <input type="hidden" value="@Model.discount_percentage" name="discount_percentage" />
+        <input type="hidden" value="@Model.paymentmethods" name="paymentmethods" />
+        <input type="hidden" value="@Model.mobile" name="phonenum" />
+        <input type="hidden" value="@Model.website" name="site" />
+        <input type="hidden" value="@Model.address_id" name="address_id" />
+        <input type="hidden" value="" name="" />
+        <div class="form-group">
+            <label for="garname">Name</label>
+            <input type="text" class="form-control" id="garname" value="@Model.name" placeholder="@Resources.Shared.EnterName" name="name">
+        </div>
+        <div>
+            @*<div class="form-group">
+            <label for="Offer_type" class="mt-2">Offer type</label>
+            <select disabled name="Offer_type" class="form-control mr-sm-2" placeholder="Select Type" title="Select Type" id="Offer_type">
+                <option @selected[5] value="select">Select garages</option>
+                <option @selected[0] value="Garage">Garage</option>
+                <option @selected[1] value="RentOffice">Rent Office </option>
+                <option @selected[2] value="Vehichle">Vehichle</option>
+                <option @selected[3] value="Product">Product</option>
+                <option @selected[4] value="Winches">Winches</option>
+            </select>
+        </div>
+        @{
+            if (Tools.FindCurrentUser(out DataRow user) && user["is_admin"].ToString() == "1")
+            {
+                DataTable table = Database.ReadTable("[Users]", out string str);
+                <div class="form-group">
+                    <label for="Owner" class="mt-2">Owner</label>
+                    <select name="Owner" class="form-control mr-sm-2" placeholder="Owner name" id="Owner" onclick="">
+                        <option value="select">Select User</option>
+                        @foreach (DataRow row in table.Rows)
+                        {
+                            if (row["id"].ToString() == Model.Owner_Id.ToString())
+                            {
+                                <option selected value="@row["id"]">@row["full_name"]</option>
+                            }
+                            else
+                            {
+                                <option value="@row["id"]">@row["full_name"]</option>
+                            }
+                        }
+                    </select>
+                </div>
+            }
+            else
+            {
+                <input type="hidden" name="Owner" value="@Model.Owner_Id " />
+            }
+
+            if (Model.referal_type == "Garage")
+            {
+                <div class="form-group">
+                    <label for="select_garages" class="mt-2">select garages</label>
+                    <select name="referal_id" class="form-control mr-sm-2" placeholder="select_garages" id="select_garages" onchange="get_garage_offer_options()">
+                        <option value="select">Select garages</option>
+                @{
+                    DataTable garages = Database.ReadTable("Garages ", " where user_id = @id ", new List<SqlParameter> { new SqlParameter("@ID", Model.Owner_Id.ToString()) }, out msg);
+                    foreach (DataRow row in garages.Rows)
+                    {
+                        string Selected = (Model.referal_id.ToString() == row["id"].ToString()) ? "selected" : "";
+                        <option @Selected value='@row["id"].ToString()'>@row["name"].ToString()</option>
+                    }
+                }
+                    </select>
+                </div>
+                <div class="form-group h-auto">
+                    <label for="select-brands">Select brands you want :</label>
+                    <div class="list-group form-control d-block h-auto" id="select-brands">
+                @{
+                    String brandQuery = @" SELECT B.id , name  FROM Brands B INNER JOIN Garages_Brands gB ON gB.brand_id = B.id WHERE gB.garage_id = @GID ";
+                    DataTable brands = Database.ReadTableByQuery(brandQuery, new List<SqlParameter> { new SqlParameter("@GID", Model.referal_id.ToString()) }, out msg);
+                    foreach (DataRow row in brands.Rows)
+                    {
+                        string Checked = Model.Brands.Where(brand => brand.ID.ToString() == row["id"].ToString()).Count() == 1 ? "checked" : "";
+
+                        <input @Checked type='checkbox' name='BrandsList' value='@row["id"].ToString()' id='@row["id"].ToString()' />
+                        <label class='list-group-item d-inline-flex w-auto m-1' for='@row["id"].ToString()'>@row["name"].ToString()</label>
+                    }
+                }
+                    </div>
+                </div>
+                <div class="form-group h-auto">
+                    @{
+                        foreach (var cate in Model.Categories)
+                        {
+                            <label for="select-categories">Select Categories you want :</label>
+                            <select class="list-group form-control d-block h-auto" id="select-categories">
+                                <option value="@cate.ID">@cate.Name</option>
+                            </select>
+                        }
+                    }
+                </div>
+            }
+
+            if (Model.referal_type == "RentOffice")
+            {
+                <div class="form-group h-auto">
+                    @{
+                        foreach (var mol in Model.Models)
+                        {
+                            <label for="select-parts">Select models you want :</label>
+                            <select disabled class="list-group form-control d-block h-auto" id="select-models">
+                                <option value="@mol.ID">@mol.Name</option>
+                            </select>
+                        }
+                    }
+                </div>
+            }
+
+            if (Model.referal_type == "Garage" || Model.referal_type == "RentOffice")
+            {
+                <div class="form-group h-auto">
+                    @{
+                        foreach (var vt in Model.VehicleTypes)
+                        {
+                            DataTable table = Database.ReadTable("Vehicle_Types"," ",null,out msg);
+                            <label for="select-vehicle-types">Select Vehicle Types you want :</label>
+                            <select disabled class="list-group form-control d-block h-auto" id="select-vehicle-types">
+                                <option value="select">select vehicle type</option>
+                                @{
+                                    <option value="select">select vehicle type</option>
+                                }
+                            </select>
+                        }
+                    }
+                </div>
+            }
+
+            if (Model.referal_type == "Product")
+            {
+                <div class="form-group h-auto">
+                    <label for="select-parts">Select products you want :</label>
+                    <div  class="list-group form-control d-inline-table h-auto" id="select-parts">
+                        @{
+                            foreach (var _model in Model.Products)
+                            {
+                                <input disabled type="checkbox" name="ProductsList" value="@_model.ID" id="@_model.ID" />
+                                <label class=" list-group-item d-inline-flex w-48 m-1 h-25" for="@_model.ID">
+                                    @_model.Title
+                                    <span class="flex-shrink-0  rounded mini-pic ml-auto"><img class="bd-placeholder-img " height="64" src="~/Images/Products/@_model.Image.URL" alt="@_model.Title"></span>
+                                </label>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        }*@
+        </div>
+        <div class="form-group">
+            <label for="meeting-time-st">Start:</label>
+            <input type="datetime-local" id="meeting-time-st" value="@Model.start_date" name="meeting-time-st" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="meeting-time-en">End:</label>
+            <input type="datetime-local" id="meeting-time-en" value="@Model.end_date" name="meeting-time-en" class="form-control">
+        </div>
+        <div  class="form-group">
+            @*<label for="descriptiontextarea">Description</label>
+            <textarea  class="form-control" id="descriptiontextarea" rows="4" placeholder="Enter Offer and Seller Description" name="desc">@Model.description</textarea>*@
+        </div>
+
+        @*@{
+            if (Model.referal_type == "Vehichle")
+            {
+                <div class="form-group">
+                    <label for="pricetextarea">Old Price</label>
+                    <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter offer's original price in numbers" name="oldprice">@Model.old_price</textarea>
+                </div>
+            }
+        }*@
+
+        @*<div class="form-group">
+            <label for="pricetextarea">Discounted</label>
+            <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter offer's new discounted price in numbers" name="discounted">@Model.discount_percentage</textarea>
+        </div>*@
+        @*<div class="form-group">
+            <label for="paymenttextarea">Payment Method</label>
+            <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="Enter your accepted payment methods" name="paymentmethod">@Model.paymentmethods</textarea>
+        </div>*@
+    </form>
+    <div class="form-group">
+        <h5>@Resources.CP_Garages.EditImage</h5>
+        <form action="/CP_Garages/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Shared.Close</button>
+    <button class="btn btn-primary" id="add-new-offer" onclick="Update('@Model.URL.Edit','@Model.URL.Refresh')">@Resources.Shared.Add</button>
+</div>

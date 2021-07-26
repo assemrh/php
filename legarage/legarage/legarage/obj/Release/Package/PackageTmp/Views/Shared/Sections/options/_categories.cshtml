@@ -1,0 +1,57 @@
+﻿@using legarage.Classes;
+@using System.Data;
+@model List<legarage.Models.ServicesModel>
+
+<div class="form-group">
+    @{
+        DataTable services = new DataTable();
+        services = legarage.Classes.Database.ReadTable("Categories", out string msg);
+        string Checked = "";
+    }
+    <div class="input-group border-bottom-0">
+        <div class="input-group-prepend">
+            <span class="input-group-text p-0 pl-3 pr-3"><label class="m-0"><span style="color:red;">*</span>@Resources.CP_Garages.Services</label></span>
+        </div>
+        <input type="text" class="form-control" placeholder="@Resources.Shared.searchBoxlbl" onkeyup="search_boxes(this.value, 'service-row')">
+        @{
+            if (ViewData["type"].ToString() == "checkbox")
+            {
+                <div class="input-group-append">
+                    <span class="input-group-text p-0 border-0"><label class="btn btn-outline-primary m-0" for="select-all-categories">@Resources.Shared.SelectAll</label></span>
+                    <input hidden id="select-all-categories" type="checkbox" onclick="toggle(this, 'categories')" />
+                </div>
+            }
+        }
+        @*<div class="input-group-append">
+            <span class="input-group-text p-0 border-0"><label class="btn btn-outline-primary m-0" for="select-all-categories"> Select All</label></span>
+            <input hidden id="select-all-categories" type="checkbox" onclick="toggle(this, 'categories')" />
+
+        </div>*@
+    </div>
+    <div class="scroll-box border-top-0">
+        @{if (services != null && services.Rows.Count > 0)
+            {
+                foreach (DataRow service in services.Rows)
+                {
+                    if (Model != null)
+                    {
+                        Checked = Model.Where(s => s.ID.ToString() == service["id"].ToString()).Count() == 1 ? "checked" : "";
+                    }
+                    <div class="form-control input-group mb-1 service-row">
+                        <div class="input-group-prepend mr-3">
+                            <div class="input-group-text">
+                                <input @Checked type="@ViewData["type"].ToString()" class="categories" value="@service["id"].ToString()" name="services">
+                            </div>
+                        </div>
+                        @service["name"].ToString()
+                    </div>
+                }
+            }
+            else
+            {
+                <label class="form-control">@Resources.CP_Garages.NoService</label>
+            }
+        }
+    </div>
+
+</div>

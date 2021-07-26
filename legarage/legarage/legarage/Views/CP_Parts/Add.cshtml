@@ -1,0 +1,318 @@
+﻿@using legarage.Classes;
+@using System.Data;
+@model legarage.Models.URLModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Parts.Add</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            <label for="title"><span style="color:red;">*</span>@Resources.CP_Parts.Title</label>
+            <input type="text" class="form-control" id="title" placeholder="@Resources.CP_Parts.EnterTitle" name="title">
+        </div>
+        @{
+            if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+            {
+                <div class="form-group">
+                    <label for="name"><span style="color:red;">*</span>@Resources.CP_Parts.Username</label>
+                    @{
+                        DataTable Users = new DataTable();
+                        string masg = "";
+                        Users = legarage.Classes.Database.ReadTable("Users", " where is_admin <> 1", null, out masg);
+                    }
+                    <select id="user" name="user" class="form-control">
+                        @{
+                            if (Users != null && Users.Rows.Count > 0)
+                            {
+                                <option value="-1">@Resources.CP_Parts.EnterUsername</option>
+                                foreach (DataRow user in Users.Rows)
+                                {
+                                    <option value="@user["id"].ToString()">
+                                        @user["full_name"].ToString()
+                                    </option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="-1"><lable>@Resources.CP_Parts.NoUser</lable></option>
+                            }
+                        }
+                    </select>
+                </div>
+            }
+        }
+        <div class="form-group">
+            <label for="owner_name"><span style="color:red;">*</span>@Resources.CP_Parts.OwnerName</label>
+            <input type="text" class="form-control" id="owner_name" placeholder="@Resources.CP_Parts.EnterOwnerName" name="owner_name">
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Parts.Country</label>
+            <select name="country" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Parts.City</label>
+            <select name="city" id="city" class="form-control">
+                <option value="-1">@Resources.CP_Parts.ChoseCountryFirstly</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address"><span style="color:red;">*</span>@Resources.CP_Parts.Address</label>
+            <input type="text" class="form-control" id="address" placeholder="@Resources.CP_Parts.EnterAddress" name="address">
+        </div>
+        <div class="form-group">
+            <label><span style="color:red;">*</span>@Resources.CP_Parts.Phone</label>
+            <div class="form-control mr-0 p-0 telefon" id="phone_picker">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png" height="24" width="24">
+                        </button>
+                        <div class="dropdown-menu select-country" id="phone_keys" aria-labelledby="dropdownMenuButton">
+                        </div><input id="phone_key" type="hidden" name="phone_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp; @Resources.Shared.PhoneNumber" required name="phoneno" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="whatsapp"><span style="color:red;">*</span>@Resources.CP_Parts.WhatsappNumber</label>
+            <div class="form-control mr-0 p-0 telefon">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png">
+                        </button>
+                        <div class="dropdown-menu select-country" id="whatsapp_key" aria-labelledby="dropdownMenuButton">
+                        </div>
+                        <input id="whatsapp_key" type="hidden" name="whatsapp_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp; @Resources.Shared.PhoneNumber" required name="Whatsapp" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/Sections/options/_categories.cshtml", new ViewDataDictionary { { "type", "checkbox" } })
+
+        @Html.Partial("~/Views/Shared/Sections/options/_vehicle-types.cshtml", new ViewDataDictionary { { "type", "radio" } })
+
+        @Html.Partial("~/Views/Shared/Sections/options/_brands.cshtml", new ViewDataDictionary { { "type", "radio" } })
+
+        @Html.Partial("~/Views/Shared/Sections/options/_models.cshtml", new ViewDataDictionary { { "type", "radio" } })
+    <div>
+        @*        <div class="form-group">
+            @{
+                string msg = "";
+                DataTable services = new DataTable();
+                services = legarage.Classes.Database.ReadTable("Categories", out msg);
+            }
+            <label><span style="color:red;">*</span>@Resources.CP_Parts.Services</label>
+            @{if (services != null && services.Rows.Count > 0)
+                {
+                    foreach (DataRow service in services.Rows)
+                    {
+                        <div class="form-control input-group" placeholder="@Resources.CP_Parts.Services" id="services">
+                            <div class="input-group-prepend mr-3">
+                                <div class="input-group-text">
+                                    <input type="checkbox" value="@service["id"].ToString()" name="services">
+                                </div>
+                            </div>
+                            @service["name"].ToString()
+                        </div>
+                    }
+                }
+                else
+                {
+                    <label class="form-control">@Resources.CP_Parts.NoService</label>
+                }
+            }
+        </div>
+
+                        <div class="form-group">
+                @{
+                    DataTable Vehicle_Types = new DataTable();
+                    Vehicle_Types = legarage.Classes.Database.ReadTable("Vehicle_Types", out msg);
+                }
+                <label><span style="color:red;">*</span>@Resources.CP_Parts.VehicleType</label>
+                @{if (Vehicle_Types != null && Vehicle_Types.Rows.Count > 0)
+                    {
+                        foreach (DataRow vehicle in Vehicle_Types.Rows)
+                        {
+                            <div class="form-control input-group">
+                                <div class="input-group-append mr-3">
+                                    <div class="input-group-text">
+                                        <input type="radio" name="vehicletype" value="@vehicle["id"].ToString()" />
+                                    </div>
+                                </div>
+                                @vehicle["type_name"].ToString()
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <label class="form-control">@Resources.CP_Parts.NoVehicle</label>
+                    }
+                }
+            </div>
+            <div class="form-group">
+                @{
+                    DataTable Models = new DataTable();
+                    Models = legarage.Classes.Database.ReadTable("Models", out msg);
+                }
+                <label><span style="color:red;">*</span>@Resources.CP_Parts.Model</label>
+                @{if (Models != null && Models.Rows.Count > 0)
+                    {
+                        foreach (DataRow Model in Models.Rows)
+                        {
+                            <div class="form-control input-group">
+                                <div class="input-group-append mr-3">
+                                    <div class="input-group-text ">
+                                        <input type="radio" value="@Model["id"].ToString()" name="model">
+                                    </div>
+                                </div>
+                                @Model["name"].ToString()
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <label class="form-control">@Resources.CP_Parts.NoModel</label>
+                    }
+                }
+            </div>
+            <div class="form-group">
+                @{
+                    DataTable Brands = new DataTable();
+                    Brands = legarage.Classes.Database.ReadTable("Brands", out msg);
+                }
+                <label><span style="color:red;">*</span>@Resources.CP_Parts.Brand</label>
+                @{if (Brands != null && Brands.Rows.Count > 0)
+                    {
+                        foreach (DataRow Brand in Brands.Rows)
+                        {
+                            <div class="form-control input-group">
+                                <div class="input-group-append mr-3">
+                                    <div class="input-group-text ">
+                                        <input type="radio" value="@Brand["id"].ToString()" name="brand">
+                                    </div>
+                                </div>
+                                @Brand["name"].ToString()
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <label class="form-control">@Resources.CP_Parts.NoBrand</label>
+                    }
+                }
+            </div>
+        *@
+    </div>
+
+
+        <div class="form-group">
+            <label for="is_new"><span style="color:red;">*</span>@Resources.CP_Parts.IsNew</label>
+            <select name="is_new" id="is_new" class="form-control">
+                <option value="-1" selected>@Resources.CP_Parts.IsNew</option>
+                <option value="0">@Resources.CP_Parts.No</option>
+                <option value="1">@Resources.CP_Parts.Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="price"><span style="color:red;">*</span>@Resources.CP_Parts.Price</label>
+            <input type="text" class="form-control" id="price" placeholder="@Resources.CP_Parts.EnterPrice" name="price">
+        </div>
+        <div class="form-group">
+            <label for="quantity"><span style="color:red;">*</span>@Resources.CP_Parts.Quantity</label>
+            <input type="number" min="1" class="form-control" id="quantity" placeholder="@Resources.CP_Parts.EnterQuantity" name="quantity">
+        </div>
+        <div class="form-group">
+            <label for="year"><span style="color:red;">*</span>@Resources.CP_Parts.Year</label>
+            <select class="form-control" id="year" name="year">
+                @{
+                    <option value="-1" selected>@Resources.CP_Parts.EnterYear</option>
+                    for (int i = 2020; i > 1960; i--)
+                    {
+                        <option value="@i">
+                            @i
+                        </option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mieage">@Resources.CP_Parts.Mieage</label>
+            <select class="form-control" id="mieage" name="mieage">
+                <option value="-1" selected>@Resources.CP_Parts.EnterMieage</option>
+                <option value="0">@Resources.CP_Parts.New</option>
+                <option value="1">@Resources.CP_Parts.Less50</option>
+                <option value="2">@Resources.CP_Parts.Less100</option>
+                <option value="3">@Resources.CP_Parts.Less150</option>
+                <option value="4">@Resources.CP_Parts.More150</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="gearbox">@Resources.CP_Parts.Gearbox</label>
+            <select class="form-control" id="gearbox" name="gearbox">
+                <option value="-1">@Resources.CP_Parts.EnterGearbox</option>
+                <option value="0">@Resources.CP_Parts.Automatic</option>
+                <option value="1">@Resources.CP_Parts.Manual</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engine_size">@Resources.CP_Parts.EngineSize</label>
+            <input list="browsers" autocomplete="off" name="engine_size" id="engine_size" class="form-control" placeholder="@Resources.CP_Parts.EnterEngineSize">
+            <datalist id="browsers">
+                @{
+                    for (int i = 20; i <= 700; i += 10)
+                    {
+                        double val = i / 100.0;
+                        <option value="@val">@val</option>
+                    }
+
+                }
+            </datalist>
+        </div>
+        <div class="form-group">
+            <label for="color">@Resources.CP_Parts.Color</label>
+            <input type="text" class="form-control" id="color" placeholder="@Resources.CP_Parts.EnterColor" name="color">
+        </div>
+        <div class="form-group">
+            <label for="quantity">@Resources.CP_Parts.FuelType</label>
+            <select class="form-control" id="fuel_type" name="fuel_type">
+                <option value="-1">@Resources.CP_Parts.EnterFuelType</option>
+                @{
+                    int index = 1;
+                    if (Session["lng"] == null || Session["lng"].ToString() == "en")
+                    {
+                        index = 0;
+                    }
+                    for (int i = 0; i < HelperClass.FuleTypes_.GetLength(0); i++)
+                    {
+                        <option value="@i">@HelperClass.FuleTypes_[i, index]</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="keywords"><span style="color:red;">*</span>@Resources.CP_Parts.Keywords</label>
+            <textarea class="form-control" id="keywords" rows="2" placeholder="@Resources.CP_Parts.EnterKeywords" name="keywords"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>@Resources.CP_Parts.Descrption</label>
+            <textarea class="form-control" id="description" rows="4" placeholder="@Resources.CP_Parts.EnterDescrption" name="description"></textarea>
+        </div>
+    </form>
+    <div class="form-group">
+        <label><span style="color:red;">*</span>@Resources.CP_Parts.EnterImage</label>
+        <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Parts.Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@Model.Adding','@Model.Refresh');">@Resources.CP_Parts.Add</button>
+</div>
+

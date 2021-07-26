@@ -1,0 +1,52 @@
+﻿@model legarage.Models.URLModel
+@{
+    Layout = "~/Views/Shared/_LayoutCP.cshtml";
+    ViewBag.Title = Resources.CP_Services.Services;
+}
+
+<div class="content col-12 text-center rounded-bottom" style="background-color: lightgrey;">
+    <div class="container">
+        <div class="col-12 h3">
+            <div class="row plusandrefresh pt-2">
+                <div class="col-7"><h3>@Resources.CP_Services.Services</h3></div>
+                <div class="col-3">
+                    <input type="text" class="form-control" placeholder="@Resources.Shared.searchBoxlbl" onkeyup="search_boxes(this.value, 'category-row','table-row')">
+                </div>
+                <div class="col-1">
+                    <i title="@Resources.CP_Services.Refresh" onclick="Refresh('@Model.Refresh');" style="color: green; cursor: pointer;" class="fas fa-redo-alt refreshControlPanel text-left"></i>
+                </div>
+                <div class="col-1">
+                    <i title="@Resources.CP_Services.Add" style="color: lightsalmon; cursor: pointer;" class="fas fa-plus-circle plusControlPanel" data-toggle="modal" data-target="#Modal" onclick="Add('@Model.Add', 'Market')"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Resources.CP_Services.Services</th>
+            <th scope="col">@Resources.CP_Services.Tools</th>
+        </tr>
+    </thead>
+    <tbody id="Table">
+        <tr colspan="3">
+            <td colspan="3" class="w-25 text-center"><span class="ml-auto mr-auto ">@Resources.Shared.Loading</span></td>
+        </tr>
+        <tr colspan="3">
+            <td colspan="3" class="w-25 text-center border-0">
+                <span class="ml-auto mr-auto ">
+                    <img src="~/Images/loader.gif" />
+                </span>
+            </td>
+        </tr>
+</table>
+
+<script>
+    $(document).ready(function () {
+        Refresh('@Model.Refresh');
+    });
+</script>
+

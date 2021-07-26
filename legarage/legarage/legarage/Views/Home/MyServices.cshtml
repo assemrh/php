@@ -1,0 +1,1973 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "My Services";
+}
+
+<h1 style="margin:auto; width:20%; margin-bottom:10px;">My Services</h1>
+
+<!--
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+</ul>
+
+<ul class="nav nav-tabs justify-content-center nav-pills nav-justified">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Menu 1</a></li>
+    <li><a href="#">Menu 2</a></li>
+    <li><a href="#">Menu 3</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <h3>HOME</h3>
+        <p>Some content.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        <h3>Menu 1</h3>
+        <p>Some content in menu 1.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p>Some content in menu 2.</p>
+    </div>
+</div>
+
+-->
+
+
+
+
+<div class="vertical-center justify-content-center">
+
+    <div class="container justify-content-center">
+        <ul class="nav nav-pills nav-justified justify-content-center">
+            <li class="nav-item"> <!--col-md-4 col-sm-6 col-xs-6-->
+                <a class="nav-link active" data-toggle="tab" href="#mygarage" onclick="return seekoGarages()">Garages <img src="~/Images/garage_first_pic.jpg" width="100%" height="80%" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" style="color: inherit; text-decoration: none;" href="#myrent" onclick="return seekoRent()">Rent <img src="~/Images/car-rental-better.jpg" width="110%" height="100%" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link tab-border-solid" data-toggle="tab" style="color: inherit; text-decoration: none; top: 3px;" href="#myvehicle" onclick="return seekoSale();">Buy & Sell <img src="~/Images/vertical-car-image-fourth.png" style="width:100%; height:150px;" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" style="color: inherit; text-decoration: none;" href="#mypart" onclick="return seekoParts()">Parts <img src="~/Images/vehiclebuyandsellproducts.jpg" width="100%" height="80%" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" style="color: inherit; text-decoration: none;" href="#myrecovery" onclick="return seekoRecovery()">Recovery <img src="~/Images/car_being_winched_second.jpg" width="100%" height="80%" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" style="color: inherit; text-decoration: none;" href="#myofferservices" onclick="return seekOffer()">Offers <img src="~/Images/offerthird.jpg" width="100%" height="80%" /></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="tab-content mt-4">
+    <div id="mygarage" class="active tab-pane">
+        <h3 style="margin-left:auto; width:90%; margin-bottom:2%; margin-top:1%;">Your Garages:</h3>
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-xs-6">
+
+
+            <!--<div class="col-3">-->
+
+            <div class="row" style="margin-left:70px; margin-right:-290px;"> <!--maybe adjust here-->
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="/Images/cars_offers.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Garage Name 1 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars, Motorbikes, Buggies, Trucks</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Volvo, Mazda</li>
+
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Mechanics, Electricity</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary" onclick="return goToGarageDetails();">Show Details</button>
+                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#newGarageModal">Update</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="/Images/cars_offers_second.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Garage Name 2 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars, Lemozines, Trucks, Scooters, Autocylces</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> JAGUARBMWINFINITIVolvo</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Radiator, Oil Change</li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="/Images/cars_offers_third.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Garage Name 3 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars, Motorbikes, Buses, Buggies</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> BMW</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Structure, Mechanics, Electricity </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="/Images/cars_offers_fourth.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Garage Name 4 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Trucks, Bulldozers</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Mercedes</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Offers:</em> 4</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Oil Change</li>
+                        <li class="list-group-item"><em style="color:dimgray;">More:</em> Other Details</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link 4</a>
+                        <a href="#" class="card-link">Another link 4</a>
+                    </div>
+                </div>
+
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <div id="myrent" class="tab-pane fade">
+        <h3 style="margin-left:auto; width:90%; margin-bottom:2%; margin-top:1%;">Your Rent Offices:</h3>
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-xs-6">
+
+
+            <!--<div class="col-3">-->
+
+            <div class="row" style="margin-left:70px; margin-right:-290px;">
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/carrent-first.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Office Name 1 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Address:</em> Nesma Street</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars, Trucks, Motorbikes</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Volvo, Mercedes, Lada, Mazda</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary" onclick="return goToRentDetails();">Show Details</button>
+                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#newRentModal">Update</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/carrent-second.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Office Name 2 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Address:</em> near Khalifa burj</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Saab, JAGUARBMWINFINITIVolvo</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/motorbikrent.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Office Name 3 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Address:</em> Bin Zayed District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Motorbikes, Autocycles</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> BMW, Audi</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/buggyrent.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Office Name 4 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Address:</em> Hamada Abd Rabo Street</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Buggies</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Mercedes</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Offers:</em> 4</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Oil Change</li>
+                        <li class="list-group-item"><em style="color:dimgray;">More:</em> Other Details</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link 4</a>
+                        <a href="#" class="card-link">Another link 4</a>
+                    </div>
+                </div>
+
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+    <div id="myvehicle" class="tab-pane fade">
+        <h3 style="margin-left:auto; width:90%; margin-bottom:2%; margin-top:1%;">Your Vehicles For Sale:</h3>
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-xs-6">
+
+
+            <!--<div class="col-3">-->
+
+            <div class="row" style="margin-left:70px; margin-right:-290px;">
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/newvehicle.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Mercedes-AMG GT <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Mercedes</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> New</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Quantity:</em> 12</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $10000</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary" onclick="return goToBuyingDetails();">Show Details</button>
+                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#newBuyingVehicleModal">Update</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/newvehicle.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Vehicle 2 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Saab</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> Old</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $12000</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/newvehicle.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Vehicle 3 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Motorbikes</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Volvo</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> New</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $13000</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/newvehicle.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Vehicle 4 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> BMW</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> New</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $14000</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/newvehicle.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Vehicle 5 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Address:</em> Hamada Abd Rabo Street</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> BMW</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Categories:</em> Tools</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> Old</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $16000</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Offers:</em> 4</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Oil Change</li>
+                        <li class="list-group-item"><em style="color:dimgray;">More:</em> Other Details</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link 4</a>
+                        <a href="#" class="card-link">Another link 4</a>
+                    </div>
+                </div>
+
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <div id="mypart" class="tab-pane fade">
+        <h3 style="margin-left:auto; width:90%; margin-bottom:2%; margin-top:1%;">Your Products For Sale:</h3>
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-xs-6">
+
+
+            <!--<div class="col-3">-->
+
+            <div class="row" style="margin-left:70px; margin-right:-290px;">
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/used part one.png" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Part 1 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars, Trucks, Motorbikes</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Volvo, Mercedes, Lada, Mazda</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Categories:</em> Supplies, Tools</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> Used</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Quantity:</em> 50</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $50</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary" onclick="return goToPartDetails();">Show Details</button>
+                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#newProductModal">Update</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/used part two clear.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Part 2 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Cars</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Saab, JAGUARBMWINFINITIVolvo</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Categories:</em> Parts, Electrics</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> Used</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $52</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/used part five.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Part 3 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Motorbikes, Autocycles</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> BMW, Audi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Categories:</em> Electrics, AddOns</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> New</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $61</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/used part three.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Part 4 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Motorbikes, Car, Autocycles</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> BMW, Audi, Lexus, Hyundai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Categories:</em> Electrics</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> Used</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $75</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/used part six.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Part 5 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Motorbikes, Car, Autocycles</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> BMW, Audi, Lexus, Hyundai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> New</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $90</li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/used part four.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Part 6 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Address:</em> Hamada Abd Rabo Street</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Types:</em> Buggies</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Brand:</em> Mercedes</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Status:</em> New</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Price:</em> $100</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Offers:</em> 4</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Oil Change</li>
+                        <li class="list-group-item"><em style="color:dimgray;">More:</em> Other Details</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link 4</a>
+                        <a href="#" class="card-link">Another link 4</a>
+                    </div>
+                </div>
+
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <div id="myrecovery" class="tab-pane fade">
+        <h3 style="margin-left:auto; width:90%; margin-bottom:2%; margin-top:1%;">Your Recovery Winches:</h3>
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-xs-6">
+
+
+            <!--<div class="col-3">-->
+
+            <div class="row" style="margin-left:70px; margin-right:-290px;">
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytrucksmall.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 1 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Nesma</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 10$ </li>
+
+
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary" onclick="return goToRecoveryDetails();">Recovery Details</button>
+                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#newRecoveryModal">Update</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytrucksmediumsecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 2 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Abu Magid District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 043943556</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 083443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 15$ </li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Recover</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytrucksbigmedium.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 3 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Bin Zayed Area</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0543443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0543443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 8$ </li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Recover</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytrucksbig.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 4 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Prince Rayan District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 022443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0643443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large, very large</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 13$ </li>
+
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Recover</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytruckverybig.jpeg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 5 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Methat Azeem District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0643443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0643443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 5$ </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Recover</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytruckbigslidesecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 6 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Tarneem District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0143443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0143443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 7$ </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Recover</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytrucksstrong.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 7 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Tarneem District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0132443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0132443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 6$ </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Recover</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/recoverytruckverybigsecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            Winche 8 <span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Ras Al Khaimah</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Prince Resh District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 081243943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0888843943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large, very large</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 20$ </li>
+                        <li class="list-group-item"><em style="color:dimgray;">Offers:</em> 4</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Oil Change</li>
+                        <li class="list-group-item"><em style="color:dimgray;">More:</em> Other Details</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link 4</a>
+                        <a href="#" class="card-link">Another link 4</a>
+                    </div>
+                </div>
+
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div id="myofferservices" class="tab-pane fade">
+        <h3 style="margin-left:auto; width:90%; margin-bottom:2%; margin-top:1%;">Your Offers To Clients:</h3>
+
+        <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin:auto;">
+
+
+            <!--<div class="col-3">-->
+
+            <div class="row">
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/vehcileoffer.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 1
+                        </h3>
+                        <h4 style="font-weight:bolder;">$100</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary" onclick="return goToOfferDetails();">Show Details</button>
+                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#newOfferModal">Update</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/offersecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 2
+                        </h3>
+                        <h4 style="font-weight:bolder;">$125</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Sharjah</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Best Garage</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> two plus one vehicles for fixing! </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/vehicleoffersecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 3
+                        </h3>
+                        <h4 style="font-weight:bolder;">$130</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> UAE Rental King</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Credit, Cash</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> Rent two times for the price of one </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/offerthird.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 4
+                        </h3>
+                        <h4 style="font-weight:bolder;">$150</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <!--<div class="col-3">-->
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/offerfirst.png" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 5
+                        </h3>
+                        <h4 style="font-weight:bolder;">$170</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Credit</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/offerfirst.png" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 6
+                        </h3>
+                        <h4 style="font-weight:bolder;">$180</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Credit, Paypal</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/offerfirst.png" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 7
+                        </h3>
+                        <h4 style="font-weight:bolder;">$200</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash, Credit, Paypal</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/offerfirst.png" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 8
+                        </h3>
+                        <h4 style="font-weight:bolder;">$240</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash, Paypal</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+                    </ul>
+                    <div class="card-body">
+                        <button class="btn btn-outline-primary">Show Details</button>
+                    </div>
+                </div>
+
+                <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/offerfirst.png" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body" style="margin:auto;">
+                        <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                            offer 9
+                        </h3>
+                        <h4 style="font-weight:bolder;">$300</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Ras Al Khaimah</li>
+                        <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Prince Resh District</li>
+                        <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash, Paypal</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+                        <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 081243943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0888843943</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large, very large</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 20$ </li>
+                        <li class="list-group-item"><em style="color:dimgray;">Offers:</em> 4</li>
+                        <li class="list-group-item"><em style="color:dimgray;">Services:</em> Oil Change</li>
+                        <li class="list-group-item"><em style="color:dimgray;">More:</em> Other Details</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link 4</a>
+                        <a href="#" class="card-link">Another link 4</a>
+                    </div>
+                </div>
+
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!--Modals-->
+
+
+
+<!-- Garage Modal -->
+<div class="modal fade" id="newGarageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Garage</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="garname">Name</label>
+                        <input type="text" class="form-control" id="garname" placeholder="Enter name">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+
+                        <label for="city" class="mt-2">City</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="City" id="city" />-->
+                        <select name="city" class="form-control mr-sm-2" placeholder="City" id="city">
+                            <option value="select">Select City</option>
+                            <option value="0">Dubai</option>
+                            <option value="1">Sharjah</option>
+                            <option value="2">Ras Al Khaimah</option>
+                            <option value="3">Abu Dhabi</option>
+                            <option value="4">Fujairah</option>
+                            <option value="5">Ajman</option>
+                            <option value="6">Umm Al Quwain</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="garaddress">Address</label>
+                        <input type="text" class="form-control" id="garaddress" placeholder="Enter address">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="vtypestextarea">Vehicle Types</label>
+                        <textarea class="form-control" id="vtypestextarea" rows="2" placeholder="Enter the vehicle types you fix"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="brandstextarea">Brands</label>
+                        <textarea class="form-control" id="brandstextarea" rows="2" placeholder="Enter the brands you fix"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset>
+                            <h6>Update The Services you provide:</h6>
+                            <input type="checkbox" name="garageservices" value="mech">&nbsp; Mechanics<br>
+                            <input type="checkbox" name="garageservices" value="elec">&nbsp; Electricity<br>
+                            <input type="checkbox" name="garageservices" value="struc">&nbsp; Structure<br>
+                            <input type="checkbox" name="garageservices" value="oilc">&nbsp; Oil Change<br>
+                            <input type="checkbox" name="garageservices" value="radi">&nbsp; Radiator<br>
+
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descriptiontextarea">Description</label>
+                        <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="Enter Garage Description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pricetextarea">Price List</label>
+                        <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter the Vehicle Types and each of their prices"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garbrands">Contact Info</label>
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your phone number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your fax number">
+                        <input type="url" class="form-control" id="garbrands" placeholder="Enter your website">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your facebook">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your twitter">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your instagram">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your youtube">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your linkedin">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your snapchat">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your tiktok">
+                        <!--<input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp">-->
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Garage Image</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div id="snackbar">SEEKO SEEKO Message..</div>
+
+                    <div class="alert alert-success" style="display:none;" id="customAlert">
+                        <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
+                    </div>
+
+                    <!--maybe change following button type back to submit-->
+                    <button type="button" class="btn btn-primary" id="myBtn" onclick="return successAlertGarage();">Update</button>
+
+                    <div class="toast">
+                        <div class="toast-header">
+                            Toast Header
+                        </div>
+                        <div class="toast-body">
+                            Some text inside the toast body
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Rent Office Modal -->
+<div class="modal fade" id="newRentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Rent Office</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="garname">Name</label>
+                        <input type="text" class="form-control" id="garname" placeholder="Enter name">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+
+                        <label for="city" class="mt-2">City</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="City" id="city" />-->
+                        <select name="city" class="form-control mr-sm-2" placeholder="City" id="city">
+                            <option value="select">Select City</option>
+                            <option value="0">Dubai</option>
+                            <option value="1">Sharjah</option>
+                            <option value="2">Ras Al Khaimah</option>
+                            <option value="3">Abu Dhabi</option>
+                            <option value="4">Fujairah</option>
+                            <option value="5">Ajman</option>
+                            <option value="6">Umm Al Quwain</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="garaddress">Address</label>
+                        <input type="text" class="form-control" id="garaddress" placeholder="Enter address">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="vtypestextarea">Vehicle Types</label>
+                        <textarea class="form-control" id="vtypestextarea" rows="2" placeholder="Enter the vehicle types you rent"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="brandstextarea">Brands</label>
+                        <textarea class="form-control" id="brandstextarea" rows="2" placeholder="Enter the brands you rent"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="descriptiontextarea">Description</label>
+                        <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="Enter Rent Office Description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pricetextarea">Models List</label>
+                        <textarea class="form-control" id="pricetextarea" rows="6" placeholder="Enter the Models of the vehicles you chose or enter the words: all models"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pricetextarea">Price List</label>
+                        <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter the periods for example: per day, per week, per month and each of their rent prices"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garbrands">Contact Info</label>
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your phone number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your fax number">
+                        <input type="url" class="form-control" id="garbrands" placeholder="Enter your website">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your facebook">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your twitter">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your instagram">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your youtube">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your linkedin">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your snapchat">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your tiktok">
+                        <!--<input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp">-->
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Office Image</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--maybe change following button type back to submit-->
+                    <button type="button" class="btn btn-primary" onclick="return successAlertRent();">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Recovery Winche Modal -->
+<div class="modal fade" id="newRecoveryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Recovery Winche</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="garname">Name</label>
+                        <input type="text" class="form-control" id="garname" placeholder="Enter name">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+
+                        <label for="city" class="mt-2">City</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="City" id="city" />-->
+                        <select name="city" class="form-control mr-sm-2" placeholder="City" id="city">
+                            <option value="select">Select City</option>
+                            <option value="0">Dubai</option>
+                            <option value="1">Sharjah</option>
+                            <option value="2">Ras Al Khaimah</option>
+                            <option value="3">Abu Dhabi</option>
+                            <option value="4">Fujairah</option>
+                            <option value="5">Ajman</option>
+                            <option value="6">Umm Al Quwain</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="gararea">Area</label>
+                        <input type="text" class="form-control" id="garaddress" placeholder="Enter area">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="garaddress">Address</label>
+                        <input type="text" class="form-control" id="garaddress" placeholder="Enter address">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="vtypestextarea">Vehicle Types</label>
+                        <textarea class="form-control" id="vtypestextarea" rows="2" placeholder="Enter the vehicle types you recover"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="vtypestextarea">Vehicle Sizes</label>
+                        <textarea class="form-control" id="vtypestextarea" rows="2" placeholder="Enter the vehicle Sizes you recover"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="descriptiontextarea">Description</label>
+                        <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="Enter Recovery Winche Description"></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="pricetextarea">Price</label>
+                        <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter your fixed recovery price per one time"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymenttextarea">Additional Payment Method</label>
+                        <h6 id="emailHelp" class="form-text text-muted">You must accept Cash.</h6>
+                        <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="Enter your other accepted payment methods"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garbrands">Contact Info</label>
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your phone number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your fax number">
+                        <input type="url" class="form-control" id="garbrands" placeholder="Enter your website">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your facebook">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your twitter">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your instagram">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your youtube">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your linkedin">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your snapchat">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your tiktok">
+                        <!--<input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp">-->
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Winche Image</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--maybe change following button type back to submit-->
+                    <button type="button" class="btn btn-primary" onclick="return successAlertWinche();">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Buying Vehicle Modal -->
+<div class="modal fade" id="newBuyingVehicleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Vehicle For Sale</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="garname">Name</label>
+                        <input type="text" class="form-control" id="garname" placeholder="Enter name">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+
+                        <label for="city" class="mt-2">City</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="City" id="city" />-->
+                        <select name="city" class="form-control mr-sm-2" placeholder="City" id="city">
+                            <option value="select">Select City</option>
+                            <option value="0">Dubai</option>
+                            <option value="1">Sharjah</option>
+                            <option value="2">Ras Al Khaimah</option>
+                            <option value="3">Abu Dhabi</option>
+                            <option value="4">Fujairah</option>
+                            <option value="5">Ajman</option>
+                            <option value="6">Umm Al Quwain</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garaddress">Address</label>
+                        <input type="text" class="form-control" id="garaddress" placeholder="Enter address">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="types" class="mt-2">Vehicle Type</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="Service" id="service" />-->
+                        <select name="vehicle-types" class="form-control mr-sm-2" placeholder="Type" id="types">
+                            <option value="select">Select Type</option>
+                            <option value="car">Car</option>
+                            <option value="mcy">Motorcycle</option>
+                            <option value="bus">Bus</option>
+                            <option value="tru">Truck</option>
+                            <option value="bug">Buggy</option>
+                            <option value="lem">Lemozine</option>
+                            <option value="bul">Bulldozer</option>
+                            <option value="aut">Autocycle</option>
+                            <option value="sco">Scooter</option>
+                            <option value="boa">Boat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="brand" class="mt-2">Brand</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="Brand" id="brand" />-->
+
+                        <select name="brands" class="form-control mr-sm-2" placeholder="Brand" id="brandies" onchange="return changeModel()">
+                            <option value="0" data-description="vehicle brand or make">Select Brand</option>
+                            <option value="volvo" data-imagesrc="/Images/volvo.jpg" data-description="&nbsp;">Volvo</option>
+                            <option value="saab" data-imagesrc="/Images/saab.png" data-description="&nbsp;">Saab</option>
+                            <option value="mercedes" data-imagesrc="/Images/mercedes.jpg" data-description="&nbsp;">Mercedes</option>
+                            <option value="audi" data-imagesrc="/Images/audi.jpg" data-description="&nbsp;">Audi</option>
+                            <option value="1" data-imagesrc="/Images/bmw.jpg" data-description="&nbsp;">BMW</option>
+                            <option value="2" data-imagesrc="/Images/Daewoo.png" data-description="&nbsp;">Daewoo</option>
+                            <option value="3" data-imagesrc="/Images/ford.png" data-description="&nbsp;">Ford</option>
+                            <option value="4" data-imagesrc="/Images/Holden.png" data-description="&nbsp;">Holden</option>
+                            <option value="5" data-imagesrc="/Images/Honda.png" data-description="&nbsp;">Honda</option>
+                            <option value="6" data-imagesrc="/Images/Hyundai.png" data-description="&nbsp;">Hyundai</option>
+                            <option value="7" data-imagesrc="/Images/Isuzu.png" data-description="&nbsp;">Isuzu</option>
+                            <option value="8" data-imagesrc="/Images/Kia.jpg" data-description="&nbsp;">Kia</option>
+                            <option value="9" data-imagesrc="/Images/Lexus.jpg" data-description="&nbsp;">Lexus</option>
+                            <option value="10" data-imagesrc="/Images/Mazda.jpg" data-description="&nbsp;">Mazda</option>
+                            <option value="11" data-imagesrc="/Images/Mitsubishi.png" data-description="&nbsp;">Mitsubishi</option>
+                            <option value="12" data-imagesrc="/Images/Nissan.jpg" data-description="&nbsp;">Nissan</option>
+                            <option value="13" data-imagesrc="/Images/Peugeot.png" data-description="&nbsp;">Peugeot</option>
+                            <option value="14" data-imagesrc="/Images/Subaru.jpg" data-description="&nbsp;">Subaru</option>
+                            <option value="15" data-imagesrc="/Images/Suzuki.png" data-description="&nbsp;">Suzuki</option>
+                            <option value="16" data-imagesrc="/Images/Toyota.jpg" data-description="&nbsp;">Toyota</option>
+                            <option value="17" data-imagesrc="/Images/Volkswagensecond.jpg" data-description="&nbsp;">Volkswagen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="mt-2">Status</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="Service" id="service" />-->
+                        <select name="statuses" class="form-control mr-sm-2" placeholder="Status" id="status">
+                            <option value="select">Select Status</option>
+                            <option value="new">New</option>
+                            <option value="old">Used</option>  <!--maybe Old instead of Used-->
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="descriptiontextarea">Description</label>
+                        <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="Enter Vehicle and Seller Description"></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="pricetextarea">Price</label>
+                        <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter your vehicle one time price, and/or add installments price if you want"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymenttextarea">Payment Method</label>
+                        <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="Enter your accepted payment methods"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garbrands">Contact Info</label>
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your phone number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your fax number">
+                        <input type="url" class="form-control" id="garbrands" placeholder="Enter your website">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your facebook">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your twitter">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your instagram">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your youtube">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your linkedin">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your snapchat">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your tiktok">
+                        <!--<input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp">-->
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Vehicle Image</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--maybe change following button type back to submit-->
+                    <button type="button" class="btn btn-primary" onclick="return successAlertVehicle();">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Buying Product or Part Modal -->
+<div class="modal fade" id="newProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Product or Part For Sale</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="garname">Name</label>
+                        <input type="text" class="form-control" id="garname" placeholder="Enter name">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+
+                        <label for="city" class="mt-2">City</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="City" id="city" />-->
+                        <select name="city" class="form-control mr-sm-2" placeholder="City" id="city">
+                            <option value="select">Select City</option>
+                            <option value="0">Dubai</option>
+                            <option value="1">Sharjah</option>
+                            <option value="2">Ras Al Khaimah</option>
+                            <option value="3">Abu Dhabi</option>
+                            <option value="4">Fujairah</option>
+                            <option value="5">Ajman</option>
+                            <option value="6">Umm Al Quwain</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garaddress">Address</label>
+                        <input type="text" class="form-control" id="garaddress" placeholder="Enter address">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="vtypestextarea">Vehicle Types</label>
+                        <textarea class="form-control" id="vtypestextarea" rows="2" placeholder="Enter the vehicle types that your part is for"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="brandstextarea">Brands</label>
+                        <textarea class="form-control" id="brandstextarea" rows="2" placeholder="Enter the brands your part is for"></textarea>
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset>
+                            <!--<label for="upcategories">Update Product Categories:</label>-->
+                            <h6>Update Product Categories:</h6>
+                            <input type="checkbox" name="garageservices" value="par">&nbsp; Parts<br>
+                            <input type="checkbox" name="garageservices" value="el">&nbsp; Electrics<br>
+                            <input type="checkbox" name="garageservices" value="too">&nbsp; Tools<br>
+                            <input type="checkbox" name="garageservices" value="sup">&nbsp; Supplies<br>
+                            <input type="checkbox" name="garageservices" value="ado">&nbsp; AddOns<br>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status" class="mt-2">Status</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="Service" id="service" />-->
+                        <select name="statuses" class="form-control mr-sm-2" placeholder="Status" id="status">
+                            <option value="select">Select Status</option>
+                            <option value="new">New</option>
+                            <option value="old">Used</option>  <!--maybe Old instead of Used-->
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="descriptiontextarea">Description</label>
+                        <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="Enter Product and Seller Description"></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="pricetextarea">Price</label>
+                        <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter your product or part price"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymenttextarea">Payment Method</label>
+                        <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="Enter your accepted payment methods"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garbrands">Contact Info</label>
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your phone number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your fax number">
+                        <input type="url" class="form-control" id="garbrands" placeholder="Enter your website">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your facebook">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your twitter">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your instagram">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your youtube">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your linkedin">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your snapchat">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your tiktok">
+                        <!--<input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp">-->
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Part Image</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--maybe change following button type back to submit-->
+                    <button type="button" class="btn btn-primary" onclick="return successAlertProduct();">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Offer Modal -->
+<div class="modal fade" id="newOfferModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Offer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="garname">Name</label>
+                        <input type="text" class="form-control" id="garname" placeholder="Enter name">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+
+                        <label for="city" class="mt-2">City</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="City" id="city" />-->
+                        <select name="city" class="form-control mr-sm-2" placeholder="City" id="city">
+                            <option value="select">Select City</option>
+                            <option value="0">Dubai</option>
+                            <option value="1">Sharjah</option>
+                            <option value="2">Ras Al Khaimah</option>
+                            <option value="3">Abu Dhabi</option>
+                            <option value="4">Fujairah</option>
+                            <option value="5">Ajman</option>
+                            <option value="6">Umm Al Quwain</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garaddress">Address</label>
+                        <input type="text" class="form-control" id="garaddress" placeholder="Enter address">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="by" class="mt-2">By</label>
+                        <!--<input class="form-control mr-sm-2" placeholder="Service" id="service" />-->
+                        <select name="bys" class="form-control mr-sm-2" placeholder="By" id="by">
+                            <option value="select">By</option>
+                            <option value="1">Garage</option>
+                            <option value="2">Rent Office</option>
+                            <!--<option value="3">Seller</option>
+                            <option value="4">Winche</option>-->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meeting-time-st">Start:</label>
+                        <input type="datetime-local" id="meeting-time-st"
+                               name="meeting-time-st" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meeting-time-en">End:</label>
+                        <input type="datetime-local" id="meeting-time-en"
+                               name="meeting-time-en"
+                               class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descriptiontextarea">Description</label>
+                        <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="Enter Offer and Seller Description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="offertextarea">Offer Details</label>
+                        <textarea class="form-control" id="offertextarea" rows="4" placeholder="Enter Offer's Full Details"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pricetextarea">Price</label>
+                        <textarea class="form-control" id="pricetextarea" rows="3" placeholder="Enter offer's original price and new discounted price"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymenttextarea">Payment Method</label>
+                        <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="Enter your accepted payment methods"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garbrands">Contact Info</label>
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your phone number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp number">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your fax number">
+                        <input type="url" class="form-control" id="garbrands" placeholder="Enter your website">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your facebook">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your twitter">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your instagram">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your youtube">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your linkedin">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your snapchat">
+                        <input type="text" class="form-control" id="garbrands" placeholder="Enter your tiktok">
+                        <!--<input type="text" class="form-control" id="garbrands" placeholder="Enter your whatsapp">-->
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Offer Image</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--maybe change following button type back to submit-->
+                    <button type="button" class="btn btn-primary" onclick="return successAlertOffer();">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--End of Modals-->
+
+
+
+
+<script>
+    function goToGarageDetails() {
+        window.location.href = "/Garage/GarageDetails";
+    }
+    function goToRentDetails() {
+        window.location.href = "/Rent/RentDetails";
+    }
+    function goToBuyingDetails() {
+        window.location.href = "/Part/BuyingDetails";
+    }
+    function goToPartDetails() {
+        window.location.href = "/Part/PartDetails";
+    }
+    function goToRecoveryDetails() {
+        window.location.href = "/Recovery/RecoveryDetails";
+    }
+    function goToOfferDetails() {
+        window.location.href = "/Offer/OfferDetails";
+    }
+
+
+
+    function successAlertGarage() {
+        ////alert("Garage Updated Succesfully");
+    }
+    function successAlertRent() {
+        ////alert("Rent Office Updated Succesfully");
+    }
+    function successAlertVehicle() {
+        ////alert("Vehicle Updated Succesfully");
+    }
+    function successAlertWinche() {
+        ////alert("Recovery Winche Updated Succesfully");
+    }
+    function successAlertProduct() {
+        ////alert("Product or Part Updated Succesfully");
+    }
+    function successAlertOffer() {
+        ////alert("Offer Updated Succesfully");
+    }
+
+</script>

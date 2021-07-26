@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add new user</value>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>The user has been added</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>The address</value>
+  </data>
+  <data name="ChoseCountryFirstly" xml:space="preserve">
+    <value>Chose the country firstly</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>The city</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>The country</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete the user</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>The user has been deleted</value>
+  </data>
+  <data name="Descrption" xml:space="preserve">
+    <value>The descrption</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>The user details</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit the user</value>
+  </data>
+  <data name="Edited" xml:space="preserve">
+    <value>The user has been edited</value>
+  </data>
+  <data name="EditImage" xml:space="preserve">
+    <value>Drup an image to change the current image</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>The email</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>Enter the address</value>
+  </data>
+  <data name="EnterAddressPlease" xml:space="preserve">
+    <value>Enter address please</value>
+  </data>
+  <data name="EnterCityPlease" xml:space="preserve">
+    <value>Enter city please</value>
+  </data>
+  <data name="EnterDescrption" xml:space="preserve">
+    <value>Enter the descrption</value>
+  </data>
+  <data name="EnterDescrptionPlease" xml:space="preserve">
+    <value>Enter the descrption please</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Enter the email</value>
+  </data>
+  <data name="EnterEmailOrPhonePlease" xml:space="preserve">
+    <value>Enter the email or phone please</value>
+  </data>
+  <data name="EnterFacebook" xml:space="preserve">
+    <value>Enter the facebook</value>
+  </data>
+  <data name="EnterFax" xml:space="preserve">
+    <value>Enter the fax</value>
+  </data>
+  <data name="EnterImagePlease" xml:space="preserve">
+    <value>Enter the image please</value>
+  </data>
+  <data name="EnterInstagram" xml:space="preserve">
+    <value>Enter the instagram</value>
+  </data>
+  <data name="EnterLinkedin" xml:space="preserve">
+    <value>Enter the linkedin</value>
+  </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Enter the name</value>
+  </data>
+  <data name="EnterNamePlease" xml:space="preserve">
+    <value>Enter the name please</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Enter the password</value>
+  </data>
+  <data name="EnterPasswordPlease" xml:space="preserve">
+    <value>Enter password please</value>
+  </data>
+  <data name="EnterPhone" xml:space="preserve">
+    <value>Enter the phone</value>
+  </data>
+  <data name="EnterSnapchat" xml:space="preserve">
+    <value>Enter the snapchat</value>
+  </data>
+  <data name="EnterTiktok" xml:space="preserve">
+    <value>Enter the tiktok</value>
+  </data>
+  <data name="EnterTwitter" xml:space="preserve">
+    <value>Enter the twitter</value>
+  </data>
+  <data name="EnterUsername" xml:space="preserve">
+    <value>Enter the user name</value>
+  </data>
+  <data name="EnterUserPlease" xml:space="preserve">
+    <value>Enter the user name please</value>
+  </data>
+  <data name="EnterWebsite" xml:space="preserve">
+    <value>Enter the website</value>
+  </data>
+  <data name="EnterWhatsApp" xml:space="preserve">
+    <value>Enter the WhatsApp number</value>
+  </data>
+  <data name="EnterWhatsAppPlease" xml:space="preserve">
+    <value>Enter the WhatsApp number please</value>
+  </data>
+  <data name="EnterYoutube" xml:space="preserve">
+    <value>Enter the youtube</value>
+  </data>
+  <data name="Facebook" xml:space="preserve">
+    <value>The facebook</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>The fax</value>
+  </data>
+  <data name="Img" xml:space="preserve">
+    <value>The user image</value>
+  </data>
+  <data name="Instagram" xml:space="preserve">
+    <value>The instagram</value>
+  </data>
+  <data name="Linkedin" xml:space="preserve">
+    <value>The linkedin</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>The name</value>
+  </data>
+  <data name="NoCity" xml:space="preserve">
+    <value>There is no cities availbe</value>
+  </data>
+  <data name="NoCountry" xml:space="preserve">
+    <value>There is no countries avalible</value>
+  </data>
+  <data name="NoUser" xml:space="preserve">
+    <value>There is no users avalible</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>The password</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>The phone</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Snapchat" xml:space="preserve">
+    <value>The snapchat</value>
+  </data>
+  <data name="Tiktok" xml:space="preserve">
+    <value>The tiktok</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>The tools</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>The twitter</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>The user name</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>The users</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>The website</value>
+  </data>
+  <data name="WhatsApp" xml:space="preserve">
+    <value>The WhatsApp number</value>
+  </data>
+  <data name="Youtube" xml:space="preserve">
+    <value>The  youtube</value>
+  </data>
+</root>

@@ -1,0 +1,21 @@
+﻿@model List<legarage.Models.VehiclesModel>
+
+<div class="form-group">
+    <label for="select_vehicle" class="mt-2">select Vehicle</label>
+    <select name="referal_id" class="form-control mr-sm-2" placeholder="select_vehicle" id="select_vehicle">
+        <option value="select">Select Vehicle</option>
+        @{
+            string OldPrice = "";
+            foreach (var moo in Model)
+            {
+                <option value="@moo.ID">@moo.Title</option>
+                OldPrice = moo.Price;
+            }
+        }
+    </select>
+</div>
+
+<div class="form-group" >
+    <label for="pricetextarea">Old Price</label>
+    <input disabled class="form-control" id="pricetextarea" rows="3" placeholder="@OldPrice" name="oldprice" />
+</div>

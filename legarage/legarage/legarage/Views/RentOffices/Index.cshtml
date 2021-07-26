@@ -1,0 +1,114 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Rent";
+}
+@using System.Data;
+@using legarage.Classes;
+
+@model legarage.Models.RentOfficesIndexModel
+
+<div class="row" style="margin: 0px; margin-top: 15px;">
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 bg-beige pb-5 mr-5 ">
+        <form id="filterform">
+            <input type="hidden" value="1" name="Filter" />
+            <label for="types" class="mt-2">@Resources.Garages.VehicleType</label>
+            <select name="vehicle-types" class="form-control mr-sm-2" placeholder="@Resources.Garages.Type" id="types">
+                <option value="select">@Resources.Garages.SelectType</option>
+            </select>
+
+            <label for="brand" class="mt-2">@Resources.Garages.Brand</label>
+            <select name="Brand" class="form-control mr-sm-2" placeholder="@Resources.Garages.Brand" id="Brand" onchange="Get_Models();">
+                <option value="-1" data-description="vehicle brand or make">@Resources.Garages.SelectBrand</option>
+            </select>
+            <label for="types" class="mt-2">@Resources.Garages.BrandModel</label>
+            <select disabled name="Model" class="form-control mr-sm-2" placeholder="@Resources.Garages.Model" id="Model">
+                <option value="-1">@Resources.Garages.SelectModel </option>
+            </select>
+
+            <label for="country" class="mt-2">@Resources.Garages.Country</label>
+            <select name="country" onchange="Get_Options('city', 'country', '/Home/GetCities/');" class="form-control mr-sm-2" placeholder="@Resources.Garages.Country" id="country">
+                <option value="-1">@Resources.RentOffices.SelectCountry </option>
+            </select>
+
+            <label for="city" class="mt-2">@Resources.RentOffices.City</label>
+            <select name="city" class="form-control mr-sm-2" placeholder="@Resources.Garages.City" id="city">
+                <option value="-1">@Resources.RentOffices.SelectCity</option>
+                @{
+
+                    if (Model.Cities != null && Model.Cities.Count > 0)
+                    {
+                        foreach (var c in Model.Cities)
+                        {
+                            <option value="@c.ID">@c.Name</option>
+                        }
+                    }
+
+                }
+            </select>
+
+
+            <label for="rating" class="mt-2">@Resources.RentOffices.Rating</label>
+            <select name="ratings" class="form-control mr-sm-2" placeholder="@Resources.Garages.Rating" id="rating">
+                <option value="-1">@Resources.RentOffices.SelectRating</option>
+                <option value="1">@Resources.Garages.Ratingof 1</option>
+                <option value="2">@Resources.Garages.Ratingof 2</option>
+                <option value="3">@Resources.Garages.Ratingof 3</option>
+                <option value="4">@Resources.Garages.Ratingof 4</option>
+                <option value="5">@Resources.Garages.Ratingof 5</option>
+            </select>
+
+
+        </form>
+        <button class="btn btn-outline-primary mt-4">@Resources.RentOffices.reset</button>
+        <button type="button" class="btn btn-outline-success btn-Search mt-4 ml-2 pl-3 pr-3 " id="Search" data-controller="RentOffices" data-action="GetRentOffices">@Resources.Garages.Search</button>
+    </div>
+
+
+    <div class="col-xl-9 col-lg-9 col-md-6 col-sm-6 col-xs-6 flex-column">
+        <div class="row centered-card">
+            <div id="data_countainer" class="centered-card" style="display:contents;max-width: -webkit-fill-available;">
+                @Html.Partial("Content", Model.RentOffices)
+                </div>
+                <div id="msg"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+    function changeModel() {
+        var val = $('#brand').val();
+        if (val == "volvo") {
+            $("#models").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>");
+        } else if (val == "1") {
+            $("#models").html("<option value='test'>item2: test 1</option><option value='test2'>item2: test 2</option>");
+        } else if (val == "2") {
+            $("#models").html("<option value='test'>item3: test 1</option><option value='test2'>item3: test 2</option>");
+        } else if (val == "3") {
+            $("#models").html("<option value=''>--select one--</option>");
+        }
+    }
+
+
+
+
+    function goToRentDetails(rid) {
+        window.location.href = "/RentOffices/RentDetails?id=" + rid;
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+    if (document.getElementById("Factory") != null) Get_Options('Factory', '', '/Home/GetCountries', 'Factory');
+        if (document.getElementById("MCountry") != null) Get_Options('MCountry', '', '/Home/GetCountries', 'Market');
+    @*//Get_Market('@Session["Market"].ToString()');*@
+    if (document.getElementById("phone_keys")!=null) Get_PhoneKeys("phone_keys");
+        Get_Market();
+        Get_VehicleTypes();
+        });
+</script>

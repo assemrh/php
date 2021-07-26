@@ -1,0 +1,109 @@
+﻿@model List<legarage.Models.GaragesModel>
+@{
+    if (Model != null && Model.Count > 0)
+    {
+        foreach (var garage in Model)
+        {
+            string dir = Server.MapPath("~/Images/Garages/");
+            var url = File.Exists(dir + garage.Image.URL) ? garage.Image.URL : "no-img.jpg";
+            List<string> Checked = new List<string>();
+            //for(int x=0; x < 5;x++)
+            //{
+            //    string s = x > garage.Rate ? "" : "checked";
+            //    Checked.Add(s);
+            //}
+            <div class="card col-lg-5 index-card" id="garages_div" onclick="goToGarageDetails('@garage.ID');">
+                @{
+                    if (garage.Rate > 0)
+                    {
+                        @Html.Partial("../Rating/Stars", garage.Rate, new ViewDataDictionary { { "class", "rating2" } })
+                    }
+                }
+                <img class="card-img-top" src="~/Images/Garages/@url" srcset="" alt="Card image cap">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-lg">
+                            <h4 class="card-title" style="display:inline">@garage.Name</h4>
+                        </div>
+                        <div class="col-md align-self-end" style="text-align: end;">
+                            <em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em>
+                            @garage.Mobile
+                        </div>
+                    </div>
+                    <hr />
+                    <button class="btn btn-outline-primary" onclick="goToGarageDetails('@garage.ID');" hidden>@Resources.Home.garages_show</button>
+                    <div class="">
+                        <div class="row details">
+                            <div class="col-12 col-sm-12">
+                                <ul class="list-group list-group-flush no-border">
+                                    <li class="list-group-item no-border"><em style="color:dimgray;">@Resources.Garages.CityName:</em> @garage.Address.Province</li>
+                                    <li class="list-group-item no-border"><em style="color:dimgray;">@Resources.Garages.Website:</em> @garage.Website</li>
+                                    <li class="list-group-item no-border"><em style="color:dimgray;">@Resources.Garages.Desecription:</em>@garage.Description</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+        <nav aria-label="Page navigation example" class="mt-auto">
+            <ul class="pagination justify-content-center">
+                @{
+                    string prev = "";
+                    string next = "";
+                    string next_page = "";
+                    string prev_page = "";
+                    int page = (int)Session["current_page"];
+                    int page_count = (int)Session["pages_count"];
+                    if (page == 1)
+                    {
+                        prev = "disabled";
+                    }
+                    else
+                    {
+                        prev = "";
+                        prev_page = (page - 1).ToString();
+                    }
+                    if (page == page_count || page_count <= 1)
+                    {
+                        next = "disabled";
+                    }
+                    else
+                    {
+                        next = "";
+                        next_page = (page + 1).ToString();
+                    }
+
+                }
+                <li class="page-item  @prev">
+                    <button class="page-link" tabindex="-1" aria-disabled="true" onclick="return getPage('@prev_page','/Garages/GetGarages');">@Resources.Shared.Previous</button>
+                </li>
+                @{
+
+                    for (var pg = 1; pg <= page_count; pg++)
+                    {
+                        <li class="page-item @(pg == page ? "active":"")">
+                            <div onclick="return getPage('@pg','/Garages/GetGarages');" class="page-link" data-controller="Garages" asp-route-page="">
+                                @(pg)
+                            </div>
+                        </li>
+                    }
+                }
+
+                <li class="page-item @next">
+                    <button class="page-link" onclick="return getPage('@next_page','/Garages/GetGarages');">@Resources.Shared.Next</button>
+                </li>
+            </ul>
+        </nav>
+    }
+    else
+    {
+        <div class="card border-0 p-3 m-auto">
+            <div class="row">
+                <div class="col-12">@Resources.Shared.Nodatafound</div>
+            </div>
+        </div>
+    }
+}

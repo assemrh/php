@@ -1,0 +1,195 @@
+﻿@model List<legarage.Models.OffersModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = Resources.Offers.MyOfferPageTitle;
+}
+
+
+<h2 style="margin: auto; margin-bottom: 5%; width: 14%;"><strong>@Resources.Offers.MyOffers</strong></h2>
+
+
+
+
+<div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin:auto; margin-top:5%;">
+
+
+    <!--<div class="col-3">-->
+
+    <div class="row">
+        @{
+            if (Model != null && Model.Count > 0)
+            {
+                foreach (var offer in Model)
+                {
+                    <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/vehcileoffer.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body" style="margin:auto;">
+                            <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                                My offer 1
+                            </h3>
+                            <h4 style="font-weight:bolder;">@offer.old_price $100</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            @*<li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>*@
+                            <li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.By:</em>@offer.referal_id Garage Unity</li>
+                            <li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.Payment Method:</em> @offer.paymentmethods</li>
+                            <li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.Description:</em> @offer.description</li>
+                            @*<li class="list-group-item"><em style="color:dimgray;">Status:</em> @(offer.Is_Active=="1" ? "Ative":"") </li>*@
+                            @*<li class="list-group-item"><em style="color:dimgray;">Time:</em> 14 hours ago </li>*@
+                        </ul>
+                        <div class="card-body" style="margin:auto;">
+                            <button class="btn btn-outline-primary"  onclick="goToOfferDetails('@offer.id.ToString()')">@Resources.Offers.ShowDetails</button>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6 border-0 m-auto" style="width: 18rem;">
+                    <p class="text-muted">
+                        @Resources.Offers.Nodata
+                    </p>
+                </div>
+            }
+        }
+
+
+        <!--</div>-->
+        <!--<div class="col-3">-->
+        <!--<div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+        <img class="card-img-top" src="~/Images/offersecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+        <div class="card-body" style="margin:auto;">
+            <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                My offer 2
+            </h3>
+            <h4 style="font-weight:bolder;">$125</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Sharjah</li>
+            <li class="list-group-item"><em style="color:dimgray;">By:</em> Best Garage</li>
+            <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash</li>
+            <li class="list-group-item"><em style="color:dimgray;">Description:</em> two plus one vehicles for fixing! </li>
+            <li class="list-group-item"><em style="color:dimgray;">Status:</em> Inactivated </li>
+            <li class="list-group-item"><em style="color:dimgray;">Time:</em> 1 day ago </li>
+        </ul>
+        <div class="card-body" style="margin:auto;">
+            <button class="btn btn-outline-primary">Show Details</button>
+        </div>
+    </div>-->
+        <!--</div>-->
+        <!--<div class="col-3">-->
+        <!--<div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+        <img class="card-img-top" src="~/Images/vehicleoffersecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+        <div class="card-body" style="margin:auto;">
+            <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                My offer 3
+            </h3>
+            <h4 style="font-weight:bolder;">$130</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+            <li class="list-group-item"><em style="color:dimgray;">By:</em> UAE Rental King</li>
+            <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Credit</li>
+            <li class="list-group-item"><em style="color:dimgray;">Description:</em> Rent two times for the price of one </li>
+            <li class="list-group-item"><em style="color:dimgray;">Status:</em> Activated </li>
+            <li class="list-group-item"><em style="color:dimgray;">Time:</em> 2 days ago </li>
+        </ul>
+        <div class="card-body" style="margin:auto;">
+            <button class="btn btn-outline-primary">Show Details</button>
+        </div>
+    </div>
+
+    <div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+        <img class="card-img-top" src="~/Images/offerthird.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+        <div class="card-body" style="margin:auto;">
+            <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                My offer 4
+            </h3>
+            <h4 style="font-weight:bolder;">$150</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+            <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+            <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Cash</li>
+            <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+            <li class="list-group-item"><em style="color:dimgray;">Status:</em> Inactivated </li>
+            <li class="list-group-item"><em style="color:dimgray;">Time:</em> 2 days and 13 hours ago </li>
+        </ul>
+        <div class="card-body" style="margin:auto;">
+            <button class="btn btn-outline-primary">Show Details</button>
+        </div>
+    </div>-->
+        <!--</div>-->
+        <!--<div class="col-3">-->
+        <!--<div class="card col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+        <img class="card-img-top" src="~/Images/offerfirst.png" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+        <div class="card-body" style="margin:auto;">
+            <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                My offer 5
+            </h3>
+            <h4 style="font-weight:bolder;">$170</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+            <li class="list-group-item"><em style="color:dimgray;">By:</em> Garage Unity</li>
+            <li class="list-group-item"><em style="color:dimgray;">Payment Method:</em> Credit</li>
+            <li class="list-group-item"><em style="color:dimgray;">Description:</em> This is one in a time car offer </li>
+            <li class="list-group-item"><em style="color:dimgray;">Status:</em> Activated </li>
+            <li class="list-group-item"><em style="color:dimgray;">Time:</em> 1 week ago </li>
+        </ul>
+        <div class="card-body" style="margin:auto;">
+            <button class="btn btn-outline-primary">Show Details</button>
+        </div>
+    </div>-->
+        <!--</div>-->
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+        function getSlidNumberValue(val) {
+            document.getElementById('#textInput').value = val;
+        }
+
+
+
+
+        const $valueSpan = $('.valueSpan');
+        const $value = $('#slider11');
+        $valueSpan.html($value.val());
+        $value.on('input change', () => {
+
+            $valueSpan.html($value.val());
+        });
+
+
+
+        $('li').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+
+
+        function toggleFilters() {
+            $("#filtersoffers").toggle();
+            $("#rightarr").toggle();
+            $("#downarr").toggle();
+        }
+
+        function goToOfferDetails() {
+            window.location.href = "/Offer/OfferDetails";
+        }
+
+</script>

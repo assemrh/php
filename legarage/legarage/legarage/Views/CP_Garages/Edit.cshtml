@@ -1,0 +1,318 @@
+﻿@model legarage.Models.GaragesModel
+@using System.Data;
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.CP_Garages.Edit</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="EditForm">
+        <div class="form-group">
+            <input hidden type="text" id="id" name="id" value="@Model.ID" />
+            <input hidden type="text" id="image_id" name="IID" value="@Model.Image.ID" />
+            <input hidden type="text" id="image_url" name="image_url" value="@Model.Image.URL" />
+            <label for="full_name"><span style="color:red;">*</span>@Resources.CP_Garages.Name</label>
+            <input type="text" class="form-control" id="name" value="@Model.Name" name="name" placeholder="@Resources.CP_Garages.EnterCarageName">
+        </div>
+        @{
+            if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+            {
+                <div class="form-group">
+                    <label for="user"><span style="color:red;">*</span>@Resources.CP_Garages.OwnerName</label>
+                    @{
+                        DataTable Users = new DataTable();
+                        string masg = "";
+                        Users = legarage.Classes.Database.ReadTable("Users", " where is_admin <> 1", null, out masg);
+                    }
+                    <select id="user" name="user" class="form-control">
+                        @{
+                            if (Users != null && Users.Rows.Count > 0)
+                            {
+                                foreach (DataRow user in Users.Rows)
+                                {
+                                    if (user["id"].ToString() == Model.User.ID.ToString())
+                                    {
+                                        <option selected value="@user["id"].ToString()">
+                                            @user["full_name"].ToString()
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@user["id"].ToString()">
+                                            @user["full_name"].ToString()
+                                        </option>
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                <option value="-1">
+                                    @Resources.CP_Garages.NoUser
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+            }
+        }
+        <div class="form-group">
+            @{
+                string msg = "";
+                DataTable Countries = new DataTable();
+                Countries = legarage.Classes.Database.ReadTable("Countries ", " where is_market = 1 order by name ", null, out msg);
+
+            }
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Garages.Country</label>
+            <select name="country" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" class="form-control">
+                @{
+                    foreach (DataRow item in Countries.Rows)
+                    {
+                        if (item["id"].ToString() == Model.Address.CountryId.ToString())
+                        {
+                            <option selected value="@item["id"].ToString()">
+                                @item["name"].ToString()
+                            </option>
+
+                        }
+                        else
+                        {
+                            <option value="@item["id"].ToString()">
+                                @item["name"].ToString()
+                            </option>
+                        }
+                    }
+                }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Provinces = new DataTable();
+                List<System.Data.SqlClient.SqlParameter> li = new List<System.Data.SqlClient.SqlParameter>();
+                li.Add(new System.Data.SqlClient.SqlParameter("@country_id", Model.Address.CountryId));
+                Provinces = legarage.Classes.Database.ReadTable("Provinces", " Where country_id = @country_id", li, out msg);
+            }
+            <label for="city"><span style="color:red;">*</span>@Resources.CP_Garages.City</label>
+            <select name="city" id="city" class="form-control">
+                @{
+                    foreach (DataRow item in Provinces.Rows)
+                    {
+                        if (item["id"].ToString() == Model.Address.ProvinceId.ToString())
+                        {
+                            <option selected value="@item["id"].ToString()">
+                                @item["name"].ToString()
+                            </option>
+                        }
+                        else
+                        {
+                            <option value="@item["id"].ToString()">@item["name"].ToString()</option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address"><span style="color:red;">*</span>@Resources.CP_Garages.Address</label>
+            <input type="text" class="form-control" id="address" placeholder="@Resources.CP_Garages.EnterAddress" name="address" value="@Model.Address.AddressName">
+        </div>
+        @Html.Partial(
+                "~/Views/Shared/Sections/options/_vehicle-types.cshtml",
+                Model.VehicleTypes,
+                new ViewDataDictionary { { "type", "checkbox" }, { "name", "vehicletypes" } })
+        @Html.Partial(
+                "~/Views/Shared/Sections/options/_brands.cshtml",
+                Model.Brands,
+                new ViewDataDictionary { { "type", "checkbox" } })
+
+        @Html.Partial(
+                "~/Views/Shared/Sections/options/_categories.cshtml",
+                Model.Services,
+                new ViewDataDictionary { { "type", "checkbox" } })
+
+        @*@Html.Partial("~/Views/Shared/Sections/options/_social-media.cshtml")*@
+
+    <div>
+        @*
+                               <div class="form-group">
+                      @{
+                          DataTable Vehicle_Types = new DataTable();
+                          Vehicle_Types = legarage.Classes.Database.ReadTable("Vehicle_Types", out msg);
+                      }
+                      <label><span style="color:red;">*</span>@Resources.CP_Garages.Vehicles</label>
+                      @{
+                          if (Vehicle_Types != null && Vehicle_Types.Rows.Count > 0)
+                          {
+
+                              foreach (DataRow vehicle in Vehicle_Types.Rows)
+                              {
+                                  string Checked = Model.VehicleTypes.Where(vt => vt.ID.ToString() == vehicle["id"].ToString()).Count() == 1 ? "checked" : "";
+                                  <div class="form-control input-group">
+                                      <div class="input-group-append mr-3">
+                                          <div class="input-group-text">
+                                              <input type="checkbox" name="vehicletypes" @Checked value="@vehicle["id"].ToString()" />
+                                          </div>
+                                      </div>
+                                      @vehicle["type_name"].ToString()
+                                  </div>
+                              }
+                          }
+                          else
+                          {
+                              <label class="form-control">@Resources.CP_Garages.NoVehicle</label>
+                          }
+                      }
+                  </div>
+        <div class="form-group">
+                  @{
+                      DataTable Brands = new DataTable();
+                      Brands = legarage.Classes.Database.ReadTable("Brands", out msg);
+                  }
+                  <label><span style="color:red;">*</span>@Resources.CP_Garages.Brands</label>
+                  @{
+                      if (Brands != null && Brands.Rows.Count > 0)
+                      {
+                          foreach (DataRow Brand in Brands.Rows)
+                          {
+                              string Checked = Model.Brands.Where(m => m.ID.ToString() == Brand["id"].ToString()).Count() == 1 ? "checked" : "";
+                              <div class="form-control input-group" id="brands">
+                                  <div class="input-group-append mr-3">
+                                      <div class="input-group-text ">
+                                          <input type="checkbox" name="brands" value=" @Brand["id"].ToString()" @Checked />
+                                      </div>
+                                  </div>
+                                  @Brand["name"].ToString()
+                              </div>
+                          }
+                      }
+                      else
+                      {
+                          <label class="form-control">@Resources.CP_Garages.NoBrand</label>
+                      }
+                  }
+              </div>
+                    <div class="form-group">
+            @{
+                DataTable services = new DataTable();
+                services = legarage.Classes.Database.ReadTable("Categories", out msg);
+            }
+            <label><span style="color:red;">*</span>@Resources.CP_Garages.Services</label>
+            @{if (services != null && services.Rows.Count > 0)
+                {
+                    foreach (DataRow service in services.Rows)
+                    {
+                        string Checked = Model.Services.Where(s => s.ID.ToString() == service["id"].ToString()).Count() == 1 ? "checked" : "";
+                        <div class="form-control input-group" placeholder="@Resources.CP_Garages.Services" id="services">
+                            <div class="input-group-prepend mr-3">
+                                <div class="input-group-text">
+                                    <input type="checkbox" name="services" value=" @service["id"].ToString()" @Checked />
+                                </div>
+                            </div>
+                            @service["name"].ToString()
+                        </div>
+                    }
+                }
+                else
+                {
+                    <label class="form-control">@Resources.CP_Garages.NoService</label>
+                }
+            }
+        </div>
+
+        *@
+    </div>
+
+      
+
+        <div class="form-group">
+            <label for="phone"><span style="color:red;">*</span>@Resources.CP_Garages.Phone</label>
+            <div class="form-control mr-0 p-0 telefon">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png">
+                        </button>
+                        <div class="dropdown-menu select-country" id="phone_keys" aria-labelledby="dropdownMenuButton">
+                        </div>
+                        <input id="phone_key" type="hidden" name="phone_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp; @Resources.Shared.PhoneNumber" required name="phoneno" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="website">@Resources.CP_Garages.Website</label>
+            <input type="text" class="form-control" id="website" value="@Model.Website" name="website" placeholder="@Resources.CP_Garages.EnterWebsite">
+        </div>
+        <div class="form-group">
+            <label for="youtube">@Resources.CP_Garages.Youtube</label>
+            <input type="text" class="form-control" id="youtube" value="@Model.Youtube" name="youtube" placeholder="@Resources.CP_Garages.EnterYoutube">
+        </div>
+        <div class="form-group">
+            <label for="linkedin">@Resources.CP_Garages.Linkedin</label>
+            <input type="text" class="form-control" id="linkedin" value="@Model.Linkedin" name="linkedin" placeholder="@Resources.CP_Garages.EnterLinkedin">
+        </div>
+        <div class="form-group">
+            <label for="instagram">@Resources.CP_Garages.Instagram</label>
+            <input type="text" class="form-control" id="instagram" value="@Model.Instagram" name="instagram" placeholder="@Resources.CP_Garages.EnterInstagram">
+        </div>
+        <div class="form-group">
+            <label for="twitter">@Resources.CP_Garages.Twitter</label>
+            <input type="text" class="form-control" id="twitter" value="@Model.Twitter" name="twitter" placeholder="@Resources.CP_Garages.EnterTwitter">
+        </div>
+        <div class="form-group">
+            <label for="snapchat">@Resources.CP_Garages.Snapchat</label>
+            <input type="text" class="form-control" id="snapchat" value="@Model.Snapchat" name="snapchat" placeholder="@Resources.CP_Garages.EnterSnapchat">
+        </div>
+        <div class="form-group">
+            <label for="tiktok">@Resources.CP_Garages.Tiktok</label>
+            <input type="text" class="form-control" id="tiktok" value="@Model.Tiktok" name="tiktok" placeholder="@Resources.CP_Garages.EnterTiktok">
+        </div>
+        <div class="form-group">
+            <label for="facebook">@Resources.CP_Garages.Facebook</label>
+            <input type="text" class="form-control" id="facebook" value="@Model.Facebook" name="facebook" placeholder="@Resources.CP_Garages.EnterFacebook">
+        </div>
+        <div class="form-group">
+            <label for="whatsapp">@Resources.CP_Garages.Whatsapp</label>
+            <div class="form-control mr-0 p-0 telefon">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png">
+                        </button>
+                        <div class="dropdown-menu select-country" id="whatsapp_key" aria-labelledby="dropdownMenuButton">
+                        </div>
+                        <input id="whatsapp_key" type="hidden" name="whatsapp_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp; @Resources.Shared.PhoneNumber" required name="Whatsapp" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fax">@Resources.CP_Garages.Fax</label>
+            <input type="text" class="form-control" id="fax" value="@Model.Fax" name="fax" placeholder="@Resources.CP_Garages.EnterFax">
+        </div>
+        <div class="form-group">
+            <label for="Keywords"><span style="color:red;">*</span>@Resources.CP_Garages.Keywords</label>
+            <textarea type="text" class="form-control" id="Keywords" rows="2" name="keywords" placeholder="@Resources.CP_Garages.EnterKeywords">@Model.Keywords</textarea>
+        </div>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>@Resources.CP_Garages.Descrption</label>
+            <textarea class="form-control" id="description" name="description" rows="4" placeholder="@Resources.CP_Garages.EnterDescrption">@Model.Description</textarea>
+        </div>
+        <div class="form-group text-center">
+            <h5>@Resources.CP_Garages.CurrentImage</h5>
+            <img class="rounded w-50 m-auto" src="/Images/Garages/@Model.Image.URL" alt="Old Image" />
+        </div>
+    </form>
+    <div class="form-group">
+        <h5>@Resources.CP_Garages.EditImage</h5>
+        <form action="/CP_Garages/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Garages.Close</button>
+    <button type="button" class="btn btn-primary"  onclick="Update('@Model.URL.Edit','@Model.URL.Refresh')">@Resources.CP_Garages.Edit</button>
+</div>

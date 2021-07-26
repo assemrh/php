@@ -1,0 +1,473 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = Resources.Winches.Title;
+}
+
+@using System.Data;
+@using legarage.Classes;
+
+@model legarage.Models.WinchesIndexModel
+
+@{
+
+    string msj = "";
+    string sqlquery = "";
+    if (Model != null)
+    {
+    <div class="row" style="margin: 0px; margin-top: 15px;">
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 bg-beige pb-5 mr-5 ">
+            <form id="filterform">
+                <input type="hidden" value="1" name="Filter" />
+                <label for="size" class="mt-2">@Resources.Shared.VehicleSize</label>
+                <select name="sizes" class="form-control mr-sm-2" placeholder="@Resources.Shared.Size" id="size" onchange="Get_Winches()">
+                    <option value="-1">@Resources.Shared.SelectSize</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="16*">16*</option>
+                    <option value="20">20</option>
+                    <option value="32*">32*</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="44*">44*</option>
+                    <option value="46">46</option>
+                    <option value="48*">48*</option>
+                    <option value="50">50</option>
+                    <option value="53*">53*</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                    <option value="74*">74*</option>
+                    <option value="80">80</option>
+                </select>
+                <label for="country" class="mt-2">@Resources.Shared.Country</label>
+                <select name="country" onchange="Get_Options('city', 'country', '/Home/GetCities/'); Get_Winches();" class="form-control mr-sm-2" placeholder="@Resources.Shared.Country" id="country">
+                    <option value="-1">@Resources.Shared.SelectCountry </option>
+                </select>
+                <label for="city" class="mt-2">@Resources.Shared.City</label>
+                <select name="city" class="form-control mr-sm-2" placeholder="@Resources.Shared.City" id="city" onchange="Get_Winches()">
+                    <option value="-1">@Resources.Shared.SelectCity</option>
+                </select>
+
+                <label for="area" class="mt-2">@Resources.Shared.Area</label>
+                <input type="text" name="area" class="form-control mr-sm-2" placeholder="@Resources.Shared.Area" id="area" onchange="" onkeyup="Get_Winches()" />
+
+                <label for="rating" class="mt-2">@Resources.Shared.Rating</label>
+                <select name="ratings" class="form-control mr-sm-2" placeholder="Rating" id="rating">
+                    <option value="-1">@Resources.Shared.SelectRating</option>
+                    <option value="1">@Resources.Shared.Rating of 1</option>
+                    <option value="2">@Resources.Shared.Rating of 2</option>
+                    <option value="3">@Resources.Shared.Rating of 3</option>
+                    <option value="4">@Resources.Shared.Rating of 4</option>
+                    <option value="5">@Resources.Shared.Rating of 5</option>
+                </select>
+
+
+
+                <button class="btn btn-outline-primary mt-4">@Resources.Shared.reset</button>
+                <button type="button" class="btn btn-outline-success btn-Search mt-4 ml-2 pl-3 pr-3 " id="Search" data-controller="Winches" data-action="GetWinches">@Resources.Garages.Search</button>
+
+            </form>
+        </div>
+
+
+        @*
+        <!--<!--<!--<!--<div class="col-xl-9 col-lg-9 col-md-6 col-sm-6 col-xs-6 flex-column">
+                <hr style="margin-top:3rem;" />
+                <div class="container ">
+                    <div class="row" id="winchesCarts">
+
+
+
+
+                        @{
+                            if (Model.Winches != null)
+                            {
+
+                                if (Model.Winches.Count > 0)
+                                {
+                                    foreach (var Winche in Model.Winches)
+                                    {
+
+                                        <div class="card mb-5" style="max-width: 70vw; max-height:18.2rem" hidden>
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4" style="height: 18rem; overflow: hidden;">
+
+                                                    <img src="~/Images/winches/@Winche.Image.URL" class="card-img" alt="..." style="height: 100%; width: auto;">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">@Winche.Title</h5>
+                                                        <div class="col-md align-self-end phone-no" style="text-align: end;">
+                                                            <em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em>
+                                                            @Winche.DriverPhone
+                                                        </div>
+                                                        <div class="col col-lg">
+                                                        </div>
+                                                        <p class="card-text"><em style="color:dimgray;">CityName:</em> @Winche.Address.Province</p>
+                                                        <p class="card-text"><em style="color:dimgray;">City Area:</em> @Winche.Area</p>
+                                                        <p class="card-text"><em style="color:dimgray;">Vehicle Sizes:</em>@Winche.VehicleSize</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                    </div>
+                                                    <span class="rating">
+                                                        <em class="fa fa-star checked"></em>
+                                                        <em class="fa fa-star checked"></em>
+                                                        <em class="fa fa-star checked"></em>
+                                                        <em class="fa fa-star checked"></em>
+                                                        <em class="fa fa-star checked"></em>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card col-lg-5 index-card" id="garages_div" onclick="goToRecoveryDetails('@Winche.ID');">
+
+                                            <span class="rating2">
+                                                <em class="fa fa-star checked"></em>
+                                                <em class="fa fa-star checked"></em>
+                                                <em class="fa fa-star checked"></em>
+                                                <em class="fa fa-star checked"></em>
+                                                <em class="fa fa-star checked"></em>
+                                            </span>
+                                            <img class="card-img-top" src="~/Images/winches/@Winche.Image.URL" alt="Card image cap">
+
+
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col col-lg">
+                                                        <h4 class="card-title" style="display:inline">@Winche.Title</h4>
+                                                    </div>
+                                                    <div class="col-md align-self-end" style="text-align: end;">
+                                                        <em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em>
+                                                        @Winche.DriverPhone
+                                                    </div>
+
+
+                                                </div>
+                                                <hr />
+                                                <button class="btn btn-outline-primary" onclick="goToPartDetails('@Winche.ID');" hidden>@Resources.Home.garages_show</button>
+                                                <div class="">
+                                                    <div class="row details">
+                                                        <div class="col-12 col-sm-12">
+                                                            <ul class="list-group list-group-flush no-border">
+                                                                <li class="list-group-item no-border"><em style="color:dimgray;">CityName:</em> @Winche.Address.Province</li>
+                                                                <li class="list-group-item no-border"><em style="color:dimgray;">City Area:</em> @Winche.Area</li>
+                                                                <li class="list-group-item no-border"><em style="color:dimgray;">Vehicle Sizes:</em>@Winche.VehicleSize</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            }-->-->-->-->
+                            }
+                            catch (Exception e)
+                            {
+                                <p style="color:red;">@e.Message.ToString();</p> <h1></h1>
+                            }
+                        <!--}
+
+                    </div>
+
+                </div>
+
+            </div>-->*@
+
+        <div class="col-xl-9 col-lg-9 col-md-6 col-sm-6 col-xs-6 flex-column">
+            <div class="row centered-card">
+                <div id="data_countainer" class="centered-card" style="display:contents;max-width: -webkit-fill-available;">
+                    @Html.Partial("Content", Model.Winches)
+                </div>
+                <div id="msg"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+            @*
+                <div hidden>
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytrucksmall.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 1 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Nesma</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 10$ </li>
+
+
+
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-outline-primary" onclick="return goToRecoveryDetails();">Recover</button>
+                        </div>
+                    </div>
+
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytrucksmediumsecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 2 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Abu Magid District</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 043943556</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 083443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 15$ </li>
+
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-outline-primary">Recover</button>
+                        </div>
+                    </div>
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytrucksbigmedium.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 3 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Bin Zayed Area</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0543443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0543443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 8$ </li>
+
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-outline-primary">Recover</button>
+                        </div>
+                    </div>
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytrucksbig.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 4 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Prince Rayan District</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 022443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0643443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large, very large</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 13$ </li>
+
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-outline-primary">Recover</button>
+                        </div>
+                    </div>
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytruckverybig.jpeg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 5 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Methat Azeem District</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0643443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0643443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 5$ </li>
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-outline-primary">Recover</button>
+                        </div>
+                    </div>
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytruckbigslidesecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 6 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Tarneem District</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0143443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0143443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 7$ </li>
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-outline-primary">Recover</button>
+                        </div>
+                    </div>
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytrucksstrong.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 7 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Abu Dhabi</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Tarneem District</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 0132443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0132443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 6$ </li>
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-outline-primary">Recover</button>
+                        </div>
+                    </div>
+
+                    <div class="card col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/recoverytruckverybigsecond.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Winche 8 <span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                            </h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><em style="color:dimgray;">CityName:</em> Ras Al Khaimah</li>
+                            <li class="list-group-item"><em style="color:dimgray;">City Area:</em> Prince Resh District</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Mobile:</em> 081243943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Whatsapp:</em> 0888843943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Fax:</em> 0343443943</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium, large, very large</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Recovery Price:</em> 20$ </li>
+                            <li class="list-group-item"><em style="color:dimgray;">Offers:</em> 4</li>
+                            <li class="list-group-item"><em style="color:dimgray;">Services:</em> Oil Change</li>
+                            <li class="list-group-item"><em style="color:dimgray;">More:</em> Other Details</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link 4</a>
+                            <a href="#" class="card-link">Another link 4</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            *@
+            <script>
+                function getSlidNumberValue(val) {
+                    document.getElementById('#textInput').value = val;
+                }
+
+
+
+
+                const $valueSpan = $('.valueSpan');
+                const $value = $('#slider11');
+                $valueSpan.html($value.val());
+                $value.on('input change', () => {
+
+                    $valueSpan.html($value.val());
+                });
+
+
+
+                //$('li').click(function () {
+                //    $(this).addClass('active').siblings().removeClass('active');
+                //});
+
+                function goToRecoveryDetails(wid) {
+                    window.location.href = "/Recovery/RecoveryDetails?id=" + wid;
+                }
+
+            </script>
+
+            <script>
+        $(document).ready(function () {
+        if (document.getElementById("Factory") != null) Get_Options('Factory', '', '/Home/GetCountries', 'Factory');
+            if (document.getElementById("MCountry") != null) Get_Options('MCountry', '', '/Home/GetCountries', 'Market');
+        //Get_Market('@Session["Market"].ToString()');
+        if (document.getElementById("phone_keys")!=null) Get_PhoneKeys("phone_keys");
+            Get_Market();
+            Get_VehicleTypes();
+            });
+            </script>
+        }
+        else
+        {
+            Response.Redirect("~/Winches/Index");
+        }
+    }

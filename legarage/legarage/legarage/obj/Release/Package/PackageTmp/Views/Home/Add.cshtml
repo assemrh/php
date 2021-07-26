@@ -1,0 +1,54 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Resources.Home.PageTitle;
+}
+
+<h2 style="margin:auto; width:6%; font-weight: bolder; font-family: Lato,Lucida Sans Unicode,Lucida Grande,sans-serif;">Add</h2>
+
+<div style="margin:auto; margin-top:5%;" class="card col-xl-6 col-lg-6 col-md-10 col-sm-12 col-xs-12 addCard">
+    <button class="btn garageB" data-toggle="modal" data-target="#Modal" onclick="Add('/Garages/Add/', 'Market')">@Resources.Shared.NewGarage</button>
+    <br>
+    <button class="btn rentB" data-toggle="modal" data-target="#Modal" onclick="Add('/RentOffices/Add/', 'Market')">@Resources.Shared.NewRentOffice</button>
+    <br>
+    <button class="btn wincheB" data-toggle="modal" data-target="#Modal" onclick="Add('/Winches/Add/', 'Market')">@Resources.Shared.NewRecoveryWinche</button>
+    <br>
+    <button class="btn vehicleB" data-toggle="modal" data-target="#Modal" onclick="Add('/Vehicles/Add/', 'Market')">@Resources.Shared.NewVehicleForSale</button>
+    <br>
+    <button class="btn partB" data-toggle="modal" data-target="#Modal" onclick="Add('/Parts/Add/', 'Market')">@Resources.Shared.NewProductorPart</button>
+    <br>
+    <button class="btn offerB" data-toggle="modal" data-target="#Modal" onclick="Add('/Offers/Add/', 'Market')">@Resources.Shared.NewOffer</button>
+</div>
+
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><!--ModalBody-->
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" id="ModalBody">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Information" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div id="backdrop">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">@Resources.Shared.Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('Information').style.display = 'none';">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <h2 id="msg" class="text-center"></h2>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="document.getElementById('Information').style.display = 'none';">@Resources.Shared.Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/offers.js"></script>

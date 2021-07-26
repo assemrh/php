@@ -1,0 +1,43 @@
+﻿@using System.Data;
+@model legarage.Models.URLModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Cities.Add</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            @{
+                DataTable Countries = new DataTable();
+                string msg = "";
+                Countries = legarage.Classes.Database.ReadTable("Countries ", " where is_market = 1 order by name ", null, out msg);      
+              }
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Cities.Country</label>
+            <select name="country" class="form-control mr-sm-2" id="country">
+                @{
+                    if (Countries != null && Countries.Rows.Count > 0)
+                    {
+                        <option value="-1">@Resources.CP_Cities.ChoseCountry</option>
+                        foreach (DataRow country in Countries.Rows)
+                        {
+                            <option value="@country["id"].ToString()">
+                                @country["name"].ToString()
+                            </option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city"><span style="color:red;">*</span>@Resources.CP_Cities.City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="@Resources.CP_Cities.EnterCity">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Cities.Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@Model.Adding','@Model.Refresh');">@Resources.CP_Cities.Add</button>
+</div>

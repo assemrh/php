@@ -1,0 +1,71 @@
+﻿@using System.Data;
+
+@model legarage.Models.URLModel
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Countries.Add</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            @{
+                DataTable Countries = new DataTable();
+                string msg = "";
+                //Countries = legarage.Classes.Database.ReadTable("Countries", out msg);
+                //Countries = legarage.Classes.Database.ReadTableByQuery("SELECT Id, name FROM Countries ORDER BY name ;", null, out msg);
+                //Countries.DefaultView.Sort = "name desc";
+                //Countries = Countries.DefaultView.ToTable();
+                Countries = legarage.Classes.Database.ReadTable("Countries ", " order by name ", null, out msg);
+
+            }
+            <label for="country"><span style="color:red;">*</span>@Resources.CP.Country</label>
+            <select class="form-control" id="country" name="country">
+                <option value="-1">@Resources.CP.Chose @Resources.CP.Country
+                <img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.36.jpeg"/>
+                </option>
+                @*{
+                    if (Countries != null && Countries.Rows.Count != 0)
+                    {
+                        foreach (DataRow Country in Countries.Rows)
+                        {
+                            <option value="@Country["id"].ToString()">@Country["name"].ToString()</option>
+                        }
+                    }
+                }*@
+            </select>
+        </div>
+
+        @*<div class="form-group" hidden>
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Countries.Country</label>
+            <input type="text" class="form-control" id="country" name="country" placeholder="@Resources.CP_Countries.EnterCountry">
+        </div>*@
+        @*<div class="form-group" hidden>
+            <label for="code"><span style="color:red;">*</span>@Resources.CP_Countries.Code</label>
+            <input type="text" class="form-control" id="code" name="code" placeholder="@Resources.CP_Countries.EnterCode">
+        </div>*@
+        <div class="form-group">
+            <label for="is_market"><span style="color:red;">*</span>@Resources.CP_Countries.IsMarket</label>
+            <select name="is_market" id="is_market" class="form-control">
+                <option value="-1">@Resources.CP_Countries.IsMarket
+                </option>
+
+                <option value="1">@Resources.CP_Countries.Yes</option>
+                <option value="0">@Resources.CP_Countries.No</option>
+            </select>
+        </div> 
+        <div class="form-group">
+            <label for="is_factory"><span style="color:red;">*</span>@Resources.CP_Countries.IsFactory</label>
+            <select name="is_factory" id="is_factory" class="form-control">
+                <option value="-1">@Resources.CP_Countries.IsFactory</option>
+                <option value="1">@Resources.CP_Countries.Yes</option>
+                <option value="0">@Resources.CP_Countries.No</option>
+            </select>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Countries.Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@Model.Adding','@Model.Refresh');">@Resources.CP_Countries.Add</button>
+</div>

@@ -1,0 +1,86 @@
+﻿@model legarage.Models.UsersModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Users.Details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <input hidden value="@Model.ID" />
+    <div class="form-group">
+        <label>@Resources.CP_Users.Name</label>
+        <input disabled type="text" class="form-control" value="@Model.Name">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Username</label>
+        <input disabled type="text" class="form-control" value="@Model.UserName">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Address</label>
+        <input disabled type="text" class="form-control" value="@Model.Address.AddressName">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Email</label>
+        <input disabled type="text" class="form-control" value="@Model.Email">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Phone</label>
+        <input disabled type="text" class="form-control" value="@Model.Phone">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Password</label>
+        <input disabled type="text" class="form-control" value="@Model.Password">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Website</label>
+        <input disabled type="text" class="form-control" value="@Model.Website">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Youtube</label>
+        <input disabled type="text" class="form-control" value="@Model.Youtube">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Linkedin</label>
+        <input disabled type="text" class="form-control" value="@Model.Linkedin">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Instagram</label>
+        <input disabled type="text" class="form-control" value="@Model.Instagram">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Twitter</label>
+        <input disabled type="text" class="form-control" value="@Model.Twitter">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Snapchat</label>
+        <input disabled type="text" class="form-control" value="@Model.Snapchat">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Tiktok</label>
+        <input disabled type="text" class="form-control" value="@Model.Tiktok">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Facebook</label>
+        <input disabled type="text" class="form-control" value="@Model.Facebook">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.WhatsApp</label>
+        <input disabled type="text" class="form-control" value="@Model.Whatsapp">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Fax</label>
+        <input disabled type="text" class="form-control" value="@Model.Fax">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Users.Descrption</label>
+        <textarea disabled type="text" rows="4" class="form-control">@Model.Description</textarea>
+    </div>
+</div>
+<div class="form-group text-center">
+    <h3>@Resources.CP_Users.Img</h3>
+    <img class="rounded w-50" src="~/Images/Users/@Model.Image.URL"/>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Users.Close</button>
+</div>

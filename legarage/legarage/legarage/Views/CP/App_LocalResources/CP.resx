@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>Added</value>
+  </data>
+  <data name="AddGarage" xml:space="preserve">
+    <value>Add garage</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Add image</value>
+  </data>
+  <data name="AddImageBrand" xml:space="preserve">
+    <value>Please add the Brand logo</value>
+  </data>
+  <data name="AddNewCity" xml:space="preserve">
+    <value>Add new city</value>
+  </data>
+  <data name="AddNewCountry" xml:space="preserve">
+    <value>Add new country</value>
+  </data>
+  <data name="AddNewModel" xml:space="preserve">
+    <value>Add new model</value>
+  </data>
+  <data name="AddNewService" xml:space="preserve">
+    <value>Add new service</value>
+  </data>
+  <data name="AddNewUser" xml:space="preserve">
+    <value>Add new user</value>
+  </data>
+  <data name="AddNewVehicle" xml:space="preserve">
+    <value>Add new vehicle</value>
+  </data>
+  <data name="AddNewVehicles" xml:space="preserve">
+    <value>Add new vehicle </value>
+  </data>
+  <data name="AddRentOffice" xml:space="preserve">
+    <value>Add rent office</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AreSureDelete" xml:space="preserve">
+    <value>Are you sure to delete it?</value>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="Back_To_Website" xml:space="preserve">
+    <value>Back To Website</value>
+  </data>
+  <data name="Brand" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="BrandDetail" xml:space="preserve">
+    <value>Brand details</value>
+  </data>
+  <data name="Brands" xml:space="preserve">
+    <value>Brands</value>
+  </data>
+  <data name="BuyAndSellVehicles" xml:space="preserve">
+    <value>Buying and Selling Vehicles</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>By</value>
+  </data>
+  <data name="CarageImg" xml:space="preserve">
+    <value>Carage Images</value>
+  </data>
+  <data name="Carages" xml:space="preserve">
+    <value>Carages</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Chose" xml:space="preserve">
+    <value>Choses</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="CityDetails" xml:space="preserve">
+    <value>City details</value>
+  </data>
+  <data name="CityEdit" xml:space="preserve">
+    <value>Edite city</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Chose</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Condition" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="CountryDetails" xml:space="preserve">
+    <value>Country details</value>
+  </data>
+  <data name="cp" xml:space="preserve">
+    <value>Control Panel</value>
+  </data>
+  <data name="cp_garages" xml:space="preserve">
+    <value>Control Panel Garages</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create new</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeletedSuccessfully" xml:space="preserve">
+    <value>Deleted Successfully</value>
+  </data>
+  <data name="Descrption" xml:space="preserve">
+    <value>Descrption</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Diesel" xml:space="preserve">
+    <value>Diesel</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditBrand" xml:space="preserve">
+    <value>Edit brand</value>
+  </data>
+  <data name="EditCountry" xml:space="preserve">
+    <value>Edit country</value>
+  </data>
+  <data name="Edited" xml:space="preserve">
+    <value>Edited</value>
+  </data>
+  <data name="EditImage" xml:space="preserve">
+    <value>Enter image to change the image</value>
+  </data>
+  <data name="EditModel" xml:space="preserve">
+    <value>Edit model</value>
+  </data>
+  <data name="EditService" xml:space="preserve">
+    <value>Edit service</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="EngineSize" xml:space="preserve">
+    <value>Engine size</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>Enter address please</value>
+  </data>
+  <data name="EnterBrand" xml:space="preserve">
+    <value>Enter the brand please</value>
+  </data>
+  <data name="EnterCity" xml:space="preserve">
+    <value>Enter city name please</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Enter country code please</value>
+  </data>
+  <data name="EnterColor" xml:space="preserve">
+    <value>Enter Color</value>
+  </data>
+  <data name="EnterCountry" xml:space="preserve">
+    <value>Enter country name please</value>
+  </data>
+  <data name="EnterDescrption" xml:space="preserve">
+    <value>Enter descrption please</value>
+  </data>
+  <data name="EnterDriverName" xml:space="preserve">
+    <value>Enter Driver Name</value>
+  </data>
+  <data name="EnterDriverPhone" xml:space="preserve">
+    <value>Enter Driver Phone</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Enter email address please</value>
+  </data>
+  <data name="EnterEngineSize" xml:space="preserve">
+    <value>Enter Engine Size</value>
+  </data>
+  <data name="EnterFacebook" xml:space="preserve">
+    <value>EnterFacebook</value>
+  </data>
+  <data name="EnterFax" xml:space="preserve">
+    <value>Enter your fax number</value>
+  </data>
+  <data name="EnterFuelType" xml:space="preserve">
+    <value>Enter Fuel Type</value>
+  </data>
+  <data name="EnterFullName" xml:space="preserve">
+    <value>Enter full name please</value>
+  </data>
+  <data name="EnterGearBox" xml:space="preserve">
+    <value>Enter Gear Box</value>
+  </data>
+  <data name="EnterImage" xml:space="preserve">
+    <value>Enter image please</value>
+  </data>
+  <data name="EnterInstagram" xml:space="preserve">
+    <value>EnterInstagram</value>
+  </data>
+  <data name="EnterIsNew" xml:space="preserve">
+    <value>Enter Is New</value>
+  </data>
+  <data name="EnterKeywords" xml:space="preserve">
+    <value>Enter Keywords</value>
+  </data>
+  <data name="EnterLinkedin" xml:space="preserve">
+    <value>EnterLinkedin</value>
+  </data>
+  <data name="EnterMieage" xml:space="preserve">
+    <value>Enter Mieage</value>
+  </data>
+  <data name="EnterModel" xml:space="preserve">
+    <value>the model please</value>
+  </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>the name please</value>
+  </data>
+  <data name="EnterOwnerName" xml:space="preserve">
+    <value>Enter name of owner please</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>password please</value>
+  </data>
+  <data name="EnterPhone" xml:space="preserve">
+    <value>phone number please</value>
+  </data>
+  <data name="EnterPrice" xml:space="preserve">
+    <value>Enter price please</value>
+  </data>
+  <data name="EnterQuantity" xml:space="preserve">
+    <value>Enter Quantity</value>
+  </data>
+  <data name="EnterSerives" xml:space="preserve">
+    <value>the service please</value>
+  </data>
+  <data name="EnterSnapchat" xml:space="preserve">
+    <value>EnterSnapchat</value>
+  </data>
+  <data name="EnterTiktok" xml:space="preserve">
+    <value>EnterTiktok</value>
+  </data>
+  <data name="EnterTitle" xml:space="preserve">
+    <value>Enter Title</value>
+  </data>
+  <data name="EnterTwitter" xml:space="preserve">
+    <value>EnterTwitter</value>
+  </data>
+  <data name="EnterUser" xml:space="preserve">
+    <value>Enter the user please</value>
+  </data>
+  <data name="EnterVehicle" xml:space="preserve">
+    <value>the vehicle type please</value>
+  </data>
+  <data name="EnterVehicleSizes" xml:space="preserve">
+    <value>Enter Vehicle Sizes</value>
+  </data>
+  <data name="EnterWhatsapp" xml:space="preserve">
+    <value>your whatsapp number</value>
+  </data>
+  <data name="EnterYear" xml:space="preserve">
+    <value>Enter Year</value>
+  </data>
+  <data name="EnterYoutube" xml:space="preserve">
+    <value>EnterYoutube</value>
+  </data>
+  <data name="Facebook" xml:space="preserve">
+    <value>Enter your facebook</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="FuelType" xml:space="preserve">
+    <value>Fuel type</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="GarageContactInformation" xml:space="preserve">
+    <value>Garage Contact Information:</value>
+  </data>
+  <data name="GarageDetail" xml:space="preserve">
+    <value>Garage detail</value>
+  </data>
+  <data name="GarageEdit" xml:space="preserve">
+    <value>Edit garage</value>
+  </data>
+  <data name="GarageName" xml:space="preserve">
+    <value>Garage name</value>
+  </data>
+  <data name="Garages" xml:space="preserve">
+    <value>Garages</value>
+  </data>
+  <data name="Gearbox" xml:space="preserve">
+    <value>Gearbox</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Instagram" xml:space="preserve">
+    <value>your instagram</value>
+  </data>
+  <data name="IsMarket" xml:space="preserve">
+    <value>Is there market</value>
+  </data>
+  <data name="IsNew" xml:space="preserve">
+    <value>Is new</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="Less100" xml:space="preserve">
+    <value>Less than 100 thousand km</value>
+  </data>
+  <data name="Less150" xml:space="preserve">
+    <value>Less than 150 thousand km</value>
+  </data>
+  <data name="Less50" xml:space="preserve">
+    <value>Less than 50 thousand km</value>
+  </data>
+  <data name="Linkedin" xml:space="preserve">
+    <value>your linkedin</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Brand Logo</value>
+  </data>
+  <data name="MainServices" xml:space="preserve">
+    <value>The main services</value>
+  </data>
+  <data name="Make" xml:space="preserve">
+    <value>Make</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Mieage" xml:space="preserve">
+    <value>Mieage</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>Models</value>
+  </data>
+  <data name="Model_id" xml:space="preserve">
+    <value>Model Id</value>
+  </data>
+  <data name="ModleDetail" xml:space="preserve">
+    <value>Modle detail</value>
+  </data>
+  <data name="More150" xml:space="preserve">
+    <value>More than 150 thousand km</value>
+  </data>
+  <data name="NameOfCarage" xml:space="preserve">
+    <value>Name of carage</value>
+  </data>
+  <data name="NameOfPart" xml:space="preserve">
+    <value>Name of part</value>
+  </data>
+  <data name="NameOfRentOffice" xml:space="preserve">
+    <value>Name of rent office</value>
+  </data>
+  <data name="nav_services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="Nickname" xml:space="preserve">
+    <value>Nickname</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoBrand" xml:space="preserve">
+    <value>No brands avalible</value>
+  </data>
+  <data name="NoCity" xml:space="preserve">
+    <value>No Cities avalible</value>
+  </data>
+  <data name="NoCountry" xml:space="preserve">
+    <value>No country avalible</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>There is an error in sql query</value>
+  </data>
+  <data name="NoGarages" xml:space="preserve">
+    <value>No garages avalible</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>There is no image</value>
+  </data>
+  <data name="NoModel" xml:space="preserve">
+    <value>No model avalible</value>
+  </data>
+  <data name="NoOffers" xml:space="preserve">
+    <value>No offers avalible</value>
+  </data>
+  <data name="NoParts" xml:space="preserve">
+    <value>No Parts</value>
+  </data>
+  <data name="NoRentOffices" xml:space="preserve">
+    <value>No rent offices</value>
+  </data>
+  <data name="NoService" xml:space="preserve">
+    <value>No service avalible</value>
+  </data>
+  <data name="NoUser" xml:space="preserve">
+    <value>No user avalible</value>
+  </data>
+  <data name="NoVehicle" xml:space="preserve">
+    <value>No vehicle avalible</value>
+  </data>
+  <data name="NoWinches" xml:space="preserve">
+    <value>No Winches</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="Offers" xml:space="preserve">
+    <value>Offers</value>
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value>Old</value>
+  </data>
+  <data name="OldImage" xml:space="preserve">
+    <value>The current image</value>
+  </data>
+  <data name="OwnerName" xml:space="preserve">
+    <value>Owner Name</value>
+  </data>
+  <data name="Part" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Paymentmethod" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="Petrol" xml:space="preserve">
+    <value>Petrol</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="ProductsOrParts" xml:space="preserve">
+    <value>Products or Parts</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="RecoveryWinches" xml:space="preserve">
+    <value>Recovery Winches</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RentOfficeDetails" xml:space="preserve">
+    <value>Rent office details</value>
+  </data>
+  <data name="RentOfficeEdit" xml:space="preserve">
+    <value>Rent office edit</value>
+  </data>
+  <data name="RentOffices" xml:space="preserve">
+    <value>Rent offices</value>
+  </data>
+  <data name="SelectCountry" xml:space="preserve">
+    <value>Select the county please</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="ServiceDetail" xml:space="preserve">
+    <value>Service details</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="Snapchat" xml:space="preserve">
+    <value>your snapchat</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Store_id" xml:space="preserve">
+    <value>Store Id</value>
+  </data>
+  <data name="TheMainSections" xml:space="preserve">
+    <value>The main sections</value>
+  </data>
+  <data name="Tiktok" xml:space="preserve">
+    <value>your tiktok</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>your twitter</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="TypeOfPart" xml:space="preserve">
+    <value>Type of part</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Upload garage image</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>user name please</value>
+  </data>
+  <data name="UserDetails" xml:space="preserve">
+    <value>User details</value>
+  </data>
+  <data name="UserEdit" xml:space="preserve">
+    <value>Edit user details</value>
+  </data>
+  <data name="UserImg" xml:space="preserve">
+    <value>User image</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="VehicleDetail" xml:space="preserve">
+    <value>Vehicle detail</value>
+  </data>
+  <data name="VehicleEdit" xml:space="preserve">
+    <value>Vehicle edit type</value>
+  </data>
+  <data name="Vehicles" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="VehicleType" xml:space="preserve">
+    <value>Vehicle type</value>
+  </data>
+  <data name="VehicleTypes" xml:space="preserve">
+    <value>Vehicle types</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="Whatsapp" xml:space="preserve">
+    <value>WhatsApp</value>
+  </data>
+  <data name="WhatsappNumber" xml:space="preserve">
+    <value>Whatsapp number</value>
+  </data>
+  <data name="WhatUserName" xml:space="preserve">
+    <value>What is your unique user name</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Youtube" xml:space="preserve">
+    <value>your youtube</value>
+  </data>
+</root>

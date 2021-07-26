@@ -1,0 +1,275 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Used Parts";
+}
+
+@using System.Data;
+@using legarage.Classes;
+@model legarage.Models.ProductsIndexModel
+
+
+@{
+    string msj = "";
+    string state = "";
+    string Categories = "";
+    int i = 0;
+
+
+}
+
+<div class="row" style="margin: 0px; margin-top: 15px;">
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 bg-beige pb-5 mr-5 ">
+        <form id="filterform">
+            <input type="hidden" value="1" name="Filter" />
+
+            <label for="types" class="mt-2">@Resources.Garages.VehicleType</label>
+            <select name="vehicle-types" class="form-control mr-sm-2" placeholder="@Resources.Garages.Type" id="types">
+                <option value="select">@Resources.Garages.SelectType</option>
+            </select>
+            <label for="Factory" class="mt-2"@Resources.Part.CountryofFactory</label>
+            <select name="Factory" onchange="Get_Brands(); " class="js-example-basic-single form-control mr-sm-2" placeholder="@Resources.Part.Country" id="Factory">
+                <option id="Select_Countries" value="-1">@Resources.Part.SelectCountry </option>
+            </select>
+            @*<label for="brand" class="mt-2">@Resources.Garages.Brand</label>
+        <select name="Brand" class="form-control mr-sm-2" placeholder="Brand" id="Brand" onchange="Get_Models();">
+            <option value="-1" data-description="vehicle brand or make">@Resources.Garages.SelectBrand</option>
+        </select>*@
+            <label for="brand" class="mt-2">@Resources.Garages.Brand</label>
+            <select name="Brand" class="form-control mr-sm-2" placeholder="@Resources.Part.Brand" id="Brand" onchange="Get_Models();">
+                <option value="-1" data-description="vehicle brand or make">@Resources.Garages.SelectBrand</option>
+                @{
+                    foreach (var brand in Model.Brands)
+                    {
+                        <option value="@brand.ID">@brand.Name</option>
+                    }
+                }
+            </select>
+            <label for="types" class="mt-2">@Resources.Garages.BrandModel</label>
+            <select disabled name="Model" class="form-control mr-sm-2" placeholder="@Resources.Part.Model" id="Model">
+                <option value="-1">@Resources.Garages.SelectModel </option>
+            </select>
+
+
+            @*<label for="brand-country">Addres Country</label>
+        <select name="country" class="form-control mr-sm-2" placeholder="Address Country" id="MCountry">
+            <option value="-1">Select Country</option>
+        </select>*@
+        <label for="country" class="mt-2">@Resources.Part.Country</label>
+            <select name="country" onchange="Get_Options('city', 'country', '/Home/GetCities/');" class="form-control mr-sm-2" placeholder="country(Adress)" id="country">
+                <option value="-1">@Resources.Part.SelectCountry </option>
+            </select>
+
+            <label for="city" class="mt-2">@Resources.Part.City</label>
+            <select name="city" class="form-control mr-sm-2" placeholder="@Resources.Part.City" id="city">
+                <option value="-1">@Resources.Part.SelectCity</option>
+            </select>
+
+            @*<fieldset>
+            <label for="categories" class="mt-2">Categories</label><br>
+            @{
+                if (Model.Categories != null && Model.Categories.Count > 0)
+                {
+                    foreach (var c in Model.Categories)
+                    {
+                        <input type="checkbox" name="categories" value="@c.ID.ToString()" /> @c.Name<br>
+                    }
+                }
+            }
+        </fieldset>*@
+        <label for="categories" class="mt-2">@Resources.Part.Categories</label><br>
+            <fieldset class="scroll-box rounded p-0">
+
+                @{
+                    if (Model.Categories != null && Model.Categories.Count > 0)
+                    {
+                        foreach (var c in Model.Categories)
+                        {
+                            <input class="mr-1 ml-1" title="" type="checkbox" name="categories" value="@c.ID.ToString()" id="@c.ID.ToString()" /><label for="@c.ID.ToString()">@c.Name</label><br>
+                        }
+                    }
+                }
+            </fieldset>
+            <label for="rating" class="mt-2">Rating</label>
+            <select name="ratings" class="form-control mr-sm-2" placeholder="@Resources.Part.Rating" id="rating">
+                <option value="-1">@Resources.Part.SelectRating</option>
+                <option value="1">@Resources.Part.RatingOf 1</option>
+                <option value="2">@Resources.Part.RatingOf 2</option>
+                <option value="3">@Resources.Part.RatingOf 3</option>
+                <option value="4">@Resources.Part.RatingOf 4</option>
+                <option value="5">@Resources.Part.RatingOf 5</option>
+            </select>
+
+            <label for="status" class="mt-2">Status</label>
+            <select name="status" class="form-control mr-sm-2" placeholder="@Resources.Part.Status" id="status">
+                <option value="-1">@Resources.Part.lblStatus</option>
+                <option value="1">@Resources.Part.New</option>
+                <option value="0">@Resources.Part.Used</option>  <!--maybe Old instead of Used-->
+            </select>
+
+            @*<div class="slidecontainer mt-2">
+            <label for="textInput">Price</label>
+            <input type="range" min="1" max="10000" value="50" class="range" id="textInput" name="Price">
+            <output class="bubble" for="foo" onforminput="value = foo.valueAsNumber;"></output>
+        </div>*@
+
+            <div class="mt-2">
+                <div class="slidecontainer mt-2">
+                    <label class="d-block" for="textInputmin">Price</label>
+                    <input type="text" placeholder="@Resources.Part.Min" class="form-control text-box-numeric d-inline " id="textInputmin" name="minrange"> -
+                    <input type="text" placeholder="@Resources.Part.Max" class="form-control text-box-numeric d-inline" id="textInputmax" name="maxrange">
+                    <output class="bubble" for="textInputmin" onforminput="value = textInputmin.valueAsNumber;"></output>
+                </div>
+            </div>
+
+
+            <button type="reset" class="btn btn-outline-primary mt-4">@Resources.Part.reset</button>
+            <button type="button" class="btn btn-outline-success btn-Search mt-4 ml-2 pl-3 pr-3 " id="Search" data-controller="Parts" data-action="Get_Parts">@Resources.Garages.Search</button>
+
+        </form>
+    </div>
+
+
+    <div class="col-xl-9 col-lg-9 col-md-6 col-sm-6 col-xs-6 flex-column">
+        <div class="row centered-card">
+            <div id="data_countainer" class="centered-card" style="display:contents;max-width: -webkit-fill-available;">
+                @Html.Partial("Content", Model.Products)
+            </div>
+            <div id="msg"></div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+<script>
+    function getSlidNumberValue(val) {
+        document.getElementById('#textInput').value = val;
+    }
+
+
+
+
+    const $valueSpan = $('.valueSpan');
+    const $value = $('#slider11');
+    $valueSpan.html($value.val());
+    $value.on('input change', () => {
+
+        $valueSpan.html($value.val());
+    });
+
+
+
+    //$('li').click(function () {
+    //    $(this).addClass('active').siblings().removeClass('active');
+    //});
+
+    function goToPartDetails(pid) {
+        window.location.href = "/Parts/PartDetails?id=" + pid;
+    }
+
+</script>
+@*<script>
+    function getFilters(HtmlDivId, formID, ControllerUrl) {
+        var formdata = $("#" + formID).serialize();
+        //console.log(formdata);
+        $.ajax({
+            type: "Post",
+            dataType: "json",
+            data: formdata,
+            url: ControllerUrl,
+            success(result) {
+                if (result.code == 200) {
+                    if (result.data != null) {
+                        //console.log("Filter done");
+                        var html_part = ` `;
+                        $("#fill_out_garage").html(html_part);
+                        var obj = jQuery.parseJSON(result.data);
+                        for (var x in obj) {
+                            html_part = `
+<div class="card col-lg-6 index-card" id="garages_div" onclick="goToPartDetails('`+obj[x].ID + `');">
+
+                                <span class="rating2">
+                                    <em class="fa fa-star checked"></em>
+                                    <em class="fa fa-star checked"></em>
+                                    <em class="fa fa-star checked"></em>
+                                    <em class="fa fa-star checked"></em>
+                                    <em class="fa fa-star checked"></em>
+                                </span>
+                                <img class="card-img-top" src="~/Images/Products/`+ obj[x].Image.URL +`" alt="Card image cap">
+
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col col-lg">
+                                            <h4 class="card-title" style="display:inline">`+ obj[x].Title +`</h4>
+                                        </div>
+                                        <div class="col-md align-self-end" style="text-align: end;"><em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em> 0343443943</div>
+                                    </div>
+                                    <hr />
+                                    <button class="btn btn-outline-primary" onclick="goToPartDetails('`+obj[x].ID +`');" hidden>@Resources.Home.garages_show</button>
+                                    <div class="">
+                                        <div class="row details">
+                                            <div class="col-12 col-sm-12">
+                                                <ul class="list-group list-group-flush no-border">
+                                                    <li class="list-group-item no-border"><em style="color:dimgray;">CityName:</em> Dubai</li>
+                                                    <li class="list-group-item no-border"><em style="color:dimgray;">City Area:</em> Nesma</li>
+                                                    <li class="list-group-item no-border"><em style="color:dimgray;">Vehicle Sizes:</em> small, medium</li>
+                                                </ul>
+                                            </div>
+                                            <div class=" col-6 col-xl-6 no-border " style="text-align:right; border:hidden" hidden>
+                                                <ul class="list-group list-group-flush" style="text-align:right; border:hidden">
+                                                    <li class="list-group-item"><em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em> 0343443943</li>
+                                                    <li class="list-group-item" hidden><em style="color:dimgray;"><i class="fab fa-whatsapp fa-1x" style="color:green;"></i></em> 0343443943</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 align-self-start" hidden>
+                                                <div class="btn btn-success" style="color:dimgray; font-weight: bold; text-align:right;">learn more!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  `;
+                            $("#fill_out_garage").append(html_part);
+                        }
+                        $("#fill_out_garage").html(html);
+                    }
+                    else {
+                        //console.log(error);
+                    }
+                }
+                if (result.code == 200) {
+
+                }
+                else {
+                    //console.log(error);
+                }
+            },
+            error(error) {
+                //console.log(error);
+            }
+        });
+
+
+    }
+</script>*@
+
+<script>
+    $(document).ready(function () {
+        if (document.getElementById("Factory") != null) Get_Options('Factory', '', '/Home/GetCountries', 'Factory');
+        if (document.getElementById("MCountry") != null) Get_Options('MCountry', '', '/Home/GetCountries', 'Market');
+        if (document.getElementById("phone_keys") != null) Get_PhoneKeys("phone_keys");
+        Get_Market();
+        Get_VehicleTypes();
+    });
+</script>

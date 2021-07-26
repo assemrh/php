@@ -1,0 +1,472 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Rent Office Details";
+}
+
+@*@model legarage.Models.RentModel*@
+
+@model legarage.Models.RentOfficesModel
+
+@{
+    legarage.Models.ItemSliderModel itemSlider = new legarage.Models.ItemSliderModel();
+    itemSlider.Directory = "RentOffice";
+    itemSlider.ImagesLsit = Model.Images;
+}
+
+@{
+    string Brands = "";
+    string CityName = Model.Address.Province;
+    string Adres = Model.Address.AddressName + ", " + Model.Address.Province + ", " + Model.Address.Country;
+    string Vehicle_Types = "";
+    string Description = Model.Description;
+    string OwnerName = Model.User.Name;
+    string Phone = Convert.ToString(Model.Mobile);
+    string whatsapp = Model.Whatsapp;
+    string Fax = Model.Fax;
+    string website = Model.Website;
+    string facebook = Model.Facebook;
+    string instagram = Model.Instagram;
+    string Tiktok = Model.Tiktok;
+    string Twitter = Model.Twitter;
+    string Linkedin = Model.Linkedin;
+    string Youtube = Model.Youtube;
+    string snapchat = Model.Snapchat;
+
+    int sayac = 0; //sayac = counter
+
+
+    foreach (var model in Model.Models_view)
+    {
+        sayac++;
+        Brands += model.Brand;
+        Brands += (Model.Models_view.Count == sayac) ? "." : ", ";
+
+    }
+
+    sayac = 0;
+    foreach (var Vehicle_Type in Model.VehicleTypes)
+    {
+        sayac++;
+        Vehicle_Types += Vehicle_Type.Name;
+        Vehicle_Types += (Model.VehicleTypes.Count == sayac) ? "." : ", ";
+
+    }
+
+
+
+
+
+}
+
+<img class="card-img-top" src="~/Images/RentOffice/@Model.Image.URL" alt="Card image cap" style="">
+<h2 style="margin: auto; margin-bottom: 5%; width: 26%;"><strong>Test</strong></h2>
+
+
+
+<div class="card no-border">
+
+    <div class="flex-row-xl flex-row-Deteis" style="margin: auto;display: flex;">
+
+        <div class="card images_card centered-card no-border col-7">
+            <div class="card-body">
+                <div class="text-center">
+                    @Html.Partial("~/Views/Home/_ItemSliderPartial.cshtml", itemSlider)
+                    @*<div class="Details_Images_Slides_container" hidden>
+                            <div class="ma3rad">
+
+                                @{
+                                    if (Model.Images != null && Model.Images.Count > 0)
+                                    {
+                                        foreach (var img in Model.Images)
+                                        {
+                                            <div class="Details_Images_Slides">
+                                                <img src="~/Images/RentOffice/@img.URL">
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div class="Details_Images_Slides">
+                                            <img src="Images/no-images.png">
+                                        </div>
+                                    }
+                                }
+                                <a class="Details_Images_Slides_prev" onclick="plusSlides(-1)">❮</a>
+                                <a class="Details_Images_Slides_next" onclick="plusSlides(1)">❯</a>
+                            </div>
+                            <div class="caption-container" hidden>
+                                <p id="Details_Images_Slides_caption"></p>
+                            </div>
+                            <hr />
+                            <div class="Details_Images_Slides_row">
+                                <div style="width:100%;">
+
+                                    @{
+                                        if (Model.Images != null && Model.Images.Count > 0)
+                                        {
+                                            int i = 1;
+                                            foreach (var img in Model.Images)
+                                            {
+                                                <div class="Details_Images_Slides_column">
+                                                    <img class="Details_Slides_Images Details_Images_Slides_cursor rounded img-thumbnail" src="~/Images/RentOffice/@img.URL" onclick="currentSlide(@i)" alt="The Woods">
+                                                </div>
+                                                i++;
+                                            }
+                                        }
+                                        else  /// no-image image
+                                        {
+                                            <div class="Details_Images_Slides_column">
+                                                <img class="Details_Slides_Images Details_Images_Slides_cursor rounded img-thumbnail" src="~/Images/no-images.png" onclick="currentSlide(1)" alt="The Woods">
+                                            </div>
+
+                                        }
+
+                                    }
+
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+
+        <div class="card col-5 details_card no-border centered-card">
+            <div class="card-body  centered-card" style="max-height: 4rem;">
+
+                @*<div style="margin:auto;">*@
+
+
+                @*<div class="card col-8" style="margin:auto;">*@
+                <img class="card-img-top" src="/Images/carrent-first.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;" hidden>
+                @*<div class="card-body" style="margin:auto;">*@
+                <h5 class="card-title">
+                    @Model.Name
+                    @{
+                        if (Model.Rate > 0)
+                        {
+                            @Html.Partial("../Rating/Stars", Model.Rate, new ViewDataDictionary { { "class", "" } })
+                        }
+                    }
+                </h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.RentOffices.CityName:</em>@CityName </li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.RentOffices.CityAddress:</em>@Adres </li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.RentOffices.VehicleTypes:</em>@Vehicle_Types </li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.RentOffices.Brand:</em>@Brands </li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.RentOffices.Description:</em>@Description</li>
+
+            </ul>
+
+            <div class="card-body">
+                <h5 style="margin-bottom:3%;"><em>Office Contact Information:</em></h5>
+                <span><em style="color:dimgray;"><i class="fas fa-mobile-alt fa-md" style="color:black;"></i>@Resources.RentOffices.Mobile:</em>@Phone  </span>
+                <br />
+                <span><em style="color:dimgray;"><i class="fab fa-whatsapp fa-lg" style="color:green;"></i>@Resources.RentOffices.Whatsapp:</em>@whatsapp  </span>
+                <br />
+                <span><em style="color:dimgray;"><i class="fas fa-fax fa-md" style="color:#442727;"></i>@Resources.RentOffices.Fax:</em>@Fax</span>
+                <br />
+                <span><em style="color:dimgray;"><i class="fab fa-chrome fa-md" style="color:orangered;"></i>@Resources.RentOffices.Website:</em> <a href="@website"> @website </a> </span>
+                <br />
+                <div style="margin-top:2%;">
+                    <span>
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook-square fa-2x" style="color:blue;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.twitter.com"><i class="fab fa-twitter-square fa-2x" style="color:deepskyblue;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com"><i class="fab fa-instagram-square fa-2x" style="color:purple;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com"><i class="fab fa-youtube fa-2x" style="color:red;"></i></a>&nbsp;&nbsp;&nbsp;
+                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x" style="color:darkcyan"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.snapchat.com"><i class="fab fa-snapchat-square fa-2x" style="color:yellow;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.tiktok.com"><i class="fab fa-tiktok fa-2x" style="color:black;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.whatsapp.com"><i class="fab fa-whatsapp fa-2x" style="color:green;"></i></a>
+                    </span>
+                </div>
+
+
+
+            </div>
+
+
+            <form id="ratingForm" method="post" action="~/Rating/addRating" style="display:none !important," hidden>
+                <input type="hidden" value="@Model.ID" name="src_id" />
+                <input type="hidden" value="RentOffice" name="src_type" />
+
+            </form>
+
+            <div class="card-body" style="margin:auto;">
+                <button id="rate" type="button" class="btn btn-info" data-toggle="modal" data-target="#rateModal">@Resources.CP.Rate</button>
+            </div>
+
+
+        </div>
+
+
+        @*<div class="modal" tabindex="-1" role="dialog" id="rateModal">
+                <div class="modal-dialog modal-sm" role="document" style="overflow-y:auto; height:200px; margin:auto;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Rating</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="margin:auto;">
+                            <span class="fa fa-star" style="cursor:pointer;" id="starone" onclick="return checkStar();"></span>
+                            <span class="fa fa-star" style="cursor:pointer;" id="startwo" onclick="return checkStarTwo();"></span>
+                            <span class="fa fa-star" style="cursor:pointer;" id="starthree" onclick="return checkStarThree();"></span>
+                            <span class="fa fa-star" style="cursor:pointer;" id="starfour" onclick="return checkStarFour();"></span>
+                            <span class="fa fa-star" style="cursor:pointer;" id="starfive" onclick="return checkStarFive();"></span>
+
+                            <br />
+                            <br />
+                            <button type="button" class="btn btn-outline-success" onclick="return ratingCalculate();" style="margin:auto; padding:10px;">@Resources.RentOffices.SubmitRating</button>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+    <div class="container">
+        <div class="table-responsive-xl">
+            <h2 id="vertical-alignment" style=" margin : 1rem;">@Resources.RentOffices.ModelsListe</h2>
+            <table class="table centered-card table-light table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">@Resources.RentOffices.ModelName</th>
+                        <th scope="col">@Resources.RentOffices.BrandName</th>
+                        <th scope="col">@Resources.RentOffices.VecicleType</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int j = 0;
+                        foreach (var model1 in Model.Models_view)
+                        {
+                            j++;
+                            <tr>
+                                <th scope="row">@j</th>
+                                <td scope="row">@model1.Name</td>
+                                <td scope="row">@model1.Brand</td>
+                                <td scope="row">@model1.VehicleType</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @*<div class="card-body text-center" hidden>
+            <h5><em>Models List:</em></h5>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <ul>
+                        Volvo
+                        <li>Vx1 car</li>
+                        <li>Vx2 car</li>
+                        <li>Vx3 car</li>
+                        <li>Vx4 car</li>
+                        <li>Vx1 motorcycle</li>
+                        <li>Vx2 motorcycle</li>
+                        <li>Vx3 motorcycle</li>
+                        <li>Vx4 motorcycle</li>
+                        <li>Vx1 truck</li>
+                        <li>Vx2 truck</li>
+                        <li>Vx3 truck</li>
+                        <li>Vx4 truck</li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <ul>
+                        Mercedes X1
+                        <li>Vx1 X2 car X3</li>
+                        <li>Vx2 car</li>
+                        <li>Vx3 car</li>
+                        <li>Vx4 car</li>
+                        <li>Vx1 motorcycle</li>
+                        <li>Vx2 motorcycle</li>
+                        <li>Vx3 motorcycle</li>
+                        <li>Vx4 motorcycle</li>
+                        <li>Vx1 truck</li>
+                        <li>Vx2 truck</li>
+                        <li>Vx3 truck</li>
+                        <li>Vx4 truck</li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <ul>
+                        Lada
+                        <li>Vx1 car</li>
+                        <li>Vx2 car</li>
+                        <li>Vx3 car</li>
+                        <li>Vx4 car</li>
+                        <li>Vx1 motorcycle</li>
+                        <li>Vx2 motorcycle</li>
+                        <li>Vx3 motorcycle</li>
+                        <li>Vx4 motorcycle</li>
+                        <li>Vx1 truck</li>
+                        <li>Vx2 truck</li>
+                        <li>Vx3 truck</li>
+                        <li>Vx4 truck</li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <ul>
+                        Mazda
+                        <li>Vx1 car</li>
+                        <li>Vx2 car</li>
+                        <li>Vx3 car</li>
+                        <li>Vx4 car</li>
+                        <li>Vx1 motorcycle</li>
+                        <li>Vx2 motorcycle</li>
+                        <li>Vx3 motorcycle</li>
+                        <li>Vx4 motorcycle</li>
+                        <li>Vx1 truck</li>
+                        <li>Vx2 truck</li>
+                        <li>Vx3 truck</li>
+                        <li>Vx4 truck</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card-body centered-card" style="width: min-content;" hidden>
+            <div style="width: max-content; ">
+                <h5><em>Prices List:</em></h5>
+                <span><em style="color:dimgray;">per day:</em> $4.99 </span>
+                <br />
+                <span><em style="color:dimgray;">per week:</em> $19.99 </span>
+                <br />
+                <span><em style="color:dimgray;">per month:</em> $59.99 </span>
+                <br />
+                <span><em style="color:dimgray;">per year:</em> $399.99 </span>
+                <br />
+            </div>
+        </div>
+    *@
+</div>
+
+
+
+<!--  GarageDetails Slider Show Script start -->
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Details_Images_Slides");
+        var dots = document.getElementsByClassName("Details_Slides_Images");
+        var captionText = document.getElementById("Details_Images_Slides_caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" Details_Images_Slides_active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " Details_Images_Slides_active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+<!--  GarageDetails Slider Show Script End -->
+
+
+
+<script>
+
+
+    function checkStar() {
+        $("#starthree").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starfour").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").toggleClass("checked");
+    }
+
+    function checkStarTwo() {
+        $("#starone").removeClass("checked");
+        $("#starthree").removeClass("checked");
+        $("#starfour").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").toggleClass("checked");
+    }
+
+    function checkStarThree() {
+        $("#starone").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starfour").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").addClass("checked");
+        $("#starthree").toggleClass("checked");
+    }
+
+    function checkStarFour() {
+        $("#starone").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starthree").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").addClass("checked");
+        $("#starthree").addClass("checked");
+        $("#starfour").toggleClass("checked");
+    }
+
+    function checkStarFive() {
+        $("#starone").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starthree").removeClass("checked");
+        $("#starfour").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").addClass("checked");
+        $("#starthree").addClass("checked");
+        $("#starfour").addClass("checked");
+        $("#starfive").toggleClass("checked");
+    }
+
+
+
+    function ratingCalculate() {
+        if (!$("#starone").hasClass("checked") && !$("#startwo").hasClass("checked") && !$("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //alert("Please rate by filling the stars atleast 1, empty or 0 rating cannot be submitted!");
+            return;
+        }
+
+        if ($("#starone").hasClass("checked") && !$("#startwo").hasClass("checked") && !$("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("1"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && !$("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("2"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && $("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("3"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && $("#starthree").hasClass("checked") && $("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("4"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && $("#starthree").hasClass("checked") && $("#starfour").hasClass("checked") && $("#starfive").hasClass("checked")) {
+            //console.log("5"); //return and add number to database
+        }
+
+        alert('Rating Submitted, thank you for rating');
+    }
+
+
+
+</script>

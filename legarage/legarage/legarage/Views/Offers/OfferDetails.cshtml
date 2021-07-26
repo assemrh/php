@@ -1,0 +1,78 @@
+﻿@model legarage.Models.OffersModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Offer Details";
+}
+
+
+<h2 style="margin: auto; margin-bottom: 5%; width: 20%;"><strong>@Resources.Offers.OfferDetails</strong></h2>
+
+<div style="margin:auto;">
+
+
+    <div class="card col-8" style="margin:auto;">
+        <img class="card-img-top" src="/Images/vehcileoffer.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+        <div class="card-body" style="margin:auto;">
+            <h5 class="card-title">
+                <span class="text-uppercase">@Model.name</span>
+            </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            @*<li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.CityName:</em></li>
+            <li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.CityAddress:</em> </li>*@
+            @*<li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.By:</em></li>*@
+            <li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.Start:</em> <strong>@Model.start_date</strong></li>
+            <li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.End:</em> <strong>@Model.end_date</strong></li>
+            <li class="list-group-item"><em style="color:dimgray;">@Resources.Offers.Description:</em> @Model.description.</li>
+
+        </ul>
+
+        <div class="card-body">
+            <h5><em>@Resources.Offers.OfferDetails:</em></h5>
+            <p>@Model.description.</p>
+        </div>
+
+        <div class="card-body">
+            <h5><em>@Resources.Offers.Price</em></h5>
+            @{ 
+                var x = (dynamic)Model.old_price;
+                var y = Model.discount_percentage;
+                var newP = x - (x / y);
+            }
+        <span><em style="color:dimgray;">@Resources.Offers.OriginalPrice:</em> $ @x </span>
+            <br />
+            <span><em style="color:dimgray;">@Resources.Offers.OfferPrice:</em><strong> $ @newP </strong> </span>
+            <br />
+            <br />
+            <span><em style="color:dimgray;">@Resources.Offers.Weaccept:</em> @Model.paymentmethods</span>
+        </div>
+
+        <div class="card-body">
+            <h5 style="margin-bottom:3%;"><em>@Resources.Offers.SellerContactInformation:</em></h5>
+            <span><em style="color:dimgray;"><i class="fas fa-mobile-alt fa-md" style="color:black;"></i> @Resources.Offers.Mobile:</em>@Model.mobile</span>
+            <br />
+            <span><em style="color:dimgray;"><i class="fab fa-whatsapp fa-lg" style="color:green;"></i>@Resources.Offers.Whatsapp:</em> @Model.mobile</span>
+            <br />
+            @*<span><em style="color:dimgray;"><i class="fas fa-fax fa-md" style="color:#442727;"></i> Fax:</em> 0924549343300 </span>*@
+            <br />
+            <span><em style="color:dimgray;"><i class="fab fa-chrome fa-md" style="color:orangered;"></i>@Resources.Offers.Website:</em> <a href="http://@Model.website"> @Model.website </a> </span>
+            <br />
+            @*<div style="margin-top:2%;">
+                <span>
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook-square fa-2x" style="color:blue;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.twitter.com"><i class="fab fa-twitter-square fa-2x" style="color:deepskyblue;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com"><i class="fab fa-instagram-square fa-2x" style="color:purple;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com"><i class="fab fa-youtube fa-2x" style="color:red;"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x" style="color:darkcyan"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.snapchat.com"><i class="fab fa-snapchat-square fa-2x" style="color:yellow;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.tiktok.com"><i class="fab fa-tiktok fa-2x" style="color:black;"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.whatsapp.com"><i class="fab fa-whatsapp fa-2x" style="color:green;"></i></a>
+                </span>
+            </div>*@
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+

@@ -1,0 +1,125 @@
+﻿@model List<legarage.Models.ProductsModel>
+@{
+
+    string msj = "";
+    string state = "";
+    string Categories = "";
+    int i = 0;
+
+    try
+    {
+        foreach (var product in Model)
+        {
+            state = (Convert.ToInt32(product.IsNew) == 1) ? "New" : "Used";
+            Categories = "";
+            //foreach (var cate in product.Service)
+            //{
+            //    i++;
+            //    Categories += cate.Name;
+            //    Categories += (product.Service.Count == i) ? "." : ", ";
+            //}
+
+            <div class="card col-lg-5 index-card" id="garages_div" onclick="goToPartDetails('@product.ID');">
+                @{
+                    if (product.Rate > 0)
+                    {
+                        @Html.Partial("../Rating/Stars", product.Rate, new ViewDataDictionary { { "class", "rating2" } })
+                    }
+                }
+                <img class="card-img-top" src="~/Images/Products/@product.Image.URL" alt="Card image cap">
+                
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-lg">
+                            <h4 class="card-title" style="display:inline">@product.Title</h4>
+                        </div>
+                        <div class="col-md align-self-end" style="text-align: end;"><em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em> @product.Mobile</div>
+
+
+                    </div>
+                    <hr />
+                    <button class="btn btn-outline-primary" onclick="goToPartDetails('@product.ID');" hidden>@Resources.Home.garages_show</button>
+                    <div class="">
+                        <div class="row details">
+                            <div class="col-12 col-sm-12">
+                                <ul class="list-group list-group-flush no-border">
+                                    <li class="list-group-item no-border"><em style="color:dimgray;">@Resources.Home.CityName:</em> @product.Address.Province</li>
+                                    <li class="list-group-item no-border"><em style="color:dimgray;">@Resources.Home.CityArea:</em> @product.Address.AddressName</li>
+                                    <li class="list-group-item no-border"><em style="color:dimgray;">@Resources.Home.VehicleSizes:</em>@product.VehicleType</li>
+                                </ul>
+                            </div>
+                            @*<div class=" col-6 col-xl-6 no-border " style="text-align:right; border:hidden" hidden>
+            <ul class="list-group list-group-flush" style="text-align:right; border:hidden">
+                <li class="list-group-item"><em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em> 0343443943</li>
+                <li class="list-group-item" hidden><em style="color:dimgray;"><i class="fab fa-whatsapp fa-1x" style="color:green;"></i></em> 0343443943</li>
+            </ul>
+        </div>*@
+                        </div>
+                        <div class="row">
+                            <div class="col-6 align-self-start" hidden>
+                                <div class="btn btn-success" style="color:dimgray; font-weight: bold; text-align:right;">@Resources.Part.learnMore</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        }
+        <nav aria-label="Page navigation example" class="mt-auto">
+            <ul class="pagination justify-content-center">
+                @{
+                    string prev = "";
+                    string next = "";
+                    string next_page = "";
+                    string prev_page = "";
+                    int page = (int)Session["current_page"];
+                    int page_count = (int)Session["pages_count"];
+                    if (page == 1)
+                    {
+                        prev = "disabled";
+                    }
+                    else
+                    {
+                        prev = "";
+                        prev_page = (page - 1).ToString();
+                    }
+                    if (page == page_count || page_count <= 1)
+                    {
+                        next = "disabled";
+                    }
+                    else
+                    {
+                        next = "";
+                        next_page = (page + 1).ToString();
+                    }
+
+                }
+                <li class="page-item  @prev">
+                    <button class="page-link" tabindex="-1" aria-disabled="true" onclick="return getPage('@prev_page','/Parts/Get_Parts');">@Resources.Part.Previous</button>
+                </li>
+                @{
+
+                    for (var pg = 1; pg <= page_count; pg++)
+                    {
+                        <li class="page-item @(pg == page ? "active":"")">
+                            <div onclick="return getPage('@pg','/Parts/Get_Parts');" class="page-link" >
+                                @(pg)
+                            </div>
+                        </li>
+                    }
+                }
+
+                <li class="page-item @next">
+                    <button class="page-link" onclick="return getPage('@next_page','/Parts/Get_Parts');">@Resources.Part.Next</button>
+                </li>
+            </ul>
+        </nav>
+
+    }
+    catch (Exception e)
+    {
+        <p style="color:red;">@e.Message.ToString();</p> <h1></h1>
+    }
+}

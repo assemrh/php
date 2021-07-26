@@ -1,0 +1,125 @@
+﻿@model legarage.Models.RentOfficesModel
+@using legarage.Models;
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_RentOffices.Details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <input hidden value="@Model.ID" />
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Name</label>
+        <input disabled type="text" class="form-control" value="@Model.Name">
+    </div>
+    @{ 
+        if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+        {
+            <div class="form-group">
+        <label>@Resources.CP_RentOffices.OwnerName</label>
+        <input disabled type="text" class="form-control" value="@Model.User.UserName">
+    </div>
+
+        }
+    }
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Models</label>
+        @{
+            string M = "";
+            if (Model.Models != null && Model.Models.Count > 0)
+            {
+                foreach (ModelsModel model in Model.Models)
+                {
+                    M += model.Name + " , ";
+                }
+                string A = "";
+                A = M.Substring(0, M.Length - 3);
+                <input disabled type="text" class="form-control" value="@A" />
+            }
+            else
+            {
+                <input disabled type="text" value="@Resources.CP_RentOffices.NoModel" class="form-control" />
+            }
+        }
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Vehicles</label>
+        @{
+            string VT = "";
+            if (Model.VehicleTypes != null && Model.VehicleTypes.Count > 0)
+            {
+                foreach (VehicleTypesModel vehicleType in Model.VehicleTypes)
+                {
+                    VT += vehicleType.Name + " , ";
+                }
+                string A = "";
+                A = VT.Substring(0, VT.Length - 3);
+                <input disabled type="text" class="form-control" value="@A" />
+            }
+            else
+            {
+                <input disabled type="text" value="@Resources.CP_RentOffices.NoVehicle" class="form-control" />
+            }
+        }
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Address</label>
+        <input disabled type="text" class="form-control" value="@Model.Address.AddressName">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Phone</label>
+        <input disabled type="text" class="form-control" value="@Model.Mobile">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Whatsapp</label>
+        <input disabled type="text" class="form-control" value="@Model.Whatsapp">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Website</label>
+        <input disabled type="text" class="form-control" value="@Model.Website">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Youtube</label>
+        <input disabled type="text" class="form-control" value="@Model.Youtube">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Linkedin</label>
+        <input disabled type="text" class="form-control" value="@Model.Linkedin">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Instagram</label>
+        <input disabled type="text" class="form-control" value="@Model.Instagram">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Twitter</label>
+        <input disabled type="text" class="form-control" value="@Model.Twitter">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Snapchat</label>
+        <input disabled type="text" class="form-control" value="@Model.Snapchat">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Tiktok</label>
+        <input disabled type="text" class="form-control" value="@Model.Tiktok">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Facebook</label>
+        <input disabled type="text" class="form-control" value="@Model.Facebook">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Fax</label>
+        <input disabled type="text" class="form-control" value="@Model.Fax">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_RentOffices.Descrption</label>
+        <textarea disabled type="text" class="form-control" rows="4">@Model.Description</textarea>
+    </div>
+</div>
+<div class="form-group text-center">
+    <h3>@Resources.CP_RentOffices.Currentlyimage</h3>
+    <img class="rounded w-50" src="~/Images/RentOffice/@Model.Image.URL" />
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_RentOffices.Close</button>
+</div>

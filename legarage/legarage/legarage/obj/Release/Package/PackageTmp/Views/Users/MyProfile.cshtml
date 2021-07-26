@@ -1,0 +1,312 @@
+﻿@model legarage.Models.UsersModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "My Profile";
+}
+<h1 class="mt-5" style="margin:auto; width:17%; margin-bottom:2%;">My Profile</h1>
+<div class="card col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12" style="margin:auto;" hidden>
+    <img src="~/Images/profilepicsecond.jpg" width="40%;" style="margin:auto;" />
+    <br />
+    <h4 style="margin:auto;"><em style="font-weight:lighter;">Full Name:</em> <strong>Ramy Elsaraf</strong></h4>
+    <br />
+    <h4 style="margin:auto;"><em style="font-weight:lighter;">Email:</em> <strong>ramystan92@gmail.com</strong></h4>
+    <br />
+    <h4 style="margin:auto;"><em style="font-weight:lighter;" class="nicknameProf">Nickname:</em> <strong> Ramzy</strong></h4>
+    <br />
+    <h4 style="margin:auto;"><em style="font-weight:lighter;">Residance Address:</em> <strong> Turkey, Istanbul, Bacgilar next to yenimahalle metro</strong></h4>
+    <br />
+    <h4 style="margin:auto;"><em style="font-weight:lighter;">Phone Number:</em> <strong> +90546873273</strong></h4>
+    <br />
+    <h4 style="margin:auto;"><em style="font-weight:lighter;">Website and/or Social Media:</em> <strong>ramgarage.com and @@ramgarage</strong>  </h4>
+    <br />
+    <br />
+    <br />
+    <div class="card-body" style="margin:auto;">
+        <button class="btn btn-outline-warning" data-toggle="modal" data-target="#newUserPasswordModal">Change Password</button>
+        <button class="btn btn-outline-info" data-toggle="modal" data-target="#newUserModal">Update</button>
+    </div>
+</div>
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <form id="">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <div class="position-relative img-profile overflow-hidden"style="width:150px;height:150px;border-radius: 50%!important;overflow: hidden;">
+                        <div class="overflow-hidden" >
+                            <img id="profileImg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; left: 0; object-position: center;" src="~/Images/Users/Profile/@Model.Image.URL" />
+                            @*<button hidden class="btn-secondary position-absolute x-layer btn btn-link"><div style="margin-top: 75px;"><span style="margin-top: 87px;">edit picture</span></div></button>*@
+                        </div>
+                        <div id="profil-pic-cp" style="
+                                    background-color: #00000029;
+                                    width: 150px;
+                                    height: 150px;
+                                    position: relative;
+                                    top: -75px;
+                                    left: 0rem;
+                                    display:none;
+                                    padding-top:1.5rem;
+                                    ">
+                            <a class="text-muted text-center stretched-link pt-4">edit picture</a>
+                        </div>
+                    </div>
+                    <span class="font-weight-bold">@Model.Name</span><span class="text-black-50">@Model.Email</span><span> </span>
+                </div>
+                
+            </div>
+            <div class="col-md-8">
+                <div class="p-3 py-5 ">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">@Resources.Users.ProfileDetails</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">@Resources.Users.Name</label><input type="text" readonly class="form-control" placeholder="full name" value="@Model.Name"></div>
+                        <div class="col-md-6"><label class="labels">@Resources.Users.Email</label><input disabled type="text" class="form-control" readonly placeholder="full name" value="@Model.Email"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6 mt-1"><label class="labels">@Resources.Users.MobileNumber</label><input type="text" readonly class="form-control" placeholder="enter phone number" value="@Model.Phone"></div>
+                        @*<div class="col-md-6 mt-1"><label class="labels">@Resources.Users.FaxNumber</label><input type="text" class="form-control" placeholder="enter fax number" value="@Model.Fax"></div>*@
+                        <div class="col-md-6 mt-1"><label class="labels">@Resources.Users.WhatsappNumber</label><input readonly type="text" class="form-control" placeholder="enter Whatsapp number if was different" value="@Model.Whatsapp"></div>
+                        @*<div class="col-md-6 mt-1"><label class="labels">Facebook Accoumt</label><input type="text" class="form-control" placeholder="enter Facebook Accoumt" value="@Model.Facebook"></div>
+            <div class="col-md-6 mt-1"><label class="labels">Linkedin Accoumt</label><input type="text" class="form-control" placeholder="enter Linkedin Accoumt" value="@Model.Linkedin"></div>
+            <div class="col-md-6 mt-1"><label class="labels">Snapchat Accoumt</label><input type="text" class="form-control" placeholder="enter Snapchat Accoumt" value="@Model.Snapchat"></div>
+            <div class="col-md-6 mt-1"><label class="labels">Tiktok Accoumt</label><input type="text" class="form-control" placeholder="enter Tiktok Accoumt" value="@Model.Tiktok"></div>
+            <div class="col-md-6 mt-1"><label class="labels">Twitter Accoumt</label><input type="text" class="form-control" placeholder="enter Twitter Accoumt" value="@Model.Twitter"></div>
+            <div class="col-md-6 mt-1"><label class="labels">Website Accoumt</label><input type="text" class="form-control" placeholder="enter Website link" value="@Model.Website"></div>*@
+
+                    </div>
+                    @*<div class="row mt-3">
+            <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+            <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="@Model.Address.Province" placeholder="state"></div>
+            <div class="col-md-12"><label class="labels">Address </label><input type="text" class="form-control" placeholder="enter address " value="@Model.Address.AddressName"></div>
+
+        </div>
+        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>*@
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <form action="~/Users/ChangeProfilePic" method="post" id="updatePrfiloform0">
+        <input hidden type="file" id="uplaodImg" accept="image/*" />
+    </form>
+</div>
+
+
+
+<!--User Modals-->
+<!-- Update Profile Modal -->
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleDropdownFormFullname">Full Name</label>
+                        <input type="text" class="form-control" id="exampleDropdownFormFullname" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormNickname">Nickname <span title="What do you want others to call you or what do you go by"><i class="far fa-question-circle"></i></span></label>
+                        <input type="text" class="form-control" id="exampleDropdownFormNickname" placeholder="Nickname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormAddress"> Residance Address</label>
+                        <input type="text" class="form-control" id="exampleDropdownFormAddress" placeholder="Residance Address">
+                    </div>
+
+                    <div class="form-group col-10">
+                        <label for="exampleDropdownFormPhonenumber" style="margin-left: -16px;">Phone Number</label>
+                        <div class="row">
+
+
+                            <div class="col-4" style="margin-left:-16px;">
+                                <select id="countrycode" class="form-control">
+                                    <option value="">code</option>
+                                    <option value="UAE">+971</option>
+                                    <option value="SaudiArabia">+966</option>
+                                    <option value="Bahrain">+973</option>
+                                    <option value="Egypt">+20</option>
+                                    <option value="Turkey">+90</option>
+                                    <option value="USCanada">+1</option>
+                                    <option value="UK">+44</option>
+                                    <option value="Australia">+61</option>
+                                    <option value="NewZealand">+64</option>
+                                    <option value="RepublicofIreland">+353</option>
+                                    <option value="SouthAfrica">+27</option>
+                                    <option value="Germany">+49</option>
+                                    <option value="France">+33</option>
+                                    <option value="Sweden">+46</option>
+                                    <option value="Russia">+7</option>
+                                    <option value="Other" title="Please enter the other country code in phone number field">Other</option>
+
+                                </select>
+                            </div>
+
+                            <div class="col-8" style="margin-left:-30px;"><input type="tel" class="form-control" id="exampleDropdownFormPhonenumber" placeholder="Phone Number" style="width:161%;"></div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleDropdownFormWebsiteOrSM">Website and/or Social Media</label>
+                        <input type="url" class="form-control" id="exampleDropdownFormWebsiteOrSM" placeholder="Website and/or Social Media">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload New Profile Image</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" onclick="return successAlertUserUpdate();">Update</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="newUserPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1"><span style="color:red;">*</span> Email address</label>
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="garpass"><span style="color:red;">*</span> Password</label>
+                        <input type="text" class="form-control" id="garpass" placeholder="Enter Password">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="garpassnew"><span style="color:red;">*</span> New Password</label>
+                        <input type="text" class="form-control" id="garpassnew" placeholder="Enter New Password">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="garpassnewcon"><span style="color:red;">*</span> Confirm New Password</label>
+                        <input type="text" class="form-control" id="garpassnewcon" placeholder="Enter New Password again">
+                        <!--<small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>-->
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning" onclick="return successAlertUserPassword();">Change</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    function updateImagesLabel() {
+        $(".x-layer").toggle();
+    }
+    $("#profil-pic-cp").click(
+        function () {
+            $("#uplaodImg").click();
+        }
+    );
+    $("#profileImg").mouseenter(function () {
+        $("#profil-pic-cp").show();
+    }).mouseleave(function () {
+        $("#profil-pic-cp").hide();
+    });
+
+    $("#profil-pic-cp").mouseenter(function () {
+        $("#profil-pic-cp").show();
+    }).mouseleave(function () {
+        $("#profil-pic-cp").hide();
+    });
+
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            //console.log(reader);
+            //console.log(input.files);
+            var formData = new FormData();
+            formData.append('file', input.files[0]);
+
+            $.ajax({
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                url: "/users/ChangeProfilePic",
+                success: function (data) {
+                    reader.onload = function (e) {
+                        $("#profileImg").attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                },
+                error: function () { }
+            });
+
+        }
+    }
+
+    $("#uplaodImg").change(function () {
+        readURL(this);
+    });
+
+    function updateImagesLabelShow() {
+        $(".x-layer").show();
+    }
+    function updateImagesLabelHide() {
+        $(".x-layer").hide();
+    }
+    function successAlertUserUpdate() {
+        ////alert("User Profile or Account Updated Successfully");
+    }
+
+    function successAlertUserPassword() {
+        ////alert("Password reset or change instructions sent to provided Email Address and Changed Successfully");
+    }
+
+</script>
+
+
+
+
+

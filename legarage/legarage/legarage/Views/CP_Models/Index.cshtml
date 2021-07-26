@@ -1,0 +1,116 @@
+﻿@model legarage.Models.URLModel
+@using legarage.Classes;
+@using System.Data;
+@{
+    Layout = "~/Views/Shared/_LayoutCP.cshtml";
+    ViewBag.Title = Resources.CP_Models.Models;
+}
+
+<div class="content col-12 text-center rounded-bottom" style="background-color: lightgrey;">
+    <div class="container">
+        <div class="col-12 h3">
+            <div class="row plusandrefresh pt-2">
+                <div class="col-5"><h3>@Resources.CP_Models.Models</h3></div>
+                <div class="col-3">
+                    <input type="text" class="form-control" placeholder="@Resources.Shared.searchBoxlbl" onkeyup="search_boxes(this.value, 'model-row','table-row')">
+                </div>
+                <div class="col-2 overflow-hidden">
+                    <select id="select-brand" class="custom-select" aria-label="Default select example" onchange="select_brands()" hidden>
+                        <option value="-1" selected>All Brands</option>
+                        @{
+                            string qurey = @" SELECT name FROM [Brands] 
+                                                  WHERE ID IN (
+                                                SELECT 
+                                                      brand_id
+                                                  FROM Models
+                                                  GROUP BY brand_id)
+                                                ";
+                            DataTable dataTable = Database.ReadTableByQuery(qurey, null, out string str);
+                            if(dataTable !=null && dataTable.Rows.Count > 0)
+                            {
+                                foreach(DataRow row in dataTable.Rows)
+                                {
+                                    <option value="@row["name"].ToString().Replace(" ","-")" >@row["name"].ToString()</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-1">
+                    <i title="@Resources.CP_Models.Refresh" onclick="Refresh('@Model.Refresh');" style="color: green; cursor: pointer;" class="fas fa-redo-alt refreshControlPanel text-left"></i>
+                </div>
+                <div class="col-1">
+                    <i title="@Resources.CP_Models.Add" style="color: lightsalmon; cursor: pointer;" class="fas fa-plus-circle plusControlPanel" data-toggle="modal" data-target="#Modal" onclick="Add('@Model.Add')"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Resources.CP_Models.Models</th>
+            <th scope="col">@Resources.CP_Models.Brands</th>
+            <th scope="col">@Resources.CP_Models.Vehicles</th>
+            <th scope="col">@Resources.CP_Models.Tools</th>
+        </tr>
+    </thead>
+    <tbody id="Table">
+        <tr colspan="5">
+            <td colspan="5" class="w-25 text-center"><span class="ml-auto mr-auto ">@Resources.Shared.Loading</span></td>
+        </tr>
+        <tr colspan="5">
+            <td colspan="5" class="w-25 text-center border-0">
+                <span class="ml-auto mr-auto ">
+                    <img src="~/Images/loader.gif" />
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+        Refresh('@Model.Refresh');
+        $("#select-brand").select2();
+    });
+    //var datalist;
+    //$.ajax({
+    //    type: "Post",
+    //    dataType: "json",
+    //    url: "/CP_Models/GetAllData/",
+    //    success(result) {
+    //        if (result.code == 200) {
+    //           datalist = result.data;
+    //            //console.log("done");
+    //        }
+    //        else {
+    //            $("#Information").show(500);
+    //            document.getElementById("msg").innerHTML = result.msg;
+    //        }
+    //    },
+    //    error(error) {
+    //    }
+    //});
+    //var Table = document.getElementById("Table");
+    //Table.innerHTML = " ";
+    //datalist.forEach((model, index) => {
+    //    var html_contents = `
+    //                <tr class="model-row  ${model.Brand.replace(" ", "-")} ${model.VehicleType} ">
+    //                <th scope="row" > ${++index}  </th>
+    //                <td>${model.Name} </td>
+    //                <td> <span>${model.Brand}  </td>
+    //                <td>  ${model.VehicleType}</td>
+    //                 <td>
+    //                <i title = "${result.label.Edit}" style = "color:darkcyan; cursor:pointer;" class="fas fa-file-alt"data-toggle="modal" onclick="Edite('${model.ID}','/CP_Models/Edit/')"data-target="#Modal"></i>
+    //                <i title = "${result.label.Delete} " style="color:red; cursor:pointer;" class="fas fa-trash" onclick="Delete('${model.ID}','/CP_Models/Delete/');"></i>&nbsp;
+    //                <i title = " ${result.label.Details} " style="color:lawngreen; cursor:pointer;" class="fas fa-table" data-toggle="modal" onclick="Details('${model.ID}','/CP_Models/Details/')" data-target="#Modal"></i>
+    //                </td>
+    //                </tr> `;
+    //    Table.innerHTML += html_contents;
+    //    //console.log("done");
+    //});
+</script>

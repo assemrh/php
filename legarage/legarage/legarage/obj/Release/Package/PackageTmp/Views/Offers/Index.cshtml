@@ -1,0 +1,192 @@
+﻿@model List<legarage.Models.OffersModel>
+@using legarage.Classes;
+@using legarage.Models;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Offers";
+    //Session["Page_Number"] = 2;
+    var t = Session["Page_Number"] ?? 1;
+    int page_Number =Convert.ToInt32(t);
+    var disabled = (page_Number <= 1)? "disabled" : "";
+}
+
+
+
+
+<div style="margin:auto; margin-top:5%; cursor: pointer;" onclick="return toggleFilters();">
+    <span style="margin:auto;"><i class="fas fa-chevron-right" id="rightarr" style="display:none;"></i><i class="fas fa-chevron-down" id="downarr"></i></span>&nbsp; &nbsp;<strong style="margin:auto;">Filters</strong>
+</div>
+
+<div class="row" style="margin-top:5%;">
+    <form class="row" id="filtersoffers">
+        <div class="col-3">
+            <label for="paymentmethod" class="mt-2 filtersoffersPayMet">@Resources.Offers.Payment Method</label>
+            <select name="payment" class="form-control mr-sm-2" placeholder="@Resources.Offers.Payment Method" id="paymentmethod">
+                <option value="-1">@Resources.Offers.Payment Method</option>
+                <option value="1">@Resources.Offers.Cash</option>
+                <option value="2">@Resources.Offers.Credit</option>
+                <option value="3">@Resources.Offers.Paypal</option>
+            </select>
+        </div>
+        <div class="col-3 filtersoffersCity">
+            <label for="city" class="mt-2">@Resources.Shared.City</label>
+            <select name="city" class="form-control mr-sm-2" placeholder="@Resources.Shared.City" id="city">
+
+                @{
+                    if (ViewData["citieslist"] != null)
+                    {
+                        <option value="-1">Select City</option>
+                        foreach (var city in (List<CitiesModel>)ViewData["citieslist"])
+                        {
+                            <option value="@city.ID">@city.Name</option>
+                        }
+                    }
+                    else
+                    {
+                        <option>@Resources.Shared.selectmarketfirst</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="col-3 filtersoffersBy">
+            <label for="type" class="mt-2">@Resources.Offers.OfferTypes</label>
+            <select name="type" class="form-control mr-sm-2" placeholder="@Resources.Offers.type" id="type">
+                <option value="-1">@Resources.Shared.By</option>
+                <option value="1">@Resources.Shared.Garage</option>
+                <option value="2">@Resources.Shared.RentOffice</option>
+                <option value="4">@Resources.Shared.Winche</option>
+            </select>
+        </div>
+
+
+
+        <div class="col-3">
+            <div class="slidecontainer mt-2">
+                <label class="d-block" for="textInputmin">@Resources.Offers.Price</label>
+                <input type="text" value="" placeholder="Min" class="form-control text-box-numeric d-inline " id="textInputmin" name="pmin"> -
+                <input type="text" value="" placeholder="Max" class="form-control text-box-numeric d-inline" id="textInputmax" name="pmax">
+                <output class="bubble" for="textInputmin" onforminput="value = textInputmin.valueAsNumber;"></output>
+            </div>
+
+        </div>
+    </form>
+    <div style="margin:auto">
+        <button class="btn btn-outline-primary mt-4" style="margin:auto">@Resources.Offers.reset</button>
+        <button id="filterlama" class="btn btn-outline-success mt-4 ml-2 pl-5 pr-5" style="margin:auto">@Resources.Offers.Search</button>
+    </div>
+</div>
+
+<div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin:auto; margin-top:10%;">
+    <div class="row" id="content">
+        @Html.Partial("content", Model)
+
+        <br />
+        <br />
+        <br />
+        <hr />
+
+    </div>
+
+</div>
+
+@*<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @ViewBag.dPrevious">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">@Resources.Shared.Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link @ViewBag.dNext" href="#">@Resources.Shared.Next</a>
+        </li>
+    </ul>
+</nav>*@
+
+<div style="margin-top:10%;" class="offersPag" hidden>
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="page-item" style="margin:auto;">
+                <a class="page-link" href="#" style="color:black;">Previous</a>
+            </li>
+            <li class="page-item active" style="margin:auto;"><a class="page-link" href="#"><strong>1</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>2</strong><span class="sr-only">(current)</span></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>3</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>4</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>5</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>6</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>7</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>8</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>9</strong></a></li>
+            <li class="page-item" style="margin:auto;"><a class="page-link" href="#"><strong>10</strong></a></li>
+            <li class="page-item" style="margin:auto;">
+                <a class="page-link" href="#" style="color:black;">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+<script>
+    function getSlidNumberValue(val) {
+        document.getElementById('#textInput').value = val;
+    }
+    $('#filterlama').click(function () {
+        var formdata = $("#filtersoffers").serialize();
+            $.ajax({
+                dataType: "html",
+                data: formdata,
+                url: '/Offers/get_offers',
+                success(result) {
+                        if (result != null) {
+                            //console.log("Filter done");
+                            $("#content").html(result.data);
+                        }
+                        else {
+                            //console.log(error);
+                        }
+                },
+                error(error) {
+                    //console.log(error);
+                }
+            });
+    });
+</script>
+
+
+<script>
+
+
+
+    function goToOfferDetails(oid) {
+        window.location.href = "/Offers/OfferDetails?id=" + oid;
+    }
+
+    const $valueSpan = $('.valueSpan');
+    const $value = $('#slider11');
+    $valueSpan.html($value.val());
+    $value.on('input change', () => {
+
+        $valueSpan.html($value.val());
+    });
+
+
+
+    $('li').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+
+
+    function toggleFilters() {
+        $("#filtersoffers").toggle();
+        $("#rightarr").toggle();
+        $("#downarr").toggle();
+    }
+
+
+</script>

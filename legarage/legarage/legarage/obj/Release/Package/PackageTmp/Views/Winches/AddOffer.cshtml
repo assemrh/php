@@ -1,0 +1,44 @@
+﻿@model List<legarage.Models.WinchesModel>
+
+
+<div class="form-group">
+    <label for="select_winches" class="mt-2">select_winches</label>
+    <select name="select_winches" class="form-control mr-sm-2" placeholder="@Resources.Offers.SelectWinches" id="select_winches">
+        <option value="select">@Resources.Offers.SelectWinches</option>
+        @{
+            foreach (var m in Model)
+            {
+                <option value="@m.ID">@m.Title</option>
+            }
+        }
+    </select>
+</div>
+<div class="form-group">
+    <label for="meeting-time-st">@Resources.Offers.Start:</label>
+    <input type="datetime-local" id="meeting-time-st"
+           name="meeting-time-st" class="form-control">
+</div>
+<div class="form-group">
+    <label for="meeting-time-en">@Resources.Offers.End:</label>
+    <input type="datetime-local" id="meeting-time-en"
+           name="meeting-time-en"
+           class="form-control">
+</div>
+<div class="form-group">
+    <label for="descriptiontextarea">@Resources.Offers.Description</label>
+    <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="@Resources.Offers.PlaceHolder_eDescription" name="desc"></textarea>
+</div>
+<div class="form-group">
+    <label for="offertextarea">@Resources.Offers.OfferDetails</label>
+    <textarea class="form-control" id="offertextarea" rows="4" placeholder="@Resources.Offers.PlaceHolder_eDetails" name="details"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="paymenttextarea">@Resources.Offers.PaymentMethod</label>
+    <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="@Resources.Offers.PlaceHolder3" name="paymentmethod"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="exampleFormControlFile1">@Resources.Offers.UploadOfferImage</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*" name="image">
+</div>

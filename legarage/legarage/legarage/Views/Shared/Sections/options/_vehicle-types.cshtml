@@ -1,0 +1,58 @@
+﻿@using legarage.Classes;
+@using System.Data;
+@model List<legarage.Models.VehicleTypesModel>
+<div class="form-group">
+    @{
+        DataTable Vehicle_Types = new DataTable();
+        Vehicle_Types = legarage.Classes.Database.ReadTable("Vehicle_Types", out string msg);
+    }
+    <label><span style="color:red;">*</span>@Resources.CP.VehicleType</label>
+    <div class="input-group border-bottom-0">
+        <div class="input-group-prepend">
+            <span class="input-group-text p-0 pl-3 pr-3"><label class="m-0"><span style="color:red;">*</span>@Resources.CP.VehicleType</label></span>
+        </div>
+        <input type="text" class="form-control" placeholder="@Resources.Shared.searchBoxlbl" onkeyup="search_boxes(this.value, 'vehicle-row')">
+        @{
+            if (ViewData["type"].ToString() == "checkbox")
+            {
+                <div class="input-group-append">
+                    <span class="input-group-text p-0 border-0"><label class="btn btn-outline-primary m-0" for="select-all-vehicletype"> @Resources.Shared.SelectAll</label></span>
+                    <input hidden id="select-all-vehicletype" type="checkbox" onclick="toggle(this, 'vehicletype')" />
+                </div>
+            }
+        }
+
+    </div>
+    <div class="scroll-box border-top-0">
+        @{
+            if (Vehicle_Types != null && Vehicle_Types.Rows.Count > 0)
+            {
+                foreach (DataRow vehicle in Vehicle_Types.Rows)
+                {
+                    string Checked = "";
+                    if (Model != null)
+                    {
+                        Checked = Model.Where(vt => vt.ID.ToString() == vehicle["id"].ToString()).Count() == 1 ? "checked" : "";
+                    }
+                    <div class="form-control input-group mb-1 vehicle-row">
+                        <div class="input-group-append mr-3">
+                            <div class="input-group-text">
+                                <input @Checked 
+                                       type="@(ViewData["type"]?.ToString())" 
+                                       class="vehicletype" 
+                                       name="@(ViewData["name"]?.ToString())" 
+                                       value="@vehicle["id"].ToString()" />
+                            </div>
+                        </div>
+                        @vehicle["type_name"].ToString()
+                    </div>
+                }
+            }
+            else
+            {
+                <label class="form-control">@Resources.CP.NoVehicle</label>
+            }
+        }
+    </div>
+
+</div>

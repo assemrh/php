@@ -1,0 +1,66 @@
+﻿@model legarage.Models.BrandsModel
+@using System.Data;
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.CP_Brands.Edit</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="EditForm">
+        <div class="form-group">
+            <input hidden type="text" id="brand_id" name="id" value="@Model.ID" />
+            <input hidden type="text" id="image_id" name="image_id" value="@Model.Image.ID" />
+            <input hidden type="text" id="image_url" name="image_url" value="@Model.Image.URL" />
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Brands.Brand</label>
+            <input type="text" class="form-control" id="name" value="@Model.Name" name="name" placeholder="@Resources.CP_Brands.EnterBrand">
+        </div>
+        <div class="form-group">
+            @{
+                    DataTable Countries = new DataTable();
+                    string msg = "";
+                    Countries = legarage.Classes.Database.ReadTable("Countries ", " where is_factory = 1 order by name ", null, out msg);
+                }
+            <input hidden id="Factory" value="Factory" />
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Brands.Countries</label>
+            <select name="brand_id" class="form-control mr-sm-2" id="country" value="@Model.CountryId">
+                @{
+                        if (Countries != null && Countries.Rows.Count > 0)
+                        {
+                            foreach (DataRow country in Countries.Rows)
+                            {
+                                if (country["id"].ToString() == Model.CountryId)
+                                {
+                                    <option selected value="@country["id"].ToString()">
+                                        @country["name"].ToString()
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option value="@country["id"].ToString()">
+                                        @country["name"].ToString()
+                                    </option>
+                                }
+
+                            }
+                        }
+                    }
+
+            </select>
+        </div>
+        <div class="form-group text-center mt-5">
+            <h5>@Resources.CP_Brands.CurrentLogo</h5>
+            <img class="rounded w-50 m-auto" src="/Images/Brands/@Model.Image.URL" alt="Old Image" />
+        </div>
+    </form>
+
+    <div class="form-group">
+        <label>@Resources.CP_Brands.ChangeLogo</label>
+        <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Brands.Close</button>
+    <button type="button" class="btn btn-primary" onclick="Update('@Model.URL.Edit','@Model.URL.Refresh')">@Resources.CP_Brands.Edit</button>
+</div>

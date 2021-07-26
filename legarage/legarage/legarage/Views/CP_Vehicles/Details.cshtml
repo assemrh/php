@@ -1,0 +1,111 @@
+﻿@model legarage.Models.VehiclesModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Vehicles.Details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <input hidden value="@Model.ID" />
+    <div class="form-group">
+        <label>@Resources.CP_Vehicles.Title</label>
+        <input disabled type="text" class="form-control" value="@Model.Title">
+    </div>
+    @{
+        if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+        {
+
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Username</label>
+                <input disabled type="text" class="form-control" value="@Model.User.UserName">
+            </div>
+            }
+        }
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.OwnerName</label>
+                <input disabled type="text" class="form-control" value="@Model.OwnerName">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Model</label>
+                <input disabled type="text" class="form-control" value="@Model.Model.Name">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Vehicles</label>
+                <input disabled type="text" class="form-control" value="@Model.VehicleType.Name">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Address</label>
+                <input disabled type="text" class="form-control" value="@Model.Address.AddressName">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Color</label>
+                <input disabled type="text" class="form-control" value="@Model.Color">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.EngineSize</label>
+                <input disabled type="text" class="form-control" value="@Model.EngineSize">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.FuelType</label>
+                <input disabled type="text" class="form-control" value="@Model.FuelType">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Gearbox</label>
+                <input disabled type="text" class="form-control" value="@Model.Gearbox">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Mieage</label>
+                <input disabled type="text" class="form-control" value="@Model.Mieage">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Mobile</label>
+                <input disabled type="text" class="form-control" value="@Model.Mobile">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Price</label>
+                <input disabled type="text" class="form-control" value="@Model.Price">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Quantity</label>
+                <input disabled type="text" class="form-control" value="@Model.Quantity">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Year</label>
+                <input disabled type="text" class="form-control" value="@Model.Year">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Whatsapp</label>
+                <input disabled type="text" class="form-control" value="@Model.WhatsApp">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.IsNew</label>
+                @{
+                    string IsNew;
+                    if (Model.IsNew == 0)
+                    {
+                        IsNew = Resources.CP_Vehicles.New;
+                    }
+                    else
+                    {
+                        IsNew = Resources.CP_Vehicles.Old;
+                    }
+                }
+                <input disabled type="text" class="form-control" value="@IsNew">
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Keywords</label>
+                <textarea disabled type="text" class="form-control" rows="2">@Model.Keywords</textarea>
+            </div>
+            <div class="form-group">
+                <label>@Resources.CP_Vehicles.Descrption</label>
+                <textarea disabled type="text" class="form-control" rows="4">@Model.Description</textarea>
+            </div>
+        </div>
+<div class="form-group text-center">
+    <h3>@Resources.CP_Vehicles.Image</h3>
+    <img class="rounded w-50" src="~/Images/Vehicles/@Model.Image.URL" />
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Vehicles.Close</button>
+</div>

@@ -1,0 +1,68 @@
+﻿@using legarage.Models;
+@model List<RentOfficesModel>
+
+
+<h1>Add Offer Rent</h1>
+<div class="form-group">
+    <label for="select_rents" class="mt-2">@Resources.RentOffices.SelectOffice</label>
+    <select name="select_rents" class="form-control mr-sm-2" placeholder="select_rents" id="select_rents" onchange="get_rent_offer_options()">
+        <option value="select">@Resources.RentOffices.SelectOffice</option>
+        @{
+            foreach (var item in Model)
+            {
+                <option value="@item.ID">@item.Name</option>
+            }
+        }
+    </select>
+</div>
+
+<div class="form-group h-auto">
+    <label for="select-parts">@Resources.RentOffices.lblSlcmodel</label>
+    <div class="list-group form-control d-block h-auto" id="select-models">
+    </div>
+</div>
+
+<div class="form-group h-auto">
+    <label for="select-parts">@Resources.RentOffices.lblSlcVehicle</label>
+    <div class="list-group form-control d-block h-auto" id="select-vehicle-types">
+
+    </div>
+</div>
+
+
+<div class="form-group">
+    <label for="meeting-time-st">@Resources.Offers.Start:</label>
+    <input type="datetime-local" id="meeting-time-st"
+           name="meeting-time-st" class="form-control">
+</div>
+<div class="form-group">
+    <label for="meeting-time-en">@Resources.Offers.End:</label>
+    <input type="datetime-local" id="meeting-time-en"
+           name="meeting-time-en"
+           class="form-control">
+</div>
+<div class="form-group">
+    <label for="descriptiontextarea">@Resources.RentOffices.Description</label>
+    <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="@Resources.Offers.PlaceHolder_eDescription" name="desc"></textarea>
+</div>
+<div class="form-group">
+    <label for="offertextarea">@Resources.Offers.OfferDetails</label>
+    <textarea class="form-control" id="offertextarea" rows="4" placeholder="@Resources.Offers.PlaceHolder_eDetails" name="details"></textarea>
+</div>
+<div class="form-group">
+    <label for="pricetextarea">@Resources.Offers.OldPrice</label>
+    <textarea class="form-control" id="pricetextarea" rows="3" placeholder="@Resources.Offers.PlaceHolder1" name="oldprice"></textarea>
+</div>
+<div class="form-group">
+    <label for="pricetextarea">@Resources.Offers.Price</label>
+    <textarea class="form-control" id="pricetextarea" rows="3" placeholder="@Resources.Offers.PlaceHolder2" name="price"></textarea>
+</div>
+<div class="form-group">
+    <label for="paymenttextarea">@Resources.Offers.PaymentMethod</label>
+    <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="@Resources.Offers.PlaceHolder3" name="paymentmethod"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="exampleFormControlFile1">@Resources.Offers.UploadOfferImage</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*" name="image">
+</div>

@@ -1,0 +1,32 @@
+﻿@using legarage.Models;
+@model List<GaragesModel>
+
+<div class="form-group">
+    <label for="select_garages" class="mt-2">select garages</label>
+    <select name="referal_id" class="form-control mr-sm-2" placeholder="select_garages" id="select_garages" onchange="get_garage_offer_options()">
+        <option value="select">Select garages</option>
+        @{
+            foreach (var item in Model)
+            {
+                <option value="@item.ID">@item.Name</option>
+            }
+        }
+    </select>
+</div>
+<div id="brands-Section" class="form-group h-auto" style="display:none">
+    <label for="select-brands">Select brands you want :</label>
+    <div class="list-group form-control d-block h-auto" id="select-brands">
+    </div>
+</div>
+<div id="categories-Section" class="form-group h-auto" style="display:none">
+    <label for="select-categories">Select Categories you want :</label>
+    <div class="list-group form-control d-block h-auto" id="select-categories">
+    </div>
+</div>
+<div id="vehicle-types-Section" class="form-group h-auto" style="display:none">
+    <label for="select-vehicle-types">Select Vehicle Types you want :</label>
+    <div class="list-group form-control d-block h-auto" id="select-vehicle-types">
+    </div>
+</div>
+
+

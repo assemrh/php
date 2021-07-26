@@ -1,0 +1,160 @@
+﻿@using System.Data;
+@model legarage.Models.URLModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP.AddRentOffice</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            <label for="garname"><span style="color:red;">*</span>@Resources.CP.NameOfRentOffice</label>
+            <input type="text" class="form-control" id="garname" placeholder="@Resources.CP.Enter @Resources.CP.NameOfRentOffice" name="name">
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP.Country</label>
+            <select name="country" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" class="form-control">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP.City</label>
+            <select name="city" id="city" class="form-control">
+                <option value="-1">@Resources.CP.Chose @Resources.CP.Country</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address"><span style="color:red;">*</span>@Resources.CP.Address</label>
+            <input type="text" class="form-control" id="address" placeholder="@Resources.CP.Enter @Resources.CP.Address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormPhonenumber"><span style="color:red;">*</span>@Resources.CP.Phone</label>
+            <div class="form-control mr-0 p-0 " id="phone_picker">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png">
+                        </button>
+                        <div class="dropdown-menu select-country" id="phone_keys" role="listbox" aria-labelledby="dropdownMenuButton">
+
+
+                        </div><input id="phone_key" type="hidden" name="phone_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.Shared.PhoneNumber" required name="phoneno" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="form-group">
+            @{
+                string msg = "";
+                DataTable Vehicle_Types = new DataTable();
+                Vehicle_Types = legarage.Classes.Database.ReadTable("Vehicle_Types", out msg);
+            }
+            <label><span style="color:red;">*</span>@Resources.CP.Vehicles</label>
+            @{if (Vehicle_Types != null && Vehicle_Types.Rows.Count > 0)
+                {
+                    foreach (DataRow vehicle in Vehicle_Types.Rows)
+                    {
+                        <div class="form-control input-group">
+                            <div class="input-group-append mr-3">
+                                <div class="input-group-text">
+                                    <input type="checkbox" name="vehicletypes" value="@vehicle["id"].ToString()" />
+                                </div>
+                            </div>
+                            @vehicle["type_name"].ToString()
+                        </div>
+                    }
+                }
+                else
+                {
+                    <label class="form-control">@Resources.CP.NoVehicle</label>
+                }
+            }
+        </div>*@
+        @*<div class="form-group">
+            @{
+                DataTable Models = new DataTable();
+                Models = legarage.Classes.Database.ReadTable("Models", out msg);
+            }
+            <label><span style="color:red;">*</span>@Resources.CP.Models</label>
+            @{if (Models != null && Models.Rows.Count > 0)
+                {
+                    foreach (DataRow Model in Models.Rows)
+                    {
+                        <div class="form-control input-group">
+                            <div class="input-group-append mr-3">
+                                <div class="input-group-text ">
+                                    <input type="checkbox" value="@Model["id"].ToString()" name="models">
+                                </div>
+                            </div>
+                            @Model["name"].ToString()
+                        </div>
+                    }
+                }
+                else
+                {
+                    <label class="form-control">@Resources.CP.NoModel</label>
+                }
+            }
+        </div>*@
+        @Html.Partial("~/Views/Shared/Sections/options/_vehicle-types.cshtml", new ViewDataDictionary { { "type", "checkbox" },{ "name", "vehicletypes" } })
+        @Html.Partial("~/Views/Shared/Sections/options/_brands.cshtml", new ViewDataDictionary { { "type", "checkbox" } })
+        @Html.Partial("~/Views/Shared/Sections/options/_models.cshtml", new ViewDataDictionary { { "type", "checkbox" } })
+
+        <div class="form-group">
+            <label for="whatsapp"><span style="color:red;">*</span>@Resources.CP.WhatsappNumber</label>
+            <input type="tel" class="form-control" id="whatsapp" placeholder="@Resources.CP.Enter @Resources.CP.WhatsappNumber" name="whatsapp">
+        </div>
+        <div class="form-group">
+            <label for="fax">@Resources.CP.Fax</label>
+            <input type="text" class="form-control" id="fax" placeholder="@Resources.CP.Enter @Resources.CP.Fax" name="fax">
+        </div>
+        <div class="form-group">
+            <label for="website">@Resources.CP.Website</label>
+            <input type="url" class="form-control" id="website" placeholder="@Resources.CP.Enter @Resources.CP.Website" name="website">
+        </div>
+        <div class="form-group">
+            <label for="facebook">Facebook</label>
+            <input type="text" class="form-control" id="facebook" placeholder="@Resources.CP.EnterFacebook" name="facebook">
+        </div>
+        <div class="form-group">
+            <label for="twitter">Twitter</label>
+            <input type="text" class="form-control" id="twitter" placeholder="@Resources.CP.EnterTwitter" name="twitter">
+        </div>
+        <div class="form-group">
+            <label for="instagram">Instagram</label>
+            <input type="text" class="form-control" id="instagram" placeholder="@Resources.CP.EnterInstagram" name="instagram">
+        </div>
+        <div class="form-group">
+            <label for="youtube"> Youtube</label>
+            <input type="text" class="form-control" id="youtube" placeholder="@Resources.CP.EnterYoutube" name="youtube">
+        </div>
+        <div class="form-group">
+            <label for="linkedin"> Linkedin</label>
+            <input type="text" class="form-control" id="linkedin" placeholder="@Resources.CP.EnterLinkedin" name="linkedin">
+        </div>
+        <div class="form-group">
+            <label for="snapchat"> Snapchat</label>
+            <input type="text" class="form-control" id="snapchat" placeholder="@Resources.CP.EnterSnapchat" name="snapchat">
+        </div>
+        <div class="form-group">
+            <label for="tiktok"> Tiktok</label>
+            <input type="text" class="form-control" id="tiktok" placeholder="@Resources.CP.EnterTiktok" name="tiktok">
+        </div>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>@Resources.CP.Descrption</label>
+            <textarea class="form-control" id="description" rows="4" placeholder="@Resources.CP.Enter @Resources.CP.Descrption" name="description"></textarea>
+        </div>
+    </form>
+    <div class="form-group">
+        <label><span style="color:red;">*</span>@Resources.CP.EnterImage</label>
+        <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP.Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@Model.Adding','@Model.Refresh');">@Resources.CP.Add</button>
+</div>

@@ -1,0 +1,18 @@
+﻿@model List<legarage.Models.ProductsModel>
+
+
+<div class="form-group h-auto">
+    <label for="select-parts">Select products you want :</label>
+    <div class="list-group form-control d-inline-table h-auto" id="select-parts">
+        @{
+            foreach (var m in Model)
+            {
+                <input type="checkbox" name="ProductsList" value="@m.ID" id="@m.ID" />
+                <label class=" list-group-item d-inline-flex w-48 m-1 h-25" for="@m.ID">
+                        @m.Title
+                    <span class="flex-shrink-0  rounded mini-pic ml-auto"><img class="bd-placeholder-img " height="64" src="~/Images/Products/@m.Image.URL" alt="@m.Title"></span>
+                </label>
+            }
+        }
+    </div>
+</div>

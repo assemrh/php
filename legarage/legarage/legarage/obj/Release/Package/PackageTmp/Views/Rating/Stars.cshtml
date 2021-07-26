@@ -1,0 +1,18 @@
+﻿@model float
+@{
+    List<string> classes = new List<string>();//icon-star-empty
+
+    for (int x = 0; x < 5; x++)//model = 3.5
+    {
+        string s = x < Math.Floor(Model) ? "fa fa-star checked" : Model - x >= 0.5 ? "fa fa-star-half-empty checked" : "fa fa-star-o checked";
+        classes.Add(s);
+    }
+ }
+<span class="@ViewData["class"].ToString()">
+    <i class="@classes[0]"></i>
+    <i class="@classes[1]"></i>
+    <i class="@classes[2]"></i>
+    <i class="@classes[3]"></i>
+    <i class="@classes[4]"></i>
+
+</span>

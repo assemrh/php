@@ -1,0 +1,83 @@
+﻿@model legarage.Models.ModelsModel
+@using System.Data;
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.CP_Models.Edit</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="EditForm">
+        <input hidden type="text" id="id" name="id" value="@Model.ID" />
+        <div class="form-group">
+            <label for="Model"><span style="color:red;">*</span>@Resources.CP_Models.Name</label>
+            <input type="text" class="form-control" id="name" value="@Model.Name" name="name" placeholder="@Resources.CP_Models.EnterName">
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Brands = new DataTable();
+                string msg = "";
+                Brands = legarage.Classes.Database.ReadTable("Brands", out msg);
+            }
+            <label for="brands"><span style="color:red;">*</span>@Resources.CP_Models.Brand</label>
+            <select name="brand_id" class="form-control mr-sm-2" id="brand_id">
+                @{
+                    if (Brands != null && Brands.Rows.Count > 0)
+                    {
+                        foreach (DataRow brand in Brands.Rows)
+                        {
+                            if (brand["id"].ToString() == Model.BrandId)
+                            {
+                                <option selected value="@brand["id"].ToString()">
+                                    @brand["name"].ToString()
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@brand["id"].ToString()">
+                                    @brand["name"].ToString()
+                                </option>
+                            }
+
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Vehicle_Types = new DataTable();
+                Vehicle_Types = legarage.Classes.Database.ReadTable("Vehicle_Types", out msg);
+            }
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Models.Country</label>
+            <select name="vehicle_type_id" class="form-control mr-sm-2" id="vehicle_type_id" value="@Model.VehicleTypeId">
+                @{
+                    if (Vehicle_Types != null && Vehicle_Types.Rows.Count > 0)
+                    {
+                        foreach (DataRow vehicle in Vehicle_Types.Rows)
+                        {
+                            if (vehicle["id"].ToString() == Model.VehicleTypeId)
+                            {
+                                <option selected value="@vehicle["id"].ToString()">
+                                    @vehicle["type_name"].ToString()
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@vehicle["id"].ToString()">
+                                    @vehicle["type_name"].ToString()
+                                </option>
+                            }
+
+                        }
+                    }
+                }
+            </select>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Models.Close</button>
+    <button type="button" class="btn btn-primary" onclick="Update('@Model.URL.Edit','@Model.URL.Refresh')">@Resources.CP_Models.Edit</button>
+</div>

@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - LeGarage</title>
+    <meta name="description" content="This is LeGarage where you can contact garages, rental offices, buy and sell vehicle products and parts and also recover and tow your vehicle, we are here for your vehicle needs. " />
+    <!-- Style and css Files-->
+    <link href="~/Content/select2/select2.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/legarage logo.png" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.default.css" rel="stylesheet" />
+    <link href="~/Content/lightbox.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/dropzone.css" />
+    <link rel="stylesheet" href="~/Content/style.css" crossorigin="anonymous">
+    <link href="~/Content/market-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link href="~/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <!-- JacaScript  Files-->
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/lightbox.min.js"></script>
+    @{
+        string img_text = "img_text";
+        string RemoveImage = "RemoveImage";
+        string lang = (Session["lng"] ?? "ar").ToString();
+        if (lang == "en")
+        {
+            <!--      Bootstrap with Languages      -->
+            <link rel="stylesheet" href="/Content/bootstrap.min.css" crossorigin="anonymous">
+            <script src="~/Scripts/popper.min.js" crossorigin="anonymous"></script>
+            <script src="/Scripts/bootstrap.min.js" crossorigin="anonymous"></script>
+            @*<script src="/Scripts/bootstrap.min.js" crossorigin="anonymous"></script>*@
+            img_text = Resources.Shared.EnterImage;
+            RemoveImage = Resources.Shared.DeleteImage;
+
+
+        }
+        else
+        {
+            <!--      Bootstrap with Languages      -->
+            <link rel="stylesheet" href="/Content/bootstrap.rtl.min.css" crossorigin="anonymous">
+            <script src="~/Scripts/popper.min.js" crossorigin="anonymous"></script>
+            <script src="/Scripts/bootstrap.rtl.min.js" crossorigin="anonymous"></script>
+            <!--      Languages       -->
+            <link rel="stylesheet" href="/Content/ar.css" crossorigin="anonymous">
+            img_text = Resources.Shared.EnterImage;
+            RemoveImage = Resources.Shared.DeleteImage;
+        }
+    }
+    <style type="text/less"></style>
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+</head>
+<body>
+    <input type="hidden" id="dropzone_lan" value="@img_text" />
+    <input type="hidden" id="RemoveImage" value="@RemoveImage" />
+    @using System.Data;
+    @using legarage.Classes;
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><img src="/Images/logo_with_logoword.png" width="90" height="50" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" onclick="return goToHome();" href="#">@Resources.Home.index_title <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @Resources.Home.nav_services
+                        </a>
+                        <div class="dropdown-content" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#" onclick="return goToGarage();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.garages_tab</a>
+                            <a class="dropdown-item" href="#" onclick="return goToBuyAndSell();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.buyandsell_tab</a>
+                            <a class="dropdown-item" href="#" onclick="return goToRent();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.nav_rent</a>
+                            <a class="dropdown-item" href="#" onclick="return goToUsedPart();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.nav_parts</a>
+                            <a class="dropdown-item" href="#" onclick="return goToRecovery();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.nav_recovery</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Offers/Index">@Resources.Home.nav_offers </a>
+                </li>
+                @*<li class="nav-item">
+                        <a class="nav-link" onclick="return goToAbout();" href="#">@Resources.Home.about </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Contact">@Resources.Home.contact </a>
+                    </li>*@
+            </ul>
+            <form class="mr-5 ml-5 mw-75 w-75 position-relative ">
+                <div class="form-group mt-3">
+                    <input class="form-control search_Box mr-sm-2" type="search" placeholder="@Resources.Home.nav_search" aria-label="Search">
+                </div>
+                <button style="border: none;  background: none;" hidden><i style=" color: dimgray;" class="fas fa-search mr-5"></i></button>
+
+                <div id="resultBox" class="list-group list-group-flush bg-white position-absolute shadow  border border-primary rounded container p-2" style="z-index:1000; display:none;">
+                </div>
+            </form>
+            <form class="form-inline nav-item flex-nowrap">
+                <div class=" input-group market-selector" hidden>
+                    @{
+                        DataTable markets = new DataTable();
+                        string msg = "";
+                        string market = Session["market"].ToString();
+                        string orderby = (lang == "en") ? " order by name " : (lang == "ar") ? " order by ar_name " : "";
+                        markets = Database.ReadTable("Countries ", " where is_market = 1 " + orderby, null, out msg);
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="Market_flag"><i class="fa fa-globe" aria-hidden="true"></i></span>&nbsp;
+                            <span id="Select_Market">
+                            </span>
+                        </a>
+                        <div class="dropdown-content" role="listbox" aria-labelledby="navbarDropdown">
+                            <div class="" role="option" href="#" onclick="Select_Market('');">
+                                <!--dropdown-item-->
+                                <i class="fa fa-globe" aria-hidden="true"></i>&nbsp;
+                                All Markets
+                            </div>
+
+                            @if (markets != null && markets.Rows.Count > 0)
+                            {
+                                foreach (DataRow Row in markets.Rows)
+                                {
+
+                                    <div role="option" class="" href="#" onclick="Select_Market('@Row["id"].ToString()');" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">
+                                        <img src="https://www.countryflags.io/@Row["ISO"]/shiny/24.png">
+                                        @{
+                                            if (lang == "en")
+                                            { <span>@Row["name"].ToString()</span> }
+                                        if (lang == "ar")
+                                        { <span>@Row["ar_name"].ToString()</span> }
+                                        }
+
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <a role="option" class="dropdown-item" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">no market</a>
+                            }
+
+                        </div>
+                    }
+                </div>
+                @{
+                    DataTable markets1 = new DataTable();
+                    string market1 = Session["market"].ToString();
+                    string orderby1 = (lang == "en") ? " order by name " : (lang == "ar") ? " order by ar_name " : "";
+                    markets = Database.ReadTable("Countries ", " where is_market = 1 " + orderby, null, out msg);
+                }
+                <select class="js-example-templating" style="width: 8rem; opacity: 0;" name="state" id="select-market-select2">
+                    <option value="-1">All market</option>
+                    @if (markets != null && markets.Rows.Count > 0)
+                    {
+                        foreach (DataRow Row in markets.Rows)
+                        {
+                            string seleceted = (market1 == Row["id"].ToString()) ? "selected" : "";
+                            string coun = "";
+                            if (lang == "en") { coun = Row["name"].ToString(); }
+                            if (lang == "ar") { coun = Row["ar_name"].ToString(); }
+                            <option @seleceted value="@Row["id"]" data-iso="@Row["ISO"]" onclick="Select_Market('@Row["id"].ToString()');">
+                                @coun
+                            </option>
+                        }
+                    }
+                    else
+                    {
+                        <option>no market</option>
+                    }
+                </select>
+
+                @{
+                    if (Tools.FindCurrentUser(out DataRow user))
+                    {
+                        <i class="fas fa-plus plusM" title="@Resources.Home.nav_add " style="color: #e32d2d; cursor: pointer;" onclick="return goToAdd();"></i>
+                        <div class="dropdown userDD" style="width: fit-content; margin: unset;">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <em>@user["full_name"].ToString()</em>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="background-color:white; border:groove;">
+                                <li style="font-weight:bolder; margin:auto; width:75%; font-family: Lato,Lucida Sans Unicode,Lucida Grande,sans-serif;"><a href="/Users/MyProfile">@Resources.Home.nav_myprofile </a></li>
+                                @*<li style="font-weight:bolder; margin:auto; width:75%; font-family: Lato,Lucida Sans Unicode,Lucida Grande,sans-serif;"><a href="/Home/MyServices">@Resources.Home.nav_services </a></li>*@
+                                <li style="font-weight:bolder; margin:auto; width:75%; font-family: Lato,Lucida Sans Unicode,Lucida Grande,sans-serif;"><a href="/CP/Index">@Resources.CP.cp </a></li>
+                                <li style="font-weight:bolder; margin:auto; width:75%;" role="separator" class="divider"><hr /></li>
+                                <li style="font-weight:bolder; margin:auto; width:75%; font-family: Lato,Lucida Sans Unicode,Lucida Grande,sans-serif;"><a href="/users/LogOut">@Resources.Home.nav_lout </a></li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <button title="@Resources.Home.nav_log" type="button" onclick="return goToLogin();" class="btn btn-secondary ml-3 mr-3">@Resources.Home.nav_log</button>
+                        <button title="@Resources.Home.nav_reg" type="button" onclick="return goToRegister();" class="btn btn-secondary ml-2 mr-3">@Resources.Home.nav_reg</button>
+                    }
+                }
+
+
+                @{
+                    if (Session["lng"] == null || lang == "en")
+                    {
+                        <a style="color: inherit; text-decoration: none; margin: unset;" href="/?lng=ar" class="arabicTran">
+                            <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/ae.svg" alt="United Arab Emirates Flag" width="25px" />
+                        </a>
+                    }
+                    else
+                    {
+                        <a style="color: inherit; text-decoration: none; margin: unset;" href="/?lng=en">
+                            <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="United Kingdom Flag" width="25px">
+                        </a>
+                    }
+                }
+            </form>
+        </div>
+    </nav>
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <div class="modal fade" id="rateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content p-5 h3" id="ModalBody">
+                    <div class="m-5 p-5 text-center">
+                        <img src="~/Images/loader.gif" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="Information" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div id="backdrop">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Resources.Shared.Information</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('Information').style.display = 'none', Refresh('Refresh');">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <h2 id="msg" class="text-center"></h2>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="document.getElementById('Information').style.display = 'none', Refresh('.Refresh');">@Resources.Shared.Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="row" style="margin-top:100px">
+                <div class="col-6">
+                    <a href="/"><img src="/Images/logo_with_logoword.png" class="footerLogo" style="width: 50%" /></a>
+                    <p>@Resources.Home.websitedescription </p>
+                </div>
+                <div class="col-6 justify-content-center legarageAboutandContact">
+                    <h5 style="margin-top: 100px; margin-left: 150px" class="legarageWordFooter">LeGarage </h5>
+                    <a class="nav-link homeFooter" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px" href="#" onMouseOver="this.style.color='#808080'"
+                       onMouseOut="this.style.color = '#000000'" onclick="return goToHome();">@Resources.Home.index_title </a>
+
+                    <div class="dropdown">
+                        <a class="nav-link servicesFooter" id="navbarDropdown" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px" href="#" onMouseOver="this.style.color='#808080'" onMouseOut="this.style.color = '#000000'">
+                            @Resources.Home.nav_services
+                        </a>
+                        <div class="dropdown-content" aria-labelledby="navbarDropdown" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px">
+                            <a class="dropdown-item" href="#" onclick="return goToGarage();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.garages_tab</a>
+                            <a class="dropdown-item" href="#" onclick="return goToBuyAndSell();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.buyandsell_tab</a>
+                            <a class="dropdown-item" href="#" onclick="return goToRent();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.nav_rent</a>
+                            <a class="dropdown-item" href="#" onclick="return goToUsedPart" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.nav_parts</a>
+                            <a class="dropdown-item" href="#" onclick="return goToRecovery();" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">@Resources.Home.nav_recovery</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="dropdown">
+                        <a class="nav-link marketFooter" id="navbarDropdown" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px" href="#" onMouseOver="this.style.color='#808080'" onMouseOut="this.style.color = '#000000'">
+                            Market
+                        </a>
+                        <div class="dropdown-content" aria-labelledby="navbarDropdown" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px">
+                            <a class="dropdown-item" href="#" onclick="" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">London</a>
+                            <a class="dropdown-item" href="#" onclick="" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">Dubai</a>
+                            <a class="dropdown-item" href="#" onclick="" onmouseover="this.style.color='#808080'" onmouseout="this.style.color='#000000'">Kuala Lumpur</a>
+                        </div>
+                    </div>
+
+                    <a class="nav-link offerFooter" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px" href="#" onMouseOver="this.style.color='#808080'"
+                       onMouseOut="this.style.color = '#000000'" onclick="return goToOffer();">@Resources.Home.nav_offers </a>
+                    <a class="nav-link aboutFooter" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px" href="#" onMouseOver="this.style.color='#808080'"
+                       onMouseOut="this.style.color = '#000000'" onclick="return goToAbout();">@Resources.Home.about </a>
+                    <a class="nav-link contactFooter" style="color: inherit; text-decoration: none; font-family: Montserrat,sans-serif!important; margin-left: 150px" href="#" onMouseOver="this.style.color='#808080'"
+                       onMouseOut="this.style.color = '#000000'" onclick="return goToContact();">@Resources.Home.contact </a>
+                </div>
+            </div>
+
+            <div class="justify-content-center vertical-center footerSMs">
+                <a style="color: inherit; text-decoration: none;" href="#"><i class="fab fa-instagram ml-3 mr-3"></i></a>
+                <a style="color: inherit; text-decoration: none;" href="#"><i class="fab fa-google-plus-g ml-3 mr-3"></i></a>
+                <a style="color: inherit; text-decoration: none;" href="#"><i class="fab fa-twitter ml-3 mr-3"></i></a>
+                <a style="color: inherit; text-decoration: none;" href="#"><i class="fab fa-facebook-square ml-3 mr-3"></i></a>
+            </div>
+            <p style="margin-top: 100px;">
+                &copy; @DateTime.Now.Year - @Resources.Home.websitenameandrights @Resources.Home.devby <a href="https://l.facebook.com/l.php?u=http%3A%2F%2Fggs-co.com%2Fhome.aspx%3Ffbclid%3DIwAR3voyQoBVRkV1ROIqnxKPQWJfa5HSiru3OYmHIa13fb54b4l3qZQ7ysdfM&h=AT07WJNsA3_t3geZRpauTZTb2fiGC44Gy0x61A6Zw-JepdzJu-neLo0VRZT6bCIZ1-fWvEn7l54Ebzh3HpEN3IuHmQnqDBfS_3kBbzzjI_F0Wllvpc_KmJMcEtu9_m81trnh4g">@Resources.Home.companyname</a>.
+            </p>
+        </footer>
+    </div>
+    @*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>*@
+    <script src="~/Scripts/select2.js"></script>
+
+    <script src="~/Scripts/dropzone.js"></script>
+    <script src="~/Scripts/action.js"></script>
+    <script src="~/Scripts/Script.js"></script>
+    <script src="~/Scripts/lagarge-sb.js"></script>
+    <script>
+        $(document).ready(function () {
+            Initialization(false);
+
+            $(".js-example-templating").select2();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#select-market-select2").change(function () {
+                var val = $(this).children("option:selected").val();
+                var selectedCountrytitle = $(this).children("option:selected").attr('title');
+                var status = $(this).children("option:selected").data('iso');
+                //selectedCountrytitle
+                Select_Market(val);
+                //////////alert("You have selected the country - \n" + selectedCountry + "\n" + selectedCountrytitle + "\n" + status);
+            });
+
+        });
+            //var homeDir = Titanium.Filesystem.getUserDirectory();
+            //var mySampleFile = Titanium.Filesystem.getFile(homeDir, this.url);
+            
+            //if (mySampleFile.exists()) {
+            //    //alert('A file called sample.txt already exists in your home directory.');
+            //}
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+﻿@using System.Data;
+@using legarage.Classes;
+@model List<legarage.Models.ModelsModel>
+
+<div class="form-group">
+    @{
+        DataTable Models = new DataTable();
+        string query = @"
+         SELECT Models.id as ID , Models.name, Brands.name AS BrandName from Models
+         inner join Brands on Models.brand_id = Brands.id
+         ORDER BY Models.name ASC
+        ";//model["BrandName"].ToString().Replace(" ", " - ")
+        Models = Database.ReadTableByQuery(query, null, out string msg);
+        //Models = legarage.Classes.Database.ReadTable("Models", out msg);
+    }
+    <label><span style="color:red;">*</span>@Resources.CP_Parts.Model</label>
+    <div class="input-group border-bottom-0">
+        <div class="input-group-prepend">
+            <span class="input-group-text p-0 pl-3 pr-3"><label class="m-0"><span style="color:red;">*</span>@Resources.CP_Models.Models</label></span>
+        </div>
+        <input type="text" class="form-control" placeholder="@Resources.Shared.searchBoxlbl" onkeyup="search_boxes(this.value, 'model-row')">
+        @{
+            if (ViewData["type"].ToString() == "checkbox")
+            {
+                <div class="input-group-append">
+                    <span class="input-group-text p-0 border-0"><label class="btn btn-outline-primary m-0" for="select-all-models">@Resources.Shared.SelectAll</label></span>
+                    <input hidden id="select-all-models" type="checkbox" onclick="toggle(this, 'models')" />
+                </div>
+            }
+        }
+
+    </div>
+    <div class="scroll-box border-top-0">
+
+        @{
+            if (Models != null && Models.Rows.Count > 0)
+            {
+                foreach (DataRow model_ in Models.Rows)
+                {
+                    string Checked = "";
+                    if (Model != null)
+                    {
+                        Checked = Model.Where(m => m.ID.ToString() == model_["id"].ToString()).Count() == 1 ? "checked" : "";
+                    }
+                <div class="form-control input-group model-row hide-bf @model_["BrandName"].ToString().Replace(" ", "-")">
+                    <div class="input-group-append mr-3">
+                        <div class="input-group-text ">
+                            <input @Checked type="@ViewData["type"].ToString()" class="models" name="model" @Checked value="@model_["id"].ToString()" />
+                        </div>
+                    </div>
+                    @model_["BrandName"].ToString() > @model_["name"].ToString()
+                </div>
+                }
+            }
+            else
+            {
+                <label class="form-control">@Resources.CP_Parts.NoModel</label>
+            }
+        }
+    </div>
+</div>

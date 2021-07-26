@@ -1,0 +1,26 @@
+﻿@using legarage.Models;
+@model List<RentOfficesModel>
+
+<div class="form-group">
+    <label for="select_rents" class="mt-2">Select office</label>
+    <select name="referal_id" class="form-control mr-sm-2" placeholder="select_rents" id="select_rents" onchange="get_rent_offer_options()">
+        <option value="select">Select Office</option>
+        @{
+            foreach (var item in Model)
+            {
+                <option value="@item.ID">@item.Name</option>
+            }
+        }
+    </select>
+</div>
+<div id="models-Section" class="form-group h-auto" style="display:none">
+    <label for="select-parts">Select models you want :</label>
+    <div class="list-group form-control d-block h-auto" id="select-models">
+    </div>
+</div>
+<div id="vehicle-types-Section" class="form-group h-auto" style="display:none">
+    <label for="select-parts">Select Vehicle Types you want :</label>
+    <div class="list-group form-control d-block h-auto" id="select-vehicle-types">
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@using System.Data;
+@model List<legarage.Models.BrandsModel>
+
+<div class="form-group">
+    @{
+        DataTable Brands = new DataTable();
+        Brands = legarage.Classes.Database.ReadTable("Brands", out string msg);
+    }
+
+    <div class="input-group border-bottom-0">
+        <div class="input-group-prepend">
+            <span class="input-group-text p-0 pl-3 pr-3"><label class="m-0"><span style="color:red;">*</span>@Resources.CP_Garages.Brands</label></span>
+        </div>
+        <input type="text" class="form-control" placeholder="@Resources.Shared.searchBoxlbl" onkeyup="search_boxes(this.value, 'brands-row')">
+        @{
+            if (ViewData["type"].ToString() == "checkbox")
+            {
+                <div class="input-group-append">
+                    <span class="input-group-text p-0 border-0"><label class="btn btn-outline-primary m-0" for="select-all-brands">@Resources.Shared.SelectAll</label></span>
+                    <input hidden id="select-all-brands" type="checkbox" onclick="toggle(this, 'brands')" />
+                </div>
+            }
+        }
+
+    </div>
+    <div class="scroll-box border-top-0">
+        @{if (Brands != null && Brands.Rows.Count > 0)
+            {
+                foreach (DataRow Brand in Brands.Rows)
+                {
+                    string Checked = "";
+                    if (Model != null)
+                    {
+                        Checked = Model.Where(m => m.ID.ToString() == Brand["id"].ToString()).Count() == 1 ? "checked" : "";
+                    }
+                    <div class="form-control input-group mb-1 brands-row">
+                        <div class="input-group-append mr-3">
+                            <div class="input-group-text ">
+                                <input @Checked type="@ViewData["type"].ToString()"  data-brand="@Brand["name"].ToString().Replace(" ","-")" class="brands" value="@Brand["id"].ToString()" name="brand">
+                            </div>
+                        </div>
+                        @Brand["name"].ToString()
+                    </div>
+                }
+            }
+            else
+            {
+                <label class="form-control">@Resources.CP_Garages.NoBrand</label>
+            }
+        }
+    </div>
+
+</div>

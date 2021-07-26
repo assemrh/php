@@ -1,0 +1,54 @@
+﻿@model legarage.Models.URLModel
+@{
+    Layout = "~/Views/Shared/_LayoutCP.cshtml";
+    ViewBag.Title = Resources.CP_Countries.Countries;
+}
+
+<div class="content col-12 text-center rounded-bottom" style="background-color: lightgrey;">
+    <div class="container">
+        <div class="col-12 h3">
+            <div class="row plusandrefresh pt-2">
+                <div class="col-7"><h3>@Resources.CP_Countries.Countries</h3></div>
+                <div class="col-3">
+                    <input type="text" class="form-control" placeholder="@Resources.Shared.searchBoxlbl" onkeyup="search_boxes(this.value, 'model-row','table-row')">
+                </div>
+                <div class="col-1">
+                    <i title="@Resources.CP_Countries.Refresh" onclick="Refresh('@Model.Refresh');" style="color: green; cursor: pointer;" class="fas fa-redo-alt refreshControlPanel text-left"></i>
+                </div>
+                <div class="col-1">
+                    <i title="@Resources.CP_Countries.Add" style="color: lightsalmon; cursor: pointer;" class="fas fa-plus-circle plusControlPanel" data-toggle="modal" data-target="#Modal" onclick="Add('@Model.Add')"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Resources.CP_Countries.Countries</th>
+            <th scope="col">@Resources.CP_Countries.Code</th>
+            <th scope="col">@Resources.CP_Countries.IsMarket</th>
+            <th scope="col">@Resources.CP_Countries.IsFactory</th>
+            <th scope="col">@Resources.CP_Countries.Tools</th>
+        </tr>
+    </thead>
+    <tbody id="Table">
+        <tr colspan="6">
+            <td colspan="6" class="w-25 text-center"><span class="ml-auto mr-auto ">@Resources.Shared.Loading</span></td>
+        </tr>
+        <tr colspan="6">
+            <td colspan="6" class="w-25 text-center border-0">
+                <span class="ml-auto mr-auto ">
+                    <img src="~/Images/loader.gif" />
+                </span>
+            </td>
+        </tr>
+</table>
+<script>
+    $(document).ready(function () {
+        Refresh('@Model.Refresh');
+    });
+
+</script>

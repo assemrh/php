@@ -1,0 +1,320 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = Resources.Garages.DetailsPageTitle;
+}
+
+@model legarage.Models.GaragesModel
+
+@{
+    legarage.Models.ItemSliderModel itemSlider = new legarage.Models.ItemSliderModel();
+    itemSlider.Directory = "Garages";
+    itemSlider.ImagesLsit = Model.Images;
+}
+
+@{
+    string Brands = "";
+    string CityName = Model?.Address?.Province??"";
+    string Adres = Model.Address.AddressName + ", " + Model.Address.Province + ", " + Model.Address.Country;
+    string Vehicle_Types = "";
+    string Services = "";
+    string Description = Model.Description;
+    string OwnerName = Model.User.Name;
+    string Phone = Convert.ToString(Model.Mobile);
+    string whatsapp = Model.Whatsapp;
+    string Fax = Model.Fax;
+    string website = Model.Website;
+    string facebook = Model.Facebook;
+    string instagram = Model.Instagram;
+    string Tiktok = Model.Tiktok;
+    string Twitter = Model.Twitter;
+    string Linkedin = Model.Linkedin;
+    string Youtube = Model.Youtube;
+    string snapchat = Model.Snapchat;
+
+    int sayac = 0; //sayac = counter
+    foreach (var brand in Model.Brands)
+    {
+        sayac++;
+        Brands += brand.Name;
+        Brands += (Model.Brands.Count == sayac) ? "." : ", ";
+
+    }
+
+    sayac = 0;
+    foreach (var Vehicle_Type in Model.VehicleTypes)
+    {
+        sayac++;
+        Vehicle_Types += Vehicle_Type.Name;
+        Vehicle_Types += (Model.VehicleTypes.Count == sayac) ? "." : ", ";
+
+    }
+
+    sayac = 0;
+    foreach (var Service in Model.Services)
+    {
+        sayac++;
+        Services += Service.Name;
+        Services += (Model.Services.Count == sayac) ? "." : ", ";
+
+    }
+
+}
+
+<img class="card-img-top" src="/Images/Garages/@Model.Image.URL" alt="Card image cap" style="">
+
+<h2 style="margin: auto; margin-bottom: 2%;margin-top:2%; width: 20%;"><strong>@Resources.CP.GarageDetail</strong></h2>
+
+
+<div class="card no-border">
+
+    <div class="flex-row-xl flex-row-Deteis" style="margin: auto;display: flex;">
+        <div class="card images_card centered-card no-border col-7">
+            <div class="card-body">
+                <div class="text-center">
+                    @Html.Partial("~/Views/Home/_ItemSliderPartial.cshtml", itemSlider)
+                </div>
+            </div>
+        </div>
+
+        <div class="card col-5 details_card no-border centered-card">
+            <div class="card-body  centered-card" style="max-height: 4rem;">
+                <h5 class="card-title">
+                    @Model.Name 
+                    @{
+                        if (Model.Rate > 0)
+                        {
+                            @Html.Partial("../Rating/Stars", Model.Rate, new ViewDataDictionary { { "class", "" } })
+                        }
+                    }
+                    @*@Html.Partial("~/Views/Rating/Stars.cshtml", Model.Rate, new ViewDataDictionary { { "class", "" } })*@
+                </h5>
+            </div>
+
+
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Garages.OwnerName :</em> @OwnerName</li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Garages.City:</em> @CityName</li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Garages.Address :</em> @Adres</li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Garages.VehicleTypes :</em>@Vehicle_Types</li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Garages.Brands :</em> @Brands</li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Garages.Services :</em> @Services </li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Garages.Descrption :</em>@Description</li>
+
+
+            </ul>
+
+
+            <div class="card-body">
+                <h5 style="margin-bottom:3%;"><em>@Resources.CP.GarageContactInformation :</em></h5>
+                <span>
+                    <em style="color:dimgray;"><i class="fas fa-mobile-alt fa-md" style="color:black;"> </i> @Resources.CP.Mobile :</em><a href="tel:+@Phone" dir=ltr>@Phone</a>
+                </span>
+                <br />
+                @{
+                    if (whatsapp != null && whatsapp.Length > 0)
+                    {
+                        <span><em style="color:dimgray;"><i class="fab fa-whatsapp fa-lg" style="color:green;"> </i> @Resources.CP.WhatsappNumber :</em> @whatsapp </span>
+                        <br />
+                    }
+                    if (Fax != null && Fax.Length > 0)
+                    {
+                        <span><em style="color:dimgray;"><i class="fas fa-fax fa-md" style="color:#442727;"> </i> @Resources.CP.Fax :</em> @Fax </span>
+                        <br />
+                    }
+
+                    if (website != null && website.Length > 0)
+                    {
+                        <span><em style="color:dimgray;"><i class="fab fa-chrome fa-md" style="color:orangered;"></i> @Resources.CP.Website :</em> <a href="http://@website"> @website </a> </span>
+                        <br />
+                    }
+                }
+
+                <div style="margin-top:2%;">
+                    <span>
+                        @{
+                            if (facebook != null && facebook.Length > 0)
+                            {
+                                <a href="@facebook" style="margin:5px;"><i class="fab fa-facebook-square fa-2x" style="color:blue;"></i></a>
+                            }
+
+                            if (Twitter != null && Twitter.Length > 0)
+                            {
+                                <a href="https://www.twitter.com/@Twitter" style="margin:5px;"><i class="fab fa-twitter-square fa-2x" style="color:deepskyblue;"></i></a>
+
+                            }
+
+                            if (instagram != null && instagram.Length > 0)
+                            {
+                                <a href="https://www.instagram.com/@instagram" style="margin:5px;"><i class="fab fa-instagram-square fa-2x" style="color:purple;"></i></a>
+                            }
+                            if (Youtube != null && Youtube.Length > 0)
+                            {
+                                <a href="@Youtube" style="margin:5px;"><i class="fab fa-youtube fa-2x" style="color:red;"></i></a>
+                            }
+                            if (Linkedin != null && Linkedin.Length > 0)
+                            {
+                                <a href="https://www.linkedin.com/in/@Linkedin" style="margin:5px;"><i class="fab fa-linkedin fa-2x" style="color:darkcyan"></i></a>
+                            }
+                            if (snapchat != null && snapchat.Length > 0)
+                            {
+                                <a href="https://www.snapchat.com/add/@snapchat" style="margin:5px;"><i class="fab fa-snapchat-square fa-2x" style="color:yellow;"></i></a>
+                            }
+                            if (Tiktok != null && Tiktok.Length > 0)
+                            {
+                                <a href="https://www.tiktok.com/@Tiktok" style="margin:5px;"><i class="fab fa-tiktok fa-2x" style="color:black;"></i></a>
+                            }
+                            if (whatsapp != null && whatsapp.Length > 0)
+                            {
+                                <a href="https://wa.me/@whatsapp" style="margin:5px;"><i class="fab fa-whatsapp fa-2x" style="color:green;"></i></a>
+                            }
+
+
+
+
+                        }
+                    </span>
+                </div>
+
+
+
+            </div>
+            <form id="ratingForm" method="post" action="~/Rating/addRating" style="display:none !important," hidden>
+                <input type="hidden" value="@Model.ID" name="src_id" />
+                <input type="hidden" value="Garage" name="src_type" />
+            </form>
+
+            <div class="card-body" style="margin:auto;">
+                <button id="rate" type="button" class="btn btn-info" data-toggle="modal" data-target="#rateModal">@Resources.CP.Rate</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<!--  GarageDetails Slider Show Script start -->
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Details_Images_Slides");
+        var dots = document.getElementsByClassName("Details_Slides_Images");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" Details_Images_Slides_active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " Details_Images_Slides_active";
+    }
+</script>
+
+<!--  GarageDetails Slider Show Script End -->
+
+<script>
+
+
+    function checkStar() {
+        $("#starthree").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starfour").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").toggleClass("checked");
+    }
+
+    function checkStarTwo() {
+        $("#starone").removeClass("checked");
+        $("#starthree").removeClass("checked");
+        $("#starfour").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").toggleClass("checked");
+    }
+
+    function checkStarThree() {
+        $("#starone").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starfour").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").addClass("checked");
+        $("#starthree").toggleClass("checked");
+    }
+
+    function checkStarFour() {
+        $("#starone").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starthree").removeClass("checked");
+        $("#starfive").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").addClass("checked");
+        $("#starthree").addClass("checked");
+        $("#starfour").toggleClass("checked");
+    }
+
+    function checkStarFive() {
+        $("#starone").removeClass("checked");
+        $("#startwo").removeClass("checked");
+        $("#starthree").removeClass("checked");
+        $("#starfour").removeClass("checked");
+
+        $("#starone").addClass("checked");
+        $("#startwo").addClass("checked");
+        $("#starthree").addClass("checked");
+        $("#starfour").addClass("checked");
+        $("#starfive").toggleClass("checked");
+    }
+
+    function ratingCalculate() {
+        if (!$("#starone").hasClass("checked") && !$("#startwo").hasClass("checked") && !$("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            ////alert("Please rate by filling the stars atleast 1, empty or 0 rating cannot be submitted!");
+            return;
+        }
+
+        if ($("#starone").hasClass("checked") && !$("#startwo").hasClass("checked") && !$("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("1"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && !$("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("2"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && $("#starthree").hasClass("checked") && !$("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("3"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && $("#starthree").hasClass("checked") && $("#starfour").hasClass("checked") && !$("#starfive").hasClass("checked")) {
+            //console.log("4"); //return and add number to database
+        }
+        else if ($("#starone").hasClass("checked") && $("#startwo").hasClass("checked") && $("#starthree").hasClass("checked") && $("#starfour").hasClass("checked") && $("#starfive").hasClass("checked")) {
+            //console.log("5"); //return and add number to database
+        }
+
+        alert('Rating Submitted, thank you for rating');
+    }
+
+
+</script>

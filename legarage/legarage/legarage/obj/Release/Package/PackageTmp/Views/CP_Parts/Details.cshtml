@@ -1,0 +1,101 @@
+﻿@model legarage.Models.ProductsModel
+@using legarage.Models;
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Parts.Details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <input hidden value="@Model.ID" />
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Title</label>
+        <input disabled type="text" class="form-control" value="@Model.Title">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.OwnerName</label>
+        <input disabled type="text" class="form-control" value="@Model.OwnerName">
+    </div>
+    @{
+        if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+        {
+            <div class="form-group">
+                <label>@Resources.CP_Parts.Username</label>
+                <input disabled type="text" class="form-control" value="@Model.User.UserName">
+            </div>
+            }
+        }
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Address</label>
+        <input disabled type="text" class="form-control" value="@Model.Address.AddressName">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Brand</label>
+        <input disabled type="text" class="form-control" value="@Model.Brand.Name">
+
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Service </label>
+        @{
+            string S = "";
+            if (Model.Services != null && Model.Services.Count > 0)
+            {
+                foreach (ServicesModel servece in Model.Services)
+                {
+                    S += servece.Name + " , ";
+                }
+                string A = "";
+                A = S.Substring(0, S.Length - 3);
+                <input disabled type="text" class="form-control" value="@A" />
+            }
+            else
+            {
+                <input disabled type="text" value="@Resources.CP_Parts.NoService" class="form-control" />
+            }
+        }
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Vehicle</label>
+        <input disabled type="text" class="form-control" value="@Model.VehicleType.Name">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Model</label>
+        <input disabled type="text" class="form-control" value="@Model.Model.Name">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Price</label>
+        <input disabled type="text" class="form-control" value="@Model.Price">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Phone</label>
+        <input disabled type="text" class="form-control" value="@Model.Mobile">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Quantity</label>
+        <input disabled type="text" class="form-control" value="@Model.Quantity">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.WhatsappNumber</label>
+        <input disabled type="text" class="form-control" value="@Model.WhatsApp">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Phone</label>
+        <input disabled type="text" class="form-control" value="@Model.Mobile">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Keywords</label>
+        <textarea disabled type="text" rows="2" class="form-control">@Model.Keywords</textarea>
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Parts.Descrption</label>
+        <textarea disabled type="text" rows="4" class="form-control">@Model.Description</textarea>
+    </div>
+</div>
+<div class="form-group text-center">
+    <h3>@Resources.CP_Parts.Image</h3>
+    <img class="rounded w-50" src="~/Images/Products/@Model.Image.URL" />
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Parts.Close</button>
+</div>

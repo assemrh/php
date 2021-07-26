@@ -1,0 +1,172 @@
+﻿@model legarage.Models.UsersModel
+@using System.Data;
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.CP_Users.Edit</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="EditForm">
+        <div class="form-group">
+            <input hidden type="text" id="id" name="id" value="@Model.ID" />
+            <input hidden type="text" id="image_id" name="image_id" value="@Model.Image.ID" />
+            <input hidden type="text" id="image_url" name="image_url" value="@Model.Image.URL" />
+            <label for="full_name"><span style="color:red;">*</span>@Resources.CP_Users.Name</label>
+            <input type="text" class="form-control" id="full_name" value="@Model.Name" name="full_name" placeholder="@Resources.CP_Users.EnterName">
+        </div>
+        <div class="form-group">
+            <label for="username"><span style="color:red;">*</span>@Resources.CP_Users.Username</label>
+            <input type="text" class="form-control" id="username" value="@Model.UserName" name="username" placeholder="@Resources.CP_Users.EnterUsername">
+        </div>
+        <div class="form-group">
+            <label for="email"><span style="color:red;">*</span>@Resources.CP_Users.Email</label>
+            <input type="text" class="form-control" id="email" value="@Model.Email" name="email" placeholder="@Resources.CP_Users.EnterEmail">
+        </div>
+        <div class="form-group">
+            <label for="password">@Resources.CP_Users.Password</label>
+            <input type="password" class="form-control" id="password" value="@Model.Password" name="password" placeholder="@Resources.CP_Users.EnterPassword">
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Countries = new DataTable();
+                string msg = "";
+                Countries = legarage.Classes.Database.ReadTable("Countries ", " where is_market = 1 order by name ", null, out msg);
+            }
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Users.Country</label>
+            <select name="country" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" class="form-control">
+                @{
+                    if (Countries != null && Countries.Rows.Count > 0)
+                    {
+                        foreach (DataRow item in Countries.Rows)
+                        {
+                            if (item["id"].ToString() == Model.Address.CountryId.ToString())
+                            {
+                                <option selected value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+
+                            }
+                            else
+                            {
+                                <option value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <option>
+                            @Resources.CP_Users.NoCountry
+                        </option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Provinces = new DataTable();
+                List<System.Data.SqlClient.SqlParameter> li = new List<System.Data.SqlClient.SqlParameter>();
+                li.Add(new System.Data.SqlClient.SqlParameter("@country_id", Model.Address.CountryId));
+                Provinces = legarage.Classes.Database.ReadTable("Provinces", " Where country_id = @country_id", li, out msg);
+            }
+            <label for="city"><span style="color:red;">*</span>@Resources.CP_Users.City</label>
+            <select name="city" id="city" class="form-control">
+                @{
+                    if (Provinces != null && Provinces.Rows.Count > 0)
+                    {
+                        foreach (DataRow item in Provinces.Rows)
+                        {
+                            if (item["id"].ToString() == Model.Address.ProvinceId.ToString())
+                            {
+                                <option selected value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@item["id"].ToString()">@item["name"].ToString()</option>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <option>
+                            @Resources.CP_Users.NoCity
+                        </option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address"><span style="color:red;">*</span>@Resources.CP_Users.Address</label>
+            <input type="text" class="form-control" id="address" placeholder="@Resources.CP_Users.EnterAddress" name="address" value="@Model.Address.AddressName">
+        </div>
+        <div class="form-group">
+            <label for="phone"><span style="color:red;">*</span>@Resources.CP_Users.Phone</label>
+            <input type="tel" class="form-control" id="mobile" value="@Model.Phone" name="phone" placeholder="@Resources.CP_Users.EnterPhone">
+        </div>
+        <div class="form-group">
+            <label for="whatsapp"><span style="color:red;">*</span>@Resources.CP_Users.WhatsApp</label>
+            <input type="text" class="form-control" id="whatsapp" value="@Model.Whatsapp" name="whatsapp" placeholder="@Resources.CP_Users.EnterWhatsApp">
+        </div>
+        <div class="form-group">
+            <label for="website">@Resources.CP_Users.Website</label>
+            <input type="text" class="form-control" id="website" value="@Model.Website" name="website" placeholder="@Resources.CP_Users.EnterWebsite">
+        </div>
+        <div class="form-group">
+            <label for="youtube">@Resources.CP_Users.Youtube</label>
+            <input type="text" class="form-control" id="youtube" value="@Model.Youtube" name="youtube" placeholder="@Resources.CP_Users.EnterYoutube">
+        </div>
+        <div class="form-group">
+            <label for="linkedin">@Resources.CP_Users.Linkedin</label>
+            <input type="text" class="form-control" id="linkedin" value="@Model.Linkedin" name="linkedin" placeholder="@Resources.CP_Users.EnterLinkedin">
+        </div>
+        <div class="form-group">
+            <label for="instagram">@Resources.CP_Users.Instagram</label>
+            <input type="text" class="form-control" id="instagram" value="@Model.Instagram" name="instagram" placeholder="@Resources.CP_Users.EnterInstagram">
+        </div>
+        <div class="form-group">
+            <label for="twitter">@Resources.CP_Users.Twitter</label>
+            <input type="text" class="form-control" id="twitter" value="@Model.Twitter" name="twitter" placeholder="@Resources.CP_Users.EnterTwitter">
+        </div>
+        <div class="form-group">
+            <label for="snapchat">@Resources.CP_Users.Snapchat</label>
+            <input type="text" class="form-control" id="snapchat" value="@Model.Snapchat" name="snapchat" placeholder="@Resources.CP_Users.EnterSnapchat">
+        </div>
+        <div class="form-group">
+            <label for="tiktok">@Resources.CP_Users.Tiktok</label>
+            <input type="text" class="form-control" id="tiktok" value="@Model.Tiktok" name="tiktok" placeholder="@Resources.CP_Users.EnterTiktok">
+        </div>
+        <div class="form-group">
+            <label for="facebook">@Resources.CP_Users.Facebook</label>
+            <input type="text" class="form-control" id="facebook" value="@Model.Facebook" name="facebook" placeholder="@Resources.CP_Users.EnterFacebook">
+        </div>
+        <div class="form-group">
+            <label for="fax">@Resources.CP_Users.Fax</label>
+            <input type="text" class="form-control" id="fax" value="@Model.Fax" name="fax" placeholder="@Resources.CP_Users.EnterFax">
+        </div>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>@Resources.CP_Users.Descrption</label>
+            <textarea type="text" class="form-control" id="description" rows="4" name="description" placeholder="@Resources.CP_Users.EnterDescrption">@Model.Description</textarea>
+        </div>
+        <div class="form-group text-center">
+            <h5>@Resources.CP_Users.Img</h5>
+            <img class="rounded w-50" src="~/Images/Users/@Model.Image.URL" />
+        </div>
+
+    </form>
+    <div class="form-group">
+        <h5>@Resources.CP_Users.EditImage</h5>
+        <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Users.Close</button>
+    <button type="button" class="btn btn-primary" onclick="Update('@Model.URL.Edit','@Model.URL.Refresh')">@Resources.CP_Users.Edit</button>
+</div>

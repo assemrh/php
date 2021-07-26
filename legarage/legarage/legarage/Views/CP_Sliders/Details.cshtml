@@ -1,0 +1,34 @@
+﻿@model legarage.Models.SlidersModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Sliders.Details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <input hidden value="@Model.ID" />
+    <div class="form-group">
+        <label>@Resources.CP_Sliders.Title</label>
+        <input disabled type="text" class="form-control" value="@Model.Title">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Sliders.Order</label>
+        <input type="text" disabled class="form-control" value="@Model.RowOrder">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Sliders.link</label>
+        <input disabled type="text" class="form-control" value="@Model.Link">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Sliders.Descrption</label>
+        <textarea disabled type="text" class="form-control" rows="4">@Model.Description</textarea>
+    </div>
+</div>
+<div class="form-group text-center">
+    <h3>@Resources.CP_Sliders.SliderImage</h3>
+    <img class="rounded w-50" src="~/Images/Sliders/@Model.Image.URL" />
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Sliders.Close</button>
+</div>

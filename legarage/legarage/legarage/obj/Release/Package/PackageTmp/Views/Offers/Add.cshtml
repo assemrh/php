@@ -1,0 +1,83 @@
+﻿@model legarage.Models.URLModel
+@{
+    legarage.Classes.Tools.FindCurrentUser(out System.Data.DataRow user);
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.Offers.AddOffer</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="newofferform">
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="garname">@Resources.Offers.Name</label>
+            <input type="text" class="form-control" id="garname" placeholder="@Resources.Shared.EnterName" name="name">
+        </div>
+        <input id="Owner" type="hidden" name="Owner" value="@user["id"].ToString()" />
+        <div class="form-group">
+            <label for="Offer_type" class="mt-2">@Resources.Offers.Offertype</label>
+            <select name="Offer_type" class="form-control mr-sm-2" placeholder="@Resources.Shared.OfferType" id="Offer_type" onchange="Offer_type_switcher()">
+                <option value="select">@Resources.Shared.SelectType</option>
+                <option value="Garage">@Resources.Shared.Garage</option>
+                <option value="RentOffice">@Resources.Shared.RentOffice </option>
+                <option value="Vehichle">@Resources.Shared.Vehichle</option>
+                <option value="Product">@Resources.Shared.Product</option>
+                <option value="Winches">@Resources.Shared.Winches</option>
+            </select>
+        </div>
+        <div id="offer-details">
+        </div>
+        <div class="form-group">
+            <label><span style="color:red;">*</span>@Resources.CP_Garages.Phone</label>
+            <div class="form-control dropdown mr-0 p-0 " id="phone_picker">
+                <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                    <img src="https://www.countryflags.io/tr/shiny/24.png">
+                </button>
+                <div class="dropdown-menu select-country" id="phone_keys" role="listbox" aria-labelledby="dropdownMenuButton">
+                </div><input id="phone_key" type="hidden" name="phone_key" value="90" />
+                <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.Shared.PhoneNumber" required name="phoneno" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="meeting-time-st">@Resources.Shared.Start:</label>
+            <input type="datetime-local" id="meeting-time-st"
+                   name="meeting-time-st" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="meeting-time-en">@Resources.Shared.End:</label>
+            <input type="datetime-local" id="meeting-time-en"
+                   name="meeting-time-en"
+                   class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="descriptiontextarea">@Resources.Shared.Description</label>
+            <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="@Resources.Offers.EnterOfferandSellerDescription" name="desc"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="offertextarea">@Resources.Shared.OfferDetails</label>
+            <textarea class="form-control" id="offertextarea" rows="4" placeholder="@Resources.Offers.Enterdiscounted" name="details"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pricetextarea">@Resources.Shared.OldPrice</label>
+            <textarea class="form-control" id="pricetextarea" rows="3" placeholder="@Resources.Offers.PlaceHolder1" name="oldprice"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pricetextarea">@Resources.Shared.Price</label>
+            <textarea class="form-control" id="pricetextarea" rows="3" placeholder="@Resources.Offers.PlaceHolder2" name="price"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="paymenttextarea">@Resources.Shared.PaymentMethod</label>
+            <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="@Resources.Offers.PlaceHolder3" name="paymentmethod"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlFile1">@Resources.Shared.UploadOfferImage</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*" name="image">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Shared.Close</button>
+        <button class="btn btn-primary" id="add-new-offer" onclick="return Adding('@Model.Adding',null);">@Resources.Shared.Add</button>
+    </div>
+</form>

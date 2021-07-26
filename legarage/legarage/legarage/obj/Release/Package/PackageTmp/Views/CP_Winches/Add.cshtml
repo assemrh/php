@@ -1,0 +1,158 @@
+﻿@using System.Data;
+@model legarage.Models.URLModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Winches.Add</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            <label for="name"><span style="color:red;">*</span>@Resources.CP_Winches.Title</label>
+            <input type="text" class="form-control" id="name" placeholder="@Resources.CP_Winches.EnterTitle" name="Title">
+        </div>
+        @{
+            if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+            {
+                <div class="form-group">
+                    <label for="name"><span style="color:red;">*</span>@Resources.CP_Winches.OwnerName</label>
+                    @{
+                        DataTable Users = new DataTable();
+                        string msg = "";
+                        Users = legarage.Classes.Database.ReadTable("Users", " where is_admin <> 1", null, out msg);
+                    }
+                    <select id="user" name="user" class="form-control">
+                        @{
+                            if (Users != null && Users.Rows.Count > 0)
+                            {
+                                <option value="-1">@Resources.CP_Winches.EnterOwnerName</option>
+                                foreach (DataRow user in Users.Rows)
+                                {
+                                    <option value="@user["id"].ToString()">
+                                        @user["full_name"].ToString()
+                                    </option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="-1">@Resources.CP_Winches.NoUser</option>
+                            }
+                        }
+                    </select>
+                </div>
+            }
+        }
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Winches.Country</label>
+            <select name="country" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP_Winches.City</label>
+            <select name="city" id="city" class="form-control">
+                <option value="-1">@Resources.CP_Winches.ChoseCountryFirstiy</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address"><span style="color:red;">*</span>@Resources.CP_Winches.Address</label>
+            <input type="text" class="form-control" id="address" placeholder="@Resources.CP_Winches.EnterAddress" name="address">
+        </div>
+        <div class="form-group">
+            <label><span style="color:red;">*</span>@Resources.CP_Winches.Phone</label>
+            <div class="form-control mr-0 p-0 telefon">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png">
+                        </button>
+                        <div class="dropdown-menu select-country" id="phone_keys" aria-labelledby="dropdownMenuButton">
+                        </div>
+                        <input id="phone_key" type="hidden" name="phone_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.Shared.PhoneNumber" required name="phoneno" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="whatsapp"><span style="color:red;">*</span>@Resources.CP_Winches.Whatsapp</label>
+            <div class="form-control mr-0 p-0 telefon">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png">
+                        </button>
+                        <div class="dropdown-menu select-country" id="whatsapp_key" aria-labelledby="dropdownMenuButton">
+                        </div>
+                        <input id="whatsapp_key" type="hidden" name="whatsapp_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.Shared.PhoneNumber" required name="Whatsapp" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="DriverName"><span style="color:red;">*</span>@Resources.CP_Winches.DriverName</label>
+            <input type="text" class="form-control" id="DriverName" placeholder="@Resources.CP_Winches.EnterDriverName" name="DriverName">
+        </div>
+        <div class="form-group">
+            <label for="DriverPhone"><span style="color:red;">*</span>@Resources.CP_Winches.DriverPhone</label>
+            <div class="form-control mr-0 p-0 telefon">
+                <div class="form-control mr-0 p-0">
+                    <div class="dropdown m-0 w-100">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png">
+                        </button>
+                        <div class="dropdown-menu select-country" id="phone_keys" aria-labelledby="dropdownMenuButton">
+                        </div>
+                        <input id="phone_key" type="hidden" name="DriverPhone_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.CP_Winches.EnterDriverPhone" required name="DriverPhone" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="VehicleSizes"><span style="color:red;">*</span>@Resources.CP_Winches.VehicleSizes</label>
+            <select class="form-control" id="VehicleSize" name="VehicleSize">
+                <option selected value="0">@Resources.CP_Winches.EnterVehicleSizes</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="16*">16*</option>
+                <option value="20">20</option>
+                <option value="32*">32*</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="44*">44*</option>
+                <option value="46">46</option>
+                <option value="48*">48*</option>
+                <option value="50">50</option>
+                <option value="53*">53*</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="74*">74*</option>
+                <option value="80">80</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Area"><span style="color:red;">*</span>@Resources.CP_Winches.Area</label>
+            <input type="text" class="form-control" id="Area" placeholder="@Resources.CP_Winches.EnterArea" name="Area">
+        </div>
+        <div class="form-group">
+            <label for="keywords"><span style="color:red;">*</span>@Resources.CP_Winches.Keywords</label>
+            <textarea class="form-control" id="keywords" rows="2" placeholder="@Resources.CP_Winches.EnterKeywords" name="keywords"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>@Resources.CP_Winches.Descrption</label>
+            <textarea class="form-control" id="description" rows="4" placeholder="@Resources.CP_Winches.EnterDescrption" name="description"></textarea>
+        </div>
+    </form>
+    <div class="form-group">
+        <label><span style="color:red;">*</span>@Resources.CP_Winches.Image</label>
+        <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Winches.Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@Model.Adding','@Model.Refresh');">@Resources.CP_Winches.Add</button>
+</div>

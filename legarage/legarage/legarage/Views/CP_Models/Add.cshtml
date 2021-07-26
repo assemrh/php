@@ -1,0 +1,65 @@
+﻿@using System.Data;
+@model legarage.Models.URLModel
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Models.Add</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            <label for="model"><span style="color:red;">*</span>@Resources.CP_Models.Name</label>
+            <input type="text" class="form-control" id="model" name="model" placeholder="@Resources.CP_Models.EnterName">
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Brands = new DataTable();
+                string msg = "";
+                Brands = legarage.Classes.Database.ReadTable("Brands", out msg);
+            }
+            <label for="brands"><span style="color:red;">*</span>@Resources.CP_Models.Brand</label>
+            <select name="brands" class="form-control mr-sm-2" id="brands">
+                @{
+                    if (Brands != null && Brands.Rows.Count > 0)
+                    {
+                        <option value="-1">@Resources.CP_Models.ChoseBrand</option>
+                        foreach (DataRow Brand in Brands.Rows)
+                        {
+                            <option value="@Brand["id"].ToString()">
+                                @Brand["name"].ToString()
+                            </option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Vehicle_Types = new DataTable();
+                Vehicle_Types = legarage.Classes.Database.ReadTable("Vehicle_Types", out msg);
+            }
+            <label for="vehicle"><span style="color:red;">*</span>@Resources.CP_Models.Vehicle</label>
+            <select name="vehicle" class="form-control mr-sm-2" id="vehicle">
+                @{
+                    if (Vehicle_Types != null && Vehicle_Types.Rows.Count > 0)
+                    {
+                        <option value="-1">@Resources.CP_Models.ChoseVehicle</option>
+                        foreach (DataRow vehicle in Vehicle_Types.Rows)
+                        {
+
+                            <option value="@vehicle["id"].ToString()">
+                                @vehicle["type_name"].ToString()
+                            </option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Shared.Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@Model.Adding','@Model.Refresh');">@Resources.Shared.Add</button>
+</div>

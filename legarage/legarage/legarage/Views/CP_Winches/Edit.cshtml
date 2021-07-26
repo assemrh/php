@@ -1,0 +1,259 @@
+﻿@using legarage.Classes;
+@model legarage.Models.WinchesModel
+@using System.Data;
+
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Winches.Edit</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="EditForm">
+        <div class="form-group">
+            <input hidden type="text" id="id" name="id" value="@Model.ID" />
+            <input hidden type="text" id="image_id" name="image_id" value="@Model.Image.ID" />
+            <input hidden type="text" id="image_url" name="image_url" value="@Model.Image.URL" />
+
+            <label><span style="color:red;">*</span>@Resources.CP_Winches.Title</label>
+            <input type="text" class="form-control" id="title" value="@Model.Title" name="title" placeholder="@Resources.CP_Winches.EnterTitle">
+        </div>
+        @{
+            if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+            {
+                <div class="form-group">
+                    <label for="user"><span style="color:red;">*</span>@Resources.CP_Winches.OwnerName</label>
+                    @{
+                        DataTable Users = new DataTable();
+                        string masg = "";
+                        Users = legarage.Classes.Database.ReadTable("Users", " where is_admin <> 1", null, out masg);
+                    }
+                    <select id="user" name="user" class="form-control">
+                        @{
+                            if (Users != null && Users.Rows.Count > 0)
+                            {
+                                foreach (DataRow user in Users.Rows)
+                                {
+                                    if (user["id"].ToString() == Model.User.ID.ToString())
+                                    {
+                                        <option selected value="@user["id"].ToString()">
+                                            @user["full_name"].ToString()
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@user["id"].ToString()">
+                                            @user["full_name"].ToString()
+                                        </option>
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                <option value="-1">
+                                    @Resources.CP_Winches.NoUser
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+                }
+            }
+                <div class="form-group">
+                    @{
+                        string msg = "";
+                        DataTable Countries = new DataTable();
+                        Countries = legarage.Classes.Database.ReadTable("Countries ", " where is_market = 1 order by name ", null, out msg);
+                    }
+                    <label for="country"><span style="color:red;">*</span>@Resources.CP_Winches.Country</label>
+                    <select name="country" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" class="form-control">
+                        @{
+                            if (Countries != null && Countries.Rows.Count > 0)
+                            {
+                                foreach (DataRow item in Countries.Rows)
+                                {
+                                    if (item["id"].ToString() == Model.Address.CountryId.ToString())
+                                    {
+                                        <option selected value="@item["id"].ToString()">
+                                            @item["name"].ToString()
+                                        </option>
+
+                                    }
+                                    else
+                                    {
+                                        <option value="@item["id"].ToString()">
+                                            @item["name"].ToString()
+                                        </option>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <option value="-1">
+                                    @Resources.CP_Winches.NoCountry
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    @{
+                        DataTable Provinces = new DataTable();
+                        List<System.Data.SqlClient.SqlParameter> li = new List<System.Data.SqlClient.SqlParameter>();
+                        li.Add(new System.Data.SqlClient.SqlParameter("@country_id", Model.Address.CountryId));
+                        Provinces = legarage.Classes.Database.ReadTable("Provinces", " Where country_id = @country_id", li, out msg);
+                    }
+                    <label for="city"><span style="color:red;">*</span>@Resources.CP_Winches.City</label>
+                    <select name="city" id="city" class="form-control">
+                        @{
+                            if (Provinces != null && Provinces.Rows.Count > 0)
+                            {
+                                foreach (DataRow item in Provinces.Rows)
+                                {
+                                    if (item["id"].ToString() == Model.Address.ProvinceId.ToString())
+                                    {
+                                        <option selected value="@item["id"].ToString()">
+                                            @item["name"].ToString()
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item["id"].ToString()">@item["name"].ToString()</option>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <option>
+                                    @Resources.CP_Winches.NoCity
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address"><span style="color:red;">*</span>@Resources.CP_Winches.Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="@Resources.CP_Winches.EnterAddress" name="address" value="@Model.Address.AddressName">
+                </div>
+                <div class="form-group">
+                    <label for="phone"><span style="color:red;">*</span>@Resources.CP_Winches.Phone</label>
+                    <div class="form-control mr-0 p-0 telefon">
+                        <div class="form-control mr-0 p-0">
+                            <div class="dropdown m-0 w-100">
+                                <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                                    <img src="https://www.countryflags.io/tr/shiny/24.png">
+                                </button>
+                                <div class="dropdown-menu select-country" id="phone_keys" aria-labelledby="dropdownMenuButton">
+                                </div>
+                                <input id="phone_key" type="hidden" name="phone_key" value="90" />
+                                <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.Shared.PhoneNumber" required name="phoneno" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp"><span style="color:red;">*</span>@Resources.CP_Winches.Whatsapp</label>
+                    <div class="form-control mr-0 p-0 telefon">
+                        <div class="form-control mr-0 p-0">
+                            <div class="dropdown m-0 w-100">
+                                <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                                    <img src="https://www.countryflags.io/tr/shiny/24.png">
+                                </button>
+                                <div class="dropdown-menu select-country" id="whatsapp_key" aria-labelledby="dropdownMenuButton">
+                                </div>
+                                <input id="whatsapp_key" type="hidden" name="whatsapp_key" value="90" />
+                                <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.Shared.PhoneNumber" required name="Whatsapp" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="DriverName"><span style="color:red;">*</span>@Resources.CP_Winches.DriverName</label>
+                    <input type="text" class="form-control" id="DriverName" value="@Model.DriverName" name="DriverName" placeholder="@Resources.CP_Winches.EnterDriverName">
+                </div>
+                <div class="form-group">
+                    <label for="DriverPhone"><span style="color:red;">*</span>@Resources.CP_Winches.DriverPhone</label>
+                    <div class="form-control mr-0 p-0 telefon">
+                        <div class="form-control mr-0 p-0">
+                            <div class="dropdown m-0 w-100">
+                                <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                                    <img src="https://www.countryflags.io/tr/shiny/24.png">
+                                </button>
+                                <div class="dropdown-menu select-country" id="phone_keys" aria-labelledby="dropdownMenuButton">
+                                </div>
+                                <input id="phone_key" type="hidden" name="DriverPhone_key" value="90" />
+                                <input type="tel" class="form-control border-0" value="@Model.DriverPhone" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.CP_Winches.EnterDriverPhone" required name="DriverPhone" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><span style="color:red;">*</span>@Resources.CP_Winches.VehicleSizes</label>
+                    <select class="form-control" id="VehicleSize" name="VehicleSize">
+                        @{ string selected = ""; }
+                        @{ selected = Model.VehicleSize == "6" ? "selected" : "";}
+                        <option value="6" @selected>6</option>
+                        @{ selected = Model.VehicleSize == "8" ? "selected" : "";}
+                        <option value="8" @selected>8</option>
+                        @{ selected = Model.VehicleSize == "16*" ? "selected" : "";}
+                        <option value="16*" @selected>16*</option>
+                        @{ selected = Model.VehicleSize == "20" ? "selected" : "";}
+                        <option value="20" @selected>20</option>
+                        @{ selected = Model.VehicleSize == "32*" ? "selected" : "";}
+                        <option value="32*" @selected>32*</option>
+                        @{ selected = Model.VehicleSize == "35" ? "selected" : "";}
+                        <option value="35" @selected>35</option>
+                        @{ selected = Model.VehicleSize == "40" ? "selected" : "";}
+                        <option value="40" @selected>40</option>
+                        @{ selected = Model.VehicleSize == "44*" ? "selected" : "";}
+                        <option value="44*" @selected>44*</option>
+                        @{ selected = Model.VehicleSize == "46" ? "selected" : "";}
+                        <option value="46" @selected>46</option>
+                        @{ selected = Model.VehicleSize == "46" ? "selected" : "";}
+                        <option value="46" @selected>46</option>
+                        @{ selected = Model.VehicleSize == "48*" ? "selected" : "";}
+                        <option value="48*" @selected>48*</option>
+                        @{ selected = Model.VehicleSize == "50" ? "selected" : "";}
+                        <option value="50" @selected>50</option>
+                        @{ selected = Model.VehicleSize == "53" ? "selected" : "";}
+                        <option value="53" @selected>53</option>
+                        @{ selected = Model.VehicleSize == "60" ? "selected" : "";}
+                        <option value="60" @selected>60</option>
+                        @{ selected = Model.VehicleSize == "70" ? "selected" : "";}
+                        <option value="70" @selected>70</option>
+                        @{ selected = Model.VehicleSize == "74*" ? "selected" : "";}
+                        <option value="74*" @selected>74*</option>
+                        @{ selected = Model.VehicleSize == "80" ? "selected" : "";}
+                        <option value="80" @selected>80</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone"><span style="color:red;">*</span>@Resources.CP_Winches.Area</label>
+                    <input type="text" class="form-control" id="Area" value="@Model.Area" name="Area" placeholder="@Resources.CP_Winches.EnterArea">
+                </div>
+                <div class="form-group">
+                    <label for="Keywords"><span style="color:red;">*</span>@Resources.CP_Winches.Keywords</label>
+                    <textarea type="text" class="form-control" rows="2" id="Keywords" name="keywords" placeholder="@Resources.CP_Winches.EnterKeywords">@Model.Keywords</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description"><span style="color:red;">*</span>@Resources.CP_Winches.Descrption</label>
+                    <textarea type="text" class="form-control" rows="4" id="description" name="description" placeholder="@Resources.CP_Winches.EnterDescrption">@Model.Description</textarea>
+                </div>
+                <div class="form-group text-center mt-3">
+                    <h5>@Resources.CP_Winches.Image</h5>
+                    <img class="rounded w-50 m-auto" src="~/Images/Winches/@Model.Image.URL" alt="Old Image" />
+                </div>
+            </form>
+    <div class="form-group text-center mt-3">
+        <h5>@Resources.CP_Winches.EditImage</h5>
+        <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Winches.Close</button>
+    <button type="button" class="btn btn-primary" onclick="Update('@Model.URL.Edit','@Model.URL.Refresh')">@Resources.CP_Winches.Edit</button>
+</div>
+
+

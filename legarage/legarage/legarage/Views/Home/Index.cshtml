@@ -1,0 +1,283 @@
+﻿@using legarage.Models;
+@model List<legarage.Models.SlidersModel>
+@{
+    ViewBag.Title = Resources.Home.index_title;
+}
+
+<div id="carouselExampleCaptions" class="carousel slide mb-5" data-ride="carousel">
+    <ol class="carousel-indicators">
+        @{
+            int A = 0;
+            string B = "";
+            foreach (SlidersModel slider in Model)
+            {
+                if (A == 0)
+                {
+                    B = "active";
+                    A++;
+                }
+                else
+                {
+                    B = "";
+                }
+                <li data-target="#carouselExampleCaptions" data-slide-to=@B class=@B></li>
+            }
+        }
+    </ol>
+    <div class="carousel-inner">
+        @{
+            int C = 0;
+            string D = "";
+            foreach (SlidersModel slider in Model)
+            {
+                if (C == 0)
+                {
+                    D = "active";
+                    C++;
+                }
+                else
+                {
+                    D = "";
+                }
+                string path = "";
+                if (slider.ReferralType == null)
+                {
+                    path = "Sliders";
+                }
+                else if (slider.ReferralType == "Rental_Offices")
+                {
+                    path = "RentOffice";
+                }
+                else
+                {
+                    path = slider.ReferralType;
+                }
+                <div class="carousel-item @D">
+                    <div style="opacity:0.8" class="bg-secondary border">
+                        <img src="~/Images/@path/@slider.Image.URL" height="600" width="1350" alt="@slider.Title">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>@slider.Title</h5>
+                        <p>@slider.Description</p>
+                        <form  class="m-5">
+                            <a href="@slider.Link" class="btn btn-success">@Resources.CP.Details</a>
+                        </form>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">@Resources.Shared.Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">@Resources.Shared.Next</span>
+    </a>
+</div>
+<div class="container">
+    <div class="vertical-center justify-content-center">
+        <h2 style="font-family: Oswald,sans-serif !important; font-weight: bold; text-align: center; letter-spacing: 1px; line-height: 1.2; margin-bottom: 50px" class="justify-content-center lookfor">@Resources.Home.lookingfortitle</h2>
+        <div class="container justify-content-center">
+            <ul class="nav nav-tabs justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#" onclick="return seekoGarages()">@Resources.Home.garages_tab</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link tab-border-solid" data-toggle="tab" style="color: inherit; text-decoration: none; top: 3px;" href="#" onclick="return seekoSale();">@Resources.Home.buyandsell_tab</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" style="color: inherit; text-decoration: none;" href="#" onclick="return seekoParts()">@Resources.Home.parts_tab</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" style="color: inherit; text-decoration: none;" href="#" onclick="return seekoRent()">@Resources.Home.rent_tab</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" style="color: inherit; text-decoration: none;" href="#" onclick="return seekoRecovery()">@Resources.Home.recovery_tab</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="maintabdisp">
+        <h2 style="font-family: Oswald,sans-serif !important; font-weight: bold; text-align: center; margin: 35px; letter-spacing: 1px; line-height: 1.2;" class="justify-content-center recoveryHead">@Resources.Home.recovery_services </h2>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h3>@Resources.Home.recovery_vehicles </h3>
+                <p>@Resources.Home.recovery_description </p>
+                <button class="btn btn-primary btn-md" onclick="return goToRecovery();">@Resources.Home.search_winches </button>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><img src="/Images/car_being_winched_second.jpg" width="100%" height="100%" /></div>
+        </div>
+    </div>
+
+    <div class="container" id="maintabdispparts" style="display:none">
+        <h2 style="font-family: Oswald,sans-serif !important; font-weight: bold; text-align: center; margin: 35px; letter-spacing: 1px; line-height: 1.2;" class="justify-content-center productHead">@Resources.Home.parts_and_products </h2>
+        <div class="row container">
+            <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-6 justify-content-lg-center">
+                <h6 style="margin:auto;">Product 1 name</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_location </em> Dubai</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_brand </em> Volvo, Mazda</li>
+
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_categories </em> Tires</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_offers </em> 3</li>
+
+                </ul>
+                <button class="btn btn-primary btn-md" onclick="return goToProductDetails();"><strong>@Resources.Home.product_buy </strong></button>
+            </div>
+            <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <h6 style="margin:auto;">Product 2 name</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_location </em> Sharjah</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_brand </em> BMW, Mazda</li>
+
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_categories </em> Vehicle Body</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_offers </em> 2</li>
+
+                </ul>
+                <button class="btn btn-primary btn-md"><strong>@Resources.Home.product_buy </strong></button>
+            </div>
+            <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <h6 style="margin:auto;">Product 3 name</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_location </em> Dubai</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_brand </em> Saab, Mercedes</li>
+
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_categories </em> Electrics</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_offers </em> 1</li>
+
+                </ul>
+                <button class="btn btn-primary btn-md"><strong>@Resources.Home.product_buy </strong></button>
+            </div>
+            <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <h6 style="margin:auto;">Product 4 name</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_location </em> Ras Alkheimah</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_brand </em> Porche, Kia</li>
+
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_categories </em> Engines</li>
+                    <li class="list-group-item"><em style="color:dimgray;">@Resources.Home.product_offers </em> 1</li>
+
+                </ul>
+                <button class="btn btn-primary btn-md"><strong>@Resources.Home.product_buy </strong></button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container" id="maintabdispgarage" style="display:none">
+        <h2 style="font-family: Oswald,sans-serif !important; font-weight: bold; text-align: center; margin: 35px; letter-spacing: 1px; line-height: 1.2;" class="justify-content-center garageHead">@Resources.Home.garages_services </h2>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h3>@Resources.Home.garages_tab </h3>
+                <p>@Resources.Home.garages_description </p>
+                <button class="btn btn-primary btn-md" onclick="return goToGarages()">@Resources.Home.see_garages </button>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><img src="~/Images/garage-login.jpg" width="100%" height="100%" /></div>
+        </div>
+    </div>
+
+    <div class="container" id="maintabdispbuyandsell" style="display:none">
+        <h2 style="font-family: Oswald,sans-serif !important; font-weight: bold; text-align: center; margin: 35px; letter-spacing: 1px; line-height: 1.2;" class="justify-content-center vehicleHead">@Resources.Home.vehicles_sale </h2>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h3>@Resources.Home.buyandselldiv </h3>
+                <p>@Resources.Home.buyandsell_description </p>
+                <button class="btn btn-primary btn-md" onclick="return goToBuyandSell()">@Resources.Home.buyandsell_now </button>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><img src="~/Images/vehiclebuyandsellproducts.jpg" width="100%" height="100%" /></div>
+        </div>
+    </div>
+
+    <div class="container" id="maintabdisprent" style="display:none">
+        <h2 style="font-family: Oswald,sans-serif !important; font-weight: bold; text-align: center; margin: 35px; letter-spacing: 1px; line-height: 1.2;" class="justify-content-center rentHead">@Resources.Home.rent_services </h2>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h3>@Resources.Home.rent_vehicles </h3>
+                <p>@Resources.Home.rent_description </p>
+                <button class="btn btn-primary btn-md" onclick="return goToRent()">@Resources.Home.rent_bttn </button>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><img src="~/Images/rentcars.jpeg" width="100%" height="100%" /></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-xl PartnersCarousel">
+    <div class="row">
+        <div class="col-md-12  mx-auto">
+            <h2><span>Our <b>Partners</b></span></h2>
+            <div id="PartnersCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#PartnersCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#PartnersCarousel" data-slide-to="1"></li>
+                    <li data-target="#PartnersCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.36.jpeg" class="img-fluid" alt=""></div></div>
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.37 (1).jpeg" class="img-fluid" alt=""></div></div>
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.37.jpeg" class="img-fluid" alt=""></div></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.38 (1).jpeg" class="img-fluid" alt=""></div></div>
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.38 (2).jpeg" class="img-fluid" alt=""></div></div>
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.38.jpeg" class="img-fluid" alt=""></div></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.39 (1).jpeg" class="img-fluid" alt=""></div></div>
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.40 (1).jpeg" class="img-fluid" alt=""></div></div>
+                            <div class="col-sm-4"><div class="img-box"><img src="~/Images/partners/WhatsApp Image 2021-02-14 at 11.49.40.jpeg" class="img-fluid" alt=""></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control-prev" href="#PartnersCarousel" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#PartnersCarousel" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
+    -->

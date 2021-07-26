@@ -1,0 +1,259 @@
+﻿@using System.Data;
+@using legarage.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Resources.Users.Registration;
+}
+@{
+    string msg;
+}
+
+<h2><strong>@Resources.Users.Registration</strong></h2>
+<br />
+
+
+<div class="row">
+    <div class="col-7">
+
+        <form class="px-4 py-3" id="newuserform" autocomplete="off">
+            <!--method="post" action="/users/newUser"-->
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="email" class="form-label">@Resources.Users.EmailAddress</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com">
+                    <div class="invalid-feedback">
+                        @Resources.Users.invalid_feedback
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label for="phonenumber" class="form-label">@Resources.Users.PhoneNumber</label>
+                    <div class="form-control dropdown mr-0 p-0 " id="phone_picker">
+                        <button class="btn dropdown-toggle form-control countrycodeRegSel border-0 w-auto " type="button" id="phone_keyMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:unset; position:absolute; ">
+                            <img src="https://www.countryflags.io/tr/shiny/24.png" height="24">
+                        </button>
+                        <div class="dropdown-menu select-country" id="phone_keys" role="listbox" aria-labelledby="dropdownMenuButton">
+                        </div><input id="phone_key" type="hidden" name="phone_key" value="90" />
+                        <input type="tel" class="form-control border-0" id="phonenumber" placeholder="&nbsp;&nbsp;&nbsp;@Resources.Shared.PhoneNumber" required name="phoneno" style="padding-left:4rem!important; display: inline-block; background-color:unset;">
+                    </div>
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-3">
+
+                <div class="col-sm-6">
+                    <label for="password" class="form-label"><span style="color:red;">*</span>  @Resources.Users.Password </label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="@Resources.Users.Password" required="">
+                    <div class="invalid-feedback">
+                        @Resources.Users.invalid_feedback1
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="confirm_password" class="form-label"><span style="color:red;">*</span>@Resources.Users.confirmnewpassword</label>
+                    <input type="password" class="form-control" id="confirm_password" placeholder="@Resources.Users.confirmnewpassword" required="">
+                    <div class="invalid-feedback">
+                        @Resources.Users.invalid_feedback2
+                    </div>
+                </div>
+                <span id="message"></span>
+            </div>
+            <div class="row g-3 mt-3">
+
+                <div class="col-sm-6">
+                    <label for="fullname" class="form-label"><span style="color:red;">*</span> @Resources.Users.FullName </label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="@Resources.Users.FullName">
+                    <div class="invalid-feedback">
+                        @Resources.Users.invalid_feedback3
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="Username" class="form-label"><span style="color:red;">*</span> @Resources.Users.Username <span title="What is your unique user name"><i class="far fa-question-circle"></i></span></label>
+                    <input type="text" name="username" class="form-control" id="Username" placeholder="Username">
+                    <div class="invalid-feedback">
+                        @Resources.Users.invalid_feedback4
+                    </div>
+                </div>
+                <span id="message"></span>
+            </div>
+
+            <div class="row g-3 mt-3">
+
+                <div class="col-sm-6">
+
+                    <label for="country"><span style="color:red;"></span>@Resources.CP.Country</label>
+                    <select class="form-control" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" name="country">
+                        <option value="-1">@Resources.CP.Chose @Resources.CP.Country</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label for="city"><span style="color:red;"></span>@Resources.CP.City</label>
+                    <select name="city" id="city" class="form-control">
+                        <option value="-1">@Resources.CP.Chose @Resources.CP.City</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-3 mt-3">
+                <div class="col-12">
+                    <label for="exampleDropdownFormAddress"> @Resources.Users.ResidanceAddress</label>
+                    <input type="text" class="form-control" id="exampleDropdownFormAddress" placeholder="Residance Address" name="address"> <!--in placeholder: enter full address including country and province-->
+                </div>
+            </div>
+            <div class="row g-3 mt-3">
+                <div class="col-12">
+                    <label for="exampleDropdownFormWebsiteOrSM">Website and/or Social Media</label>
+                    <input type="url" class="form-control" id="exampleDropdownFormWebsiteOrSM" placeholder="@Resources.Users.WebsiteSocialMedia" name="site">
+                </div>
+            </div>
+
+        </form>
+        <div class="row g-3 mt-3">
+            <div class="col-11 mx-auto">
+                <label><span style="color:red;">*</span>@Resources.Users.UploadProfileImage</label>
+                <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+            </div>
+        </div>
+
+        <div class="row" hidden>
+            <div class="form-group col-8" hidden>
+                <label for="exampleDropdownFormCaptcha"> <span style="color:red;">*</span>. Captcha</label>
+                <span><input type="text" class="form-control" id="exampleDropdownFormCaptcha" placeholder="Enter Captcha"><p style="color:dimgrey; margin-bottom:40px;">&nbsp;Resources.Users.We must make sure that you are human, not a bot</p></span>
+            </div>
+
+            <div class="col-1 refreshCaptcha" style=" cursor: pointer;" hidden>
+                <img title="Resources.Users.Load New Captcha" src="/Images/reCaptcha-removebg-preview.png" onclick="" width="80" />
+            </div>
+
+
+
+            <div class="col-1 actualCaptchaText" style="margin-top:20px;">
+                <img src="/Images/captcha.jpg" width="100" />
+            </div>
+
+
+            <div class="col-2">
+                <button class="btn btn-info verifyRegB" style="font-weight:bolder; margin-top:33px; margin-left:50px;">Resources.Users.Verify</button>
+            </div>
+
+        </div>
+
+        <span style=" margin-top:70px; margin-bottom:70px" class="agreementReg"><span style="color:red;" class="redStarAgreement">*</span><input type="checkbox" required name="checkbox" id="agree" />&nbsp; I have read the <a href="" style="text-decoration:none;">@Resources.Users.agreement</a></span>
+        <br>
+        <input class="btn btn-success align-content-center regB" style="font-weight:bolder;" type="submit" name="name456231" value="Register" hidden />
+        <button type="button" class="btn btn-success align-content-center regB" style="padding-left:130px; padding-right:130px; font-weight:bolder;" onclick="addUser();">@Resources.Users.Register</button>
+        <div class="dropdown-divider"></div>
+    </div>
+
+    <div class="col-5 alreadyLogDiv" style="background-image: url('../../Images/vertical-car-image-third.jpg')">
+        <img src="/Images/vertical-car-image-third.jpg" height="1000" width="350" hidden />
+        <div class="alreadyLogB" style="position: absolute; top: 35%; left: 75%; transform: translate(-50%, -50%);">
+            <h3><strong><em>@Resources.Users.AlreadyRegistered? @Resources.Users.Then</em></strong></h3>
+            <button class="btn btn-primary btn-lg font-weight-bold" style="border-radius: 40%; margin-top:10px; margin-left:15px;" onclick="return goToLogin();">@Resources.Users.Login</button>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+
+</div>
+<script>
+    function addUser() {
+
+
+
+        const $result = $("#result");
+        const email = $("#email").val();
+        $result.text("");
+
+        if (validateEmail(email)) {
+            $result.text(email + " is valid :)");
+            $result.css("color", "green");
+        }
+        else if (validatPhone()) {
+            $result.css("color", "green");
+        }
+        else {
+            //////alert("Please enter an email or phone number");
+            //$result.css("color", "red");
+            return;
+        }
+
+
+        if ($('#password').val() != $('#confirm_password').val()) {
+            $('#message').html('Passwords Do Not Match!').css('color', 'red');
+            ////alert("Passwords did Not match, please correct them");
+            return;
+        } else if ($('#password').val() == $('#confirm_password').val() && $('#password').val() != "" && $('#confirm_password').val() != "") {
+            $('#message').html('Passwords Match').css('color', 'green');
+        }
+
+        else if ($('#password').val() == "" && $('#confirm_password').val() == "") {
+            $('#message').empty();
+        }
+
+
+        if ($('#agree').is(':checked')) {
+
+            var formdata = $("#newuserform").serialize();
+            $.ajax({
+                type: "Post",
+                data: formdata,
+                dataType: "json",
+                url: "/Users/NewUser",
+                success(result) {
+                    if (result.code == "200") {
+                        ////alert("Registered Successfully");
+                        window.location.href = "Index";
+
+                        //TODO: add msg modal
+                    }
+                    else {
+                        alert(result.msg);
+                        //console.log(result.msg);
+                        //TODO: add msg modal
+                    }
+                },
+                error(error) {
+                }
+            });
+
+        } else {
+            ////alert("Please agree to the agreement by ticking the check box if you want to proceed");
+        }
+
+
+
+    }
+
+    function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    function validatPhone() {
+        if ($('#countrycode').val() == "" || $('#phonenumber').val() == "") {
+            //////alert("Please enter both Phone number and its Country code");
+            return false;
+        }
+        else return true;
+    }
+
+
+    function goToLogin() {
+        window.location.href = "Index";
+    }
+
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+    if (document.getElementById("Factory") != null) Get_Options('Factory', '', '/Home/GetCountries', 'Factory');
+        if (document.getElementById("MCountry") != null) Get_Options('MCountry', '', '/Home/GetCountries', 'Market');
+    //Get_Market('@Session["Market"].ToString()');
+    if (document.getElementById("phone_keys")!=null) Get_PhoneKeys("phone_keys");
+    Get_Market();
+        });
+</script>

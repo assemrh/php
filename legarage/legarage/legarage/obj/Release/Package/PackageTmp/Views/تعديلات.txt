@@ -1,0 +1,39 @@
+﻿/*26/01/2021*/
+--Asım 
+
+#Views >> Part >> PartDetails.cshtml
+-جلب تفاصيل المنتج من قاعدة البيانات
+-تعديل على التصميم
+-
+
+
+#Classes >> Build_Database.cs >> 522
+-تعديل جدول Products و جدول Vehicles
+
+
+#Controllers >> PartController.cs >> 28 (PartDetails)
+
+
+#Models >>ProductsModel.cs
+-اضافة وتس اب
+#Models >> VehiclesModel.cs
+-اضاقة وتس أب
+
+ملفات الـ<views> التي تحتوي على الدول 
+
+views:
+( Winches && Vehicles && RentOffices && Parts && Garages ) >> Index && Details ;
+
+Users >> Index && Register 
+
+JavaScript :
+script.js
+
+Style:
+style.css
+
+Controllars :
+( Winches && Vehicles && RentOffices && Parts && Garages ) >> Index && Details ;
+
+Models:
+WinchesIndexModel VehiclesIndexModel RentOfficesIndexModel PartsIndexModel GaragesIndexModel

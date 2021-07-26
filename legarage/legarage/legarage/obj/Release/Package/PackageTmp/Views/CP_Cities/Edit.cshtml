@@ -1,0 +1,53 @@
+﻿@model legarage.Models.CitiesModel
+@using System.Data;
+
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">@Resources.CP_Cities.Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form id="EditForm">
+        <div class="modal-body">
+            <input hidden type="text" id="province_id" name="province_id" value="@Model.ID" />
+            <div class="form-group">
+                @{
+                    DataTable Countries = new DataTable();
+                    string msg = "";
+                    Countries = legarage.Classes.Database.ReadTable("Countries ", " where is_market = 1 order by name ", null, out msg);
+                }
+                <label for="country"><span style="color:red;">*</span>@Resources.CP_Cities.Country</label>
+                <select name="country" class="form-control mr-sm-2" id="country" value="@Model.Name">
+                    @{
+                        if (Countries != null && Countries.Rows.Count > 0)
+                        {
+                            foreach (DataRow country in Countries.Rows)
+                            {
+                                if (country["id"].ToString() == Model.CountryId)
+                                {
+                                    <option selected value="@country["id"].ToString()">
+                                        @country["name"].ToString()
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option value="@country["id"].ToString()">
+                                        @country["name"].ToString()
+                                    </option>
+                                }
+
+                            }
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="country_id"><span style="color:red;">*</span>@Resources.CP_Cities.City</label>
+                <input type="text" class="form-control" id="country_id" value="@Model.Name" name="city" placeholder="@Resources.CP.EnterCity">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Cities.Close</button>
+            <button type="button" class="btn btn-primary" onclick="Update('@Model.URL.Edit')">@Resources.CP_Cities.Edit</button>
+        </div>
+    </form>

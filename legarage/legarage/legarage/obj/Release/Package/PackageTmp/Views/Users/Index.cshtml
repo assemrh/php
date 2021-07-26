@@ -1,0 +1,127 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@{
+    string ms = "";
+    if (Session["error"] != null)
+    {
+        ms = Session["error"].ToString();
+    }
+}
+
+<div class="justify-content-center">
+    <div class="row">
+
+        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-6 col-xs-6">
+            <img src="/Images/logo_with_logoword.png" style="vertical-align: middle;" width="315" height="175" />
+
+            <form id="loginform" class="px-4 py-3" method="post" action="@Url.Action("Login", "Users")">
+                <div class="alert-danger">
+                    @ms
+                    <div id="msg">   </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleDropdownFormEmail1" class="emailorphonelog">@Resources.Users.Label3</label>
+                    <i class="fas fa-user"></i>
+                    <input name="username" type="email" class="form-control" id="email" placeholder="email@example.com or phone">
+                </div>
+                <div class="form-group">
+                    <label for="exampleDropdownFormPassword1" class="passLog">@Resources.Users.Password</label>
+                    <i class="fas fa-lock"></i>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="@Resources.Users.Password" onkeydown="check(event)">
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                        <label class="form-check-label" for="dropdownCheck">
+                            @Resources.Users.Rememberme
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <button onclick="login()" id="btn-login" class="btn btn-primary align-content-center" style="vertical-align:middle; padding-left:130px; padding-right:130px; font-weight:bolder;">@Resources.Users.Login</button>
+            <p id="loading_spinner"><img src="~/Images/loader.gif" /></p>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item noBack" href="/Users/Register">@Resources.Users.New <strong><em style="color:forestgreen;"><span class="dgreenOnMouse">Register Now</span></em></strong></a>
+            <a class="dropdown-item" href="@Url.Action("Forgotpassword", "Users")" style="color: dimgray">@Resources.Users.ForgotPassword?</a>
+        </div>
+
+        <div class="col col-xl-8 col-lg-7 col-md-6 col-sm-6 col-xs-6 align-self-end">
+            <img src="~/Images/garage-login.jpg" class="garageLogImage" style="vertical-align: middle;" />
+        </div>
+
+       
+
+        <!-- Modal -->
+
+    </div>
+</div>
+
+<style>
+    #loading_spinner {
+        display: none;
+        z-index: 100000;
+        position: fixed;
+        padding-top: 50vh;
+        padding-left: 50vw;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #d6dede17;
+    }
+</style>
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<script>
+    function login() {
+        $("#loading_spinner").css({ "display": "block" });
+
+        var formdata = $("#loginform").serialize();
+
+            //console.log(formdata);
+
+        $.ajax({
+            type: "Post",
+            data: formdata ,//{username: emailId, password: passId },
+            dataType: "json",
+            url: "@Url.Action("Login", "Users")",
+            success(result) {
+                if (result.code == 200) {
+                    if (result.msg == "success") {
+                        window.location.href = "/home/index";
+                    }
+                    else {
+
+                    //$("#Information").show(500);
+                    document.getElementById("msg").innerHTML = result.msg;
+                        $("#loading_spinner").css({ "display": "none" });
+                    }
+                }
+                else {
+                    $("#Information").show(500);
+                    //document.getElementById("msg").innerHTML = result.msg;
+                    //console.log(result);
+                }
+            },
+            error(error) {
+                //console.log(error);
+            }
+        });
+    }
+
+    function check(event) {
+        //console.log(event.code);
+        if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+            $("#btn-login").click();
+        }
+    }
+</script>
+@*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>*@

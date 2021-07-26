@@ -1,0 +1,95 @@
+﻿@model legarage.Models.SlidersModel
+@using System.Data;
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.CP_Sliders.Edit</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="EditForm">
+        <div class="form-group">
+            <input hidden type="text" id="id" name="id" value="@Model.ID" />
+            <input hidden type="text" id="image_id" name="image_id" value="@Model.Image.ID" />
+            <input hidden type="text" id="image_url" name="image_url" value="@Model.Image.URL" />
+        </div>
+        <div class="site-elements-selector">
+            <fieldset>
+                <div class="form-group">
+                    <label><span style="color:red;">*</span>@Resources.CP_Sliders.Section</label>
+                    <select id="site_elements_selector" onchange="SiteElementDDLChanged(this.value,'/CP_Sliders/GetData/')" class="form-control" name="site_elements_selector">
+                        @{ string selected = ""; selected = Model.ReferralType == null ? "selected" : ""; }
+                        <option value="out">@Resources.CP_Sliders.ExternalLink</option>
+                        @{ selected = Model.ReferralType == "Garages" ? "selected" : "";}
+                        <option value="Garages">@Resources.CP_Sliders.Garage</option>
+                        @{ selected = Model.ReferralType == "Rental_Offices" ? "selected" : "";}
+                        <option value="Rental_Offices">@Resources.CP_Sliders.RentOffice</option>
+                        @{ selected = Model.ReferralType == "Products" ? "selected" : "";}
+                        <option value="Products">@Resources.CP_Sliders.Part</option>
+                        @{ selected = Model.ReferralType == "Vehicles" ? "selected" : "";}
+                        <option value="Vehicles">@Resources.CP_Sliders.Vehicle</option>
+                        @{ selected = Model.ReferralType == "Winches" ? "selected" : "";}
+                        <option value="Winches">@Resources.CP_Sliders.Winche</option>
+                    </select>
+                </div>
+                <div class="form-group secound-ddl ">
+                    <label>@Resources.CP_Sliders.Contant</label>
+                    <select id="secound_ddl" class="secound-ddl form-control" name="secound_ddl">
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+        <hr />
+        <div class="site-elements-section">
+            <div class="form-group">
+                <label><span style="color:red;">*</span>@Resources.CP_Sliders.Title</label>
+                @{string disabled = ""; disabled = (Model.ReferralType != null) ? "disabled" : "";}
+                <input type="text" @disabled class="form-control" id="title" name="Title" value="@Model.Title" placeholder="@Resources.CP_Sliders.EnterTitle">
+            </div>
+            @{disabled = disabled == "" ? "" : "hidden";}
+            <div @disabled class="form-group">
+                <label><span style="color:red;">*</span>@Resources.CP_Sliders.link</label>
+                <input type="url"  class="form-control" id="Link" value="@Model.Link" name="Link" placeholder="@Resources.CP_Sliders.Enterlink">
+            </div>
+        </div>
+        <div class="form-group">
+            <label><span style="color:red;">*</span>@Resources.CP_Sliders.Order</label>
+            <input type="number" max="7" min="1" class="form-control" id="Order" name="Order" value="@Model.RowOrder" placeholder="@Resources.CP_Sliders.EnterOrder">
+        </div>
+        <div class="form-group">
+            <label><span style="color:red;">*</span>@Resources.CP_Sliders.Descrption</label>
+            <textarea class="form-control" rows="4" placeholder="@Resources.CP_Sliders.EnterDescrption" name="desc">@Model.Description</textarea>
+        </div>
+        @{ string path = "";
+            if (Model.ReferralType == null)
+            {
+                path = "Sliders";
+            }
+            else if (Model.ReferralType == "Rental_Offices")
+            {
+                path = "RentOffice";
+            }
+            else
+            {
+                path = Model.ReferralType;
+            }}
+        <div class="form-group text-center mt-3">
+            <h5>@Resources.CP_Sliders.EnterImage</h5>
+            <img class="rounded w-50 m-auto" src="/Images/@path/@Model.Image.URL" alt="Old Image" />
+        </div>
+    </form>
+    <div class="site-elements-section">
+        <div class="form-group">
+            <label><span style="color:red;">*</span>@Resources.CP_Sliders.EnterImage</label>
+            <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Sliders.Close</button>
+    <button type="button" class="btn btn-primary" onclick="Update('@Model.URL.Edit','@Model.URL.Refresh')">@Resources.CP_Sliders.Edit</button>
+</div>

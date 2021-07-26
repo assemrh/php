@@ -1,0 +1,57 @@
+﻿@model legarage.Models.ItemSliderModel
+
+<div class="Details_Images_Slides_container">
+    <div class="ma3rad">
+        @{
+            if (Model.ImagesLsit != null && Model.ImagesLsit.Count > 0) //if (garages != null && garages.Rows.Count > 0) ? ".";
+            {
+                foreach (var img in Model.ImagesLsit)
+                {
+                    <div class="Details_Images_Slides">
+                        <img src="~/Images/@Model.Directory/@img.URL" />
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="Details_Images_Slides">
+                    <img src="~/Images/no-images.png">
+                </div>
+
+
+
+            }
+        }
+
+        <a class="Details_Images_Slides_prev" onclick="plusSlides(-1)">❮</a>
+        <a class="Details_Images_Slides_next" onclick="plusSlides(1)">❯</a>
+        <div class="Details_Images_Slides_row">
+            <div style="width:100%;">
+                @{
+                    if (Model.ImagesLsit != null && Model.ImagesLsit.Count > 0)
+                    {
+                        int i = 1; //currentSlide
+                        foreach (var img in Model.ImagesLsit)
+                        {
+                            <div class="Details_Images_Slides_column">
+                                <img class="Details_Slides_Images Details_Images_Slides_cursor rounded img-thumbnail" src="~/Images/@Model.Directory/@img.URL" onclick="currentSlide(@i)" alt="The Woods">
+                            </div>
+                            i++;
+                        }
+                    }
+                    else  /// no-image image
+                    {
+                        <div class="Details_Images_Slides_column">
+                            <img class="Details_Slides_Images Details_Images_Slides_cursor rounded img-thumbnail" src="~/Images/no-images.png" onclick="currentSlide(1)" alt="The Woods">
+                        </div>
+
+                    }
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

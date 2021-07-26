@@ -1,0 +1,98 @@
+﻿@model legarage.Models.URLModel
+
+<div class="modal-header">
+    <h5 class="modal-title">Resources.Winches.AddWinches</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            <label for="name"><span style="color:red;">*</span>@Resources.CP.Title</label>
+            <input type="text" class="form-control" id="name" placeholder="@Resources.CP.Enter @Resources.CP.Title" name="Title">
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP.Country</label>
+            <select name="country" id="country" onchange="Get_Options('city', 'country', '/Home/GetCities/')" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>@Resources.CP.City</label>
+            <select name="city" id="city" class="form-control">
+                <option value="-1">@Resources.CP.Chose @Resources.CP.Country</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address"><span style="color:red;">*</span>@Resources.CP.Address</label>
+            <input type="text" class="form-control" id="address" placeholder="@Resources.CP.Enter @Resources.CP.Address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="Phone"><span style="color:red;">*</span>@Resources.CP.Phone</label>
+            <div class="row">
+                <div class="col-4">
+                    <select name="code" id="code" class="form-control">
+                        <option value="-1">@Resources.CP.Chose @Resources.CP.Country</option>
+                    </select>
+                </div>
+                <div class="col-8 pl-2">
+                    <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="@Resources.CP.Enter @Resources.CP.Phone">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="whatsapp"><span style="color:red;">*</span>@Resources.CP.WhatsappNumber</label>
+            <input type="tel" class="form-control" id="whatsapp" placeholder=" Resources.CP.Enter @Resources.CP.WhatsappNumber" name="whatsapp">
+        </div>
+        <div class="form-group">
+            <label for="DriverName"><span style="color:red;">*</span>@Resources.CP.EnterDriverName</label>
+            <input type="text" class="form-control" id="DriverName" placeholder="@Resources.CP.Enter @Resources.CP.EnterDriverName" name="DriverName">
+        </div>
+        <div class="form-group">
+            <label for="DriverPhone"><span style="color:red;">*</span>@Resources.CP.EnterDriverPhone</label>
+            <input type="text" class="form-control" id="DriverPhone" placeholder="@Resources.CP.Enter @Resources.CP.EnterDriverPhone" name="DriverPhone">
+        </div>
+        <div class="form-group">
+            <label for="VehicleSizes"><span style="color:red;">*</span>@Resources.CP.EnterVehicleSizes</label>
+            <select class="form-control" id="VehicleSize" name="VehicleSize">
+                <option selected value="0">@Resources.CP.Enter @Resources.CP.EnterVehicleSizes</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="16*">16*</option>
+                <option value="20">20</option>
+                <option value="32*">32*</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="44*">44*</option>
+                <option value="46">46</option>
+                <option value="48*">48*</option>
+                <option value="50">50</option>
+                <option value="53*">53*</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="74*">74*</option>
+                <option value="80">80</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Area"><span style="color:red;">*</span>@Resources.CP.Add</label>
+            <input type="text" class="form-control" id="Area" placeholder="@Resources.CP.Enter @Resources.CP.Add" name="Area">
+        </div>
+        <div class="form-group">
+            <label for="keywords"><span style="color:red;">*</span>@Resources.CP.Keywords</label>
+            <textarea class="form-control" id="keywords" rows="2" placeholder="@Resources.CP.Enter @Resources.CP.Keywords" name="keywords"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>@Resources.CP.Descrption</label>
+            <textarea class="form-control" id="description" rows="4" placeholder="@Resources.CP.Enter @Resources.CP.Descrption" name="description"></textarea>
+        </div>
+    </form>
+    <div class="form-group">
+        <label><span style="color:red;">*</span>@Resources.CP.Enter @Resources.CP.Image</label>
+        <form action="/Home/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP.Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@Model.Adding','@Model.Refresh');">@Resources.CP.Add</button>
+</div>

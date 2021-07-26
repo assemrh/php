@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about" xml:space="preserve">
+    <value>عن الموقع</value>
+  </data>
+  <data name="buyandselldiv" xml:space="preserve">
+    <value>بيع و شراء</value>
+  </data>
+  <data name="buyandsell_description" xml:space="preserve">
+    <value>هذا لتلبية احتياجات سيارتك بالكامل وتجعلك سعيدًا من خلال شراء وبيع أي مركبات حسب الطلب ، سواء كانت سيارة أو 4x4 أو دراجة نارية أو شاحنة أو حتى حافلة ، استمتع بتصفحك للمركبات التي لدينا واستمتع بها.</value>
+  </data>
+  <data name="buyandsell_now" xml:space="preserve">
+    <value>بيع و شراء الآن</value>
+  </data>
+  <data name="buyandsell_tab" xml:space="preserve">
+    <value>بيع و شراء</value>
+  </data>
+  <data name="buycontactsellerindetails" xml:space="preserve">
+    <value>اتصل بالبائع للشراء في تفاصيل المنتج</value>
+  </data>
+  <data name="companyname" xml:space="preserve">
+    <value>الشركة العالمية</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="desecription" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="devby" xml:space="preserve">
+    <value>تم التطوير من</value>
+  </data>
+  <data name="garages_description" xml:space="preserve">
+    <value>تحقق من أفضل الكراجات وحجزها واستفد من خدماتها وتأكد من أنك ستكون راضيًا فيما يتعلق باحتياجات المرآب الخاصة بك وستكون قادرًا على البحث عن الشيء المحدد الذي تحتاجه وإصلاحه ومساعدته.</value>
+  </data>
+  <data name="garages_location" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="garages_mobile" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="garages_rating" xml:space="preserve">
+    <value>التقييمات</value>
+  </data>
+  <data name="garages_services" xml:space="preserve">
+    <value>خدمات الجراجات</value>
+  </data>
+  <data name="garages_show" xml:space="preserve">
+    <value>إظهار التفاصيل</value>
+  </data>
+  <data name="garages_tab" xml:space="preserve">
+    <value>جراجات</value>
+  </data>
+  <data name="garages_website" xml:space="preserve">
+    <value>الموقع الإلكتروني</value>
+  </data>
+  <data name="index_title" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="learnmore" xml:space="preserve">
+    <value>إعرف المزيد</value>
+  </data>
+  <data name="lookingfortitle" xml:space="preserve">
+    <value>ماذا تبحث عن ؟</value>
+  </data>
+  <data name="nav_add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="nav_buyandsell" xml:space="preserve">
+    <value>بيع و شراء المركبات</value>
+  </data>
+  <data name="nav_garages" xml:space="preserve">
+    <value>كراجات</value>
+  </data>
+  <data name="nav_log" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="nav_lout" xml:space="preserve">
+    <value>تسجيل خروج</value>
+  </data>
+  <data name="nav_myoffers" xml:space="preserve">
+    <value>عروضى كمشترى</value>
+  </data>
+  <data name="nav_myprofile" xml:space="preserve">
+    <value>حسابى</value>
+  </data>
+  <data name="nav_offers" xml:space="preserve">
+    <value>عروض</value>
+  </data>
+  <data name="nav_parts" xml:space="preserve">
+    <value>بيع وشراء القطع</value>
+  </data>
+  <data name="nav_recovery" xml:space="preserve">
+    <value>طلب سطحة</value>
+  </data>
+  <data name="nav_reg" xml:space="preserve">
+    <value>إنشاء حساب جديد</value>
+  </data>
+  <data name="nav_rent" xml:space="preserve">
+    <value>مكاتب إيجار</value>
+  </data>
+  <data name="nav_search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="nav_services" xml:space="preserve">
+    <value>خدمات</value>
+  </data>
+  <data name="parts_and_products" xml:space="preserve">
+    <value>قطع و منتجات</value>
+  </data>
+  <data name="parts_tab" xml:space="preserve">
+    <value>قطع و منتجات</value>
+  </data>
+  <data name="product_brand" xml:space="preserve">
+    <value>العلامة التجارية:</value>
+  </data>
+  <data name="product_buy" xml:space="preserve">
+    <value>شراء</value>
+  </data>
+  <data name="product_categories" xml:space="preserve">
+    <value>التصنيفات:</value>
+  </data>
+  <data name="product_location" xml:space="preserve">
+    <value>المكان:</value>
+  </data>
+  <data name="product_offers" xml:space="preserve">
+    <value>العروض:</value>
+  </data>
+  <data name="recovery_description" xml:space="preserve">
+    <value>يمكنك بسهولة وكفاءة طلب ونش في منطقتك لسحب سيارتك سواء كانت سيارة أو دراجة نارية أو أي مركبة أخرى ضمن المواصفات ومن خلال هذا الموقع الإلكتروني بعد الطلب ، سيأتي ونش إليك في أي مكان سواء في منتصف طريق سريع طويل أو في البرية.</value>
+  </data>
+  <data name="recovery_services" xml:space="preserve">
+    <value>خدمة جر المركبات</value>
+  </data>
+  <data name="recovery_tab" xml:space="preserve">
+    <value>جر مركبات</value>
+  </data>
+  <data name="recovery_vehicles" xml:space="preserve">
+    <value>جر مركبات</value>
+  </data>
+  <data name="rent_bttn" xml:space="preserve">
+    <value>تأجير</value>
+  </data>
+  <data name="rent_description" xml:space="preserve">
+    <value>استأجر سيارة أو دراجة نارية أو أي شيء يناسب احتياجاتك الحالية و / أو تصفح قائمة مكاتب التأجير والمركبات المؤجرة الخاصة بها واطلع على معلوماتها حتى تشعر بالرضا التام ثم احجز الإيجار.</value>
+  </data>
+  <data name="rent_services" xml:space="preserve">
+    <value>خدمات ايجار المركبات</value>
+  </data>
+  <data name="rent_tab" xml:space="preserve">
+    <value>إيجار</value>
+  </data>
+  <data name="rent_vehicles" xml:space="preserve">
+    <value>إيجار مركبات</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="search_winches" xml:space="preserve">
+    <value>بحث ناقلات الجر</value>
+  </data>
+  <data name="see_garages" xml:space="preserve">
+    <value>اطلاع</value>
+  </data>
+  <data name="vehicles_sale" xml:space="preserve">
+    <value>بيع و شراء مركبات</value>
+  </data>
+  <data name="websitedescription" xml:space="preserve">
+    <value>هذا هو موقع ليجراج و من خلاله يمكنك أن تتواصل مع جراجات، مكاتب إيجار، تبيع أو تشترى مركبات و قطعها و إغراضها، يمكنك أيضاً ارجاع و جر مركباتك، نحن هنا لأجلك.</value>
+  </data>
+  <data name="websitename" xml:space="preserve">
+    <value>ليجراج</value>
+  </data>
+  <data name="websitenameandrights" xml:space="preserve">
+    <value>ليجراج. كل الحقوق الملكية محتفظة.</value>
+  </data>
+</root>

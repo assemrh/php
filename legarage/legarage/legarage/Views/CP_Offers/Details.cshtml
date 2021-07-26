@@ -1,0 +1,105 @@
+﻿@model legarage.Models.OffersModel
+@using legarage.Models;
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.Offers.AddOffer</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="newofferform">
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="garname">@Resources.Offers.Name</label>
+            <input disabled type="text" class="form-control" id="garname" placeholder="@Model.name" name="name" />
+        </div>
+        <div class="form-group">
+            <label for="Offer_type" class="mt-2">@Resources.Offers.Offertype</label>
+            <input disabled name="Offer_type" class="form-control mr-sm-2" placeholder="@Model.referal_type" id="Offer_type">
+        </div>
+        <div class="form-group">
+            <label for="Offer_type" class="mt-2">@Resources.Offers.OfferUser</label>
+            <input disabled name="Offer_type" class="form-control mr-sm-2" placeholder="@Resources.Offers.User" id="Offer_type">
+
+        </div>
+        <div id="offer-details">
+            <h1>Add Offer Garage</h1>
+            <div class="form-group">
+                <label for="select_garages" class="mt-2">@Resources.Offers.selectgarages</label>
+                <input disabled name="referal_id" class="form-control mr-sm-2" placeholder="@Resources.Offers.select_garages" id="select_garages">
+            </div>
+            @{
+                if (Model.Brands != null && Model.Brands.Count > 0)
+                {
+                    <div class="form-group h-auto">
+                                    <label for="select-brands">@Resources.Offers.Selectbrandsyouwant </label>
+                        <div class="list-group form-control d-block h-auto" id="select-brands">
+                            @{
+                                foreach (var Br in Model.Brands)
+                                {
+                                    <div class='list-group-item d-inline-flex w-auto m-1'>@Br.Name</div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+
+
+                if (Model.Categories != null && Model.Categories.Count > 0)
+                {
+                    <div class="form-group h-auto">
+                        <label for="select-categories">@Resources.Offers.SelectCategoriesyouwant :</label>
+                        <div class="list-group form-control d-block h-auto" id="select-categories">
+                            @{
+                                foreach (var Cate in Model.Categories)
+                                {
+                                    <div class='list-group-item d-inline-flex w-auto m-1'>@Cate.Name</div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+
+                if (Model.VehicleTypes != null && Model.VehicleTypes.Count > 0)
+                {
+                    <div class="form-group h-auto">
+                        <label for="select-vehicle-types">@Resources.Offers.SelectVehicleTypesyouwant :</label>
+                        <div class="list-group form-control d-block h-auto" id="select-vehicle-types">
+                            @{
+                                foreach (var VT in Model.VehicleTypes)
+                                {
+                                    <div class='list-group-item d-inline-flex w-auto m-1'>@VT.Name</div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            }
+
+            <div class="form-group">
+                <label for="meeting-time-st">@Resources.Offers.Start:</label>
+                <input disabled type="textğ" id="meeting-time-st" name="meeting-time-st" class="form-control" value="@Model.start_date">
+            </div>
+            <div class="form-group">
+                <label for="meeting-time-en">@Resources.Offers.End:</label>
+                <input disabled type="text" id="meeting-time-en" name="meeting-time-en" class="form-control" value="@Model.end_date">
+            </div>
+            <div class="form-group">
+                <label for="descriptiontextarea">@Resources.Offers.Description</label>
+                <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="@Resources.Offers.EnterOfferandSellerDescription" name="desc">@Model.description</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="pricetextarea">Price</label>
+                <textarea class="form-control" id="pricetextarea" rows="3" placeholder="@Resources.Offers.Enterdiscounted" name="price"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="paymenttextarea">Payment Method</label>
+                <textarea class="form-control" id="paymenttextarea" rows="2" name="paymentmethod">@Model.paymentmethods</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Shared.OK</button>
+    </div>
+</form>

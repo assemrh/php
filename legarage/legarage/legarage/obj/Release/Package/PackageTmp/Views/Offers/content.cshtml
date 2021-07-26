@@ -1,0 +1,28 @@
+﻿@model List<legarage.Models.OffersModel>
+
+@{
+        foreach (var offer in Model)
+        {
+            var x = (dynamic)offer.old_price;
+        var y = offer.discount_percentage;
+        var newP = x-(x/y);
+        <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6" style="width: 18rem;">
+            <img class="card-img-top" src="~/Images/vehcileoffer.jpg" alt="Card image cap" style="width: 100%; height: 15vw; object-fit: cover;">
+            <div class="card-body" style="margin:auto;">
+                <h3 class="card-title" style="font-style: italic; font-weight:normal;">
+                    @offer.name
+                </h3>
+                <h4 style="font-weight:bolder;"><del>@x</del><strong>@newP</strong></h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Shared.CityName:</em> </li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Shared.By:</em>@offer.referal_type</li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Shared.PaymentMethod:</em>@offer.paymentmethods</li>
+                <li class="list-group-item"><em style="color:dimgray;">@Resources.Shared.Description:</em>@offer.description</li>
+            </ul>
+            <div class="card-body">
+                <button class="btn btn-outline-primary" onclick="goToOfferDetails('@offer.id.ToString()')">@Resources.Shared.ShowDetails</button>
+            </div>
+        </div>
+    }
+}

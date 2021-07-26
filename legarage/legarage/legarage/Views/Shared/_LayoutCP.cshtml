@@ -1,0 +1,239 @@
+﻿@model legarage.Models.URLModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Resources.Shared.CP @Resources.Shared.Of @ViewBag.Title</title>
+    <!--      font awesome       -->
+    <link rel="stylesheet" href="/fontawesome/css/all.css" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/legarage logo.png" />
+    @*<link href="~/Content/css/select2.min.css" rel="stylesheet" />*@
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+
+    @*<link href="~/Content/select2/select2.css" rel="stylesheet" />*@
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+    @{
+        string img_text = "";
+        string RemoveImage = "";
+        if (Session["lng"] == null || Session["lng"].ToString() == "en")
+        {
+            <!--      Bootstrap with Languages      -->
+            <link rel="stylesheet" href="/Content/bootstrap.min.css" crossorigin="anonymous">
+            <script src="~/Scripts/popper.min.js" crossorigin="anonymous"></script>
+            <script src="/Scripts/bootstrap.min.js" crossorigin="anonymous"></script>
+
+            <!--      Languages       -->
+            img_text = Resources.Shared.EnterImage;
+            RemoveImage = Resources.Shared.DeleteImage;
+        }
+        else
+        {
+            <!--      Bootstrap with Languages      -->
+            <link rel="stylesheet" href="/Content/bootstrap.rtl.min.css" crossorigin="anonymous">
+            <script src="~/Scripts/popper.min.js" crossorigin="anonymous"></script>
+            <script src="/Scripts/bootstrap.rtl.min.js" crossorigin="anonymous"></script>
+
+            <!--      Languages       -->
+            <link rel="stylesheet" href="/Content/ar.css" crossorigin="anonymous">
+            img_text = Resources.Shared.EnterImage;
+            RemoveImage = Resources.Shared.DeleteImage;
+        }
+        <script src="~/Scripts/bootstrap.bundle.js"></script>
+
+        <link rel="stylesheet" href="/Content/CP_Style.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="/Content/dropzone.css" />
+        <link rel="stylesheet" href="~/Content/Site.css" />
+        <link href="~/Content/market-style.css" rel="stylesheet" />
+    }
+</head>
+<body>
+    <input type="hidden" id="dropzone_lan" value="@img_text" />
+    <input type="hidden" id="RemoveImage" value="@RemoveImage" />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar1 shadow-lg rounded-right ">
+                <div class="logo text-center ">
+                    <img src="/Images/logo_with_logoword.png" style="width:100%" alt="Logo">
+                </div>
+                <div class="text-white-50 ">
+                    <h1 class="controlPanelTitle text-center">@Resources.Shared.CP</h1>
+                </div>
+                <hr style=" margin-top: 0rem" />
+                <div class="left-navigation">
+                    <ul class="list text-center ">
+                        <li class="li">
+                            <a href="/Home/Index">@Resources.Shared.BackToWebsite</a>
+                        </li>
+                        <li>
+                            <details class="details">
+                                <summary class="summary">@Resources.Shared.MainServices</summary>
+                                <ul class="list text-center">
+                                    @{
+
+
+                                        if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+                                        {
+                                            <li class="li"><a href="/CP_Users/Index" id="users">@Resources.Shared.Users</a></li>
+                                        }
+
+
+                                    }
+                                    <li class="li"><a href="/CP_Garages/Index" id="garages">@Resources.Shared.Garages</a></li>
+                                    <li class="li"><a href="/CP_RentOffices/Index" id="rent">@Resources.Shared.RentOffices</a></li>
+                                    <li class="li"><a href="/CP_Vehicles/Index" id="vehicles">@Resources.Shared.Vehicles</a></li>
+                                    <li class="li"><a href="/CP_Parts/Index" id="parts">@Resources.Shared.Parts</a></li>
+                                    <li class="li"><a href="/CP_Winches/Index" id="winches">@Resources.Shared.Winches</a></li>
+                                    <li class="li"><a href="/CP_Offers/Index" id="offers">@Resources.Shared.Offers</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            @{
+
+                                if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+                                {
+                                    <details class="details">
+                                        <summary class="summary">@Resources.Shared.MainSections</summary>
+                                        <ul class="list text-center">
+                                            <li class="li"><a href="/CP_Countries/Index">@Resources.Shared.Countries</a></li>
+                                            <li class="li"><a href="/CP_Cities/Index">@Resources.Shared.Cities</a></li>
+                                            <li class="li"><a href="/CP_VehicleTypes/Index">@Resources.Shared.VehicleTypes</a></li>
+                                            <li class="li"><a href="/CP_Brands/Index">@Resources.Shared.Brands</a></li>
+                                            <li class="li"><a href="/CP_Models/Index">@Resources.Shared.Models</a></li>
+                                            <li class="li"><a href="/CP_Services/Index">@Resources.Shared.Services</a></li>
+                                            <li class="li"><a href="/CP_Sliders/Index">@Resources.Shared.Sliders</a></li>
+                                        </ul>
+                                    </details>
+                                }
+
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                @RenderBody()
+                <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" id="ModalBody">
+                            <div class="m-5 p-5 text-center">
+                                <img class="m-auto" src="~/Images/loader.gif" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="Information" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div id="backdrop">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">@Resources.Shared.Information</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('Information').style.display = 'none', Refresh('@Model.Refresh');">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <h2 id="msg" class="text-center"></h2>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="document.getElementById('Information').style.display = 'none', Refresh('@Model.Refresh');">@Resources.Shared.Close</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="DeleteWarning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div id="backdrop">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">@Resources.Shared.Warning</h5>
+                                    <button type="button" class="close" data-dismiss="modal" onclick="document.getElementById('DeleteWarning').style.display = 'none'" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h2>@Resources.Shared.AreSureDelete</h2>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="document.getElementById('DeleteWarning').style.display = 'none'" class="btn btn-secondary" data-dismiss="modal">@Resources.CP.Close</button>
+                                    <button type="submit" id="button" class="btn btn-danger">@Resources.Shared.Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("/bundles/jquery")
+    @Scripts.Render("/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="~/Scripts/dropzone.js"></script>
+    @*<script src="~/Scripts/select2.min.js"></script>*@
+    <script src="/Scripts/action.js"></script>
+    <script src="~/Scripts/Script.js"></script>
+    @*<script src="~/Scripts/select2.js"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    @*<!--<script>
+            $(document).ready(function () {
+                if (document.getElementById("FCountry") != null) Get_Contries('Factory', 'FCountry');
+                if (document.getElementById("MCountry") != null)Get_Contries('Market', 'MCountry');
+                //Get_Market('@Session["Market"].ToString()');
+                if (document.getElementById("phone_keys")!=null) Get_PhoneKeys("phone_keys");
+                Get_Market();
+            });
+        </script>-->*@
+    @{
+        string CP_View_Name = Session["cp_view"] == null ? "home" : Session["cp_view"].ToString();
+    }
+    <script>
+    $(document).ready(function () {
+        let view_ID = '@CP_View_Name';
+        $("#" + view_ID).addClass("active");
+        $("a").click(function () {
+            $.ajax({
+                type: "POST",
+                data: { id: $(this).id },
+                dataType: "json",
+                url: "/CP/SetSession/",
+                success(result) {
+                    if (result.code == 200) {
+                        let fav = document.getElementById("fav_count");
+                        let favCnt = Number(fav.innerHTML);
+                        fav.innerHTML = favCnt + 1;
+                      //  btn("Warning", result.data);
+                    }
+                    else {
+                      //  btn("Warning", result.data);
+                    }
+                },
+                error(error) {
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+        $(document).ready(function () {
+            Initialization(true);
+            $(".js-example-templating").select2();
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+﻿@model legarage.Models.GaragesModel
+@using legarage.Models;
+
+<div class="modal-header">
+    <h5 class="modal-title">@Resources.CP_Garages.Details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <input hidden value="@Model.ID" />
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Name</label>
+        <input disabled type="text" class="form-control" value="@Model.Name">
+    </div>
+    @{ 
+        if (Session["Is_Admin"] == null || Session["Is_Admin"].ToString() == "1")
+        {
+            <div class="form-group">
+                <label>@Resources.CP_Garages.OwnerName</label>
+                <input disabled type="text" class="form-control" value="@Model.User.UserName">
+            </div>
+        }
+    }
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Brands</label>
+        @{
+            string B = "";
+            if (Model.Brands != null && Model.Brands.Count > 0)
+            {
+                foreach (BrandsModel Brand in Model.Brands)
+                {
+                    B += Brand.Name + " , ";
+                }
+                string A = "";
+                A = B.Substring(0, B.Length - 3);
+                <input disabled type="text" class="form-control" value="@A" />
+            }
+            else
+            {
+                <input disabled type="text" value="@Resources.CP_Garages.NoBrand" class="form-control" />
+            }
+        }
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Services </label>
+        @{
+            string S = "";
+            if (Model.Services != null && Model.Services.Count > 0)
+            {
+                foreach (ServicesModel servece in Model.Services)
+                {
+                    S += servece.Name + " , ";
+                }
+                string A = "";
+                A = S.Substring(0, S.Length - 3);
+                <input disabled type="text" class="form-control" value="@A" />
+            }
+            else
+            {
+                <input disabled type="text" value="@Resources.CP_Garages.NoService" class="form-control" />
+            }
+        }
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Vehicles</label>
+        @{
+            string VT = "";
+            if (Model.VehicleTypes != null && Model.VehicleTypes.Count > 0)
+            {
+                foreach (VehicleTypesModel vehicleType in Model.VehicleTypes)
+                {
+                    VT += vehicleType.Name + " , ";
+                }
+                string A = "";
+                A = VT.Substring(0, VT.Length - 3);
+                <input disabled type="text" class="form-control" value="@A" />
+            }
+            else
+            {
+                <input disabled type="text" value="@Resources.CP_Garages.NoVehicle" class="form-control" />
+            }
+        }
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Address</label>
+        <input disabled type="text" class="form-control" value="@Model.Address.AddressName">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Website</label>
+        <input disabled type="text" class="form-control" value="@Model.Website">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Youtube</label>
+        <input disabled type="text" class="form-control" value="@Model.Youtube">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Linkedin</label>
+        <input disabled type="text" class="form-control" value="@Model.Linkedin">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Instagram</label>
+        <input disabled type="text" class="form-control" value="@Model.Instagram">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Twitter</label>
+        <input disabled type="text" class="form-control" value="@Model.Twitter">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Snapchat</label>
+        <input disabled type="text" class="form-control" value="@Model.Snapchat">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Tiktok</label>
+        <input disabled type="text" class="form-control" value="@Model.Tiktok">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Facebook</label>
+        <input disabled type="text" class="form-control" value="@Model.Facebook">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Whatsapp</label>
+        <input disabled type="text" class="form-control" value="@Model.Whatsapp">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Fax</label>
+        <input disabled type="text" class="form-control" value="@Model.Fax">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Phone</label>
+        <input disabled type="text" class="form-control" value="@Model.Mobile">
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Keywords</label>
+        <textarea disabled type="text" class="form-control" rows="2">@Model.Keywords</textarea>
+    </div>
+    <div class="form-group">
+        <label>@Resources.CP_Garages.Descrption</label>
+        <textarea disabled type="text" class="form-control" rows="4">@Model.Description</textarea>
+    </div>
+</div>
+<div class="form-group text-center">
+    <h3>@Resources.CP_Garages.CarageImg</h3>
+    <img class="rounded w-50" src="~/Images/Garages/@Model.Image.URL" />
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.CP_Garages.Close</button>
+</div>

@@ -1,0 +1,108 @@
+﻿@model List<legarage.Models.RentOfficesModel>
+@{
+    //DataTable rents = new DataTable();
+    //string msg = "";
+    //string query = "select R.id,R.name,R.description,R.mobile,R.website, I.url AS Img ,(select name from Provinces where id in " +
+    //               "(select province_id from Addresses where id=R.address_id)) as city from Rental_Offices AS R inner join Images AS I on R.id = I.referral_id " +
+    //               "where i.is_main = 1;";
+    //rents = Database.ReadTableByQuery(query, null, out msg);
+    if (Model != null && Model.Count > 0)
+    {
+        foreach (var rent in Model)
+        {
+    <div class="card col-lg-5 index-card" id="garages_div" onclick="goToRentDetails('@rent.ID');">
+
+        @{
+            if (rent.Rate > 0)
+            {
+                @Html.Partial("../Rating/Stars", rent.Rate, new ViewDataDictionary { { "class", "rating2" } })
+            }
+        }
+        <img class="card-img-top" src="~/Images/RentOffice/@rent.Image.URL" alt="Card image cap">
+
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col col-lg">
+                    <h4 class="card-title" style="display:inline">@rent.Name</h4>
+                </div>
+                <div class="col-md align-self-end" style="text-align: end;">
+                    <em style="color:dimgray;"><i class="fa fa-phone text-success fa-1x fa-flip-horizontal" aria-hidden="true"></i></em>
+                    @rent.Mobile
+                </div>
+            </div>
+            <hr />
+            <button class="btn btn-outline-primary" onclick="goToRentDetails('@rent.ID');" hidden>@Resources.Home.garages_show</button>
+            <div class="">
+                <div class="row details">
+                    <div class="col-12 col-sm-12">
+                        <ul class="list-group list-group-flush no-border">
+                            <li class="list-group-item no-border"><em style="color:dimgray;">CityName:</em>@rent.Address.Province</li>
+                            <li class="list-group-item no-border"><em style="color:dimgray;">Website:</em> @rent.Website</li>
+                            <li class="list-group-item no-border"><em style="color:dimgray;">Description:</em>@rent.Description</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        }
+        <nav aria-label="Page navigation example" class="mt-auto">
+            <ul class="pagination justify-content-center">
+                @{
+                    string prev = "";
+                    string next = "";
+                    string next_page = "";
+                    string prev_page = "";
+                    int page = (int)Session["current_page"];
+                    int page_count = (int)Session["pages_count"];
+                    if (page == 1)
+                    {
+                        prev = "disabled";
+                    }
+                    else
+                    {
+                        prev = "";
+                        prev_page = (page - 1).ToString();
+                    }
+                    if (page == page_count || page_count <= 1)
+                    {
+                        next = "disabled";
+                    }
+                    else
+                    {
+                        next = "";
+                        next_page = (page + 1).ToString();
+                    }
+
+                }
+                <li class="page-item  @prev">
+                    <button class="page-link" tabindex="-1" aria-disabled="true" onclick="return getPage('@prev_page','/RentOffices/GetRentOffices');">@Resources.Shared.Previous</button>
+                </li>
+                @{
+
+                    for (var pg = 1; pg <= page_count; pg++)
+                    {
+                        <li class="page-item @(pg == page ? "active":"")">
+                            <div onclick="return getPage('@pg','/RentOffices/GetRentOffices');" class="page-link" data-controller="Garages" asp-route-page="">
+                                @(pg)
+                            </div>
+                        </li>
+                    }
+                }
+
+                <li class="page-item @next">
+                    <button class="page-link" onclick="return getPage('@next_page','/RentOffices/GetRentOffices');">@Resources.Shared.Next</button>
+                </li>
+            </ul>
+        </nav>
+
+    }
+    else
+    {
+        <p>
+            @Resources.Shared.Nodatafound
+        </p>
+    }
+
+}

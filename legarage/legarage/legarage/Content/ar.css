@@ -1,0 +1,11 @@
+﻿body {
+    direction:rtl;
+}
+
+* .modal{
+    text-align:right;
+}
+
+#phone_picker{
+    direction:ltr !important;
+}

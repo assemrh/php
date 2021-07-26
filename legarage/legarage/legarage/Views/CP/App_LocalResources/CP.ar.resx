@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>اضافة</value>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>تم الاضافة بنجاح</value>
+  </data>
+  <data name="AddGarage" xml:space="preserve">
+    <value>اضافة كراج</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>اضافة صورة</value>
+  </data>
+  <data name="AddImageBrand" xml:space="preserve">
+    <value>الرجاء إضافة شعار العلامة التجارية</value>
+  </data>
+  <data name="AddNewCity" xml:space="preserve">
+    <value>اضافة مدينة</value>
+  </data>
+  <data name="AddNewCountry" xml:space="preserve">
+    <value>اضافة دولة</value>
+  </data>
+  <data name="AddNewModel" xml:space="preserve">
+    <value>اضافة موديل جديد</value>
+  </data>
+  <data name="AddNewService" xml:space="preserve">
+    <value>اضافة خدمة جديدة</value>
+  </data>
+  <data name="AddNewUser" xml:space="preserve">
+    <value>اضافة مستخدم جديد</value>
+  </data>
+  <data name="AddNewVehicle" xml:space="preserve">
+    <value>اضافة نوع مركبة جديد</value>
+  </data>
+  <data name="AddNewVehicles" xml:space="preserve">
+    <value>اضافة مركبة جديدة</value>
+  </data>
+  <data name="AddProduct" xml:space="preserve">
+    <value>اضافة قطعة</value>
+  </data>
+  <data name="AddRentOffice" xml:space="preserve">
+    <value>اضافة مكتب ايجار</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="AddWinche" xml:space="preserve">
+    <value>اضافة سطحة</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>المنطقة</value>
+  </data>
+  <data name="AreSureDelete" xml:space="preserve">
+    <value>هل انت متأكد من الحذف؟</value>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>اوتوماتيك</value>
+  </data>
+  <data name="Back_To_Website" xml:space="preserve">
+    <value>العودة الى الموقع</value>
+  </data>
+  <data name="Brand" xml:space="preserve">
+    <value>علامة تجارية</value>
+  </data>
+  <data name="BrandDetail" xml:space="preserve">
+    <value>تفاصيل العلامة التجارية</value>
+  </data>
+  <data name="Brands" xml:space="preserve">
+    <value>العلامات التجارية</value>
+  </data>
+  <data name="BuyAndSellVehicles" xml:space="preserve">
+    <value>بيع وشراء المركبات</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>بواسطة</value>
+  </data>
+  <data name="CarageImg" xml:space="preserve">
+    <value>صورة الكراج</value>
+  </data>
+  <data name="Carages" xml:space="preserve">
+    <value>الكراجات</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>خدمات</value>
+  </data>
+  <data name="Chose" xml:space="preserve">
+    <value>اختر</value>
+  </data>
+  <data name="Cities" xml:space="preserve">
+    <value>المدن</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>المدن</value>
+  </data>
+  <data name="CityDetails" xml:space="preserve">
+    <value>تفاصيل المدينة</value>
+  </data>
+  <data name="CityEdit" xml:space="preserve">
+    <value>تعديل المدينة</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>اختر</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>اغلاق</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>الكود</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="Condition" xml:space="preserve">
+    <value>الشروط</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>التواصل</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>الدول</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>الدول</value>
+  </data>
+  <data name="CountryDetails" xml:space="preserve">
+    <value>تفاصيل الدولة</value>
+  </data>
+  <data name="cp" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="cp_garages" xml:space="preserve">
+    <value>لوحة تحكم الكراجات</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>اضافة جديد</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DeletedSuccessfully" xml:space="preserve">
+    <value>تم الحذف بنجاح</value>
+  </data>
+  <data name="Descrption" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفاصيل</value>
+  </data>
+  <data name="Diesel" xml:space="preserve">
+    <value>بانزين</value>
+  </data>
+  <data name="DriverName" xml:space="preserve">
+    <value>اسم السائق</value>
+  </data>
+  <data name="DriverPhone" xml:space="preserve">
+    <value>رقم هاتف السائق</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="EditBrand" xml:space="preserve">
+    <value>تعديل العلامة التجارية</value>
+  </data>
+  <data name="EditCountry" xml:space="preserve">
+    <value>تعديل الدولة</value>
+  </data>
+  <data name="Edited" xml:space="preserve">
+    <value>تم التعديل بنجاح</value>
+  </data>
+  <data name="EditImage" xml:space="preserve">
+    <value>ادرج صورة لتبديلها</value>
+  </data>
+  <data name="EditModel" xml:space="preserve">
+    <value>تعديل الموديل</value>
+  </data>
+  <data name="EditService" xml:space="preserve">
+    <value>تعديل الخدمة</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>الايميل</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>النهاية</value>
+  </data>
+  <data name="EngineSize" xml:space="preserve">
+    <value>قوة المحرك</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>ادخل</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>ادخل العنوان رجاء</value>
+  </data>
+  <data name="EnterBrand" xml:space="preserve">
+    <value>ادخل العلامة التجارية رجاء</value>
+  </data>
+  <data name="EnterCity" xml:space="preserve">
+    <value>ادخل اسم المدينة رجاء</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>ادخل رمز المدينة رجاء</value>
+  </data>
+  <data name="EnterColor" xml:space="preserve">
+    <value>ادخل اللون رجاء</value>
+  </data>
+  <data name="EnterCountry" xml:space="preserve">
+    <value>ادخل اسم الدولة رجاء</value>
+  </data>
+  <data name="EnterDescrption" xml:space="preserve">
+    <value>ادخل الوصف رجاء</value>
+  </data>
+  <data name="EnterDriverName" xml:space="preserve">
+    <value>ادخل اسم السائق رجاء</value>
+  </data>
+  <data name="EnterDriverPhone" xml:space="preserve">
+    <value>ادخل رقم هاتف السائق رجاء</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>ادخل الايميل رجاء</value>
+  </data>
+  <data name="EnterEngineSize" xml:space="preserve">
+    <value>ادخل حجم المحرك رجاء</value>
+  </data>
+  <data name="EnterFacebook" xml:space="preserve">
+    <value> حساب الفيس بوك</value>
+  </data>
+  <data name="EnterFax" xml:space="preserve">
+    <value>رقم الفاكس</value>
+  </data>
+  <data name="EnterFuelType" xml:space="preserve">
+    <value>ادخل نوع الوقود رجاء</value>
+  </data>
+  <data name="EnterFullName" xml:space="preserve">
+    <value>ادخل الاسم الكامل رجاء</value>
+  </data>
+  <data name="EnterGearBox" xml:space="preserve">
+    <value>ادخل صندوق التروس</value>
+  </data>
+  <data name="EnterHere" xml:space="preserve">
+    <value>ادخل</value>
+  </data>
+  <data name="EnterImage" xml:space="preserve">
+    <value>ادخل الصورة رجاء</value>
+  </data>
+  <data name="EnterInstagram" xml:space="preserve">
+    <value> حساب الانستكرام</value>
+  </data>
+  <data name="EnterIsNew" xml:space="preserve">
+    <value>هل جديدة؟</value>
+  </data>
+  <data name="EnterKeywords" xml:space="preserve">
+    <value>ادخل كلمات مفتاحية رجاء</value>
+  </data>
+  <data name="EnterLinkedin" xml:space="preserve">
+    <value>حساب لينكدن</value>
+  </data>
+  <data name="EnterMieage" xml:space="preserve">
+    <value>ادخل المسافة المقطوعة رجاء</value>
+  </data>
+  <data name="EnterModel" xml:space="preserve">
+    <value>ادخل الموديل رجاء</value>
+  </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>ادخل الاسم رجاء</value>
+  </data>
+  <data name="EnterOwnerName" xml:space="preserve">
+    <value>ادخل اسم المالك</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>ادخل كلمة المرور رجاء</value>
+  </data>
+  <data name="EnterPhone" xml:space="preserve">
+    <value>ادخل رقم الهاتف رجاء</value>
+  </data>
+  <data name="EnterPrice" xml:space="preserve">
+    <value>ادخل السعر رجاء</value>
+  </data>
+  <data name="EnterQuantity" xml:space="preserve">
+    <value>ادخل الكمية رجاء</value>
+  </data>
+  <data name="EnterSerives" xml:space="preserve">
+    <value>ادخل نوع الخدمة رجاء</value>
+  </data>
+  <data name="EnterSnapchat" xml:space="preserve">
+    <value>حساب سناب شات</value>
+  </data>
+  <data name="EnterUser" xml:space="preserve">
+    <value>ادخل اسم المستخدم رجاء</value>
+  </data>
+  <data name="EnterVehicle" xml:space="preserve">
+    <value>ادخل نوع المركبة رجاء</value>
+  </data>
+  <data name="EnterVehicleSizes" xml:space="preserve">
+    <value>ادخل حجم المركبة رجاء</value>
+  </data>
+  <data name="EnterWebsite" xml:space="preserve">
+    <value>الموقع الالكتروني</value>
+  </data>
+  <data name="EnterWhatsapp" xml:space="preserve">
+    <value>رقم الواتس </value>
+  </data>
+  <data name="EnterYear" xml:space="preserve">
+    <value>ادخل سنة الصنع رجاء</value>
+  </data>
+  <data name="EnterYoutube" xml:space="preserve">
+    <value>قناة اليوتيوب</value>
+  </data>
+  <data name="Facebook" xml:space="preserve">
+    <value>فيس بوك</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>فاكس</value>
+  </data>
+  <data name="FuelType" xml:space="preserve">
+    <value>نوع الوقود</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="GarageContactInformation" xml:space="preserve">
+    <value>معلومات التواصل الخاصة بالكراج</value>
+  </data>
+  <data name="GarageDetail" xml:space="preserve">
+    <value>تفاصيل الكراج</value>
+  </data>
+  <data name="GarageEdit" xml:space="preserve">
+    <value>تعديل الكراج</value>
+  </data>
+  <data name="GarageName" xml:space="preserve">
+    <value>اسم الكراج</value>
+  </data>
+  <data name="Garages" xml:space="preserve">
+    <value>الكراجات</value>
+  </data>
+  <data name="Gearbox" xml:space="preserve">
+    <value>صندوق التروس</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>صورة</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="Instagram" xml:space="preserve">
+    <value>انستاغرام</value>
+  </data>
+  <data name="IsMarket" xml:space="preserve">
+    <value>هل سوق</value>
+  </data>
+  <data name="IsNew" xml:space="preserve">
+    <value>هل جديدة</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>كلمات مفتاحية</value>
+  </data>
+  <data name="Less100" xml:space="preserve">
+    <value>اقل من 100 الف كم</value>
+  </data>
+  <data name="Less150" xml:space="preserve">
+    <value>اقل من 150 الف كم</value>
+  </data>
+  <data name="Less50" xml:space="preserve">
+    <value>اقل من 50 الف كم</value>
+  </data>
+  <data name="Linkedin" xml:space="preserve">
+    <value>لينكدن</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>شعار العلامة التجارية</value>
+  </data>
+  <data name="MainServices" xml:space="preserve">
+    <value>الخدمات الرئيسية</value>
+  </data>
+  <data name="Make" xml:space="preserve">
+    <value>الصنع</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>عادي</value>
+  </data>
+  <data name="Mieage" xml:space="preserve">
+    <value>المسافة المقطوعة</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>الموديل</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>الموديلات</value>
+  </data>
+  <data name="ModleDetail" xml:space="preserve">
+    <value>تفاصيل الموديل</value>
+  </data>
+  <data name="More150" xml:space="preserve">
+    <value>اكثر من 150 الف كم</value>
+  </data>
+  <data name="NameOfCarage" xml:space="preserve">
+    <value>اسم الكراج</value>
+  </data>
+  <data name="NameOfPart" xml:space="preserve">
+    <value>اسم القطعة</value>
+  </data>
+  <data name="NameOfRentOffice" xml:space="preserve">
+    <value>اسم مكتب الإيجار</value>
+  </data>
+  <data name="nav_services" xml:space="preserve">
+    <value>خدمات</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="Nickname" xml:space="preserve">
+    <value>الاسم المستعار</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="NoBrand" xml:space="preserve">
+    <value>لا يوجد ماركات مسجلة</value>
+  </data>
+  <data name="NoCity" xml:space="preserve">
+    <value>لا يوجد مدن مسجلة</value>
+  </data>
+  <data name="NoCountry" xml:space="preserve">
+    <value>لا يوجد دول مسجلة</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>يوجد هناك خطأ في تعليمة SQL</value>
+  </data>
+  <data name="NoGarages" xml:space="preserve">
+    <value>لا يوجد كراجات مسجلة</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>لا يوجد صور</value>
+  </data>
+  <data name="NoModel" xml:space="preserve">
+    <value>لا يوجد موديلات مسجلة</value>
+  </data>
+  <data name="NoOffers" xml:space="preserve">
+    <value>لا يوجد عروض</value>
+  </data>
+  <data name="NoParts" xml:space="preserve">
+    <value>لا يوجد قطع متاحة</value>
+  </data>
+  <data name="NoRentOffices" xml:space="preserve">
+    <value>لا يوجد مكاتب تأجير مسجلة</value>
+  </data>
+  <data name="NoService" xml:space="preserve">
+    <value>لا يوجد خدمات مسجلة</value>
+  </data>
+  <data name="NoUser" xml:space="preserve">
+    <value>لا يوجد مستخدمين مسجلين</value>
+  </data>
+  <data name="NoVehicle" xml:space="preserve">
+    <value>لا يوجد مركبات مسجلة</value>
+  </data>
+  <data name="NoWinches" xml:space="preserve">
+    <value>لا يوجد سطحات مسجلة</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>في</value>
+  </data>
+  <data name="Offers" xml:space="preserve">
+    <value>العروض</value>
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value>قديم</value>
+  </data>
+  <data name="OldImage" xml:space="preserve">
+    <value>الصورة الحالية</value>
+  </data>
+  <data name="OwnerName" xml:space="preserve">
+    <value>اسم المالك</value>
+  </data>
+  <data name="Part" xml:space="preserve">
+    <value>القطع</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة السر</value>
+  </data>
+  <data name="Paymentmethod" xml:space="preserve">
+    <value>طريقة الدفع</value>
+  </data>
+  <data name="Petrol" xml:space="preserve">
+    <value>مازوت</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>السعر</value>
+  </data>
+  <data name="ProductsOrParts" xml:space="preserve">
+    <value>قطع غيار</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>الكمية</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>تقييم</value>
+  </data>
+  <data name="RecoveryWinches" xml:space="preserve">
+    <value>سطحات</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="RentOfficeDetails" xml:space="preserve">
+    <value>تفاصيل مكتب التأجير</value>
+  </data>
+  <data name="RentOfficeEdit" xml:space="preserve">
+    <value>تعديل مكتب التأجير</value>
+  </data>
+  <data name="RentOfficeImage" xml:space="preserve">
+    <value>صورة مكتب التاجير</value>
+  </data>
+  <data name="RentOffices" xml:space="preserve">
+    <value>مكاتب التأجير</value>
+  </data>
+  <data name="SelectCountry" xml:space="preserve">
+    <value>اختار الدولة رجاء</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>الخدمة</value>
+  </data>
+  <data name="ServiceDetail" xml:space="preserve">
+    <value>تفاصيل الخدمة</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>سليدر</value>
+  </data>
+  <data name="Snapchat" xml:space="preserve">
+    <value>سنابشات</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>البدء</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Store_id" xml:space="preserve">
+    <value>رقم المتجر</value>
+  </data>
+  <data name="TheMainSections" xml:space="preserve">
+    <value>الاقسام الرئيسية</value>
+  </data>
+  <data name="Tiktok" xml:space="preserve">
+    <value>تيك توك</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>الادوات</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>تويتر</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="TypeOfPart" xml:space="preserve">
+    <value>نوع القطعة</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>حمل الصورة</value>
+  </data>
+  <data name="UserDetails" xml:space="preserve">
+    <value>تفاصيل المستخدم</value>
+  </data>
+  <data name="UserEdit" xml:space="preserve">
+    <value>تعديل بيانات المستخدم</value>
+  </data>
+  <data name="UserImg" xml:space="preserve">
+    <value>صورة المستخدم</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>المركبة</value>
+  </data>
+  <data name="VehicleDetail" xml:space="preserve">
+    <value>تفاصيل المركبة</value>
+  </data>
+  <data name="VehicleEdit" xml:space="preserve">
+    <value>تعديل نوع المركبة</value>
+  </data>
+  <data name="VehicleImage" xml:space="preserve">
+    <value>صورة المركبة</value>
+  </data>
+  <data name="Vehicles" xml:space="preserve">
+    <value>المركبات</value>
+  </data>
+  <data name="VehicleSizes" xml:space="preserve">
+    <value>حجم المركبة</value>
+  </data>
+  <data name="VehicleType" xml:space="preserve">
+    <value>نوع المركبة</value>
+  </data>
+  <data name="VehicleTypes" xml:space="preserve">
+    <value>انواع المركبات</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>الموقع الالكتروني</value>
+  </data>
+  <data name="WhatsappNumber" xml:space="preserve">
+    <value>رقم الواتس اب</value>
+  </data>
+  <data name="WhatUserName" xml:space="preserve">
+    <value>ماهو اسم المستخدم الذي تفضله</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>السنة</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="Youtube" xml:space="preserve">
+    <value>يوتيوب</value>
+  </data>
+</root>

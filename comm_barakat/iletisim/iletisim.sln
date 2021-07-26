@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iletisim", "iletisim\iletisim.csproj", "{01D12346-E421-423A-B4DC-4E3318DF13C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01D12346-E421-423A-B4DC-4E3318DF13C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D12346-E421-423A-B4DC-4E3318DF13C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D12346-E421-423A-B4DC-4E3318DF13C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D12346-E421-423A-B4DC-4E3318DF13C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C2F9A9F-070F-46C3-AFC4-4B3A62378C7B}
+	EndGlobalSection
+EndGlobal

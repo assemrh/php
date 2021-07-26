@@ -1,0 +1,100 @@
+﻿.market-selector {
+    position: relative;
+}
+
+    .market-selector .dropdown-content {
+        box-shadow: 0 0 14px rgb(0 0 0 / 8%);
+        top: 3.25rem;
+        left: 1.75rem;
+        max-height: 20rem;
+        overflow: auto;
+    }
+
+        .market-selector .dropdown-content:before {
+            font-family: Font-Awesome;
+            display: block;
+            content: '';
+            position: absolute;
+            left: 6rem;
+            top: -10px;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent #f8f9fa transparent;
+        }
+
+
+
+.select2-dropdown {
+    left: unset;
+    top: 1rem;
+}
+
+.dropdown-toggle::after {
+    font-family: Font-Awesome;
+    font-size: 30px;
+    vertical-align: 0px !important;
+}
+
+.selection {
+    border: hidden !important;
+}
+
+.select2-container--default .select2-selection--single, .selection {
+    background: none;
+    border: hidden !important;
+}
+
+.select2-search__field:focus, .select2-selection__rendered:focus, .select2-selection, .select2-selection--single {
+    outline: none !important;
+}
+/* select.js-example-templating{ outline:none; display:none; }*/
+
+.select2-dropdown--below {
+    width: max-content !important;
+}
+
+.select2-search {
+    padding: .85rem;
+}
+
+.select2-results ul li {
+    padding: .50rem 1.5rem !important; /*#f7f7f7*/
+}
+
+    .select2-results ul li:hover {
+        background-color: #f7f7f7;
+    }
+/* box-shadow: 0 0 14px rgb(0 0 0 / 8%); */
+
+.select2-container--open .select2-dropdown--above {
+    box-shadow: 0 0 14px rgb(0 0 0 / 8%);
+}
+
+.select2-container--open .select2-dropdown--below {
+    border: none;
+}
+
+.select2-search__field {
+    border-radius: 5px;
+}
+
+.select2-dropdown {
+    box-shadow: 0 0 14px rgb(0 0 0 / 8%);
+}
+
+.select2-container {
+    width: fit-content !important;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.select2-dropdown:before {
+    font-family: Font-Awesome;
+    display: block;
+    content: '';
+    position: absolute;
+    left: 6rem;
+    top: -10px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #fff transparent;
+}

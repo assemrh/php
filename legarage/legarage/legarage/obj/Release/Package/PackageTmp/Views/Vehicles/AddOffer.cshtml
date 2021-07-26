@@ -1,0 +1,59 @@
+﻿@model List<legarage.Models.VehiclesModel>
+
+<h1>Add Offer Vehicles</h1>
+
+<div class="form-group">
+    <label for="select_vehicle" class="mt-2">select Vehicle</label>
+    <select name="select_vehicle" class="form-control mr-sm-2" placeholder="select_vehicle" id="select_vehicle">
+        <option value="select">@Resources.Vehicles.SelectVehicle</option>
+        @{
+            string OldPrice = "";
+            foreach (var moo in Model)
+            {
+                <option value="@moo.ID">@moo.Title</option>
+                OldPrice = moo.Price;
+            }
+        }
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="meeting-time-st">@Resources.Offers.Start:</label>
+    <input type="datetime-local" id="meeting-time-st"
+           name="meeting-time-st" class="form-control">
+</div>
+<div class="form-group">
+    <label for="meeting-time-en">@Resources.Offers.End:</label>
+    <input type="datetime-local" id="meeting-time-en"
+           name="meeting-time-en"
+           class="form-control">
+</div>
+<div class="form-group">
+    <label for="descriptiontextarea">@Resources.Offers.Description</label>
+    <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="@Resources.Vehicles.placeholder1" name="desc"></textarea>
+</div>
+<div class="form-group">
+    <label for="offertextarea">@Resources.Offers.OfferDetails</label>
+    <textarea class="form-control" id="offertextarea" rows="4" placeholder="@Resources.Vehicles.placeholder2" name="details"></textarea>
+</div>
+<div class="form-group" >
+    <label for="pricetextarea">@Resources.Offers.OldPrice</label>
+    <input disabled class="form-control" id="pricetextarea" rows="3" placeholder="@OldPrice" name="oldprice" />
+</div>
+<div class="form-group">
+    <label for="pricetextarea">@Resources.Offers.DiscountPercentage</label>
+    <input type="text" class="form-control" id="discountinput" placeholder="@Resources.Vehicles.placeholder3" onkeyup="x=$('#pricetextarea').val(); y =$(this).val(); $('#Price').val(x-((x*y)/100));" name="discount_percentage" />
+</div>
+<div class="form-group">
+    <label for="Price">@Resources.Vehicles.Price</label>
+    <input disabled type="text" class="form-control" id="Price" placeholder="" name="Price" />
+</div>
+<div class="form-group">
+    <label for="paymenttextarea">@Resources.Offers.PaymentMethod</label>
+    <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="@Resources.Vehicles.placeholder4 " name="paymentmethod"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="exampleFormControlFile1">@Resources.Offers.UploadOfferImage</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*" name="image">
+</div>

@@ -1,0 +1,55 @@
+﻿@model List<legarage.Models.ProductsModel>
+
+
+<div class="form-group h-auto">
+    <label for="select-parts">@Resources.Part.productslbl:</label>
+    <div class="list-group form-control d-inline-table h-auto" id="select-parts">
+        @{
+            foreach (var m in Model)
+            {
+                <input type="checkbox" name="ProductsList" value="@m.ID" id="@m.ID" />
+                <label class=" list-group-item d-inline-flex w-48 m-1 h-25" for="@m.ID">
+                        @m.Title
+                    <span class="flex-shrink-0  rounded mini-pic ml-auto"><img class="bd-placeholder-img " height="64" src="~/Images/Products/@m.Image.URL" alt="@m.Title"></span>
+                </label>
+            }
+        }
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="meeting-time-st">@Resources.Part.Start:</label>
+    <input type="datetime-local" id="meeting-time-st"
+           name="meeting-time-st" class="form-control">
+</div>
+<div class="form-group">
+    <label for="meeting-time-en">@Resources.Part.End:</label>
+    <input type="datetime-local" id="meeting-time-en"
+           name="meeting-time-en"
+           class="form-control">
+</div>
+<div class="form-group">
+    <label for="descriptiontextarea">@Resources.Part.Description</label>
+    <textarea class="form-control" id="descriptiontextarea" rows="4" placeholder="@Resources.Part.placeholderDescription" name="desc"></textarea>
+</div>
+<div class="form-group">
+    <label for="offertextarea">@Resources.Part.OfferDetails</label>
+    <textarea class="form-control" id="offertextarea" rows="4" placeholder="@Resources.Part.placeholderOfferDetails" name="details"></textarea>
+</div>
+<div class="form-group">
+    <label for="pricetextarea">@Resources.Part.OldPrice</label>
+    <textarea class="form-control" id="pricetextarea" rows="3" placeholder="@Resources.Part.placeholderOldPrice" name="oldprice"></textarea>
+</div>
+<div class="form-group">
+    <label for="pricetextarea">@Resources.Part.Price</label>
+    <textarea class="form-control" id="pricetextarea" rows="3" placeholder="@Resources.Part.placeholderPrice" name="price"  onkeyup="x=$('#pricetextarea').val(); y =$(this).val(); $('#Price').val(x-((x*y)/100));" ></textarea>
+</div>
+<div class="form-group">
+    <label for="paymenttextarea">@Resources.Part.PaymentMethod</label>
+    <textarea class="form-control" id="paymenttextarea" rows="2" placeholder="@Resources.Part.placeholderPaymentMethod" name="paymentmethod"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="exampleFormControlFile1">@Resources.Part.UploadOfferImage</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*" name="image">
+</div>
