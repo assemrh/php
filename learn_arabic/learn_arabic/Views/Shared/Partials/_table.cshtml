@@ -1,0 +1,95 @@
+﻿@using Newtonsoft.Json.Linq;
+@model List<RowT>  //RowT is a Dictionary<string, string>
+@{
+    //JArray data = ViewBag.jData;
+    List<string> lstKeys = ViewBag.colKeys ?? new List<string> { "" };
+    List<string> lstColTitles = ViewBag.ColTitles;
+    string editAction = ViewBag.EditAction ?? "";
+    string saveAction = ViewBag.SaveAction ?? "";
+    string readAction = ViewBag.ReadAction ?? "";
+    string deleteAction = ViewBag.DeleteAction ?? "";
+    int i = 1;
+}
+<div class="table-responsive">
+
+    <table class="table align-items-center table-flush w-100">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                @foreach (string colTitle in lstColTitles)
+                {
+                    <th>@colTitle</th>
+                }
+                <th style="width: 100px;">@Resources.General.Tools</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Model)
+            {
+                <tr>
+                    <th scope="row">@(i++)</th>
+                    @foreach (var item in lstKeys)
+                    {
+                        if (item.ToLower() == "image")
+                        {
+                            <td>
+                                <div class="media align-items-center">
+                                    <a href="#" class="avatar rounded-circle mr-3">
+                                        <img src="@row[item]" />
+                                    </a>
+                                </div>
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="mb-0 text-sm">@row[item]</td>
+                        }
+                    }
+                    @*<td >
+                            <span class="edit-btn cursor-pointer" title="@Resources.General.Edit">
+                                <i class="fas fa-edit text-yellow"></i>
+                            </span>
+                            <span class="show-btn cursor-pointer" title="@Resources.General.Show">
+                                &nbsp;
+                                <i class="fas fa-eye text-green show-btn"></i>
+                            </span>
+                            <span class="delete-btn cursor-pointer" title="@Resources.General.Delete">
+                                &nbsp;
+                                <i class="fas fa-minus-circle text-red"></i>
+                            </span>
+                        </td>*@
+                    <td class="text-right" data-Id="@row["Id"]">
+                        <div class="dropdown">
+                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#">
+                                    <span class="edit-btn cursor-pointer" title="@Resources.General.Edit">
+                                        <i class="fas fa-edit text-yellow"></i>
+                                        &nbsp;
+                                        @Resources.General.Edit
+                                    </span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="show-btn cursor-pointer" title="@Resources.General.Show">
+                                        <i class="fas fa-eye text-green show-btn"></i>
+                                        &nbsp;
+                                        @Resources.General.details
+                                    </span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="delete-btn cursor-pointer" title="@Resources.General.Delete">
+                                        <i class="fas fa-minus-circle text-red"></i>
+                                        &nbsp;
+                                        @Resources.General.Delete
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+﻿@{Layout = "~/Views/Shared/_LayoutCP.cshtml";}
+@{ViewBag.Title = "Control Panel Users";}
+@using SGAW_ECHO.Models
+
+@model List<UserModel>
+
+
+<div class="content col-12 text-center rounded-bottom" style="background-color: lightgrey;">
+    <div class="container">
+        <div class="col-12 h3">
+            <div class="row plusandrefresh pt-2">
+                <div class="col-10"><h3> @Resources.Shared.Users</h3></div>
+                <div class="col-1">
+                    <i title=" @Resources.Shared.Refresh" onclick="Refresh('@ViewBag.ControllerName');" style="color: green; cursor: pointer;" class="fas fa-redo-alt refreshControlPanel text-left"></i>
+                </div>
+                <div class="col-1">
+                    <i title=" @Resources.Shared.CreateNew" style="color:lightsalmon; cursor: pointer;" class="fas fa-plus-circle plusControlPanel" data-toggle="modal" data-target="#Modal" onclick="Add('@ViewBag.ControllerName');"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Resources.Users.FullName</th>
+            <th scope="col">@Resources.Users.Email</th>
+            <th scope="col">@Resources.Users.Username</th>
+            <th scope="col"> @Resources.Shared.Tools</th>
+        </tr>
+    </thead>
+    <tbody id="Table"  class="table">
+        @Html.Partial("Content", Model)
+    </tbody>
+</table>
+
+
+

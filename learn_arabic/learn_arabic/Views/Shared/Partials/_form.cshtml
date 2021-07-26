@@ -1,0 +1,137 @@
+﻿@model List<RowT>
+@{
+    List<string> lstKeys = ViewBag.colKeys ?? new List<string> { "" };
+    List<string> lstColTitles = ViewBag.ColTitles;
+    int i = 1;
+}
+
+@{
+    Layout = "_ControlPanel_Layout";
+}
+@{ 
+    ViewBag.Action = "/Admin/Categories/Add";
+    var li = new List<RowT>()
+    {
+                new RowT() {
+                        {"input-id", "example-text-input-id" },
+                        { "type", "radio" },
+                        { "name", "English_Name" },
+                        { "value", "" },
+                        { "label", "English Name" },
+                    },
+                new RowT() {
+                        {"input-id", "example-text-input-id1" },
+                        { "type", "textarea" },
+                        { "name", "Arabic_Name" },
+                        { "value", "" },
+                        { "label", "Arabic Name1" },
+                    },
+                new RowT() {
+                        {"input-id", "example-text-input-id2" },
+                        { "type", "text" },
+                        { "name", "Turkish_Name" },
+                        { "value", "" },
+                        { "label", "Turkish Name" },
+                    },
+                new RowT() {
+                        {"input-id", "example-text-input-id3" },
+                        { "type", "text" },
+                        { "name", "Russian_Name" },
+                        { "value", "" },
+                        { "label", "Turkish Name" },
+                    },
+
+    };
+}
+
+@await Html.PartialAsync("_header", true)
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-6 p-5 ml-5 mr-5">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">@ViewBag.TableTitle</h3>
+                </div>
+                <div class="table-responsive p-3">
+                    <form class="align-items-center add-form w-100" role="form" method="post" action="@ViewBag.Action" data-previous="@ViewBag.Previous">
+                        <div class="form-group">
+                            @if (ViewBag.Success != null)
+                            {
+                                <div class="alert alert-success" role="alert">
+                                    @ViewBag.Success
+                                </div>
+                            }
+                        </div>
+                        @foreach (var row in li)
+                        {
+                            <div class="form-group">
+                                <label for="@row["input-id"]" class="form-control-label">@row["label"]</label>
+                                <input class="form-control" type="@row["type"]" asp-for="@row["name"]" value="@row["value"]" id="@row["input-id"]" required>
+                            </div>
+                        }
+                    </form>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger ml-auto">@Resources.General.Cancle</button>
+                        <button type="button" class="btn btn-primary btn-add my-4">@Resources.General.AddNew</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+
+    <script>
+        $(".btn-add").click(
+            function () {
+                var frm = $(".add-form")[0]
+                var _data = new FormData(frm)
+                var _action = $(frm).attr('action')
+                var previous = $(frm).data('previous')
+                $.ajax({
+                    type: "Post",
+                    data: _data,
+                    url: _action,
+                    processData: false,
+                    success(result) {
+                        console.log(result)
+                        swal("Oops", "Something went wrong!", "success")
+                        setTimeout(function () {
+                            $(".alert-success").hide(600)
+                            location.href = previous
+                        }, 4000)
+
+                    },
+                    error(error) {
+                        swal("Oops", "Something went wrong!", "error")
+                        console.log(error)
+                    }
+                })
+            }
+        )
+    </script>
+
+}
+
+@*@if (ViewBag.Success != null)
+    {
+        <script>
+            $(document).ready(
+                function () {
+                    setTimeout(function () {
+                        $(".alert-success").hide(600);
+                    }, 4000);
+                });
+        </script>
+
+    }*@
+
+

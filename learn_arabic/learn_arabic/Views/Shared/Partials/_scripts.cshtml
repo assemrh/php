@@ -1,0 +1,46 @@
+﻿<script>
+
+
+    $('.details-btn').click(
+        function () {
+            alert('details clicked')
+        }
+    )
+
+    $('.delete-btn').click(
+        function () {
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                            $.ajax({
+                                type: "Post",
+                                data: _data,
+                                url: _action,
+                                processData: false,
+                                success(result, textStatus, jqXHR) {
+                                    swal(result.msg, {
+                                        icon: "success",
+                                    })
+
+                                },
+                                error(jqXHR, textStatus, errorThrown) {
+                                    swal("Oops" + textStatus, "Something went wrong!" + textStatus, textStatus)
+                                    console.log(textStatus + ": " + jqXHR.status + " " + errorThrown)
+                                }
+                            })
+                        
+
+
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
+                });
+        }
+    )
+</script>

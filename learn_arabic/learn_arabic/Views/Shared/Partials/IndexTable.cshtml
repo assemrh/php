@@ -1,0 +1,221 @@
+﻿@model List<RowT>
+@{
+    Layout = "_ControlPanel_Layout";
+
+}
+@{
+    List<string> lstKeys = ViewBag.colKeys ?? new List<string> { "" };
+    List<string> lstColTitles = ViewBag.ColTitles;
+    string Controller = ViewBag.Controller ?? "";
+    dynamic currentPage = ViewBag.CurrentPage ?? 1;
+    int count = ViewBag.TotalItems ?? 0;
+
+    int i = 1 + (currentPage - 1) * 20;
+}
+
+@await Html.PartialAsync("_header", false)
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">@ViewBag.TableTitle</h3>
+                    <h5 class="mb-0">@count @Resources.General.Item</h5>
+                </div>
+
+                @if (Model != null && Model?.Count == 0 && string.IsNullOrWhiteSpace(ViewBag.Error))
+                {
+                    <div class="container">
+                        <div class="row text-center justify-content-center">
+                            <div class="card text-center mt-5 p-2 bg-transparent shadow-none">
+                                <img src="@ViewBag.Img" class="card-img-top h-25 w-25 ml-auto mr-auto" />
+                                <div class="card-body">
+                                    <p class="card-text">@ViewBag.Message</p>
+                                    <a href="@Controller/add" class="btn add-btn btn-dark">@Resources.General.AddNew</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (!string.IsNullOrWhiteSpace(ViewBag.Error))
+                {
+                    <div class="container">
+                        <div class="row text-center justify-content-center">
+                            <div class="card text-center mt-5 p-2 bg-transparent shadow-none">
+                                <img src="/img/svg/warning.svg" class="card-img-top h-25 w-25 ml-auto mr-auto" />
+                                <div class="card-body">
+                                    <p class="card-text">@ViewBag.Error</p>
+                                    <a href="/admin" class="btn btn-dark">@Resources.General.Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+
+                        <table class="table align-items-center table-flush w-100">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    @foreach (string colTitle in lstColTitles)
+                                    {
+                                        <th>@colTitle</th>
+                                    }
+                                    <th style="width: 100px;">@Resources.General.Tools</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var row in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@(i++)</th>
+                                        @foreach (var item in lstKeys)
+                                        {
+                                            if (item.ToLower() == "image")
+                                            {
+                                                <td>
+                                                    <div class="media align-items-center">
+                                                        <a href="#" class="avatar rounded-circle mr-3">
+                                                            <img src="@row[item]" />
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td class="mb-0 text-sm">@row[item]</td>
+                                            }
+                                        }
+                                        <td class="text-right" data-Id="@row["Id"]">
+                                            <div class="dropdown">
+                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="edit-btn cursor-pointer" title="@Resources.General.Edit">
+                                                            <i class="fas fa-edit text-yellow"></i>
+                                                            &nbsp;
+                                                            @Resources.General.Edit
+                                                        </span>
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="details-btn cursor-pointer" title="@Resources.General.Show">
+                                                            <i class="fas fa-eye text-green show-btn"></i>
+                                                            &nbsp;
+                                                            @Resources.General.details
+                                                        </span>
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="delete-btn cursor-pointer" title="@Resources.General.Delete">
+                                                            <i class="fas fa-minus-circle text-red"></i>
+                                                            &nbsp;
+                                                            @Resources.General.Delete
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                @await Html.PartialAsync("_card-footer")
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(function () {
+
+            $('.add-btn').click(
+                function () {
+                    location.href = '@Controller/add' + '?&ReturnUrl=' + window.location.href
+                }
+            )
+            $('.details-btn').parent().click(
+                function () {
+                    var _ID = $(this).closest('td').attr('data-Id');
+                    location.href = '@Controller/details' + '?Id=' + _ID + '&ReturnUrl=' + window.location.href
+                }
+            )
+            $('.edit-btn').parent().click(
+                function () {
+                    var _ID = $(this).closest('td').attr('data-Id');
+                    location.href = '@Controller/edite' + '?Id=' + _ID + '&ReturnUrl=' + window.location.href
+                }
+            )
+
+            $('.delete-btn').parent().click(
+                function () {
+
+                    var _ID = $(this).closest('td').attr('data-Id'),
+                        form_data = new FormData()
+                    form_data.append('Id', _ID)
+
+                    //console.log(_ID)
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: 'btn btn-danger',
+                            cancelButton: 'btn btn-warning'
+                        },
+                        buttonsStyling: false
+                    })
+                    //TODO Asım -  ADD title and Button text
+                    swalWithBootstrapButtons.fire({
+                        title: "@JsStringEncode(Resources.Message.AreSure)",
+                        text: "@JsStringEncode(Resources.Message.CantRevert)",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: '@JsStringEncode(Resources.General.Delete)',
+                        cancelButtonText: '@JsStringEncode(Resources.Message.NoCancel)',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                type: "Delete",
+                                data: form_data,
+                                url: '@Controller/delete',
+                                processData: false,
+                                contentType: false,
+                                success(result, textStatus, jqXHR) {
+                                    swalWithBootstrapButtons.fire(
+                                        result.title,
+                                        result.msg,
+                                        'success'
+                                    )
+                                    setTimeout(function () {
+                                        document.location.reload(true)
+                                    }, 1500)
+                                },
+                                error(jqXHR, textStatus, errorThrown) {
+                                    console.log(textStatus + ": " + jqXHR.responseJSON.msg + " " + errorThrown)
+                                },
+                                complete: function (xhr) {
+                                    console.output(xhr.status);
+                                }
+                            })
+                        } else if (result.dismiss === Swal.DismissReason.cancel) {
+                            swalWithBootstrapButtons.fire(
+                                '@JsStringEncode(Resources.Message.Cancelled)'
+                            )
+                        }
+                    })
+                })
+        })
+    </script>
+}
+

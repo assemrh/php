@@ -1,0 +1,238 @@
+﻿@model learn_arabic.Models.LessonModel
+@{
+    Layout = "_ControlPanel_Layout";
+    var LessonsList = ViewBag.LessonsList as List<ShowLessonModel> ?? new List<ShowLessonModel>();
+    var GroupsList = ViewBag.GroupsList as List<ShowConstantModel> ?? new List<ShowConstantModel>();
+}
+
+@await Html.PartialAsync("_header", true)
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row justify-content-center">
+        <div class="col-6 p-5 ml-5 mr-5">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">@ViewBag.TableTitle</h3>
+                </div>
+                <div class="table-responsive p-3">
+                    <form id="form" class="align-items-center add-form w-100" role="form" method="post" action="/Admin/Lessons/@ViewBag.Action" data-previous="/Admin/Lessons/" enctype="multipart/form-data">
+                        @*<input type="hidden" asp-for="ID" value="@Model?.ID" />*@
+
+                        <div class="form-group">
+                            <label>@Resources.General.Group_Name</label>
+                            <select class="form-control select2" type="text" data-target="Prev_Lesson_ID" data-action="/Admin/Lessons/" asp-for="Group_ID" style="width: 100%;" required>
+                                <option value="@(new Guid())">Select one</option>
+
+                                @foreach (var item in GroupsList)
+                                {
+                                    if (item.ID == Model?.Group_ID.ToString())
+                                    {
+                                        <option value="@item.ID" selected="selected">@item.Value</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.ID">@item.Value</option>
+                                    }
+                                }
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Resources.General.Prev_Name</label>
+                            <select class="form-control select2" type="text" id="Prev_Lesson_ID" asp-for="Prev_Lesson_ID" style="width: 100%;">
+                                <option value="@(new Guid())">Select one</option>
+
+                                @foreach (var item in LessonsList)
+                                {
+                                    if (item.ID == Model?.Prev_Lesson_ID.ToString())
+                                    {
+                                        <option value="@item.ID" selected="selected">@item.Name</option>
+                                    }
+                                }
+
+                            </select>
+                        </div>
+                        @if (!string.IsNullOrEmpty(Model?.Image.File_Name))
+                        {
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="/img/lessons/@Model.ID/@Model.Image.File_Name" alt="Card image cap">
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label for="RussianName-text-input" class="form-control-label">File Image<span class="text-red">*</span></label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" asp-for="Image.file" accept="image/*" required>
+                                <label class="custom-file-label" for="customFileLang">Select file</label>
+                            </div>
+                        </div>
+                        <h3>Languages</h3>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-link active" id="nav-Arabic-tab" data-toggle="tab" href="#nav-Arabic" role="tab" aria-controls="nav-Arabic" aria-selected="true">Arabic</a>
+                                <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-Russian" role="tab" aria-controls="nav-Russian" aria-selected="false">Russian</a>
+                                <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-Turkish" role="tab" aria-controls="nav-Turkish" aria-selected="false">Turkish</a>
+                                <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-English" role="tab" aria-controls="nav-English" aria-selected="false">English</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content tab-container pt-3" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-Arabic" role="tabpanel" aria-labelledby="nav-Arabic-tab">
+                                @*<div id="html5-inputs-component" class="border rounded border-primary p-3 mb-3" role="tabpanel" aria-labelledby="html5-inputs-component-tab">*@
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Name<span class="text-red">*</span></label>
+                                    <input class="form-control" type="text" asp-for="Arabic_Lesson.Name" value="@Model?.Arabic_Lesson.Name" id="ArabicName-text-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Descreption</label>
+                                    <textarea class="form-control" type="text" asp-for="Arabic_Lesson.Descreption" value="@Model?.Arabic_Lesson.Descreption" id="ArabicName-text-input" required></textarea>
+                                </div>
+                                @if (!string.IsNullOrEmpty(Model?.Arabic_Lesson.Voice.File_Name))
+                                {
+                                    <div class="card" style="width: 18rem;">
+                                        <audio controls>
+                                          <source src="/Voice/lessons/@Model.ID/@Model.Arabic_Lesson.Voice.File_Name" type="audio/*">
+                                        Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                }
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Voice<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" asp-for="Arabic_Lesson.Voice.file" accept="audio/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                                @if (!string.IsNullOrEmpty(Model?.Arabic_Lesson.Video.File_Name))
+                                {
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="/img/lessons/@Model.ID/@Model.Arabic_Lesson.Video.File_Name" alt="Card image cap">
+                                        <video controls>
+                                            <source src="/Video/lessons/@Model.ID/@Model.Arabic_Lesson.Video.File_Name" type="video/*">
+                                            <source src="movie.ogg" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                }
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Video<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" asp-for="Arabic_Lesson.Video.file" accept="video/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                                @*</div>*@
+                            </div>
+                            <div class="tab-pane fade" id="nav-Russian" role="tabpanel" aria-labelledby="nav-Russian-tab">
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Name<span class="text-red">*</span></label>
+                                    <input class="form-control" type="text" asp-for="Russian_Lesson.Name" value="@Model?.Russian_Lesson.Name" id="ArabicName-text-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Descreption</label>
+                                    <textarea class="form-control" type="text" asp-for="Russian_Lesson.Descreption" value="@Model?.Russian_Lesson.Descreption" id="ArabicName-text-input" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Voice<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" asp-for="Russian_Lesson.Voice.file" accept="audio/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Video<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" asp-for="Arabic_Lesson.Video.file" accept="video/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-Turkish" role="tabpanel" aria-labelledby="nav-Turkish-tab">
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Name<span class="text-red">*</span></label>
+                                    <input class="form-control" type="text" asp-for="Turkish_Lesson.Name" value="@Model?.Turkish_Lesson.Name" id="ArabicName-text-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Descreption</label>
+                                    <textarea class="form-control" type="text" asp-for="Turkish_Lesson.Descreption" value="@Model?.Turkish_Lesson.Descreption" id="ArabicName-text-input" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Voice<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" asp-for="Turkish_Lesson.Voice.file" accept="audio/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Video<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" asp-for="Turkish_Lesson.Video.file" accept="video/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-English" role="tabpanel" aria-labelledby="nav-English-tab">
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Name<span class="text-red">*</span></label>
+                                    <input class="form-control" type="text" asp-for="English_Lesson.Name" value="@Model?.English_Lesson.Name" id="ArabicName-text-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ArabicName-text-input" class="form-control-label">@Resources.General.Descreption</label>
+                                    <textarea class="form-control" type="text" asp-for="English_Lesson.Descreption" value="@Model?.English_Lesson.Descreption" id="ArabicName-text-input" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Voice<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang"  asp-for="Turkish_Lesson.Voice.file" accept="audio/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="file-text-input" class="form-control-label">File Video<span class="text-red">*</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang"  asp-for="Turkish_Lesson.Video.file" accept="video/*">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        @*<div class="dropzone" id="dropzone">
+            <img class="dropzone-icon" src="https://wickedev.com/wp-content/uploads/2021/02/cloud-uploading.png" />
+
+            Drop files or Click here to select files to upload.
+            <input type="file" name="files" class="dropzone-input" multiple />
+        </div>*@
+                        <div class="text-center">
+                            <a href="@ViewBag.ReturnUrl" class="btn btn-danger ml-auto text-white">@Resources.General.Cancle</a>
+                            <button type="submit" class="btn btn-primary my-4">@Resources.General.Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+        })
+        //if (document.getElementById("videoUploadFile").files.length == 0) {
+        //    console.log("no files selected");
+        //}
+    </script>
+    <script src="~/js/main.js"></script>
+
+
+}
+

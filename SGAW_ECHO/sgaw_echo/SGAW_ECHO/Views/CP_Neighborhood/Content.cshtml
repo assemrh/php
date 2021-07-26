@@ -1,0 +1,43 @@
+﻿@using SGAW_ECHO.Models.API.Neighborhoods
+@model List<NeighborhoodDisplayModel>
+
+@{
+
+    if (Model != null && Model.Count > 0)
+    {
+        int count = 0;
+        foreach (var item in Model)
+        {
+            <tr>
+                <th scope=row> @(++count) </th>
+                <td>@item.Ar</td>
+                <td>@item.En</td>
+                <td>@item.Tr</td>
+                @{
+                    if (Session["lng"].ToString() == "ar")
+                    {
+                        <td>@item.City.Ar</td>
+                    }
+                    if (Session["lng"].ToString() == "en")
+                    {
+                        <td>@item.City.En</td>
+                    }
+                    if (Session["lng"].ToString() == "tr")
+                    {
+                        <td>@item.City.Tr</td>
+                    }
+                }
+                <td>
+                    <i title="Edit" style="color:darkcyan; cursor:pointer;" class="fas fa-file-alt" data-toggle="modal" onclick="Edit('@item.ID', '@ViewBag.ControllerName'); " data-target="#Modal"></i>&nbsp;
+                    <i title="Delete" style="color:red; cursor:pointer;" class="fas fa-trash" data-item="@item.ID" onclick="Delete('@item.ID','@ViewBag.ControllerName')"></i>&nbsp;
+                    <i title="Details" style="color:lawngreen; cursor:pointer;" class="fas fa-table" data-toggle="modal" onclick="Details('@item.ID', '@ViewBag.ControllerName');" data-target="#Modal"></i>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr><td colspan="7"><h1>No Data Found!</h1></td></tr>
+        <tr><td colspan="7"><h6 ><small class="text-danger">@(ViewBag.msg??"")</small></h6></td></tr>
+    }
+}

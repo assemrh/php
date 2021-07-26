@@ -1,0 +1,273 @@
+﻿
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-default" id="sidenav-main">
+    <div class="scrollbar-inner">
+        <!-- Brand -->
+        <div class="sidenav-header  align-items-center">
+            <a class="navbar-brand" href="/admin">
+                <img src="~/img/svg/quran.svg" class="navbar-brand-img" alt="..." />
+            </a>
+            
+        </div>
+        <hr class="mt-0 bg-white">
+
+        <div class="navbar-inner">
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                <!-- Nav items -->
+                <ul class="navbar-nav nav nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white" href="#">
+                            <i class="fas fa-building"></i>
+                            <span class="nav-link-text">Company</span>
+                            <i class="right fas fa-angle-left"></i>
+
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/Company/" class="nav-link text-white align-middle">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Company</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/Company/types" class="nav-link text-white align-middle">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Company types</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-white" href="#">
+                            <i class="fas fa-users"></i>
+                            <span class="nav-link-text">@Resources.General.Users</span>
+                            <i class="right fas fa-angle-left"></i>
+
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/user/" class="nav-link text-white align-middle">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@Resources.General.Users</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-white" href="#">
+                            <i class="ni ni-building"></i>
+                            <span class="nav-link-text">@Resources.General.Countries</span>
+                            <i class="right fas fa-angle-left"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/Countries/" class="nav-link text-white align-middle">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@Resources.General.Countries</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/categories" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Categories</span>
+                        </a>
+                        @*<ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/admin/categories" class="nav-link text-white align-middle">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>@Resources.General.Categories</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/categories/add" class="nav-link text-white align-middle">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>@Resources.General.AddNew</p>
+                    </a>
+                </li>
+            </ul>*@
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Groups" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Groups</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Answers" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Answers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Examples" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Examples</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Examps" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Examps</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Helpful_Links" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Helpful_Links</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Lessons" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Lessons</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Questions" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Questions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Shapes" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Shapes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Suggestions" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Suggestions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/Tutorials" class="nav-link text-white">
+                            <i class="bi bi-tags"></i>
+                            <span class="nav-link-text">@Resources.General.Tutorials</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">
+                            <i class="ni ni-building"></i>
+
+                            <span class="nav-link-text">Dashboard</span>
+                            <i class="right fas fa-angle-left"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link text-white align-middle">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Dashboard v1</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./index2.html" class="nav-link text-white align-middle">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Dashboard v2</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./index3.html" class="nav-link text-white align-middle">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Dashboard v3</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--
+    <li class="nav-item">
+        <a class="nav-link active" href="examples/dashboard.html">
+            <i class="ni ni-tv-2 text-primary"></i>
+            <span class="nav-link-text">Dashboard</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="examples/icons.html">
+            <i class="ni ni-planet text-orange"></i>
+            <span class="nav-link-text">Icons</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="examples/map.html">
+            <i class="ni ni-pin-3 text-primary"></i>
+            <span class="nav-link-text">Google</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="examples/profile.html">
+            <i class="ni ni-single-02 text-yellow"></i>
+            <span class="nav-link-text">Profile</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="examples/tables.html">
+            <i class="ni ni-bullet-list-67 text-default"></i>
+            <span class="nav-link-text">Tables</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="examples/login.html">
+            <i class="ni ni-key-25 text-info"></i>
+            <span class="nav-link-text">Login</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="examples/register.html">
+            <i class="ni ni-circle-08 text-pink"></i>
+            <span class="nav-link-text">Register</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="examples/upgrade.html">
+            <i class="ni ni-send text-dark"></i>
+            <span class="nav-link-text">Upgrade</span>
+        </a>
+    </li>-->
+                </ul>
+                <!-- Divider -->
+                <hr class="my-3 bg-white">
+                <!-- Heading -->
+                <h6 class="navbar-heading p-0 text-muted">
+                    <span class="docs-normal">Documentation</span>
+                </h6>
+                <!-- Navigation -->
+                <ul class="navbar-nav mb-md-3">
+                    <!--<li class="nav-item">
+                    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
+                        <i class="ni ni-spaceship"></i>
+                        <span class="nav-link-text">Getting started</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
+                        <i class="ni ni-palette"></i>
+                        <span class="nav-link-text">Foundation</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
+                        <i class="ni ni-ui-04"></i>
+                        <span class="nav-link-text">Components</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
+                        <i class="ni ni-chart-pie-35"></i>
+                        <span class="nav-link-text">Plugins</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active active-pro" href="examples/upgrade.html">
+                        <i class="ni ni-send text-dark"></i>
+                        <span class="nav-link-text">Upgrade to PRO</span>
+                    </a>
+                </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

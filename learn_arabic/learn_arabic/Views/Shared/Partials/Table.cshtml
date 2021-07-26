@@ -1,0 +1,46 @@
+﻿@using Newtonsoft.Json.Linq;
+@{
+    JArray data = ViewBag.jData;
+    List<string> lstCols = ViewBag.Cols;
+    List<string> lstColTitles = ViewBag.ColTitles;
+    string editAction = ViewBag.EditAction ?? "";
+    string saveAction = ViewBag.SaveAction ?? "";
+    string readAction = ViewBag.ReadAction ?? "";
+    string deleteAction = ViewBag.DeleteAction ?? "";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            @foreach (string colTitle in lstColTitles)
+            {
+                <th>@colTitle</th>
+            }
+            <th style="width: 100px;">@Resources.General.Tools</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (JObject item in data)
+        {
+            <tr>
+                <td></td>
+                @foreach (string colName in lstCols)
+                {
+                    if (colName.ToLower() == "image")
+                    {
+                        <td><img src="data:image/jpg;base64, @item[colName].ToString()" style="width: 100px;" /></td>
+                    }
+                    else
+                    {
+                        <td>@item[colName].ToString()</td>
+                    }
+                }
+            <td>
+                <span style="cursor: pointer; font-size: 0.8em;" onclick="editdata('@editAction.Replace("ID_PARAM", item["id"].ToString())', '@saveAction.Replace("ID_PARAM", item["id"].ToString())', '@readAction')">@Resources.General.Edit</span>
+                @Html.Raw(" | ")
+                <span style="cursor: pointer; font-size: 0.8em; color: red;" onclick="deldata('/Admin/DeleteConfirmation', '@deleteAction.Replace("ID_PARAM", item["id"].ToString())', () => { readcontent('@readAction') })">@Resources.General.Delete</span>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>

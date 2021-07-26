@@ -1,0 +1,229 @@
+﻿@model SGAW_ECHO.Models.UserModel
+@using System.Data;
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Add New User</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="AddUserForm">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="exampleDropdownFormFullname"><span style="color:red;">*</span>Full Name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter Full Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleDropdownFormUsername"><span style="color:red;">*</span>Username <span title="What is your unique user name?"><i class="far fa-question-circle"></i></span></label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+            </div>
+            <label for="exampleDropdownFormEmail1"><span style="color:red;">*</span>Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="garpassnew"><span style="color:red;">*</span>Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>Country</label>
+            <select name="country" id="country" onchange="Get_Cites()" class="form-control">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>City</label>
+            <select name="city" id="city" onchange="Get_Neighborhoods()" class="form-control">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="neighborhood"><span style="color:red;">*</span>Neighborhood</label>
+            <select name="neighborhood" id="neighborhood" class="form-control">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="garaddress"><span style="color:red;">*</span>Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="descriptiontextarea">Bio</label>
+            <textarea class="form-control" id="bio" rows="4" placeholder="Enter Bio" name="bio"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="col-8 pl-2">
+                <input type="tel" class="form-control" id="mobile" name="phone" placeholder="Enter Phone">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return add();">Add</button>
+</div>
+
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Edit user details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="EditUserForm">
+        <input hidden type="text" id="id" name="id" value="@Model.ID" />
+        <div class="form-group">
+            <label for="full_name"><span style="color:red;">*</span>Full Name</label>
+            <input type="text" class="form-control" id="full_name" value="@Model.FullName" name="full_name" placeholder="Enter Full Name">
+        </div>
+        <div class="form-group">
+            <label for="username"><span style="color:red;">*</span>Username</label>
+            <input type="text" class="form-control" id="username" value="@Model.UserName" name="username" placeholder="Enter Username">
+        </div>
+        <div class="form-group">
+            <label for="email"><span style="color:red;">*</span>Email</label>
+            <input type="text" class="form-control" id="email" value="@Model.Email" name="email" placeholder="Ener Email">
+        </div>
+        <div class="form-group">
+            <label for="password"><span style="color:red;">*</span>Password</label>
+            <input type="text" class="form-control" id="password" value="@Model.Password" name="password" placeholder="Enter Password">
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Countries = new DataTable();
+                string msg = "";
+                Countries = SGAW_ECHO.Classes.Database.ReadTable("Countries", out msg);
+            }
+            <label for="country"><span style="color:red;">*</span>Country</label>
+            @*<select name="country" id="country" onchange="Get_Cites()" class="form-control">
+                @{
+                    if (Countries != null && Countries.Rows.Count > 0)
+                    {
+                        foreach (DataRow item in Countries.Rows)
+                        {
+                            if (item["id"].ToString() == Model.Address.CountryId.ToString())
+                            {
+                                <option selected value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+
+                            }
+                            else
+                            {
+                                <option value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <option>
+                            No country avalible
+                        </option>
+                    }
+                }
+            </select>*@
+        </div>
+        
+        @*<div class="form-group">
+            @{
+                DataTable Cities = new DataTable();
+                List<System.Data.SqlClient.SqlParameter> li = new List<System.Data.SqlClient.SqlParameter>();
+                li.Add(new System.Data.SqlClient.SqlParameter("@country_id", Model.Address.CountryId));
+                Cities = SGAW_ECHO.Classes.Database.ReadTable("Cities", " Where country_id = @country_id", li, out msg);
+            }
+            <label for="city"><span style="color:red;">*</span>City</label>
+            <select name="city" id="city" class="form-control">
+                @{
+                    if (Cities != null && Cities.Rows.Count > 0)
+                    {
+                        foreach (DataRow item in Cities.Rows)
+                        {
+                            if (item["id"].ToString() == Model.Address.CityId.ToString())
+                            {
+                                <option selected value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@item["id"].ToString()">@item["name"].ToString()</option>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <option>
+                            No city avalible
+                        </option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            @{
+                DataTable Neighborhoods = new DataTable();
+                Neighborhoods = SGAW_ECHO.Classes.Database.ReadTable("Neighborhoods", out msg);
+            }
+            <label for="Neighborhood"><span style="color:red;">*</span>Neighborhood</label>
+            <select name="Neighborhood" id="Neighborhood" class="form-control">
+                @{
+                    if (Neighborhoods != null && Neighborhoods.Rows.Count > 0)
+                    {
+                        foreach (DataRow item in Neighborhoods.Rows)
+                        {
+                            if (item["id"].ToString() == Model.Address.NeighborhoodId.ToString())
+                            {
+                                <option selected value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+
+                            }
+                            else
+                            {
+                                <option value="@item["id"].ToString()">
+                                    @item["name"].ToString()
+                                </option>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <option>
+                            No Neighborhood avalible
+                        </option>
+                    }
+                }
+            </select>
+        </div>*@
+        <div class="form-group">
+            <label for="address"><span style="color:red;">*</span>Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address" value="Model.Address.AddressDetail">
+        </div>
+        <div class="form-group">
+            <label for="phone"><span style="color:red;">*</span>Phone</label>
+            <input type="tel" class="form-control" id="mobile" value="@Model.Phone" name="phone" placeholder="Enter Phone">
+        </div>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>Bio</label>
+            <input type="text" class="form-control" id="description" value="@Model.Bio" name="description" placeholder="Enter Bio">
+        </div>
+        <div class="form-group text-center">
+            <h3>User Image</h3>
+            <img class="rounded w-50" src="~/Images/Users/Model.Image.URL" />
+        </div>
+
+    </form>
+    <h3>Edit Image</h3>
+    <div class="form-group">
+        <form action="/CP/DropAttachmentsSingle/" Class="dropzone" id="dropzone"></form>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="update('@Model.ID')">Edit</button>
+</div>
+

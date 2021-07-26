@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Admin Panel - Index";
+    Layout = "_ControlPanel_Layout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <!-- Application buttons -->
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3 class="card-title">Hızlı İşlem</h3>
+                </div>
+                <div class="card-body d-flex ">
+                    <a href="/admin/Categories" class="btn btn-app border-primary d-flex align-content-center align-self-center align-items-center">
+                        <div>
+                            <i class="bi bi-tags"></i><span>Categories</span>
+                        </div>
+                    </a>
+                    <a href="/admin/groups" class="btn btn-app border-primary d-flex align-content-center align-self-center align-items-center">
+                        <div>
+                            <i class="ni ni-ungroup"></i><span>Groups</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    </div>
+    <div class="row d-none">
+        <div class="col-12">
+            <div class="card ml-auto mr-auto mt-5 p-5 shadow-lg" style="width: fit-content;">
+                <img src="~/img/svg/quran.svg" class="card-img-top ml-auto mr-auto" style="max-height: 60vh; width: auto;" />
+            </div>
+        </div>
+    </div>
+</div>

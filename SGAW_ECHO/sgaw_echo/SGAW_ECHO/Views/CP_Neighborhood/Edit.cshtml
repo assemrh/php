@@ -1,0 +1,76 @@
+﻿@using SGAW_ECHO.Classes;
+@using SGAW_ECHO.Models.API.Countries;
+@using SGAW_ECHO.Models;
+@using SGAW_ECHO.Models.API.Neighborhoods;
+@model NeighborhoodModel
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Edit Neighborhood</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="EditForm">
+        <div class="form-group">
+            <input type="hidden" name="ID" value="@Model.ID" />
+            <div class="form-group">
+                <label for="Ar"><span style="color:red;">*</span>Arabic Name</label>
+                <input value="@Model.Ar" type="text" class="form-control" id="Ar" name="Ar" placeholder="Enter Arabic Name">
+            </div>
+            <div class="form-group">
+                <label for="En"><span style="color:red;">*</span>English Name</label>
+                <input value="@Model.En" type="text" class="form-control" id="En" name="En" placeholder="Enter English Name">
+            </div>
+            <div class="form-group">
+                <label for="Tr"><span style="color:red;">*</span>Turkish Name</label>
+                <input value="@Model.Tr" type="text" class="form-control" id="Tr" name="Tr" placeholder="Enter Turkish Name">
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label for="countries"><span style="color:red;">*</span>Country</label>
+            <select name="country" onchange="Get_Cites()" class="form-control mr-sm-2" id="country">
+                @{
+                    if (ViewData["countrieslist"] != null)
+                    {
+                        foreach (var country in (List<Country>)ViewData["countrieslist"])
+                        {
+                            string selected = (country.ID == ViewData["countryID"].ToString()) ? "selected" : "";
+                            <option @selected value="@country.ID">
+                                @country.En
+                            </option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>City</label>
+            <select name="city" id="city" class="form-control">
+                <option>select county first</option>
+                @*<option selected value='@ViewData["countryID"].ToString()'>@ViewData["city"]</option>*@
+                @{
+                    if (ViewData["citites"] != null)
+                    {
+                        foreach (var city in (List<City>)ViewData["citites"])
+                        {
+                            string selected = (city.ID == Model.City_ID )? "selected" : "";
+                            <option @selected value="@city.ID">
+                                @city.En
+                            </option>
+
+                        }
+                    }
+                }
+            </select>
+        </div>
+    </form>
+    <hr />
+    <div><small class="text-danger">@(ViewBag.msg??"")</small></div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Editing('/CP_Cities/EditNeighborhood/');">Edit</button>
+</div>

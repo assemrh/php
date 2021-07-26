@@ -1,0 +1,42 @@
+﻿@model List<SGAW_ECHO.Models.UserModel>
+@{int count = 0; }
+
+
+@{
+if (Model != null && Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+    <tr>
+        <th scope=row> @(++count) </th>
+        <td>@item.FullName</td>
+        <td>@item.Email</td>
+        <td>@item.UserName</td>
+        <td>
+            <div class="btn-group ms-auto">
+                <span class=" text-info p-1 me-1 border-0" role="button" title="@Resources.Shared.Details" data-toggle="modal" data-target="#Modal" onclick="Details('@item.ID','@ViewBag.ControllerName');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <use xlink:href="#eye" />
+                    </svg>
+                </span>
+                <span class=" text-warning  p-1 me-1 border-0" role="button" title="@Resources.Shared.Edit" data-toggle="modal" data-target="#Modal" onclick="Edit('@item.ID','@ViewBag.ControllerName');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <use xlink:href="#editpencil" />
+                    </svg>
+                </span>
+                <span class=" text-danger p-1 me-1 border-0" role="button" title="@Resources.Shared.Delete" onclick="Delete('@item.ID','@ViewBag.ControllerName');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <use xlink:href="#trash" />
+                    </svg>
+                </span>
+            </div>
+        </td>
+    </tr>
+    }
+
+    }
+    else
+    {
+        <tr><td colspan="5"><h1>@Resources.Shared.NoDataFound!</h1></td></tr>
+    }
+}

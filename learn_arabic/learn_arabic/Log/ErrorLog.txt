@@ -1,0 +1,1280 @@
+// 6/6/2021 12:18:59 PM
+in C:\websites\kuran-nesli\learn_arabic\learn_arabic
+in C:\websites\kuran-nesli\learn_arabic\learn_arabic\bin\Debug\net5.0\
+in C:\websites\kuran-nesli\learn_arabic\learn_arabic\bin\Debug\net5.0\
+file C:\Program Files\IIS Express\iisexpress.exe
+ at line 32 (Index)
+test
+// 6/6/2021 12:30:38 PM
+in C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 (Index)
+test
+// 6/6/2021 12:00:00 AM - 12:39:37.6206755
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 13:14:28.9568421
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 13:35:04.7064964
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 13:39:05.9341652
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 14:06:40.1977401
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 16:59:02.9514727
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 17:03:11.2471814
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 17:04:05.8976368
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 18:10:46.5530588
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 18:14:21.9003857
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 18:28:11.5996941
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 18:31:12.9956872
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 18:59:31.9314908
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 19:01:23.0106516
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 19:52:19.5130162
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 19:58:00.9076348
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 20:01:27.4911895
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 20:13:10.2300987
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 20:37:29.0479541
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 20:41:32.5524242
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 20:52:50.1922174
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 21:25:28.5149634
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 21:26:11.3146999
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 21:50:10.8290384
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 22:57:25.7046222
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 23:05:01.4965242
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/6/2021 12:00:00 AM - 23:26:55.5088616
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 10:07:05.0967796
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 10:35:36.9660159
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 10:56:19.7527590
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 11:07:40.0476082
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 15:09:54.2231308
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 16:17:52.6735744
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 16:41:15.2025666
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 16:55:27.7635358
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 22:49:49.2737984
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 23:03:09.9642555
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 23:08:10.3315805
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/7/2021 12:00:00 AM - 23:52:23.2265000
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 00:04:16.1899057
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 00:43:02.2054999
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 10:08:25.3218042
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 10:35:59.7617695
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 10:39:59.4295765
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 10:45:25.1020244
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 10:57:53.1086037
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 12:22:02.9735790
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 13:22:16.0836310
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 13:29:18.5929662
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 13:34:27.0857842
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 14:53:43.5963200
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 14:56:30.0939990
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 15:10:42.1585981
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 15:20:15.2093196
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 15:36:02.6959310
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 16:09:25.2676232
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 16:14:44.2927383
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 16:55:08.1845655
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:18:30.3521085
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:18:37.7726768
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 17:29:52.5355815
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:34:01.6617355
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 17:34:04.0989193
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:38:16.5566331
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 17:38:17.4883903
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:40:19.3947614
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:40:25.5870622
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:43:08.3035542
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:43:25.2425390
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 17:44:30.9492616
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:53:03.4586808
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:53:09.6786827
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 17:57:18.4132148
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 17:58:20.9025240
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 17:59:58.0428202
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 18:00:15.6477535
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 18:03:34.4885191
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 18:03:52.5190840
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 187 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/8/2021 12:00:00 AM - 21:49:01.7333489
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 21:52:30.5415756
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 22:00:00.7480504
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 22:09:55.7398409
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 22:59:19.3521648
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 23:02:21.7238988
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/8/2021 12:00:00 AM - 23:04:42.6245509
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 32 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 10:48:46.5265454
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 11:33:09.0279416
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/9/2021 12:00:00 AM - 11:33:39.7548978
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/9/2021 12:00:00 AM - 11:36:27.7942505
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/9/2021 12:00:00 AM - 12:02:59.3145170
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 12:08:19.1817938
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 12:10:25.7430899
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 12:10:28.4602769
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/9/2021 12:00:00 AM - 13:33:45.4846935
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 13:34:51.9647869
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 13:36:31.8505585
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))select c.id , ct.value from categories as ' expects the parameter '@lang', which was not supplied.
+// 6/9/2021 12:00:00 AM - 13:36:34.4640211
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 13:37:58.1359741
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 16:53:00.6621251
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 16:57:19.4510551
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 17:37:12.9035323
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 17:38:44.8951724
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 17:52:20.5870489
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 18:00:38.3746897
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 18:05:46.5722084
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 21:53:01.3336411
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/9/2021 12:00:00 AM - 22:05:24.3977440
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:07:16.1074288
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:10:01.6275353
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:11:54.9284045
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:14:26.8310980
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:18:31.3267851
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:30:10.7047457
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:31:24.6976137
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:32:47.8072148
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:38:59.4056610
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 11:43:31.8686174
+in file C:\websites\kuran-nesli\learn_arabic\learn_arabicC:\websites\kuran-nesli\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 14:12:48.2796706
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 14:24:04.5962594
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 14:46:30.0386717
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 15:23:19.9395193
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 15:28:11.8834841
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 15:41:30.8709246
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 15:41:58.0448938
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near '@per_page'.
+Invalid usage of the option NEXT in the FETCH statement.
+// 6/10/2021 12:00:00 AM - 15:45:21.9294592
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 15:45:46.4241243
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near '@per_page'.
+Invalid usage of the option NEXT in the FETCH statement.
+// 6/10/2021 12:00:00 AM - 15:46:38.7946254
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near '@per_page'.
+Invalid usage of the option NEXT in the FETCH statement.
+// 6/10/2021 12:00:00 AM - 15:46:51.7863649
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near '@per_page'.
+Invalid usage of the option NEXT in the FETCH statement.
+// 6/10/2021 12:00:00 AM - 15:57:01.4914789
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 15:57:21.1456656
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near '@per_page'.
+Invalid usage of the option NEXT in the FETCH statement.
+// 6/10/2021 12:00:00 AM - 16:13:05.1193452
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 16:13:14.2675085
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Invalid usage of the option NEXT in the FETCH statement.
+// 6/10/2021 12:00:00 AM - 16:27:01.6287049
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 16:27:40.6977180
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near 'OFFSET'.
+Invalid usage of the option NEXT in the FETCH statement.
+// 6/10/2021 12:00:00 AM - 17:05:28.7551028
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 18:03:01.7635229
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Controllers\HomeController.cs
+ at line 35 ( at function Index)
+Error details : 
+test
+// 6/10/2021 12:00:00 AM - 18:03:42.6581999
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near 'OFFSET'.
+// 6/10/2021 12:00:00 AM - 18:04:00.3826498
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Incorrect syntax near 'OFFSET'.
+// 6/10/2021 12:00:00 AM - 23:50:27.9468734
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/10/2021 12:00:00 AM - 23:51:29.9667103
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 11:40:08.6379870
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 11:42:26.4520484
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 12:01:14.8704102
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 12:15:16.2652673
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 12:33:27.0502020
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 12:35:13.1726979
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 0 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 12:50:32.8157080
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 13:10:16.0674437
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 13:11:17.9688478
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 13:12:08.8587319
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 14:22:38.3583692
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 15:18:11.1472886
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 16:52:29.9310678
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 16:54:08.2675197
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))DECLARE @page int = 1 DECLARE @per_page in' expects the parameter '@lang', which was not supplied.
+// 6/11/2021 12:00:00 AM - 17:04:36.1410997
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+The parameterized query '(@lang nvarchar(4000))SELECT Count(*) FROM (   select c.id , ct.' expects the parameter '@lang', which was not supplied.
+// 6/12/2021 12:00:00 AM - 21:05:08.1043166
+in file C:\websites\learn_arabic\learn_arabic C:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The offset specified in a OFFSET clause may not be negative.
+// 6/14/2021 12:00:00 AM - 15:20:40.7340884
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 6/14/2021 12:00:00 AM - 15:21:03.1367698
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 6/14/2021 12:00:00 AM - 15:21:13.7793671
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 6/14/2021 12:00:00 AM - 15:22:02.7718318
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 6/14/2021 12:00:00 AM - 15:23:36.2948444
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 6/14/2021 12:00:00 AM - 15:25:12.9181365
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 6/14/2021 12:00:00 AM - 16:23:51.4338777
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The multi-part identifier "g.id" could not be bound.
+// 14‏‏/6‏‏/2021 12:00:00 ص - 16:57:36.2856545
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 14‏‏/6‏‏/2021 12:00:00 ص - 17:01:49.3105713
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 14‏‏/6‏‏/2021 12:00:00 ص - 17:03:17.0883542
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 204 ( at function ReadDataByQuery)
+Error details : 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Invalid usage of the option NEXT in the FETCH statement.
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:15.0652125
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:15.1255258
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:15.1717582
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:15.2231709
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:41.3772242
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:41.4369703
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:41.4947564
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:41.5564377
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:52.1242962
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:52.1961473
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:52.2665679
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:52.3193821
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:56.7412586
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:56.7979880
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:56.8585710
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:01:56.9069574
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:48:39.9692653
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:48:40.0337059
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:48:40.1576639
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:48:40.2132204
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:52:51.0188036
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:52:51.3877307
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:52:51.6649063
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 15‏‏/6‏‏/2021 12:00:00 ص - 16:52:51.7359986
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:56:52.3276109
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:56:52.4657592
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:56:52.6610175
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:56:52.7140174
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:57:31.6377693
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:57:31.7036073
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:57:31.8127784
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 16:57:31.8568503
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:00:13.6935485
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:00:13.8113213
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:00:13.9957443
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:00:14.0514501
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:12:07.6745334
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:12:07.9050407
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:12:07.9733147
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:12:08.0720126
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:22:58.4088632
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:22:58.4721567
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:22:58.6289954
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:22:58.6792909
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:31:41.4432827
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:31:41.6950991
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:31:41.8729087
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 17:31:41.9638199
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 18:03:07.3270284
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 18:03:07.3630796
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 18:03:07.4353485
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/15/2021 12:00:00 AM - 18:03:07.4787959
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:23:58.8590822
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:23:58.9887010
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:23:59.0966608
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:23:59.1794646
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:25:43.2306243
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:25:43.3320556
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:25:43.4696240
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 13:25:43.5301718
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 16:37:45.8277641
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Conversion failed when converting from a character string to uniqueidentifier.
+// 6/16/2021 12:00:00 AM - 16:38:03.2291556
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Conversion failed when converting from a character string to uniqueidentifier.
+// 6/16/2021 12:00:00 AM - 16:38:06.9814793
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Conversion failed when converting from a character string to uniqueidentifier.
+// 6/16/2021 12:00:00 AM - 16:38:32.7654215
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 185 ( at function ReadTableByQuery)
+Error details : 
+Conversion failed when converting from a character string to uniqueidentifier.
+// 6/16/2021 12:00:00 AM - 17:42:28.4191296
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 17:42:28.4858931
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 17:42:28.6008950
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/16/2021 12:00:00 AM - 17:42:28.6466690
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/17/2021 12:00:00 AM - 11:52:09.6775467
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+Invalid column name 'description'.
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+// 6/17/2021 12:00:00 AM - 12:00:38.6589806
+in file C:\websites\learn_arabic\learn_arabicC:\websites\learn_arabic\learn_arabic\Classes\Database.cs
+ at line 350 ( at function InsertTranslation)
+Error details : 
+There are more columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.

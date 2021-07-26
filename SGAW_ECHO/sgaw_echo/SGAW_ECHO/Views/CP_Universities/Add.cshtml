@@ -1,0 +1,60 @@
+﻿@using System.Data;
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.University.new_University</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="AddUserForm">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="exampleDropdownFormFullname"><span style="color:red;">*</span>Full Name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter Full Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleDropdownFormUsername"><span style="color:red;">*</span>Username <span title="What is your unique user name?"><i class="far fa-question-circle"></i></span></label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+            </div>
+            <label for="exampleDropdownFormEmail1"><span style="color:red;">*</span>Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="garpassnew"><span style="color:red;">*</span>Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>Country</label>
+            <select name="country" id="country" onchange="Get_Cites()" class="form-control">                
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>City</label>
+            <select name="city" id="city" onchange="Get_Neighborhoods()" class="form-control">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="neighborhood"><span style="color:red;">*</span>Neighborhood</label>
+            <select name="neighborhood" id="neighborhood" class="form-control">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="garaddress"><span style="color:red;">*</span>Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="descriptiontextarea">Bio</label>
+            <textarea class="form-control" id="bio" rows="4" placeholder="Enter Bio" name="bio"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="col-8 pl-2">
+                <input type="tel" class="form-control" id="mobile" name="phone" placeholder="Enter Phone">
+            </div>
+        </div>
+    </form>    
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return  Adding('@ViewBag.ControllerName');">Add</button>
+</div>

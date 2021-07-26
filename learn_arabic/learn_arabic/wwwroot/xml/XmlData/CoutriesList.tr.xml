@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<country_translations>
+    <country_translation src_id="70FF27E3-4650-4950-9C4E-007CEB085741" language="Tr" value="Karadağ" />
+    <country_translation src_id="8131DD62-9D72-4C4E-B4DB-019F85A2F529" language="Tr" value="Avusturya" />
+    <country_translation src_id="A7DB28F8-7454-49E1-A8FF-024227586FB1" language="Tr" value="Lesoto" />
+    <country_translation src_id="354C4704-1390-40AE-9646-06B266D8780A" language="Tr" value="Ekvator Ginesi" />
+    <country_translation src_id="77779A32-7F78-49E3-B847-07B3C573C132" language="Tr" value="Romanya" />
+    <country_translation src_id="F73EAFC4-09D8-4167-93B2-07E9ACDB2F53" language="Tr" value="Zambiya" />
+    <country_translation src_id="F90EB737-033D-4B26-B070-0809BFA858C0" language="Tr" value="Türkmenistan" />
+    <country_translation src_id="9DAF4DBC-1EB6-4137-BD79-0918E3C9EBEF" language="Tr" value="Bahreyn" />
+    <country_translation src_id="3A798FC5-6E9A-4092-9817-09E445229852" language="Tr" value="Amerikan Samoası" />
+    <country_translation src_id="6310D101-4016-4B1B-8D50-0A080D683E12" language="Tr" value="Belçika" />
+    <country_translation src_id="BD3F585D-8627-49C8-B419-0C3690B369F1" language="Tr" value="Yunanistan" />
+    <country_translation src_id="22D52687-DF51-4E0B-B532-0F02C43C222F" language="Tr" value="Irak" />
+    <country_translation src_id="C88BF711-E94A-4DAE-AC0E-0F5A2E599504" language="Tr" value="Güney Afrika" />
+    <country_translation src_id="C8ADB34D-6E87-4F95-8017-0FDAB41DB5A1" language="Tr" value="İtalya" />
+    <country_translation src_id="BADB2D3C-E538-467A-86ED-10A7E9FBFB7E" language="Tr" value="Gine" />
+    <country_translation src_id="A8233D8D-F34C-47C2-8AFA-12021C69340B" language="Tr" value="Amerika Birleşik Devletleri Virgin Adaları" />
+    <country_translation src_id="CFB20775-2AD5-4B47-AB0F-13335F801C78" language="Tr" value="Moritanya" />
+    <country_translation src_id="C1D13664-D6E6-4200-A25C-1511564E4EF8" language="Tr" value="Cayman Adaları" />
+    <country_translation src_id="5C7B4C2E-1DD9-4754-A5E2-16B059A993C1" language="Tr" value="Zimbabve" />
+    <country_translation src_id="59A3B34B-533A-46F6-970E-16B99952B386" language="Tr" value="Andorra" />
+    <country_translation src_id="7DF4E926-A0A5-405D-AE6D-17D7DEBB70EA" language="Tr" value="Nijer" />
+    <country_translation src_id="293D1BDA-79A2-469B-B6A4-1B87CD92B7C5" language="Tr" value="Trinidad ve Tobago" />
+    <country_translation src_id="8B853062-BE96-4B6E-8416-1D37F4B48498" language="Tr" value="Kamboçya" />
+    <country_translation src_id="2D2BE370-54E2-434B-A5E0-1DB15CA38BE3" language="Tr" value="Lihtenştayn" />
+    <country_translation src_id="A038E38C-45CC-465B-B46A-1FDCBE25D2F3" language="Tr" value="Gambiya" />
+    <country_translation src_id="083B5E2C-AC58-41D4-B94C-201BB7F5D87C" language="Tr" value="Turks ve Caicos Adaları" />
+    <country_translation src_id="F063152D-CCC1-4ACA-9D14-20DF59A66F43" language="Tr" value="Belize" />
+    <country_translation src_id="F82002CA-D6D5-489E-9AB4-221B87748567" language="Tr" value="Gürcistan" />
+    <country_translation src_id="75DA3282-7710-4665-9636-225722F3A4DA" language="Tr" value="Çin" />
+    <country_translation src_id="F0A05444-4505-4E88-8274-23318869D360" language="Tr" value="Barbados" />
+    <country_translation src_id="4BE5ECA0-A600-4016-AFD8-264D26EDACC1" language="Tr" value="Mısır" />
+    <country_translation src_id="0EF67F78-DBC4-4B2D-8928-281E557F3C6C" language="Tr" value="Grenada" />
+    <country_translation src_id="00D0ACCC-BAE6-45C6-BEE1-284EDEABA49E" language="Tr" value="Bermuda" />
+    <country_translation src_id="E2618E41-32C4-4CB3-A388-28988F9886FA" language="Tr" value="Tanzanya" />
+    <country_translation src_id="42661A7F-3E26-4844-9368-293093B1C24E" language="Tr" value="Tayland" />
+    <country_translation src_id="7B38FF93-7FCA-442D-804C-2A66F625B86E" language="Tr" value="Çad" />
+    <country_translation src_id="6A070734-775F-4C8C-AAD4-2F26A3D17B0C" language="Tr" value="Tacikistan" />
+    <country_translation src_id="1CF62FD7-EF4B-4BEB-BFF8-2F49F19921C9" language="Tr" value="Paraguay" />
+    <country_translation src_id="4D43EDA8-E1AC-4433-99A9-3004D46A08B0" language="Tr" value="Guyana" />
+    <country_translation src_id="F7E889CA-F444-491C-ADE9-31F89187D168" language="Tr" value="Haiti" />
+    <country_translation src_id="94BB18FE-60D1-46D0-8EF8-323CBCDF49B4" language="Tr" value="Uganda" />
+    <country_translation src_id="3C7ADA08-183D-4C3C-B718-328C12DEAD1E" language="Tr" value="Amerika Birleşik Devletleri" />
+    <country_translation src_id="47B689F6-7291-4F83-A816-3428EE030E82" language="Tr" value="Fiji" />
+    <country_translation src_id="72042B12-B4E2-4DF1-B13D-36209A0703DA" language="Tr" value="Şili" />
+    <country_translation src_id="3D091911-6D37-4F9C-883D-3656F0D8E872" language="Tr" value="Norfolk Adası" />
+    <country_translation src_id="30397E98-46A6-4079-9806-379DBBE0630B" language="Tr" value="Angola" />
+    <country_translation src_id="EDC6BC33-E4A9-48B3-96EF-38628503BC04" language="Tr" value="İrlanda" />
+    <country_translation src_id="AC35C600-0CC4-4177-8BC6-3870F01C783F" language="Tr" value="Cape Verde" />
+    <country_translation src_id="6FDA11CC-3AB8-4E5E-9902-38D3995E1A05" language="Tr" value="Solomon Adaları" />
+    <country_translation src_id="062752C0-EEE7-4D71-8E53-39EF286A2F1F" language="Tr" value="Birleşik Arap Emirlikleri" />
+    <country_translation src_id="B05739DA-6C5E-4361-B41E-3A71518E8699" language="Tr" value="Sao Tome ve Principe" />
+    <country_translation src_id="38E97D1D-CC84-4150-B46A-3CA9C284142C" language="Tr" value="Belarus" />
+    <country_translation src_id="C2B14941-25A7-4078-97BA-3D4560D5ACE0" language="Tr" value="Almanya" />
+    <country_translation src_id="5A75A84A-3BDD-473F-B103-3EDBA866A773" language="Tr" value="Moldova" />
+    <country_translation src_id="D9EEB69E-CAB3-44EB-9EF9-3F3A8D0D0F0F" language="Tr" value="Nijerya" />
+    <country_translation src_id="A15D387C-B5C0-48A5-85F5-4224A0EFEB41" language="Tr" value="Finlandiya" />
+    <country_translation src_id="BA2902D4-F637-46E8-82DF-42E8B5011D0F" language="Tr" value="Portekiz" />
+    <country_translation src_id="508A77E6-5224-4878-BC14-439CDB942D11" language="Tr" value="Singapur" />
+    <country_translation src_id="9AA0FB4E-E4D6-4FC2-8B30-44D838ED9719" language="Tr" value="ispanya" />
+    <country_translation src_id="E5B87358-73CF-46B2-8F8C-44EE095D4478" language="Tr" value="Güney Sudan" />
+    <country_translation src_id="BF714840-CFB2-4E6D-AC29-457D163D4C79" language="Tr" value="Kosta Rika" />
+    <country_translation src_id="66DCDD09-BB61-4902-91FE-45A25286824A" language="Tr" value="Guam" />
+    <country_translation src_id="57EAEF22-1CBB-4242-BE4C-4677B4180E28" language="Tr" value="Mali" />
+    <country_translation src_id="8F811E70-66B8-4579-A68E-46851C0C907F" language="Tr" value="Yeni Zelanda" />
+    <country_translation src_id="F1ED5060-FD28-4D18-9AA8-473E479A7D14" language="Tr" value="Aziz Martin" />
+    <country_translation src_id="1AAF4486-EE8F-4978-BFF0-47C7BCD9F5AF" language="Tr" value="Kanada" />
+    <country_translation src_id="137725A3-C42C-4598-905E-4824B2313C9A" language="Tr" value="Arjantin" />
+    <country_translation src_id="8978E047-710F-4859-B8C1-491B924CB5B7" language="Tr" value="Rusya Federasyonu" />
+    <country_translation src_id="F8949DC0-4015-4A73-A716-4B0FAFC43FE4" language="Tr" value="Cibuti" />
+    <country_translation src_id="5D1FD37F-6198-436A-9121-4BCCEF02DF65" language="Tr" value="Endonezya" />
+    <country_translation src_id="039498A5-5A3A-4428-8536-506A80DB0018" language="Tr" value="Nikaragua" />
+    <country_translation src_id="83988F2F-E2C1-4194-9434-5293A258ADEF" language="Tr" value="Gitmek" />
+    <country_translation src_id="2B005A93-1B28-46BF-8B28-5312486C155A" language="Tr" value="Kongo" />
+    <country_translation src_id="66CB6495-8C93-4763-8D8C-577EEFD64B49" language="Tr" value="Hong Kong" />
+    <country_translation src_id="28134575-AC40-4650-8F3A-57C6F5358861" language="Tr" value="Danimarka" />
+    <country_translation src_id="314384E5-A07B-4FEE-8C3D-58A06064DB17" language="Tr" value="Norveç" />
+    <country_translation src_id="2F255C41-ABCC-47E8-8DE5-59067B5B2184" language="Tr" value="İran" />
+    <country_translation src_id="E6849E5E-1D42-4A36-92DE-595F4AF3836B" language="Tr" value="Kazakistan" />
+    <country_translation src_id="C311D903-F3F6-4DBF-BEF3-5C3BAE4775BA" language="Tr" value="Güney Kore" />
+    <country_translation src_id="E2528DB4-27BD-4874-8020-5C6B86C9862A" language="Tr" value="Surinam" />
+    <country_translation src_id="46D06BC4-B726-4026-94A7-5C728243B2B2" language="Tr" value="Svalbard ve Jan Mayen Adaları" />
+    <country_translation src_id="10317C86-BC18-4CE1-B41A-5C878BD380FB" language="Tr" value="Palau" />
+    <country_translation src_id="530AFCA2-32FF-45F2-A035-5F386C63BDEA" language="Tr" value="Afganistan" />
+    <country_translation src_id="18C74991-2087-4FC3-840D-5F52838BC175" language="Tr" value="Dominik Cumhuriyeti" />
+    <country_translation src_id="3A8DBB53-1B81-4AAC-BBFD-5F9361634415" language="Tr" value="Brezilya" />
+    <country_translation src_id="C67E74E4-B21D-4EFF-9B79-63394260CFFB" language="Tr" value="Saint Vincent ve Grenadinler" />
+    <country_translation src_id="4152DEA2-C217-4C77-BC0C-6462E2D1C4E1" language="Tr" value="Küba" />
+    <country_translation src_id="6787B1B1-CE65-45DE-81CD-650F12369471" language="Tr" value="Yemen" />
+    <country_translation src_id="AB868F74-D016-4A8E-A009-6540AB4FB3DD" language="Tr" value="Malezya" />
+    <country_translation src_id="EF13F1B5-467F-4012-851F-68196627AD57" language="Tr" value="Birleşik Krallık" />
+    <country_translation src_id="D63A963C-D0BC-4D3E-B40A-6965839E15AD" language="Tr" value="Samoa" />
+    <country_translation src_id="A6023B14-F46B-4CB2-991D-6B4ED42275F6" language="Tr" value="Pakistan" />
+    <country_translation src_id="856C1806-2A00-4DF2-B5B7-6BD18697A9E1" language="Tr" value="Monako" />
+    <country_translation src_id="BEA0A844-DA29-4BDA-8F76-6C7FE731592E" language="Tr" value="Filipinler" />
+    <country_translation src_id="365E66C5-F421-428E-872F-6CB91A9719F4" language="Tr" value="Nauru" />
+    <country_translation src_id="5101A1CC-939C-4618-8EBD-6E7BEFE9BC56" language="Tr" value="Namibya" />
+    <country_translation src_id="20F79264-29C4-48A6-B75A-6F70F2CDF61A" language="Tr" value="Martinik" />
+    <country_translation src_id="381BA2D1-E223-4270-8A00-6F717867A04F" language="Tr" value="Cook Adaları" />
+    <country_translation src_id="806CA92E-2BD1-4E63-B9F0-702225BE2E09" language="Tr" value="Dominika" />
+    <country_translation src_id="18624EC9-6D15-43FD-92B3-71EB3F6FC833" language="Tr" value="Peru" />
+    <country_translation src_id="4079C397-A551-4C0F-B331-725705E5E8E0" language="Tr" value="Ukrayna" />
+    <country_translation src_id="49AA751E-BB7A-461E-BFB8-738BE1817B36" language="Tr" value="Somali" />
+    <country_translation src_id="4AC42411-173F-4F8B-8962-74E9F79198FC" language="Tr" value="Gana" />
+    <country_translation src_id="C84630A9-B300-4AC9-96C6-7753033B5246" language="Tr" value="Eritre" />
+    <country_translation src_id="DC3AE172-E13F-474B-8E3C-7A6244825106" language="Tr" value="Hollanda Antilleri" />
+    <country_translation src_id="4DC065D1-086A-446E-B4AA-7B6527A3724D" language="Tr" value="Katar" />
+    <country_translation src_id="B3DA63FC-9049-4F71-8511-7D9244C2EF89" language="Tr" value="Kuzey Mariana Adaları" />
+    <country_translation src_id="E4A9122B-66ED-4422-A561-8028B33E69A3" language="Tr" value="Guatemala" />
+    <country_translation src_id="4EE9DCF1-BD04-4AE0-BD47-8125922A50BD" language="Tr" value="Japonya" />
+    <country_translation src_id="B494931E-57EB-487E-BC7A-818E43B42B2F" language="Tr" value="Burkina Faso" />
+    <country_translation src_id="64504D08-21F9-4190-A771-83017CEA2F67" language="Tr" value="Liberya" />
+    <country_translation src_id="F97B009D-1C6C-484C-84F3-83EB45D1564F" language="Tr" value="Fas" />
+    <country_translation src_id="BB5D45C9-8C7A-4D0B-A87D-849B244852AD" language="Tr" value="Saint Kitts ve Nevis" />
+    <country_translation src_id="B0DEAE3D-38C8-495A-8E93-85C8F7BA41A6" language="Tr" value="Hırvatistan" />
+    <country_translation src_id="BE0DE387-A97F-4A23-8BF3-8CF9C62C7912" language="Tr" value="Lübnan" />
+    <country_translation src_id="EDA255B6-1A1E-475C-96EC-8E40030E0DD0" language="Tr" value="Suriye Arap Cumhuriyeti" />
+    <country_translation src_id="D1D2079A-173D-4D4C-B183-8F7F97B246E4" language="Tr" value="San Marino" />
+    <country_translation src_id="5DA7C78D-F364-4791-AFAC-9089B33DFB8D" language="Tr" value="Lüksemburg" />
+    <country_translation src_id="7E9C4281-5D36-417A-A189-92DD54285188" language="Tr" value="Svaziland" />
+    <country_translation src_id="6424D185-8885-44E3-AF88-93EFB5812B86" language="Tr" value="Britanya Virjin Adaları" />
+    <country_translation src_id="F8069481-4E0A-4B3A-9213-9476780AB273" language="Tr" value="Vanuatu" />
+    <country_translation src_id="60674471-E117-4585-A5EE-962C09A3D977" language="Tr" value="Suudi Arabistan" />
+    <country_translation src_id="374D903A-7F90-4661-9E24-977ABC0C8564" language="Tr" value="Libya" />
+    <country_translation src_id="BD02B0DB-65C4-413B-A34B-978E36B25E4C" language="Tr" value="Yeni Kaledonya" />
+    <country_translation src_id="ACBD3834-223C-4408-9574-98AFF65F6BC9" language="Tr" value="Papua Yeni Gine" />
+    <country_translation src_id="E3738CEF-63F2-4B27-A0B1-9919B10F38E5" language="Tr" value="Porto Riko" />
+    <country_translation src_id="8C9A9DE8-3D01-4D5F-A659-9B9071FF9493" language="Tr" value="Sierra Leone" />
+    <country_translation src_id="B05623FD-B5DC-48B2-B5CE-9BABB7D8C10E" language="Tr" value="Letonya" />
+    <country_translation src_id="E5AA137D-9404-4758-99DF-9CA93AF5D513" language="Tr" value="Litvanya" />
+    <country_translation src_id="2FB1E665-581F-4184-85C6-9CFBD372CEAC" language="Tr" value="Makao" />
+    <country_translation src_id="3E385C2E-16D5-4C35-8B22-9DFDDC4F130D" language="Tr" value="Saint Lucia" />
+    <country_translation src_id="3E4A8459-4216-4572-9F50-9E470EB811BF" language="Tr" value="Grönland" />
+    <country_translation src_id="60C861A8-91F8-4D20-9D5B-9F0F3569961E" language="Tr" value="Polonya" />
+    <country_translation src_id="2ED8AA63-63F5-42ED-BE6D-9F3CB6B4919C" language="Tr" value="Azerbaycan" />
+    <country_translation src_id="6EC97773-4889-4314-94C6-A0BA3E8C49A3" language="Tr" value="Tuvalu" />
+    <country_translation src_id="99D22C20-124B-4ECC-B922-A0C3716D14F2" language="Tr" value="Venezuela" />
+    <country_translation src_id="12A89A45-D27B-49AC-9527-A0E71C2C4A4B" language="Tr" value="Mozambik" />
+    <country_translation src_id="60E8D61A-70A8-47E2-A9CE-A11404D6E75B" language="Tr" value="Falkland adaları" />
+    <country_translation src_id="A9E4A500-E970-435C-9575-A11F651FD0F2" language="Tr" value="Sri Lanka" />
+    <country_translation src_id="3AD7E48A-EF76-4D72-B7CC-A499B1472400" language="Tr" value="Kırgızistan" />
+    <country_translation src_id="CBCECC57-11CF-46E0-B225-A4DDF62AFE6A" language="Tr" value="Komorlar" />
+    <country_translation src_id="D7F8F488-8752-4106-BCB6-A51C3F49C8DE" language="Tr" value="Avustralya" />
+    <country_translation src_id="01E32DA0-0C57-4B92-9E9F-A585DD324E13" language="Tr" value="Saint Helena" />
+    <country_translation src_id="597A4154-EE67-44A1-94B7-A6E2AFCE583A" language="Tr" value="Madagaskar" />
+    <country_translation src_id="79B53AA8-2E89-4778-977A-A872ACB2227F" language="Tr" value="Kuzey Kore" />
+    <country_translation src_id="1CBFC1D6-A129-4BEA-B904-A8ADAE96D739" language="Tr" value="Sudan" />
+    <country_translation src_id="0D7C0D66-9C6F-42D5-A6AF-A8BD890CADEB" language="Tr" value="Özbekistan" />
+    <country_translation src_id="31AF5113-9E3A-4755-8C5D-A946258ECACC" language="Tr" value="Kamerun" />
+    <country_translation src_id="28EC0F82-7784-49C3-86E7-A9EFE7424A05" language="Tr" value="Botsvana" />
+    <country_translation src_id="1DAFA2F0-3CF5-40DF-BE23-A9FC1733260C" language="Tr" value="Ruanda" />
+    <country_translation src_id="C51C4322-173C-4B1E-B3B8-ACEA1007562B" language="Tr" value="Mayotte" />
+    <country_translation src_id="5CFA761E-E68B-4D69-BB17-AD2D2D1BFF49" language="Tr" value="Meksika" />
+    <country_translation src_id="1AAAF685-ECE0-4289-A0F5-AFC19B9A75C9" language="Tr" value="Kıbrıs" />
+    <country_translation src_id="1CC3796B-4D51-4D13-AF89-B0FAE9792824" language="Tr" value="Bosna Hersek" />
+    <country_translation src_id="31AC3FC5-21BF-4213-82C2-B136E130D7AC" language="Tr" value="Tokelau" />
+    <country_translation src_id="A94EBC7F-C9D7-49EB-8892-B18798631ECF" language="Tr" value="Filistin" />
+    <country_translation src_id="6D0F3146-3287-4EC4-BFB2-B21BEE1097E6" language="Tr" value="Cezayir" />
+    <country_translation src_id="5FBFB2D0-B009-4CAD-A4D0-B56E80158D69" language="Tr" value="Saint-Barthelemy" />
+    <country_translation src_id="33BB08BF-F550-4C8A-B317-B61353CDDA5D" language="Tr" value="Çek Cumhuriyeti" />
+    <country_translation src_id="4BA535EC-23AE-4D92-A965-B7944F396180" language="Tr" value="Senegal" />
+    <country_translation src_id="C512BFFB-3682-4788-BFDC-BA1D716C8020" language="Tr" value="Nepal" />
+    <country_translation src_id="37C9BE29-6B6B-45F6-9FB5-BAF3494A22A6" language="Tr" value="Slovenya" />
+    <country_translation src_id="2FA7AC1A-C50D-47A2-8478-BBA104B836F7" language="Tr" value="Ekvador" />
+    <country_translation src_id="57182621-B6B6-44CB-AA84-BC2EA3C9634D" language="Tr" value="Honduras" />
+    <country_translation src_id="E0C99D41-E46E-4927-96E2-BC85D3C53843" language="Tr" value="Benin" />
+    <country_translation src_id="C5D809F3-DD96-44A1-BA09-BC9789E85957" language="Tr" value="Orta Afrika Cumhuriyeti" />
+    <country_translation src_id="E304689A-FC1F-4D31-A642-BCB45995ED94" language="Tr" value="İzlanda" />
+    <country_translation src_id="F829773C-B353-4478-AA89-BD8BEBCEA94E" language="Tr" value="Fransız Polinezyası" />
+    <country_translation src_id="E0977384-B9CA-4F67-8B37-BF65655AF5F2" language="Tr" value="Slovakya" />
+    <country_translation src_id="91EA148B-876F-4D48-8BD6-BFA7F0668816" language="Tr" value="Tunus" />
+    <country_translation src_id="8AB1C7CE-EAA2-43BA-98A0-C1763EAF0666" language="Tr" value="Laos" />
+    <country_translation src_id="254E491E-C03D-4942-9332-C1C5B40F8DEC" language="Tr" value="Kiribati" />
+    <country_translation src_id="9F6CAF78-A4E6-4B22-929A-C21A201FD3B3" language="Tr" value="İsveç" />
+    <country_translation src_id="DA04F6E8-82E4-4565-865F-C358B216B861" language="Tr" value="Malawi" />
+    <country_translation src_id="CE5DC1C8-B84E-457D-8895-C3984816B32D" language="Tr" value="Jamaika" />
+    <country_translation src_id="EB943A12-9396-4BA3-842C-C4502DE65F98" language="Tr" value="Macaristan" />
+    <country_translation src_id="B394BB48-7C42-4D66-8839-C4BCD23B86E3" language="Tr" value="Bulgaristan" />
+    <country_translation src_id="00348DB1-40E4-4641-9947-C5194BC6139C" language="Tr" value="Brunei Darussalam" />
+    <country_translation src_id="16C44FB8-928A-4917-92E8-C587DB38D47E" language="Tr" value="Fransa" />
+    <country_translation src_id="4A646D9B-9980-4E61-87AC-C591A63C4A14" language="Tr" value="Seyşeller" />
+    <country_translation src_id="6BA64EB8-59A9-439D-A4FB-C64EB6E4C50F" language="Tr" value="Antigua ve Barbuda" />
+    <country_translation src_id="ED95F8B8-1FDF-4FBE-A64B-C6F65800A2F2" language="Tr" value="Kolombiya" />
+    <country_translation src_id="F4B3C34C-D0A9-46F0-B57D-C7F1E8C67018" language="Tr" value="Estonya" />
+    <country_translation src_id="92F6C1E1-F6A4-478D-BF37-C93316E4B08B" language="Tr" value="Saint Pierre ve Miquelon" />
+    <country_translation src_id="20C208E8-D02B-4049-BAE8-CA22E7A7F1D9" language="Tr" value="Fransız Guyanası" />
+    <country_translation src_id="7331DF70-15AE-48D3-84D5-CA6A40AF0473" language="Tr" value="Hollanda" />
+    <country_translation src_id="F7C6E76C-14FD-4694-9201-CACEF516AFAE" language="Tr" value="Moğolistan" />
+    <country_translation src_id="B824A65B-B969-4CB5-9FB4-CD175C82365F" language="Tr" value="İsviçre" />
+    <country_translation src_id="2614D636-9953-4732-BBDB-CD86286CA422" language="Tr" value="Bolivya" />
+    <country_translation src_id="82AEAC05-4BD4-4443-AB37-D087E1E0D6A8" language="Tr" value="Maldivler" />
+    <country_translation src_id="6CE34380-2C8F-4688-8DDF-D296E708D071" language="Tr" value="Gine-Bissau" />
+    <country_translation src_id="CC5F63D1-21AB-43BB-A448-D31C7774B870" language="Tr" value="Anguilla" />
+    <country_translation src_id="48549CE2-DA78-48C8-97B1-D33DAE6AD731" language="Tr" value="Uruguay" />
+    <country_translation src_id="0AEC89DF-20DD-402D-9568-D4B4C6991A0F" language="Tr" value="Panama" />
+    <country_translation src_id="AD61CFE0-9D47-48F8-8F81-D5E6433CEA71" language="Tr" value="Ürdün" />
+    <country_translation src_id="CD94664D-0B6D-40E9-81CC-D8A4BF4EF302" language="Tr" value="Montserrat" />
+    <country_translation src_id="113A8DCA-775E-4824-8B5E-DA9A3B91FB34" language="Tr" value="Malta" />
+    <country_translation src_id="58828026-EB58-4B59-A2E1-DADA024368A1" language="Tr" value="Bahamalar" />
+    <country_translation src_id="DF5123A4-CBDF-4F92-8C75-DB3C3FCB5933" language="Tr" value="Bangladeş" />
+    <country_translation src_id="DFE9B863-9BBA-42B0-A145-DC887A791862" language="Tr" value="Butan" />
+    <country_translation src_id="A3F0236D-EDE4-4DC2-8F00-DD85F756D457" language="Tr" value="Ermenistan" />
+    <country_translation src_id="3905C685-9530-4B32-8ECF-DDBC7CC05983" language="Tr" value="Guadeloupe" />
+    <country_translation src_id="039219DB-D4D7-43D0-B0E2-DEEA910D9816" language="Tr" value="Myanmar" />
+    <country_translation src_id="19E0A8AA-F4BB-492F-8601-DF74C950B56A" language="Tr" value="Mikronezya" />
+    <country_translation src_id="01EBF4D6-EB98-4432-9F7C-E28150FB0530" language="Tr" value="Reunion" />
+    <country_translation src_id="C992FDDF-8603-473F-BB94-E2846B13FBBE" language="Tr" value="Makedonya" />
+    <country_translation src_id="90807FEC-C609-4D45-8FCB-E286B59C97C2" language="Tr" value="Türkiye" />
+    <country_translation src_id="3B344CAB-6FEB-45DE-917D-E43AE92DE9C0" language="Tr" value="El Salvador" />
+    <country_translation src_id="09DEF817-23DA-4A52-B58F-E7F531831CFD" language="Tr" value="Gabon" />
+    <country_translation src_id="C693B8BA-91DC-43D1-96FF-EAEF8D793223" language="Tr" value="Aruba" />
+    <country_translation src_id="47409946-B035-4E85-81A0-EC2387FC03D0" language="Tr" value="Cebelitarık" />
+    <country_translation src_id="6055CE0B-63C2-47DC-A6E6-ECCD0E8F5792" language="Tr" value="Wallis ve Futuna Adaları" />
+    <country_translation src_id="162797EB-95FE-4A22-AB0E-EE1E4EC9D6C5" language="Tr" value="Kuveyt" />
+    <country_translation src_id="A4C06509-B6DE-45EE-A5C9-EF7FBCAE7EA4" language="Tr" value="Kenya" />
+    <country_translation src_id="70FEA382-E70B-4653-BAEE-F01FB36B3A1B" language="Tr" value="Tonga" />
+    <country_translation src_id="167CB96D-F520-4E13-887A-F0A792BECAD4" language="Tr" value="Faeroe Adaları" />
+    <country_translation src_id="29D8CE2C-A3B7-43F2-B772-F2253DDB8887" language="Tr" value="Burundi" />
+    <country_translation src_id="12542E28-2898-455B-89F4-F31F42BE86AB" language="Tr" value="Sırbistan" />
+    <country_translation src_id="8C793597-48D9-48EE-981E-F320D5C648B6" language="Tr" value="Niue" />
+    <country_translation src_id="E99E9388-02DE-48A8-95EB-F4050EFB13EA" language="Tr" value="Hindistan" />
+    <country_translation src_id="F51BF952-986F-4C08-974A-F5D061536B92" language="Tr" value="Marşal Adaları" />
+    <country_translation src_id="0D512814-78EC-4FE4-B3D7-F7BDB935BE45" language="Tr" value="Vietnam" />
+    <country_translation src_id="D06D0D61-3712-467C-96D4-F880A22F8E5A" language="Tr" value="Umman" />
+    <country_translation src_id="B670A069-6D20-4F4B-9518-FA90E86F0E58" language="Tr" value="Etiyopya" />
+    <country_translation src_id="35AADEF3-BEC1-413C-B927-FAF37144E98C" language="Tr" value="Mauritius" />
+    <country_translation src_id="CE6042F6-5D07-408B-A784-FB7DDD2FA71C" language="Tr" value="Arnavutluk" />
+</country_translations>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCP.cshtml";
+}
+@using SGAW_ECHO.Models.API.Cities
+@model List<CityDisplayModel>
+<div class="content col-12 text-center rounded-bottom" style="background-color: lightgrey;">
+    <div class="container">
+        <div class="col-12 h3">
+            <div class="row plusandrefresh pt-2">
+                <div class="col-10"><h3 class="p-0">Cities</h3></div>
+                <div class="col-1">
+                    <i id="Refresh-Btn" title="Refresh" onclick=" Refresh('@ViewBag.ControllerName');" style="color: green; cursor: pointer;" class="fas fa-redo-alt refreshControlPanel text-left"></i>
+                </div>
+                <div class="col-1">
+                    <i title="Add" style="color: lightsalmon; cursor: pointer;" class="fas fa-plus-circle plusControlPanel" data-toggle="modal" data-target="#Modal" onclick="Add('@ViewBag.ControllerName')"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Arabic Name</th>
+            <th scope="col">English Name</th>
+            <th scope="col">Turkish Name</th>
+            <th scope="col">Cuontry</th>
+        </tr>
+    </thead>
+    <tbody id="Table">
+        @Html.Partial("content", Model)
+</table>
+
+<!-- Button trigger modal -->
+@*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+</button>*@
+

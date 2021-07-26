@@ -1,0 +1,44 @@
+﻿@using SGAW_ECHO.Models
+@using SGAW_ECHO.Models.CP.University
+@model List<GetUniversityModel>
+
+@{
+
+    if (Model != null && Model.Count > 0)
+    {
+        int count = 0;
+        foreach (var item in Model)
+        {
+    <tr>
+        <th scope=row> @(++count) </th>
+        <td>@item.University_Name</td>
+        @{
+            if (Session["lng"].ToString() == "ar")
+            {
+                <td>@item.Ar</td>
+            }
+            if (Session["lng"].ToString() == "en")
+            {
+                <td>@item.En</td>
+            }
+            if (Session["lng"].ToString() == "tr")
+            {
+                <td>@item.Tr</td>
+            }
+            <td>@item.Domain</td>
+            <td><img class="rounded-circle" style="width:50px" src="/Images/Universities/@item.URL" />   </td>
+        }
+        <td>
+            <i title="Edit" style="color:darkcyan; cursor:pointer;" class="fas fa-file-alt" data-toggle="modal" onclick="Edit('@item.University_ID', '@ViewBag.ControllerName');" data-target="#Modal"></i>&nbsp;
+            <i title="Delete" style="color:red; cursor:pointer;" class="fas fa-trash" data-item="@item.University_ID" onclick="Delete('@item.University_ID','@ViewBag.ControllerName')"></i>&nbsp;
+            <i title="Details" style="color:lawngreen; cursor:pointer;" class="fas fa-table" data-toggle="modal" onclick="Details('@item.University_ID', '@ViewBag.ControllerName');" data-target="#Modal"></i>
+        </td>
+    </tr>
+        }
+    }
+    else
+    {
+        <tr><td colspan="7"><h1>No Data Found!</h1></td></tr>
+        <tr><td colspan="7"><h6><small class="text-danger">@(ViewBag.msg??"")</small></h6></td></tr>
+    }
+}

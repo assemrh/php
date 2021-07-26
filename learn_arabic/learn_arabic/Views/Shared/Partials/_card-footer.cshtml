@@ -1,0 +1,39 @@
+﻿@{
+    int currentPage = ViewBag.CurrentPage  ?? 1;
+    int TotalPage = ViewBag.TotalPage ?? 1;
+    var next = (currentPage == TotalPage) ? "disabled" : "";
+    var prev = (currentPage == 1) ? "disabled" : "";
+}
+    <!-- Card footer -->
+<div class="card-footer py-4">
+    <nav aria-label="...">
+        <ul class="pagination justify-content-end mb-0">
+            <li class="page-item @prev">
+                <a class="page-link" href="@Context.Request.Path.Value?p=@(currentPage-1)" tabindex="-1">
+                    <i class="fas fa-angle-left"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+
+            @for (int j = 1; TotalPage >= j; j++)
+            {
+                var _class = (j == currentPage )? "active" : "";
+                <li class="page-item @_class">
+                    <a class="page-link" href="@Context.Request.Path.Value?p=@j">
+                        @j
+                        @if (j == currentPage)
+                        {
+                            <span class="sr-only">(current)</span>
+                        }
+                    </a>
+                </li>
+            }
+            <li class="page-item @next">
+                <a class="page-link" href="@Context.Request.Path.Value?p=@(currentPage+1)">
+                    <i class="fas fa-angle-right"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

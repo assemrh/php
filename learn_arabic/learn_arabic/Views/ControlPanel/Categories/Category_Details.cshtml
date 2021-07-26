@@ -1,0 +1,43 @@
+﻿@model learn_arabic.Models.CategoriesModel
+@{
+    Layout = "_ControlPanel_Layout";
+}
+
+@await Html.PartialAsync("_header", true)
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row justify-content-center">
+        <div class="col-6 p-5 ml-5 mr-5">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">@ViewBag.TableTitle</h3>
+                </div>
+                <div class="table-responsive p-3">
+                    <div class="align-items-center add-form w-100" role="dialog" data-previous="/Admin/Categories/">
+                        <div class="form-group">
+                            <label class="form-control-label">@Resources.General.ArabicName:</label>
+                            <input class="form-control border-0 bg-transparent" type="text" value="@Model?.Arabic_Name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">@Resources.General.EnglishName:</label>
+                            <input class="form-control border-0 bg-transparent" type="text" value="@Model?.English_Name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">@Resources.General.TurkishName:</label>
+                            <input class="form-control border-0 bg-transparent" type="text" value="@Model?.Turkish_Name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">@Resources.General.RussianName:</label>
+                            <input class="form-control border-0 bg-transparent" type="text" value="@Model?.Russian_Name" readonly>
+                        </div>
+                        <div class="text-center">
+                            <a href="@ViewBag.ReturnUrl" class="btn btn-primary ml-auto">@Resources.General.Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

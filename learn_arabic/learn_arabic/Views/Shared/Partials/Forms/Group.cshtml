@@ -1,0 +1,110 @@
+﻿@model learn_arabic.Models.GroupModel
+@{
+    Layout = "_ControlPanel_Layout";
+    var CategoriesList = ViewBag.CategoriesList as PaginationList<ShowCategoriesModel> ?? new PaginationList<ShowCategoriesModel>();
+    var GroupsList = ViewBag.GroupsList as List<ShowConstantModel> ?? new List<ShowConstantModel>();
+}
+
+@await Html.PartialAsync("_header", true)
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row justify-content-center">
+        <div class="col-6 p-5 ml-5 mr-5">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">@ViewBag.TableTitle</h3>
+                </div>
+                <div class="table-responsive p-3">
+                    <form id="form" class="align-items-center add-form w-100" role="form" method="post" action="/Admin/Groups/@ViewBag.Action" data-previous="/Admin/Groups/">
+                        <input type="hidden" asp-for="ID" value="@Model?.ID" />
+                        <div class="form-group">
+                            <label for="ArabicName-text-input" class="form-control-label">@Resources.General.ArabicName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="Arabic_Name" value="@Model?.Arabic_Name" id="ArabicName-text-input" required IsReadOnly>
+                        </div>
+                        <div class="form-group">
+                            <label for="EnglishName-text-input" class="form-control-label">@Resources.General.EnglishName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="English_Name" value="@Model?.English_Name" id="EnglishName-text-input" required IsReadOnly>
+                        </div>
+                        <div class="form-group">
+                            <label for="TurkishName-text-input" class="form-control-label">@Resources.General.TurkishName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="Turkish_Name" value="@Model?.Turkish_Name" id="TurkishName-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="RussianName-text-input" class="form-control-label">@Resources.General.RussianName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="Russian_Name" value="@Model?.Russian_Name" id="RussianName-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@Resources.General.Prev_Name</label>
+                            <select class="form-control select2" type="text" asp-for="Prev_Group_ID" style="width: 100%;">
+                                <option value="@(new Guid())">Select one</option>
+
+                                @foreach (var item in GroupsList)
+                                {
+                                    if (item.ID == Model?.Prev_Group_ID.ToString())
+                                    {
+                                        <option value="@item.ID" selected="selected">@item.Value</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.ID">@item.Value</option>
+                                    }
+                                }
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Resources.General.Category_Name</label>
+                            <select class="form-control select2" type="text" asp-for="Category_ID" style="width: 100%;">
+                                <option value="@(new Guid())">Select one</option>
+                                @foreach (var item in CategoriesList)
+                                {
+                                    if (item.ID == Model?.Category_ID.ToString())
+                                    {
+                                        <option value="@item.ID" selected="selected">@item.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.ID">@item.Name</option>
+                                    }
+                                }
+
+                            </select>
+                        </div>
+                        <!-- Date -->
+
+                        <div class="form-group">
+                            <label for="start-time-input" class="form-control-label">Start time:</label>
+                            <input class="form-control" type="time" asp-for="Start_Time" value="@Model?.Start_Time" id="start-time-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-time-input" class="form-control-label">End time:</label>
+                            <input class="form-control" type="time" asp-for="End_Time" value="@Model?.End_Time" id="end-time-input">
+                        </div>
+                        <div class="text-center">
+                            <a href="@ViewBag.ReturnUrl" class="btn btn-danger ml-auto">@Resources.General.Cancle</a>
+                            <button type="submit" class="btn btn-primary my-4">@Resources.General.Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+        })
+    </script>
+    <script src="~/js/main.js"></script>
+
+    
+}
+

@@ -1,0 +1,30 @@
+﻿@*
+    Page_Not_Found
+*@
+@{
+    string host = Context.Request.Host.ToString(),  path = Context.Request.Path.ToString();
+    string url = host + path;
+    ViewData["Title"] = "Page Not Found";
+    if (path.StartsWith("/admin")){
+        Layout = "_ControlPanel_Layout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}
+<div class="container">
+    <div class="row text-center justify-content-center">
+        <div class="card text-center mt-5 p-2 bg-transparent shadow-none">
+            <img src="/img/svg/warning.svg" class="card-img-top h-50 w-50 ml-auto mr-auto" />
+            <div class="card-body">
+                <h3 class="card-text">@ViewBag.Title</h3>
+                <p>
+                    @url Was Not Found
+
+                </p>
+                <a href="/admin" class="btn btn-dark">@Resources.General.Home</a>
+            </div>
+        </div>
+    </div>
+</div>

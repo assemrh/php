@@ -1,0 +1,43 @@
+﻿@model SGAW_ECHO.Models.UserModel
+
+
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Resources.Users.EditUserDetails</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form id="EditForm">
+        <input hidden type="text" id="id" name="id" value="@Model.ID" />
+        <div class="form-group">
+            <label for="full_name"><span style="color:red;">*</span>@Resources.Users.FullName</label>
+            <input type="text" class="form-control" id="fullname" value="@Model.FullName" name="fullname" placeholder=" @Resources.Users.EnterFullName">
+        </div>
+        <div class="form-group">
+            <label for="username"><span style="color:red;">*</span>@Resources.Users.Username</label>
+            <input type="text" class="form-control" id="username" value="@Model.UserName" name="username" placeholder="@Resources.Users.EnterUsername">
+        </div>
+        <div class="form-group">
+            <label for="email"><span style="color:red;">*</span>@Resources.Users.Email</label>
+            <input type="text" class="form-control" id="email" value="@Model.Email" name="email" placeholder="@Resources.Users.EnterEmail">
+        </div>
+        <div class="form-group">
+            <label for="description">@Resources.Users.Bio</label>
+            <input type="text" class="form-control" id="bio" value="@Model.Bio" name="bio" placeholder="@Resources.Users.EnterBio">
+        </div>
+        <div class="form-group text-center">
+            <h3>@Resources.Users.ProfileImage</h3>
+            <img class="rounded w-50" src="~/Images/Users/Profile/@Model.profile" />
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Shared.Close</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="Editing('@ViewBag.controllerName')">@Resources.Shared.Edit</button>
+</div>
+

@@ -1,0 +1,35 @@
+﻿
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Add New City</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="AddForm">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="Ar"><span style="color:red;">*</span>Arabic Name</label>
+                <input type="text" class="form-control" id="Ar" name="Ar" placeholder="Enter Arabic Name">
+            </div>
+            <div class="form-group">
+                <label for="En"><span style="color:red;">*</span>English Name</label>
+                <input type="text" class="form-control" id="En" name="En" placeholder="Enter English Name">
+            </div>
+            <div class="form-group">
+                <label for="Tr"><span style="color:red;">*</span>Turkish Name</label>
+                <input type="text" class="form-control" id="Tr" name="Tr" placeholder="Enter Turkish Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country"><span style="color:red;">*</span>Country</label>
+            <select name="country" id="country" class="form-control">
+            </select>
+        </div>
+       
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Adding('@ViewBag.ControllerName');">Save</button>
+</div>

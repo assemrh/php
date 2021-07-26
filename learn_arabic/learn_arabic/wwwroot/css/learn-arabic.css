@@ -1,0 +1,68 @@
+﻿body > div.container {
+    min-height:70vh;
+}
+
+
+.list{
+    min-height:30rem;
+}
+.table-responsive {
+    min-height: 10rem;
+}
+
+.bootstrap-datetimepicker-widget {
+    /*    min-width:max-content;
+*/ max-width: 30rem !important;
+   padding:1rem;
+}
+.bootstrap-datetimepicker-widget * {
+    font-size: small;
+    padding: 0 !important;
+}
+    .bootstrap-datetimepicker-widget td {
+        padding:0!important;
+    }
+
+.dropzone {
+    border: 0.2rem dashed #6583fe;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: 0.25s background-color ease-in-out;
+    cursor: pointer;
+}
+
+    .dropzone-dragging,
+    .dropzone:hover {
+        background-color: #f3f5ff;
+    }
+
+.dropzone-icon {
+    max-width: 75px;
+    display: block;
+    margin: 0 auto 1.5rem;
+}
+
+.dropzone-input {
+    display: none;
+}
+
+.border-3 {
+    border-width: 3px !important;
+}
+.tab-container {
+    color: #525f7f;
+    border-color: #dee2e6 #dee2e6 #f8f9fe;
+    background-color: #f8f9fe;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-top: hidden;
+    border-bottom-left-radius: .375rem;
+    border-bottom-right-radius: .375rem;
+}
+}
+.nav-tabs{
+    flex-wrap:nowrap;
+}

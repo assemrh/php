@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>@ViewBag.Title</title>
+    <!-- Favicon -->
+    <link rel="icon" href="~/img/brand/favicon.png" type="image/png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Icons -->
+    <link rel="stylesheet" href="~/vendor/nucleo/css/nucleo.css" type="text/css">
+    <!-- Bootstrap Icons -->
+    <link href="~/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/vendor/fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Page plugins -->
+    <link href="~/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <!--Select2-->
+    <link href="~/vendor/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <!--Sweet Alert-->
+    <link href="~/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/vendor/sweetalert22/dist/sweetalert2.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="~/css/adminlte.min.css" rel="stylesheet" />
+    <!-- overlayScrollbars -->
+    <link href="~/vendor/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
+    <!-- Argon CSS -->
+    <link href="~/css/bootstrap/cp-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css?v=1.2.0" type="text/css">
+    <link href="~/css/learn-arabic.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Sidenav -->
+    @await Html.PartialAsync("_sidenav")
+
+    <div class="main-content" id="panel">
+        <!-- Topnav -->
+        @await Html.PartialAsync("_topnav")
+        @RenderBody()
+    </div>
+    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/js-cookie/js.cookie.js"></script>
+    <script src="~/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <!--Select2-->
+    <script src="~/vendor/select2/dist/js/select2.full.min.js"></script>
+    <!-- Optional JS -->
+    <script src="~/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="~/vendor/chart.js/dist/Chart.extension.js"></script>
+    <!-- Argon JS -->
+    <script src="~/js/script.js?v=1.2.0"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- overlayScrollbars -->
+    <script src="~/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="~/js/demo.js"></script>-->
+    <!--Sweet Alert-->
+    <script src="~/vendor/sweetalert22/dist/sweetalert2.js"></script>
+    <script>
+        $(function () {
+            $('.nav-item.toggler').click(function () {
+                $('#sidenav-main').toggle('slide', 500)
+                $('.main-content').toggleClass("ml-0", 1000)
+
+            });
+        })
+    </script>
+    @*<script src="~/vendor/sweetalert22/src/SweetAlert.js"></script>
+    <script src="~/vendor/sweetalert22/src/sweetalert2.js"></script>*@
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts", required: false)
+    }
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿@model learn_arabic.Models.CategoriesModel
+@{
+    Layout = "_ControlPanel_Layout";
+}
+
+@await Html.PartialAsync("_header", true)
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row justify-content-center">
+        <div class="col-6 p-5 ml-5 mr-5">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">@ViewBag.TableTitle</h3>
+                </div>
+                <div class="table-responsive p-3">
+                    <form id="form" class="align-items-center add-form w-100" role="form" method="post" action="/Admin/Categories/@ViewBag.Action" data-previous="/Admin/Categories/">
+                        <input type="hidden" asp-for="ID" value="@Model?.ID"/>
+                        <div class="form-group">
+                            <label for="ArabicName-text-input" class="form-control-label">@Resources.General.ArabicName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="Arabic_Name" value="@Model?.Arabic_Name" id="ArabicName-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="EnglishName-text-input" class="form-control-label">@Resources.General.EnglishName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="English_Name" value="@Model?.English_Name" id="EnglishName-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="TurkishName-text-input" class="form-control-label">@Resources.General.TurkishName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="Turkish_Name" value="@Model?.Turkish_Name" id="TurkishName-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="RussianName-text-input" class="form-control-label">@Resources.General.RussianName<span class="text-red">*</span></label>
+                            <input class="form-control" type="text" asp-for="Russian_Name" value="@Model?.Russian_Name" id="RussianName-text-input" required>
+                        </div>
+                        <div class="text-center">
+                            <a href="@ViewBag.ReturnUrl" class="btn btn-danger ml-auto">@Resources.General.Cancle</a>
+                            <button type="submit" class="btn btn-primary my-4">@Resources.General.Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script src="~/js/main.js"></script>
+}
+

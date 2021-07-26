@@ -1,0 +1,58 @@
+﻿@using SGAW_ECHO.Classes;
+@using System.Data;
+@using SGAW_ECHO.Models.API.Countries;
+@using SGAW_ECHO.Models.API.Cities;
+@model CityModel
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Edit City</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="EditForm">
+        <div class="form-group">
+            <input type="hidden" name="ID" value="@Model.ID"/>
+            <div class="form-group">
+                <label for="Ar"><span style="color:red;">*</span>Arabic Name</label>
+                <input value="@Model.Ar" type="text" class="form-control" id="Ar" name="Ar" placeholder="Enter Arabic Name">
+            </div>
+            <div class="form-group">
+                <label for="En"><span style="color:red;">*</span>English Name</label>
+                <input value="@Model.En" type="text" class="form-control" id="En" name="En" placeholder="Enter English Name">
+            </div>
+            <div class="form-group">
+                <label for="Tr"><span style="color:red;">*</span>Turkish Name</label>
+                <input value="@Model.Tr" type="text" class="form-control" id="Tr" name="Tr" placeholder="Enter Turkish Name">
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label for="countries"><span style="color:red;">*</span>Country</label>
+            <select name="country" class="form-control mr-sm-2" id="countries" value="">
+                @{
+                    if (ViewData["countrieslist"] != null)
+                    {
+                        foreach (var country in (List<Country>)ViewData["countrieslist"])
+                        {
+                            string selected = (country.ID == Model.Country_ID) ? "selected" : "";
+                            <option @selected value="@country.ID">
+
+                                @country.En
+                            </option>
+
+                        }
+                    }
+                }
+            </select>
+        </div>
+    </form>
+    <hr/>
+    <div><small class="text-danger">@(ViewBag.msg??"")</small></div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" id="myBtn" onclick="return Editing('/CP_Cities/EditCity/'); //EditCity();">Edit</button>
+</div>

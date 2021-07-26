@@ -1,0 +1,45 @@
+﻿@using System.Data;
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Add New User</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="AdduserForm" method="post" action="../user/adduser" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="exampleDropdownFormFullname"><span style="color:red;">*</span>@Resources.Users.FullName</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="@Resources.Users.EnterFullName">
+            </div>
+            <div class="form-group">
+                <label for="exampleDropdownFormUsername"><span style="color:red;">*</span>@Resources.Users.Username <span title="@Resources.Users.UsernameTitle"><i class="far fa-question-circle"></i></span></label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="@Resources.Users.EnterUsername">
+            </div>
+            <label for="exampleDropdownFormEmail1"><span style="color:red;">*</span>@Resources.Users.Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="@Resources.Users.EnterEmail">
+        </div>
+        <div class="form-group">
+            <label for="garpassnew"><span style="color:red;">*</span>@Resources.Users.Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="@Resources.Users.EnterPassword">
+        </div>
+
+        <div class="form-group">
+            <label for="descriptiontextarea">@Resources.Users.Bio</label>
+            <textarea class="form-control" id="bio" rows="4" placeholder="@Resources.Users.EnterBio" name="bio"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="col-8 pl-2">
+                <input type="file" class="form-control" id="resim" name="profile" placeholder="@Resources.Users.EnterProfileImage" accept="image/*">
+            </div>
+        </div>
+    </form>    
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Shared.Close</button>
+            <button id="adduserbtn" onclick="return AddNewUser();" class="btn btn-primary">@Resources.Shared.Add</button>
+        </div>
+
+
+</div>
+

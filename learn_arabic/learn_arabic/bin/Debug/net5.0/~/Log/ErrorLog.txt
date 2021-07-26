@@ -1,0 +1,10 @@
+Ambiguous column name 'id'.// 6/6/2021 1:10:40 AM
+in C:\websites\kuran-nesli\learn_arabic\learn_arabic
+file C:\Program Files\IIS Express\iisexpress.exe
+ at line 32 (Index)
+test
+// 6/6/2021 1:14:35 AM
+in C:\websites\kuran-nesli\learn_arabic\learn_arabic
+file C:\Program Files\IIS Express\iisexpress.exe
+ at line 21 (Index)
+test

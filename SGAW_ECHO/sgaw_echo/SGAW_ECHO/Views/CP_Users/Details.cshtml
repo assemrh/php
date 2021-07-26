@@ -1,0 +1,38 @@
+﻿@model SGAW_ECHO.Models.UserModel
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">@Resources.Users.UserDetails</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form>
+        <div class="modal-body">
+            <input hidden value="@Model.ID" />
+            <div class="form-group">
+                <label>@Resources.Users.FullName</label>
+                <input disabled type="text" class="form-control" value="@Model.FullName" name="type_name">
+            </div>
+            <div class="form-group">
+                <label>@Resources.Users.Username</label>
+                <input disabled type="text" class="form-control" value="@Model.UserName" name="type_name">
+            </div>
+            <div class="form-group">
+                <label>@Resources.Users.Email</label>
+                <input disabled type="text" class="form-control" value="@Model.Email" name="type_name">
+            </div>
+            <div class="form-group">
+                <label>@Resources.Users.Bio</label>
+                <input disabled type="text" class="form-control" value="@Model.Bio" name="type_name">
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <h3>@Resources.Users.ProfileImage</h3>
+            <img class="rounded w-50" src="~/Images/Users/Profile/@Model.profile" />
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Shared.Close</button>
+        </div>
+    </form>
+</div>

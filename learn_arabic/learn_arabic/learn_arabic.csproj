@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <UserSecretsId>5a57c45e-7776-4a14-8426-1c278b4dc97a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Shared\Partials\Componenti.razor" />
+    <Content Remove="Views\Shared\Partials\Table.cshtml" />
+    <Content Remove="Views\Shared\Partials\_form.cshtml" />
+    <Content Remove="Views\Shared\Partials\_table-responsive.cshtml" />
+    <Content Remove="Views\Shared\Partials\_table.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DryIoc.dll" Version="4.7.7" />
+    <PackageReference Include="LanguageExt.Core" Version="3.4.15" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Resources\General.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Languages\English\General.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>General.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Languages\English\Message.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Message.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Languages\English\User.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Languages\English\General.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>General.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Languages\English\Message.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Languages\English\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\ControlPanel\Companies\" />
+    <Folder Include="Views\ControlPanel\Countries\" />
+    <Folder Include="Views\Shared\Partials\General\" />
+  </ItemGroup>
+
+</Project>
